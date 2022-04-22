@@ -1,38 +1,146 @@
-# Déclaration des Types Abstrait de Données
+# Déclaration des Types Abstraits de Données
 
-## Controle
+## Types singuliers
 
-- sorte : `controle`
-- utilise : `Enseignant`, `Salle`, `Formation`
+### Enseignant
 
-## Salle
+- Sorte : $E$
+- Utilise : $\Sigma^\star$
+- Opérateurs :
+    - constructeur :
+        $$
+            \begin{align*}
+                \operatorname{enseignant} \colon \Sigma^\star \times \Sigma^\star & \longrightarrow E \\
+                (nom, matiere) & \longmapsto \operatorname{enseignant}(nom, matiere)
+            \end{align*}
+        $$
+    - génériques :
+        - $\operatorname{getNom} \colon E \longrightarrow \Sigma^\star$
+        - $\operatorname{getMatiere} \colon E \longrightarrow \Sigma^\star$
+        - $\operatorname{setNom} \colon E \times \Sigma^\star \longrightarrow E$
+        - $\operatorname{setMatiere} \colon E \times \Sigma^\star \longrightarrow E$
+        - $\operatorname{toString} \colon E \longrightarrow \Sigma^\star$
 
-- sorte : `Salle`
-- utilise : `Creneau`
-- opérateurs :
-    - constructeurs :
-        - `salle`$\colon$ ` ` $\to$ `Salle`
+### Horaire
 
-## Creneau
+- Sorte : $H$
+- Utilise : $\N$
+- Opérateurs :
+    - constructeur :
+        $$
+            \begin{align*}
+                \operatorname{horaire} \colon \llbracket 0, 24 \rrbracket \times \llbracket 0, 24 \rrbracket & \longrightarrow H \\
+                (debut, fin) & \longmapsto \operatorname{horaire}(debut, fin)
+            \end{align*}
+        $$
+    - génériques :
+        - $\operatorname{getDebut} \colon H \longrightarrow \Sigma^\star$
+        - $\operatorname{getFin} \colon H \longrightarrow \Sigma^\star$
+        - $\operatorname{setDebut} \colon H \times \llbracket 0, 24 \rrbracket \longrightarrow H$
+        - $\operatorname{setFin} \colon H \times \llbracket 0, 24 \rrbracket \longrightarrow H$
+        - $\operatorname{duree} \colon H \longrightarrow \llbracket 0, 24 \rrbracket $
+        - $\operatorname{toString} \colon H \longrightarrow \Sigma^\star$
 
-- sorte : `Creneau`
-- utilise : `int`, `string`, `Enseignant`
-- opérateurs :
-  - constructeurs :
-    - `creneau`$\colon$ `int` $\times$ `int` $\times$ `string` $\times$ `string` $\times$ `Enseignant` $\to$ `Creneau`
+### Creneau
 
-## Enseignant
+- Sorte : $C$
+- Utilise : $E, H, \Sigma^\star$
+- Opérateurs :
+    - constructeur :
+        $$
+            \begin{align*}
+                \operatorname{creneau} \colon E \times H \times \Sigma^\star \times \Sigma^\star & \longrightarrow C \\
+                (enseignant, horaire, formation, salle) & \longmapsto \operatorname{creneau}(enseignant, horaire, formation, salle)
+            \end{align*}
+        $$
+    - génériques :
+        - $\operatorname{setCreneau} \colon C \times E \times H \times \Sigma^\star \times \Sigma^\star \longrightarrow C$
+        - $\operatorname{getEnseignant} \colon C \longrightarrow E$
+        - $\operatorname{getHoraire} \colon C \longrightarrow H$
+        - $\operatorname{getFormation} \colon C \longrightarrow \Sigma^\star$
+        - $\operatorname{getSalle} \colon C \longrightarrow \Sigma^\star$
+        - $\operatorname{toString} \colon C \longrightarrow \Sigma^\star$
 
-- sorte : `Enseignant`
-- utilise : `string`
-- opérateurs :
-    - constructeurs :
-        - `enseignant`$\colon$`string` $\times$ `string` $\to$ `Enseignant`
+### Salle
 
-## Formation
+- Sorte : $S$
+- Utilise : $C^\N, \mathbb{B}$
+- Opérateurs :
+    - constructeur :
+        $$
+            \begin{align*}
+                \operatorname{salle} \colon \Sigma^\star & \longrightarrow S \\
+                nom & \longmapsto \operatorname{salle}(nom)
+            \end{align*}
+        $$
+    - génériques :
+        - $\operatorname{ajouter} \colon S \times C \longrightarrow S$
+        - $\operatorname{modifier} \colon S \times H \times H \longrightarrow S$
+        - $\operatorname{supprimer} \colon S \times H \longrightarrow S$
+        - $\operatorname{isFree} \colon S \times H \longrightarrow \mathbb{B}$
+        - $\operatorname{isEmpty} \colon S \longrightarrow \mathbb{B}$
+        - $\operatorname{toString} \colon S \longrightarrow \Sigma^\star$
 
-- sorte : `Formation`
-- utilise : `Salles`, `Creneaux`
-- opérateurs :
-  - constructeurs :
-    - `formation`$\colon$ `Creneaux` $\to$ `Formation`
+### Formation
+
+- Sorte : $F$
+- Utilise : $C, \Sigma^\star$
+- Opérateurs :
+    - constructeur :
+        $$
+            \begin{align*}
+                \operatorname{formation} \colon \Sigma^\star & \longrightarrow F \\
+                nom & \longmapsto \operatorname{formation}(nom)
+            \end{align*}
+        $$
+    - génériques :
+        - $\operatorname{ajouter} \colon F \times C \longrightarrow F$
+        - $\operatorname{supprimer} \colon F \times H \longrightarrow F$
+        - $\operatorname{isFull} \colon F \longrightarrow \mathbb{B}$
+        - $\operatorname{toString} \colon F \longrightarrow \Sigma^\star$
+
+## Collections
+
+### Enseignants
+
+- Sorte : $E^\N \coloneqq \text{liste chaînée d'enseignants}$
+- Utilise : $E, \Sigma^\star$
+- Opérateurs :
+    - constructeur :
+        $$
+            \operatorname{enseignants} \colon \empty \longrightarrow E^\N
+        $$
+    - génériques :
+        - $\operatorname{getEnseignant} \colon E^\N \times \Sigma^\star \longrightarrow E$
+        - $\operatorname{ajouter} \colon E^\N \times E \longrightarrow E^\N$
+        - $\operatorname{supprimer} \colon E^\N \times \Sigma^\star \longrightarrow E^\N$
+        - $\operatorname{toString} \colon E^\N \longrightarrow \Sigma^\star$
+
+### Salles
+
+- Sorte : $S^\N \coloneqq \text{liste chaînée de salles}$
+- Utilise : $S, \N$
+- Opérateurs :
+    - constructeur :
+        $$
+            \operatorname{salles} \colon \empty \longrightarrow S^\N
+        $$
+    - génériques :
+        - $\operatorname{ajouter} \colon S^\N \times S \longrightarrow S^\N$
+        - $\operatorname{getSalle} \colon S^\N \times \Sigma^\star \longrightarrow S$
+        - $\operatorname{toString} \colon S^\N \longrightarrow \Sigma^\star$
+
+## Contrôle
+
+- Sorte : $\mathcal{C}$
+- Utilise : $E^\N, S^\N, F, \Sigma^\star$
+- Opérateurs :
+    - constructeur :
+        $$
+            \operatorname{controle} \colon \empty \longrightarrow \mathcal{C}
+        $$
+    - générique :
+        - $\operatorname{reserver} \colon \mathcal{C} \times C \longrightarrow \mathcal{C}$
+        - $\operatorname{annuler} \colon \mathcal{C} \times C \longrightarrow \mathcal{C}$
+        - $\operatorname{modifier} \colon \mathcal{C} \times C \longrightarrow \mathcal{C}$
+        - $\operatorname{afficher}$
