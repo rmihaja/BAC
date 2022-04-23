@@ -44,7 +44,7 @@
 ### Creneau
 
 - Sorte : $C$
-- Utilise : $E, H, \Sigma^\star$
+- Utilise : $E, H, F, \Sigma^\star$
 - Opérateurs :
     - constructeur :
         $$
