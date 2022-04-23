@@ -2,7 +2,6 @@
 title: 'TAD'
 export_on_save:
     puppeteer: true
-    puppeteer: ["pdf", "png"]
 ---
 
 # Déclaration des Types Abstraits de Données
@@ -26,7 +25,7 @@ export_on_save:
         - $\operatorname{getMatiere} \colon E \longrightarrow \Sigma^\star$
         - $\operatorname{setNom} \colon E \times \Sigma^\star \longrightarrow E$
         - $\operatorname{setMatiere} \colon E \times \Sigma^\star \longrightarrow E$
-        - $\operatorname{toString} \colon E \longrightarrow \Sigma^\star$
+        - $\operatorname{toStringEnseignant} \colon E \longrightarrow \Sigma^\star$
 
 ### Horaire
 
@@ -46,7 +45,7 @@ export_on_save:
         - $\operatorname{setDebut} \colon H \times \llbracket 0, 24 \rrbracket \longrightarrow H$
         - $\operatorname{setFin} \colon H \times \llbracket 0, 24 \rrbracket \longrightarrow H$
         - $\operatorname{duree} \colon H \longrightarrow \llbracket 0, 24 \rrbracket $
-        - $\operatorname{toString} \colon H \longrightarrow \Sigma^\star$
+        - $\operatorname{toStringHoraire} \colon H \longrightarrow \Sigma^\star$
 
 ### Creneau
 
@@ -65,13 +64,13 @@ export_on_save:
         - $\operatorname{getEnseignant} \colon C \longrightarrow E$
         - $\operatorname{getHoraire} \colon C \longrightarrow H$
         - $\operatorname{getFormation} \colon C \longrightarrow \Sigma^\star$
-        - $\operatorname{getSalle} \colon C \longrightarrow \Sigma^\star$
-        - $\operatorname{toString} \colon C \longrightarrow \Sigma^\star$
+        - $\operatorname{getSalleCreneau} \colon C \longrightarrow \Sigma^\star$
+        - $\operatorname{toStringCreneau} \colon C \longrightarrow \Sigma^\star$
 
 ### Salle
 
 - Sorte : $S$
-- Utilise : $C^\N, \mathbb{B}$
+- Utilise : $C^\N \coloneqq \text{tableau de créneau}, \mathbb{B}$
 - Opérateurs :
     - constructeur :
         $$
@@ -81,17 +80,17 @@ export_on_save:
             \end{align*}
         $$
     - génériques :
-        - $\operatorname{ajouter} \colon S \times C \longrightarrow S$
-        - $\operatorname{modifier} \colon S \times H \times H \longrightarrow S$
-        - $\operatorname{supprimer} \colon S \times H \longrightarrow S$
-        - $\operatorname{isFree} \colon S \times H \longrightarrow \mathbb{B}$
-        - $\operatorname{isEmpty} \colon S \longrightarrow \mathbb{B}$
-        - $\operatorname{toString} \colon S \longrightarrow \Sigma^\star$
+        - $\operatorname{ajouterCreneauSalle} \colon S \times C \longrightarrow S$
+        - $\operatorname{modifierCreneauSalle} \colon S \times H \times H \longrightarrow S$
+        - $\operatorname{supprimerCreneauSalle} \colon S \times H \longrightarrow S$
+        - $\operatorname{isFreeSalle} \colon S \times H \longrightarrow \mathbb{B}$
+        - $\operatorname{isEmptySalle} \colon S \longrightarrow \mathbb{B}$
+        - $\operatorname{toStringSalle} \colon S \longrightarrow \Sigma^\star$
 
 ### Formation
 
 - Sorte : $F$
-- Utilise : $C, \Sigma^\star$
+- Utilise : $C^\N \coloneqq \text{tableau de créneau}, \Sigma^\star$
 - Opérateurs :
     - constructeur :
         $$
@@ -101,10 +100,10 @@ export_on_save:
             \end{align*}
         $$
     - génériques :
-        - $\operatorname{ajouter} \colon F \times C \longrightarrow F$
-        - $\operatorname{supprimer} \colon F \times H \longrightarrow F$
-        - $\operatorname{isFull} \colon F \longrightarrow \mathbb{B}$
-        - $\operatorname{toString} \colon F \longrightarrow \Sigma^\star$
+        - $\operatorname{ajouterCreneauFormation} \colon F \times C \longrightarrow F$
+        - $\operatorname{supprimerCreneauFormation} \colon F \times H \longrightarrow F$
+        - $\operatorname{isFullFormation} \colon F \longrightarrow \mathbb{B}$
+        - $\operatorname{toStringFormation} \colon F \longrightarrow \Sigma^\star$
 
 ## Collections
 
@@ -119,9 +118,9 @@ export_on_save:
         $$
     - génériques :
         - $\operatorname{getEnseignant} \colon E^\N \times \Sigma^\star \longrightarrow E$
-        - $\operatorname{ajouter} \colon E^\N \times E \longrightarrow E^\N$
-        - $\operatorname{supprimer} \colon E^\N \times \Sigma^\star \longrightarrow E^\N$
-        - $\operatorname{toString} \colon E^\N \longrightarrow \Sigma^\star$
+        - $\operatorname{ajouterEnseignant} \colon E^\N \times E \longrightarrow E^\N$
+        - $\operatorname{supprimerEnseignant} \colon E^\N \times \Sigma^\star \longrightarrow E^\N$
+        - $\operatorname{toStringEnseignants} \colon E^\N \longrightarrow \Sigma^\star$
 
 ### Salles
 
@@ -133,9 +132,9 @@ export_on_save:
             \operatorname{salles} \colon \empty \longrightarrow S^\N
         $$
     - génériques :
-        - $\operatorname{ajouter} \colon S^\N \times S \longrightarrow S^\N$
+        - $\operatorname{ajouterSalle} \colon S^\N \times S \longrightarrow S^\N$
         - $\operatorname{getSalle} \colon S^\N \times \Sigma^\star \longrightarrow S$
-        - $\operatorname{toString} \colon S^\N \longrightarrow \Sigma^\star$
+        - $\operatorname{toStringSalles} \colon S^\N \longrightarrow \Sigma^\star$
 
 ## Contrôle
 
@@ -147,7 +146,7 @@ export_on_save:
             \operatorname{controle} \colon \empty \longrightarrow \mathcal{C}
         $$
     - générique :
-        - $\operatorname{reserver} \colon \mathcal{C} \times C \longrightarrow \mathcal{C}$
-        - $\operatorname{annuler} \colon \mathcal{C} \times C \longrightarrow \mathcal{C}$
-        - $\operatorname{modifier} \colon \mathcal{C} \times C \longrightarrow \mathcal{C}$
+        - $\operatorname{reserverCreneau} \colon \mathcal{C} \times C \longrightarrow \mathcal{C}$
+        - $\operatorname{annulerCreneau} \colon \mathcal{C} \times C \longrightarrow \mathcal{C}$
+        - $\operatorname{modifierCreneau} \colon \mathcal{C} \times C \longrightarrow \mathcal{C}$
         - $\operatorname{afficher}$
