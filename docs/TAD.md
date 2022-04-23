@@ -1,3 +1,10 @@
+---
+title: 'TAD'
+export_on_save:
+    puppeteer: true
+    puppeteer: ["pdf", "png"]
+---
+
 # Déclaration des Types Abstraits de Données
 
 ## Types singuliers
