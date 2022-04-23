@@ -5,4 +5,10 @@
 
 typedef struct s_salles *Salles;
 
+Salles salles();
+
+Salle getSalle(Salles, char* nom);
+Salles ajouterSalle(Salles, Salle);
+char* toStringSalles(Salles);
+
 #endif

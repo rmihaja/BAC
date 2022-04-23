@@ -24,6 +24,8 @@ int main() {
 
     test(toStringEnseignants(E) == "");
 
+    assert(getEnseignant(E, e1_nom)); // devrait produire une erreur
+
     ajouterEnseignant(E, e1);
     test(getEnseignant(E, e1_nom) == e1);
     assert(ajouterEnseignant(E, e1)); // devrait produire une erreur
