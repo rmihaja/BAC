@@ -5,4 +5,11 @@
 
 typedef struct s_enseignants *Enseignants;
 
+Enseignants enseignants();
+
+Enseignant getEnseignant(Enseignants, Enseignant);
+Enseignants ajouterEnseignant(Enseignants, Enseignant);
+Enseignants supprimerEnseignant(Enseignants, char* nom);
+char* toStringEnseignant(Enseignants);
+
 #endif
