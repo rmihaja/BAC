@@ -90,7 +90,7 @@ export_on_save:
 ### Formation
 
 - Sorte : $F$
-- Utilise : $C^\N \coloneqq \text{tableau de créneau}, \Sigma^\star$
+- Utilise : $C^\N \coloneqq \text{tableau de créneau}, H, \Sigma^\star, \mathbb{B}$
 - Opérateurs :
     - constructeur :
         $$

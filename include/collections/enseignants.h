@@ -16,4 +16,11 @@ void AfficherEnseignants (Enseignants es);
 Enseignant getEnseignantN(Enseignants es, char *n);
 Enseignant getEnseignantM(Enseignants es, char *m);
 
+Enseignants enseignants();
+
+Enseignant getEnseignant(Enseignants, Enseignant);
+Enseignants ajouterEnseignant(Enseignants, Enseignant);
+Enseignants supprimerEnseignant(Enseignants, char* nom);
+char* toStringEnseignant(Enseignants);
+
 #endif

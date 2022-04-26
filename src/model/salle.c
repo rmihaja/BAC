@@ -63,7 +63,7 @@ int main() {
 
     Salle s = salle(s1_nom);
 
-    assert(ajouterCreneauSalle(c2)); // devrait produit une erreur
+    assert(ajouterCreneauSalle(c2)); // devrait produire une erreur
     test(isFreeSalle(s) == true);
 
     assert(ajouterCreneauSalle(c1));
