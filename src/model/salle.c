@@ -1,10 +1,48 @@
 #include "salle.h"
+#include "creneau.h"
+#include "horaire.h"
+
 
 #ifdef DEBUG
 #include "tests.h"
 #endif
 
-// attributs, constructor, methods here
+struct s_salle{
+    char * nom;
+    Creneau creneaux[10];
+};
+
+Salle salle(int n){
+    Salle s= (Salle)malloc(sizeof(struct s_salle));
+    s->nom=n;
+    for(int i=0; i<10; i++){
+        s->creneaux[i]="NULL";
+    }
+    return s;
+}
+
+bool isFreeSalle(Salle s, Horaire h){
+    bool b=true;
+    for (int i=0; i<10; i++){
+        if(getDebut(h)==getDebut(s->creneaux[i]->horaire) & b){
+            if(getFin(h)==getFin(s->creneaux[i]->horaire)){
+                b=false;
+            }
+        }
+    }
+    return b;
+
+}
+
+Salle ajouterS(Salle s, Creneau c){
+    if(estLibre(s,c->horaire)){
+        for(int i=1; i<10;i++){
+            if(s->creneaux[i-1]->horaire<c->horaire<s->creneaux[i]->horaire)
+        }
+    }
+}
+
+
 
 #ifdef TEST
 

@@ -1,8 +1,42 @@
-#include "enseignant.h"
+#include "../../include/collections/enseignant.h"
 
 #ifdef DEBUG
 #include "tests.h"
 #endif
+
+struct s_enseignant{
+    char* nom;
+    char* matiere;
+};
+
+Enseignant enseignant (char* n, char* m){
+    Enseignant e= (Enseignant) malloc (sizeof(struct s_enseignant));
+    e->nom =n;
+    e->matiere=m;
+    return e;
+}
+
+char* toStringEnseignant (Enseignant e){
+    return "e->nom, e->matiere\n";
+}
+
+Enseignant setMatiere(Enseignant e, char* m){
+    e->matiere=m;
+    return e;
+}
+
+Enseignant setNom(Enseignant e, char* n){
+    e->nom=n;
+    return e;
+}
+
+char* getMatiere(Enseignant e){
+    return e->matiere;
+}
+
+char* getNom(Enseignant e){
+    return e->nom;
+}
 
 #ifdef TEST
 
@@ -20,7 +54,7 @@ int main() {
     Enseignant e = enseignant(e1_nom, e1_matiere);
 
     // TODO discuter du format final attendu
-    test(toString(e) == "TRUILLET, Structure de données");
+    test(toStringEnseignant(e) == "TRUILLET, Structure de données");
 
     test(getNom(e) == e1_nom);
     test(getMatiere(e) == e1_matiere);
@@ -31,7 +65,7 @@ int main() {
     test(getNom(e) == e2_nom);
     test(getMatiere(e) == e2_matiere);
 
-    test(toString(e) == "GAILDRAT, Programmation orientée objet");
+    test(toStringEnseignant(e) == "GAILDRAT, Programmation orientée objet");
 
     return 0;
 }
