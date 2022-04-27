@@ -55,53 +55,12 @@
 #define ISO6429_CACHE_CURSEUR             ISO6429_CSI "?25l"
 #define ISO6429_MONTRE_CURSEUR            ISO6429_CSI "?25h"
 
-struct iso6429_point {
-  int x ;
-  int y ;
-} ;
-
-
-/*
-  Pour l'utiliser sans probl�mes, il vaut mieux que les entr�es soient "hot"
- */
-struct iso6429_point
-iso6429_position_curseur ( )
-{
-  struct iso6429_point point ;
-  printf ( ISO6429_CSI "6n" ) ;
-  scanf ( "\33[%d;%dR" , &(point.x) , &(point.y) ) ;
-  return point ;
-}
-
-
 #define POSITION "Fichier "__FILE__ ", ligne %d (fonction %s):\n"
 
-#ifdef USECOLORS
 #define COULEUR_SUCCES  ISO6429_COULEUR(ISO6429_GRAS ISO6429_SEP ISO6429_TEXTE(ISO6429_VERT))
 #define COULEUR_ECHEC   ISO6429_COULEUR(ISO6429_GRAS ISO6429_SEP ISO6429_TEXTE(ISO6429_ROUGE))
 #define COULEUR_INFO    ISO6429_COULEUR(ISO6429_GRAS ISO6429_SEP ISO6429_TEXTE(ISO6429_BLEU))
 #define COULEUR_NORMALE ISO6429_COULEUR(ISO6429_REMISE_A_ZERO)
-#else
-#define COULEUR_SUCCES  ""
-#define COULEUR_ECHEC   ""
-#define COULEUR_INFO    ""
-#define COULEUR_NORMALE ""
-#endif
-
-
-#ifdef production
-
-#define VAL_INT(n)  ((void)0)
-
-#define TEST_RES(x) ((void)0)
-
-#define ASSERT(x)   ((void)0)
-
-#define debug(...)  ((void)0)
-
-#define test(x)     ((void)0)
-
-#else
 
 #define TEST_str(x) #x
 
@@ -130,7 +89,6 @@ iso6429_position_curseur ( )
 
 #define debug(...) fprintf ( stderr ,COULEUR_INFO __VA_ARGS__ )
 #define test(x) TEST_RES(x)
-
-#endif
+#define assert(x) ASSERT(x)
 
 #endif

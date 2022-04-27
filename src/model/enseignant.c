@@ -16,8 +16,8 @@ Enseignant enseignant (char* n, char* m){
     return e;
 }
 
-void AfficheEnseignant (Enseignant e){
-    printf("%c: %c\n",getNom(e), getMatiere(e));
+void afficheEnseignant (Enseignant e){
+    printf("%s, %s\n",getNom(e), getMatiere(e));
 }
 
 Enseignant setMatiere(Enseignant e, char* m){
@@ -38,6 +38,16 @@ char* getNom(Enseignant e){
     return e->nom;
 }
 
+json_t* getJson(Enseignant e) {
+
+    json_t *root = json_object();
+
+    json_object_set_new(root, "nom", json_string(e->nom));
+    json_object_set_new(root, "matiere", json_string(e->matiere));
+
+    return root;
+}
+
 #ifdef TEST
 
 int main() {
@@ -53,8 +63,7 @@ int main() {
 
     Enseignant e = enseignant(e1_nom, e1_matiere);
 
-    // TODO discuter du format final attendu
-    test(AfficheEnseignant(e) == "TRUILLET, Structure de données");
+    afficheEnseignant(e); // "TRUILLET, Structure de données"
 
     test(getNom(e) == e1_nom);
     test(getMatiere(e) == e1_matiere);
@@ -65,7 +74,7 @@ int main() {
     test(getNom(e) == e2_nom);
     test(getMatiere(e) == e2_matiere);
 
-    test(AfficheEnseignant(e) == "GAILDRAT, Programmation orientée objet");
+    afficheEnseignant(e); // "GAILDRAT, Programmation orientée objet"
 
     return 0;
 }

@@ -4,7 +4,7 @@ LIB = ./lib
 LIBS = $(LIB)/model.a
 # LIBTOOLS =
 LDEPENDENCY = -lmodel
-# LTOOLSDEPENDENCY =
+LTOOLSDEPENDENCY = -ljansson
 WARNINGS = -Wall -Werror -Wextra -ggdb3
 MODULE = ./module
 MODULES = $(MODULE)/enseignant.o $(MODULE)/horaire.o $(MODULE)/creneau.o $(MODULE)/salle.o $(MODULE)/formation.o $(MODULE)/enseignants.o $(MODULE)/salles.o
@@ -49,9 +49,9 @@ $(LIBTOOLS): $(LIB)/%.a: $(SRC)/tools/%
 
 # ! build on .o files if .a compile fail (case study on WSL)
 test/%: $(SRC)/%.c # $(LIBTOOLS)
-	gcc $(INCLUDE) -L $(LIB) $(WARNINGS) $(DEBUG) $(TEST) $< -o $* $(LTOOLSDEPENDENCY) || gcc $(INCLUDE) $(TOOLS) $(WARNINGS) $(DEBUG) $(TEST) $< -o $@
-	./$*
-	rm $*
+	gcc $(INCLUDE) -L $(LIB) $(WARNINGS) $(DEBUG) $(TEST) $< -o $(SRC)/$* $(LTOOLSDEPENDENCY) || gcc $(INCLUDE) $(TOOLS) $(WARNINGS) $(DEBUG) $(TEST) $< -o $(SRC)/$*
+	./$(SRC)/$*
+	rm $(SRC)/$*
 
 # project cleanup
 
