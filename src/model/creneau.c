@@ -3,7 +3,7 @@
 #include "horaire.h"
 
 #ifdef DEBUG
-#include "tests".h
+#include "tests.h"
 #endif
 
 struct s_creneau{
@@ -43,7 +43,7 @@ Creneau setCreneauS(char * s, Creneau c){
 }
 
 void AfficheCreneau(Creneau c){
-    printf("%c %c \n%c\n%c", getS(c), getH(c), getE(c), getF(c));
+    printf("%c %c \n%c\n%c", getS(c), getF(c), getE(c), getH(c));
 }
 
 char * getS(Creneau c){
@@ -55,7 +55,7 @@ char * getH(Creneau c){
 }
 
 char * getE(Creneau c){
-    return toStringEnseignant(c->enseignant);
+    return AfficheEnseignant(c->enseignant);
 }
 
 char * getF(Creneau c){
@@ -82,21 +82,21 @@ int main() {
     Creneau c = creneau(e1, h1, f1, s1);
 
     // TODO définir format toString
-    test(toString(c) == "");
+    test(AfficheCreneau(c) == "");
 
-    test(getNom(getEnseignant(c)) == getNom(e1));
-    test(getDebut(getHoraire(c)) == getDebut(h1));
-    test(getFormation(c) == f1);
-    test(getSalle(c) == s1);
+    test(getNom(getE(c)) == getNom(e1));
+    test(getDebut(getH(c)) == getDebut(h1));
+    test(getF(c) == f1);
+    test(getS(c) == s1);
 
     setCreneau(c, e2, h2, f2, s2);
 
-    test(getMatiere(getEnseignant(c)) == getMatiere(e2));
-    test(getFin(getHoraire(c)) == getFin(h2));
-    test(getFormation(c) == f2);
-    test(getSalle(c) == s2);
+    test(getMatiere(getE(c)) == getMatiere(e2));
+    test(getFin(getH(c)) == getFin(h2));
+    test(getF(c) == f2);
+    test(getS(c) == s2);
 
-    test(toString(c) == "");
+    test(AfficheCreneau(c) == "");
 
     return 0;
 }

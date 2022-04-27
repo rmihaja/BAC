@@ -16,7 +16,7 @@ struct s_salle{
 Salle salle(int n){
     Salle s= (Salle)malloc(sizeof(struct s_salle));
     s->nom=n;
-    for(int i=0; i<10; i++){
+    for(int i=0; i<24; i++){
         s->creneaux[i]="NULL";
     }
     return s;
@@ -24,7 +24,7 @@ Salle salle(int n){
 
 bool isFreeSalle(Salle s, Horaire h){
     bool b=true;
-    for (int i=0; i<10; i++){
+    for (int i=8; i<20; i++){
         if(getDebut(h)==getDebut(s->creneaux[i]->horaire) & b){
             if(getFin(h)==getFin(s->creneaux[i]->horaire)){
                 b=false;
@@ -33,8 +33,6 @@ bool isFreeSalle(Salle s, Horaire h){
     }
     return b;
 }
-
-
 
 Salle ajouterS(Salle s, Creneau c){
     if(isFreeSalle(s,c->horaire)){
@@ -45,12 +43,44 @@ Salle ajouterS(Salle s, Creneau c){
     return s;
 }
 
-Salle modifierS(Salle s,Horaire hmodif, Horaire hnew){
-
+Salle supprimerS(Salle s, Horaire h){
+    assert(estVide(s));
+    for(int i=getDebut(h); i<=getFin(h); i++){
+        s->creneaux[i]="NULL";
+    }
+    return s;
 }
 
-Salle supprimerS()
+Salle modifierS(Salle s,Horaire hmodif, Creneau cnew){
+    supprimerS(s,hmodif);
+    ajouterS(s,cnew);
+    return s;
+}
 
+bool estVide(Salle s){
+    bool b=false;
+    for(int i=8;i<20;i++){
+        if(s->creneaux[i]=="NULL" && !b){
+            b=true;
+        }
+    }
+    return b;
+}
+
+void AfficheSalle(Salle s){
+    printf("    Salle%c     \n", s->nom);
+    for(int i=8;i<21;i++){
+        printf("\n");
+        if(s->creneaux[i]=="NULL"){
+            printf("\n VIDE \n");
+        }else{
+            AfficheHoraire(s->creneaux[i]->horaire);
+            AfficheEnseignant(s->creneaux[i]->enseignant);
+            printf("%d", s->creneaux[i]->fromation);
+        }
+        printf("___");
+    }
+}
 
 
 #ifdef TEST

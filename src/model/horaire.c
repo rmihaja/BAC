@@ -10,7 +10,7 @@ struct s_horaire{
 };
 
 Horaire horaire(int d, int f){
-    assert(7<d<20 && 8<f<21);
+    assert(8<=d<=19 && 9<=f<=20);
     Horaire h= (Horaire)malloc(sizeof(struct s_horaire));
     h->debut=d;
     h->fin=f;
@@ -44,7 +44,7 @@ void Affiche1H(int i){
 }
 
 void AfficheHoraire(Horaire h){
-    printf("%dh00 à %dh00",h->debut,h->fin);
+    printf("%dh00 à %dh00\n",getDebut(h),getFin(h));
 }
 
 
@@ -64,7 +64,7 @@ int main() {
 
     Horaire h = horaire(h1_debut, h1_fin);
 
-    test(toStringHoraire(h) == "8h00 à 10h00")
+    test(AfficheHoraire(h) == "8h00 à 10h00")
     test(duree(h) > 0);
 
     test(getDebut(h) == h1_debut);
@@ -77,7 +77,7 @@ int main() {
     test(getFin(h) == h2_fin);
 
     test(duree(h) == h2_fin - h2_debut);
-    test(toStringHoraire(h) == "15h00 à 18h00")
+    test(AfficheHoraire(h) == "15h00 à 18h00")
 
     return 0;
 }
