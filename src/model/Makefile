@@ -2,7 +2,7 @@ LIB = model.a
 DEST = ../../lib
 MODULE = ../../module
 MODULES = $(MODULE)/enseignant.o $(MODULE)/horaire.o $(MODULE)/creneau.o $(MODULE)/salle.o $(MODULE)/formation.o
-INCLUDE = -I ../../include/*
+INCLUDE = -I ../../include
 WARNINGS = -Wall -Werror -Wextra -ggdb3
 
 # * dependencies compile

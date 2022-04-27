@@ -3,5 +3,10 @@
         "enseignant.h": "c",
         "creneau.h": "c"
     },
-    "C_Cpp.errorSquiggles": "Disabled"
+    "C_Cpp.errorSquiggles": "Disabled",
+    "cSpell.words": [
+        "controle",
+        "duree",
+        "matiere"
+    ]
 }

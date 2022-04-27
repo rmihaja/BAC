@@ -139,7 +139,7 @@ export_on_save:
 ## Contrôle
 
 - Sorte : $\mathcal{C}$
-- Utilise : $E^\N, S^\N, F, \Sigma^\star$
+- Utilise : $E^\N, S^\N, F^\N, \Sigma^\star$
 - Opérateurs :
     - constructeur :
         $$
