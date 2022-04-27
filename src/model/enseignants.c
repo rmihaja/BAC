@@ -1,4 +1,4 @@
-#include "../../include/collections/enseignants.h"
+#include "enseignants.h"
 #include <stdbool.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -19,7 +19,7 @@ struct s_enseignants{
 
 Enseignants enseignants(){
     Enseignants es= (Enseignants) malloc(sizeof(struct s_enseignants));
-    es-> enseignants="NULL";
+    es->enseignants="NULL";
     es->taille=0;
     return es;
 }
@@ -46,7 +46,8 @@ Enseignants ajouterEs(Enseignant g, Enseignants es){
     return es;
 }
 
-bool appartient(Enseig e, Enseignants es){
+bool appartient(Enseignant g, Enseignants es){
+    Enseig e=enseig(g)
     char* b= "false";
     Enseig courant= es->enseignants;
     for(int i=0; i<es->taille-1; i++){

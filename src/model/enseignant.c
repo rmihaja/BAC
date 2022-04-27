@@ -1,4 +1,4 @@
-#include "../../include/collections/enseignant.h"
+#include "enseignant.h"
 
 #ifdef DEBUG
 #include "tests.h"
@@ -16,8 +16,8 @@ Enseignant enseignant (char* n, char* m){
     return e;
 }
 
-char* toStringEnseignant (Enseignant e){
-    return "e->nom, e->matiere\n";
+void AfficheEnseignant (Enseignant e){
+    printf("%c: %c\n",getNom(e), getMatiere(e));
 }
 
 Enseignant setMatiere(Enseignant e, char* m){
@@ -54,7 +54,7 @@ int main() {
     Enseignant e = enseignant(e1_nom, e1_matiere);
 
     // TODO discuter du format final attendu
-    test(toStringEnseignant(e) == "TRUILLET, Structure de données");
+    test(AfficheEnseignant(e) == "TRUILLET, Structure de données");
 
     test(getNom(e) == e1_nom);
     test(getMatiere(e) == e1_matiere);
@@ -65,7 +65,7 @@ int main() {
     test(getNom(e) == e2_nom);
     test(getMatiere(e) == e2_matiere);
 
-    test(toStringEnseignant(e) == "GAILDRAT, Programmation orientée objet");
+    test(AfficheEnseignant(e) == "GAILDRAT, Programmation orientée objet");
 
     return 0;
 }
