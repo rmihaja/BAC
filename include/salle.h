@@ -3,7 +3,6 @@
 
 #include "creneau.h"
 #include <stdbool.h>
-#include <assert.h>
 
 typedef struct s_salle *Salle;
 Salle salle(char * n);

@@ -1,9 +1,6 @@
 #ifndef __HORAIRE_H__
 #define __HORAIRE_H__
 
-#include <stdlib.h>
-#include <assert.h>
-
 typedef struct s_horaire *Horaire;
 
 Horaire horaire(int d, int f);

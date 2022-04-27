@@ -1,8 +1,6 @@
 #include "salle.h"
-#include <stdbool.h>
 #include <assert.h>
 #include <stdlib.h>
-
 
 #ifdef DEBUG
 #include "tests.h"
@@ -36,6 +34,7 @@ bool isFreeSalle(Salle s, Horaire h){
 
 Salle ajouterS(Salle s, Creneau c){
     if(isFreeSalle(s,getH(c))){
+        // TODO Mihaja check infinite loop
         for(int i=getDebut(getH(s->creneaux[i])); i<getFin(getH(s->creneaux[i]));i++){
             s->creneaux[i]=c;
         }
@@ -105,10 +104,11 @@ int main() {
 
     Salle s = salle(s1_nom);
 
-    assert(ajouterS(s,c2));
+    VAL_CHAR('&');
+    ajouterS(s,c2);
     test(isFreeSalle(s,h1) == true);
 
-    assert(ajouterS(s,c1));
+    ajouterS(s,c1);
     test(isFreeSalle(s,h1) == false);
 
     modifierS(s, h1, c2);

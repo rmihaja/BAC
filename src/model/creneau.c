@@ -1,7 +1,6 @@
 #include "creneau.h"
-#include "enseignant.h"
-#include "horaire.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 #ifdef DEBUG
 #include "tests.h"
