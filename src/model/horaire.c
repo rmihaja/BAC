@@ -10,7 +10,7 @@ struct s_horaire{
 };
 
 Horaire horaire(int d, int f){
-    assert(7<d<18 && 9<f<20);
+    assert(7<d<20 && 8<f<21);
     Horaire h= (Horaire)malloc(sizeof(struct s_horaire));
     h->debut=d;
     h->fin=f;

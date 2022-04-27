@@ -4,7 +4,29 @@
 #include "tests.h"
 #endif
 
-// attributs, constructor, methods here
+struct s_salles{
+    int nbr;
+    Sal salle;
+};
+
+struct s_sal{
+    Salle s;
+    Salle suivante;
+};
+
+Salles salles (){
+    Salles s=(salles) malloc(sizeof(struct s_salles));
+    s->salle="NULL";
+    s->nbr=0;
+    return s;
+}
+
+Sal sal(Salle s){
+    Sal l=(Sal) malloc(sizeof(struct s_sal));
+    l->s=s;
+    l->suivante="NULL";
+    return l;
+}
 
 #ifdef TEST
 

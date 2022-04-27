@@ -1,6 +1,7 @@
 #include "salle.h"
 #include "creneau.h"
 #include "horaire.h"
+#include <stdbool.h>
 
 
 #ifdef DEBUG
@@ -9,7 +10,7 @@
 
 struct s_salle{
     char * nom;
-    Creneau creneaux[10];
+    Creneau creneaux[24];
 };
 
 Salle salle(int n){
@@ -31,16 +32,24 @@ bool isFreeSalle(Salle s, Horaire h){
         }
     }
     return b;
-
 }
+
+
 
 Salle ajouterS(Salle s, Creneau c){
-    if(estLibre(s,c->horaire)){
-        for(int i=1; i<10;i++){
-            if(s->creneaux[i-1]->horaire<c->horaire<s->creneaux[i]->horaire)
+    if(isFreeSalle(s,c->horaire)){
+        for(int i=getdebut(s->creneaux[i]->horaire); i<geFin(s->creneaux[i]->horaire);i++){
+            s->creneaux[i]=c;
         }
     }
+    return s;
 }
+
+Salle modifierS(Salle s,Horaire hmodif, Horaire hnew){
+
+}
+
+Salle supprimerS()
 
 
 

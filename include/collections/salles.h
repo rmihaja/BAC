@@ -4,11 +4,9 @@
 #include "salle.h"
 
 typedef struct s_salles *Salles;
+typedef struct s_sal *Sal;
 
 Salles salles();
 
-Salle getSalle(Salles, char* nom);
-Salles ajouterSalle(Salles, Salle);
-char* toStringSalles(Salles);
 
 #endif

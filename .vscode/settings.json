@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "enseignant.h": "c"
-    }
+        "enseignant.h": "c",
+        "creneau.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
 }
