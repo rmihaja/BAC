@@ -12,6 +12,7 @@ TOOLS = $(MODULE)/enseignant.o $(MODULE)/horaire.o $(MODULE)/creneau.o $(MODULE)
 SRC = ./src
 DEST = ./bin
 TEST = -DTEST
+DEPTEST = -DJSON
 DEBUG = -DDEBUG
 
 # program compile
@@ -50,6 +51,12 @@ $(LIBTOOLS): $(LIB)/%.a: $(SRC)/%
 # ! build on .o files if .a compile fail (case study on WSL)
 test/%: $(SRC)/%.c $(LIBTOOLS)
 	gcc $(INCLUDE) -L $(LIB) $(WARNINGS) $(DEBUG) $(TEST) $< -o $(SRC)/$* $(LTOOLSDEPENDENCY) || gcc $(INCLUDE) $(TOOLS) $(WARNINGS) $(DEBUG) $(TEST) $< -o $(SRC)/$*
+	./$(SRC)/$*
+	rm $(SRC)/$*
+
+# ! build on .o files if .a compile fail (case study on WSL)
+testdep/%: $(SRC)/%.c $(LIBTOOLS)
+	gcc $(INCLUDE) -L $(LIB) $(WARNINGS) $(DEBUG) $(TEST) $(DEPTEST) $< -o $(SRC)/$* $(LTOOLSDEPENDENCY) || gcc $(INCLUDE) $(TOOLS) $(WARNINGS) $(DEBUG) $(TEST) $(DEPTEST) $< -o $(SRC)/$*
 	./$(SRC)/$*
 	rm $(SRC)/$*
 

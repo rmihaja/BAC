@@ -1,7 +1,12 @@
 #ifndef __ENSEIGNANT_H__
 #define __ENSEIGNANT_H__
 
-//#include "jansson.h"
+#ifdef JSON
+#include "jansson.h"
+#endif
+
+#include <stdlib.h>
+#include <stdio.h>
 
 typedef struct s_enseignant *Enseignant;
 
@@ -12,6 +17,9 @@ Enseignant setNom(Enseignant e, char* n);
 char* getMatiere(Enseignant e);
 char* getNom(Enseignant e);
 
-//json_t* getJson(Enseignant e);
+#ifdef JSON
+json_t* getJsonEnseignant(Enseignant e);
+char* toStringEnseignant(Enseignant e);
+#endif
 
 #endif

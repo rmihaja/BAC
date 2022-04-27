@@ -39,8 +39,9 @@ char* getMatiere(Enseignant e){
 char* getNom(Enseignant e){
     return e->nom;
 }
-/*
-json_t* getJson(Enseignant e) {
+
+#ifdef JSON
+json_t* getJsonEnseignant(Enseignant e) {
 
     json_t *root = json_object();
 
@@ -49,6 +50,22 @@ json_t* getJson(Enseignant e) {
 
     return root;
 }*/
+
+char* toStringEnseignant(Enseignant e) {
+
+    json_t *root = getJsonEnseignant(e);
+    char *str = json_dumps(root, 0);
+
+    #ifdef DEBUG
+    puts(str);
+    #endif
+
+    // deallocate json object memory
+    json_decref(root);
+
+    return str;
+}
+#endif
 
 #ifdef TEST
 
@@ -77,6 +94,11 @@ int main() {
     test(getMatiere(e) == e2_matiere);
 
     afficheEnseignant(e); // "GAILDRAT, Programmation orientée objet"
+
+    #ifdef JSON
+    toStringEnseignant(e);
+    #endif
+
 
     return 0;
 }
