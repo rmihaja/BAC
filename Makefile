@@ -2,13 +2,13 @@ PROGRAM = app
 INCLUDE = -I ./include
 LIB = ./lib
 LIBS = $(LIB)/model.a
-# LIBTOOLS =
+LIBTOOLS = $(LIB)/model.a
 LDEPENDENCY = -lmodel
-LTOOLSDEPENDENCY = -ljansson
+LTOOLSDEPENDENCY = -ljansson -lmodel
 WARNINGS = -ggdb3 # -Wall -Werror -Wextra
 MODULE = ./module
 MODULES = $(MODULE)/enseignant.o $(MODULE)/horaire.o $(MODULE)/creneau.o $(MODULE)/salle.o $(MODULE)/formation.o $(MODULE)/enseignants.o $(MODULE)/salles.o
-TOOLS =
+TOOLS = $(MODULE)/enseignant.o $(MODULE)/horaire.o $(MODULE)/creneau.o $(MODULE)/salle.o $(MODULE)/formation.o $(MODULE)/enseignants.o $(MODULE)/salles.o
 SRC = ./src
 DEST = ./bin
 TEST = -DTEST
@@ -42,13 +42,13 @@ init: $(LIBS) $(LIBTOOLS)
 $(LIBS): $(LIB)/%.a: $(SRC)/%
 	cd $< && make init
 
-$(LIBTOOLS): $(LIB)/%.a: $(SRC)/tools/%
+$(LIBTOOLS): $(LIB)/%.a: $(SRC)/%
 	cd $< && make init
 
 # dependencies unit tests
 
 # ! build on .o files if .a compile fail (case study on WSL)
-test/%: $(SRC)/%.c # $(LIBTOOLS)
+test/%: $(SRC)/%.c $(LIBTOOLS)
 	gcc $(INCLUDE) -L $(LIB) $(WARNINGS) $(DEBUG) $(TEST) $< -o $(SRC)/$* $(LTOOLSDEPENDENCY) || gcc $(INCLUDE) $(TOOLS) $(WARNINGS) $(DEBUG) $(TEST) $< -o $(SRC)/$*
 	./$(SRC)/$*
 	rm $(SRC)/$*
