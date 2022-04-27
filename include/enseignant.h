@@ -1,7 +1,7 @@
 #ifndef __ENSEIGNANT_H__
 #define __ENSEIGNANT_H__
 
-#include <jansson.h>
+#include "jansson.h"
 
 typedef struct s_enseignant *Enseignant;
 

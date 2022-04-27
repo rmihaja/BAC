@@ -5,7 +5,7 @@ LIBS = $(LIB)/model.a
 # LIBTOOLS =
 LDEPENDENCY = -lmodel
 LTOOLSDEPENDENCY = -ljansson
-WARNINGS = -Wall -Werror -Wextra -ggdb3
+WARNINGS = -ggdb3 # -Wall -Werror -Wextra
 MODULE = ./module
 MODULES = $(MODULE)/enseignant.o $(MODULE)/horaire.o $(MODULE)/creneau.o $(MODULE)/salle.o $(MODULE)/formation.o $(MODULE)/enseignants.o $(MODULE)/salles.o
 TOOLS =
@@ -57,5 +57,5 @@ test/%: $(SRC)/%.c # $(LIBTOOLS)
 
 prune:
 	rm -f $(MODULE)/*
-	rm -f $(LIB)/*
+#	rm -f $(LIB)/*
 	rm -f $(DEST)/*
