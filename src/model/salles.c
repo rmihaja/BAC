@@ -15,7 +15,7 @@ struct s_sal{
 };
 
 Salles salles (){
-    Salles s=(salles) malloc(sizeof(struct s_salles));
+    Salles s=(Salles) malloc(sizeof(struct s_salles));
     s->salle="NULL";
     s->nbr=0;
     return s;

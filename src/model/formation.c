@@ -1,5 +1,5 @@
 #include "collections/creneau.h"
-#include "formation.h"
+#include "types/formation.h"
 #include <stdbool.h>
 
 struct s_formation {
