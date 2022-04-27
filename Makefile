@@ -55,7 +55,7 @@ test/%: $(SRC)/%.c $(LIBTOOLS)
 
 # project cleanup
 
-prune:
+prune:S
 	rm -f $(MODULE)/*
 #	rm -f $(LIB)/*
 	rm -f $(DEST)/*

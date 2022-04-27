@@ -6,7 +6,7 @@
 
 struct s_salles{
     int nbr;
-    Sal salle;
+    Sal salles;
 };
 
 struct s_sal{
@@ -26,6 +26,36 @@ Sal sal(Salle s){
     l->s=s;
     l->suivante="NULL";
     return l;
+}
+
+Salles ajouterSs(Salles Ss, Salle a){
+    Sal s=sal(a);
+    if(Ss->nbr==0){
+        Ss->salles=s;
+        Ss->nbr=1;
+    }else{
+        s->suivante=Ss->salles;
+        Ss->salles=s;
+        Ss->nbr++;
+    }
+    return Ss;
+}
+
+Salle getSalle(Salles Ss, char* salle){
+    Salle r=salle(0);
+    for(int i=0;i<Ss->nbr;i++){
+        if(Ss->salles[i]->s->nom==salle){
+            r=Ss->salles[i]->s;
+        }
+    }
+    return r;
+}
+
+void afficheSalles(Salles Ss){
+    for(int i=0;i<Ss->nbr;i++){
+        afficherSalle(Ss->salles[i]);
+        printf("*********************");
+    }
 }
 
 #ifdef TEST

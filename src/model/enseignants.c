@@ -2,57 +2,54 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <assert.h>
 
 #ifdef DEBUG
 #include "tests.h"
 #endif
 
-struct s_enseig{
+typedef struct s_enseig{
     Enseignant e;
-    Enseignant * suivant;
-};
+    struct s_enseig* suivant;
+}*Enseig;
 
 struct s_enseignants{
-    Enseig enseignants;
+    Enseig sentinelle;
     int taille;
 };
 
 Enseignants enseignants(){
     Enseignants es= (Enseignants) malloc(sizeof(struct s_enseignants));
-    es->enseignants="NULL";
+    es->sentinelle=(Enseig)malloc(sizeof(struct s_enseig));
+    es->sentinelle->suivant=es->sentinelle;
     es->taille=0;
     return es;
 }
 
-Enseig enseig(Enseignant e){
+Enseig enseig(Enseignant e, Enseignants es){
     Enseig g=(Enseig) malloc(sizeof(struct s_enseig));
     g->e=e;
-    g->suivant="NULL";
+    g->suivant=es->sentinelle;
     return g;
 }
 
 Enseignants ajouterEs(Enseignant g, Enseignants es){
-    Enseig e=enseig(g);
-    if(es->taille==0){
-        es->enseignants=e;
-        es->taille=1;
-    }else{
-        if(!appartient(e,es)){
-            e->suivant=es->enseignants;
-            es->enseignants=e;
-            es->taille++;
-        }
+    Enseig e=enseig(g,es);
+    if(!appartient(g,es)){
+        e->suivant = es->sentinelle->suivant;
+        es->sentinelle->suivant=e;
+        es->taille++;
     }
     return es;
 }
 
 bool appartient(Enseignant g, Enseignants es){
-    Enseig e=enseig(g)
-    char* b= "false";
-    Enseig courant= es->enseignants;
+    Enseig e=enseig(g,es);
+    bool b= false;
+    Enseig courant= es->sentinelle->suivant;
     for(int i=0; i<es->taille-1; i++){
         if((getNom(courant->e) != getNom(e->e)) && (getMatiere(courant->e) != getMatiere(e->e)) && !b){
-            b= "true";
+            b= true;
         }
         courant=courant->suivant;
     }
@@ -62,33 +59,28 @@ bool appartient(Enseignant g, Enseignants es){
 
 Enseignants supprimerEs(Enseignant g, Enseignants es){
     assert(!es->taille==0);
-    Enseig e =enseig(g);
-    if((getNom(g)==getNom(es->enseignants->e)) && (getMatiere(g)==getMatiere(es->enseignants->e))){
-        e->suivant=es->enseignants->suivant;
-        es->enseignants=e;
-    }else{
-        Enseig precedent = es->enseignants;
-        Enseig courant = es->enseignants->suivant;
-        int i=0;
-        while((getNom(courant->e) != getNom(g)) && (getMatiere(courant->e) != getMatiere(g)) && (i<es->taille-1)){
-            precedent=courant;
-            courant=courant->suivant;
-            i++;        
-        }
-        e->suivant=courant->suivant;
-        precedent->suivant=e;
-        free(courant);
-        free(precedent);
+    Enseig e =enseig(g,es);
+    Enseig precedent = es->sentinelle;
+    Enseig courant = es->sentinelle->suivant;
+    int i=0;
+    while((getNom(courant->e) != getNom(g)) && (getMatiere(courant->e) != getMatiere(g)) && (i<es->taille-1)){
+        precedent=courant;
+        courant=courant->suivant;
+        i++;        
     }
+    e->suivant=courant->suivant;
+    precedent->suivant=e;
+    free(courant);
+    free(precedent);
     es->taille--;
     return es;
 }
 
-void AfficherEnseignants (Enseignants es){
+void afficherEnseignants (Enseignants es){
     printf("******* Enseignants *******");
-    Enseig courant = es->enseignants;
+    Enseig courant = es->sentinelle->suivant;
     for(int i=0; i<es->taille;i++){
-        printf("%s\n", toStringEnseignant(courant->e));
+        afficheEnseignant(courant->e);
         courant=courant->suivant;
     }
     printf("***************************");
@@ -97,7 +89,7 @@ void AfficherEnseignants (Enseignants es){
 Enseignant getEnseignantN(Enseignants es, char *n){
     bool b=false;
     Enseignant e;
-    Enseig courant = es->enseignants;
+    Enseig courant = es->sentinelle->suivant;
     for(int i=0; i<es->taille; i++){
         if(n==getNom(courant->e) && !b){
             b= true;
@@ -111,7 +103,7 @@ Enseignant getEnseignantN(Enseignants es, char *n){
 Enseignant getEnseignantM(Enseignants es, char *m){
     bool b=false;
     Enseignant e;
-    Enseig courant = es->enseignants;
+    Enseig courant = es->sentinelle->suivant;
     for(int i=0; i<es->taille; i++){
         if(m==getMatiere(courant->e) && !b){
             b= true;
@@ -121,3 +113,32 @@ Enseignant getEnseignantM(Enseignants es, char *m){
     }
     return e;
 }
+
+
+#ifdef TEST
+
+int main() {
+
+    char* e1_nom = "TRUILLET";
+    char* e2_nom = "GAILDRAT";
+    char* e1_matiere = "Structure de données";
+    char* e2_matiere = "Programmation orientée objet";
+    Enseignant e1 = enseignant(e1_nom, e1_matiere);
+    Enseignant e2 = enseignant(e2_nom, e2_matiere);
+
+    Enseignants es = enseignants();
+
+    test(ajouterEs(e1,es));
+    test(ajouterEs(e2,es));
+
+    test(supprimerEs(e1,es));
+    test(getEnseignantN(es,"GAILDRAT") == e2);
+    test(getEnseignantM(es,"Programmation orientée objet") == e2);
+
+    afficherEnseignants (es);
+
+
+    return 0;
+}
+
+#endif 

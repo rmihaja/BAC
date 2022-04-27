@@ -1,4 +1,6 @@
 #include "horaire.h"
+#include <stdlib.h>
+#include <assert.h>
 
 #ifdef DEBUG
 #include "tests.h"
@@ -10,7 +12,7 @@ struct s_horaire{
 };
 
 Horaire horaire(int d, int f){
-    assert(8<=d<=19 && 9<=f<=20);
+    assert(7<d && d<20 && 8<f && f<21);
     Horaire h= (Horaire)malloc(sizeof(struct s_horaire));
     h->debut=d;
     h->fin=f;
@@ -39,11 +41,11 @@ int duree(Horaire h){
     return (h->fin - h->debut);
 }
 
-void Affiche1H(int i){
-    printf("%dh00", i);
+void affiche1H(int i){
+    printf("%dh00\n", i);
 }
 
-void AfficheHoraire(Horaire h){
+void afficheHoraire(Horaire h){
     printf("%dh00 à %dh00\n",getDebut(h),getFin(h));
 }
 
@@ -55,16 +57,15 @@ int main() {
 
     // init
 
-    unsigned int h1_debut = 8;
-    unsigned int h2_debut = 15;
-    unsigned int h1_fin = 10;
-    unsigned int h2_fin = 18;
+    int h1_debut = 8;
+    int h2_debut = 15;
+    int h1_fin = 10;
+    int h2_fin = 18;
 
     // testing
 
     Horaire h = horaire(h1_debut, h1_fin);
 
-    test(AfficheHoraire(h) == "8h00 à 10h00")
     test(duree(h) > 0);
 
     test(getDebut(h) == h1_debut);
@@ -77,7 +78,9 @@ int main() {
     test(getFin(h) == h2_fin);
 
     test(duree(h) == h2_fin - h2_debut);
-    test(AfficheHoraire(h) == "15h00 à 18h00")
+
+    affiche1H(duree(h));
+    afficheHoraire(h);
 
     return 0;
 }

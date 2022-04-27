@@ -89,6 +89,5 @@
 
 #define debug(...) fprintf ( stderr ,COULEUR_INFO __VA_ARGS__ )
 #define test(x) TEST_RES(x)
-#define assert(x) ASSERT(x)
 
 #endif

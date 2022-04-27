@@ -1,7 +1,7 @@
 #include "salle.h"
-#include "creneau.h"
-#include "horaire.h"
 #include <stdbool.h>
+#include <assert.h>
+#include <stdlib.h>
 
 
 #ifdef DEBUG
@@ -13,40 +13,52 @@ struct s_salle{
     Creneau creneaux[24];
 };
 
-Salle salle(int n){
+Salle salle(char * n){
     Salle s= (Salle)malloc(sizeof(struct s_salle));
     s->nom=n;
     for(int i=0; i<24; i++){
-        s->creneaux[i]="NULL";
+        s->creneaux[i]=NULL;
     }
     return s;
 }
 
 bool isFreeSalle(Salle s, Horaire h){
-    bool b=true;
-    for (int i=8; i<20; i++){
-        if(getDebut(h)==getDebut(s->creneaux[i]->horaire) & b){
-            if(getFin(h)==getFin(s->creneaux[i]->horaire)){
-                b=false;
-            }
+    bool b;
+    for (int i=getDebut(h); i<getFin(h); i++){
+        if(s->creneaux[i]==NULL){
+            b=true;
+        }else{
+            b=false;
         }
     }
     return b;
 }
 
 Salle ajouterS(Salle s, Creneau c){
-    if(isFreeSalle(s,c->horaire)){
-        for(int i=getdebut(s->creneaux[i]->horaire); i<geFin(s->creneaux[i]->horaire);i++){
+    if(isFreeSalle(s,getH(c))){
+        for(int i=getDebut(getH(s->creneaux[i])); i<getFin(getH(s->creneaux[i]));i++){
             s->creneaux[i]=c;
         }
     }
     return s;
 }
 
+bool estVideSalle(Salle s){
+    bool b=true;
+    int i=8;
+    while(i<21 && s->creneaux[i]==NULL){
+        i++;
+    }
+    if(s->creneaux[i]!=NULL){
+        b=false;
+    }
+    return b;
+}
+
 Salle supprimerS(Salle s, Horaire h){
-    assert(estVide(s));
+    assert(estVideSalle(s));
     for(int i=getDebut(h); i<=getFin(h); i++){
-        s->creneaux[i]="NULL";
+        s->creneaux[i]=NULL;
     }
     return s;
 }
@@ -57,26 +69,17 @@ Salle modifierS(Salle s,Horaire hmodif, Creneau cnew){
     return s;
 }
 
-bool estVide(Salle s){
-    bool b=false;
-    for(int i=8;i<20;i++){
-        if(s->creneaux[i]=="NULL" && !b){
-            b=true;
-        }
-    }
-    return b;
-}
 
-void AfficheSalle(Salle s){
+void afficherSalle(Salle s){
     printf("    Salle%c     \n", s->nom);
     for(int i=8;i<21;i++){
         printf("\n");
-        if(s->creneaux[i]=="NULL"){
+        if(s->creneaux[i]==NULL){
             printf("\n VIDE \n");
         }else{
-            AfficheHoraire(s->creneaux[i]->horaire);
-            AfficheEnseignant(s->creneaux[i]->enseignant);
-            printf("%d", s->creneaux[i]->fromation);
+            afficheHoraire(getH(s->creneaux[i]));
+            afficheEnseignant(getE(s->creneaux[i]));
+            printf("%d", getF(s->creneaux[i]));
         }
         printf("___");
     }
@@ -92,7 +95,7 @@ int main() {
     char* s1_nom = "103";
     char* s2_nom = "118";
 
-    Horaire h1 = horaire(7, 9);
+    Horaire h1 = horaire(8, 9);
     Horaire h2 = horaire(15, 17);
 
     Creneau c1 = creneau(enseignant("TRUILLET", "Structure de données"), h1, "CUPGE", s1_nom);
@@ -102,31 +105,24 @@ int main() {
 
     Salle s = salle(s1_nom);
 
-    assert(ajouterCreneauSalle(c2)); // devrait produire une erreur
-    test(isFreeSalle(s) == true);
+    assert(ajouterS(s,c2));
+    test(isFreeSalle(s,h1) == true);
 
-    assert(ajouterCreneauSalle(c1));
-    test(isFreeSalle(s) == false);
+    assert(ajouterS(s,c1));
+    test(isFreeSalle(s,h1) == false);
 
-    test(toStringSalle(s) == "");
-
-    modifierCreneauSalle(c1, h1, h2);
-
-    // TODO finir test toString
-    test(toStringSalle(s) == "");
+    modifierS(s, h1, c2);
 
     test(isFreeSalle(s, h1) == true);
     test(isFreeSalle(s, h2) == false);
 
-    test(isEmptySalle(s) == false);
+    test(estVideSalle(s) == false);
 
-    supprimerCreneauSalle(c1, h2);
+    supprimerS(s, h2);
 
     test(isFreeSalle(s, h2) == true);
 
-    test(isEmptySalle(s) == true);
-
-    test(toStringSalle(s) == "pas de créneau disponible pour la salle " + s1_nom);
+    test(estVideSalle(s) == true);
 
     return 0;
 }

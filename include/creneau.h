@@ -11,10 +11,10 @@ Creneau setCreneauE(Enseignant e, Creneau c);
 Creneau setCreneauF(char * f, Creneau c);
 Creneau setCreneauH(Horaire h, Creneau c);
 Creneau setCreneauS(char * s, Creneau c);
-void AfficheCreneau(Creneau c);
+void afficheCreneau(Creneau c);
 char * getS(Creneau c);
-char * getH(Creneau c);
-char * getE(Creneau c);
+Horaire getH(Creneau c);
+Enseignant getE(Creneau c);
 char * getF(Creneau c);
 
 

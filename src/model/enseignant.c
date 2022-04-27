@@ -1,4 +1,6 @@
+#include <stdlib.h>
 #include "enseignant.h"
+
 
 #ifdef DEBUG
 #include "tests.h"
@@ -37,7 +39,7 @@ char* getMatiere(Enseignant e){
 char* getNom(Enseignant e){
     return e->nom;
 }
-
+/*
 json_t* getJson(Enseignant e) {
 
     json_t *root = json_object();
@@ -46,7 +48,7 @@ json_t* getJson(Enseignant e) {
     json_object_set_new(root, "matiere", json_string(e->matiere));
 
     return root;
-}
+}*/
 
 #ifdef TEST
 
