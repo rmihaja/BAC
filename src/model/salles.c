@@ -1,22 +1,24 @@
 #include "salles.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 #ifdef DEBUG
 #include "tests.h"
 #endif
+
+typedef struct s_sal{
+    Salle s;
+    struct s_sal *suivante;
+}* Sal;
 
 struct s_salles{
     int nbr;
     Sal salles;
 };
 
-struct s_sal{
-    Salle s;
-    Salle suivante;
-};
-
 Salles salles (){
     Salles s=(Salles) malloc(sizeof(struct s_salles));
-    s->salle="NULL";
+    s->salles->s=NULL;
     s->nbr=0;
     return s;
 }
@@ -24,7 +26,7 @@ Salles salles (){
 Sal sal(Salle s){
     Sal l=(Sal) malloc(sizeof(struct s_sal));
     l->s=s;
-    l->suivante="NULL";
+    l->suivante=NULL;
     return l;
 }
 
@@ -41,20 +43,25 @@ Salles ajouterSs(Salles Ss, Salle a){
     return Ss;
 }
 
-Salle getSalle(Salles Ss, char* salle){
+Salle getSalle(Salles Ss, char* nom){
     Salle r=salle(0);
+    Sal courant=Ss->salles;
     for(int i=0;i<Ss->nbr;i++){
-        if(Ss->salles[i]->s->nom==salle){
-            r=Ss->salles[i]->s;
+        if(getNomS(courant->s)==nom){
+            r=courant->s;
         }
+        courant=courant->suivante;
     }
+    free(courant);
     return r;
 }
 
 void afficheSalles(Salles Ss){
+    Sal courant=Ss->salles;
     for(int i=0;i<Ss->nbr;i++){
-        afficherSalle(Ss->salles[i]);
+        afficherSalle(courant->s);
         printf("*********************");
+        courant=courant->suivante;
     }
 }
 
@@ -74,17 +81,10 @@ int main() {
 
     Salles S = salles();
 
-    test(toStringSalles(S) == "");
-
-    assert(getSalle(S, s1_nom)); // devrait produire une erreur
-
-    ajouterSalle(S, s1);
+    ajouterSs(S, s1);
     test(getSalle(S, s1_nom) == s1);
-    ajouterSalle(S, s1); // devrait produire une erreur
 
-    test(toStringSalles(S) == toStringSalle(s1));
-
-    ajouterSalle(S, s2);
+    ajouterSs(S, s2);
     test(getSalle(S, s2_nom) == s2);
     test(getSalle(S, s1_nom) == s1);
 

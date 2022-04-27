@@ -12,6 +12,8 @@ Salle supprimerS(Salle s, Horaire h);
 Salle modifierS(Salle s,Horaire hmodif, Creneau cnew);
 bool estVideSalle(Salle s);
 void afficherSalle(Salle s);
+Creneau* getCreneauS(Salle s);
+char* getNomS(Salle s);
 
 
 

@@ -68,6 +68,14 @@ Salle modifierS(Salle s,Horaire hmodif, Creneau cnew){
     return s;
 }
 
+char* getNomS(Salle s){
+    return s->nom;
+}
+
+Creneau* getCreneauS(Salle s){
+    return s->creneaux;
+}
+
 
 void afficherSalle(Salle s){
     printf("    Salle%c     \n", s->nom);
