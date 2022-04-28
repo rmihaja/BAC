@@ -8,7 +8,8 @@ typedef struct s_formation *Formation;
 
 Formation formation(char* n);
 bool estComplet(Formation f);
-Formation ajouterH(Formation f, Creneau c);
+Formation ajouterC(Formation f, Creneau c);
 Formation supprimerH (Formation f, Horaire h);
+void afficheFormation(Formation f);
 
 #endif
