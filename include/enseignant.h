@@ -1,12 +1,11 @@
 #ifndef __ENSEIGNANT_H__
 #define __ENSEIGNANT_H__
 
+#include <stdlib.h>
+#include <stdio.h>
 #ifdef JSON
 #include "jansson.h"
 #endif
-
-#include <stdlib.h>
-#include <stdio.h>
 
 typedef struct s_enseignant *Enseignant;
 

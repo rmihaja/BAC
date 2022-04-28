@@ -45,23 +45,23 @@ json_t* getJsonEnseignant(Enseignant e) {
 
     json_t *root = json_object();
 
-    json_object_set_new(root, "nom", json_string(e->nom));
-    json_object_set_new(root, "matiere", json_string(e->matiere));
+    json_object_set_new(root, "nom", json_string(getNom(e)));
+    json_object_set_new(root, "matiere", json_string(getMatiere(e)));
 
     return root;
-}*/
+}
 
 char* toStringEnseignant(Enseignant e) {
 
-    json_t *root = getJsonEnseignant(e);
-    char *str = json_dumps(root, 0);
+    json_t *json_enseignant = getJsonEnseignant(e);
+    char *str = json_dumps(json_enseignant, 0);
 
     #ifdef DEBUG
     puts(str);
     #endif
 
     // deallocate json object memory
-    json_decref(root);
+    json_decref(json_enseignant);
 
     return str;
 }
@@ -82,23 +82,22 @@ int main() {
 
     Enseignant e = enseignant(e1_nom, e1_matiere);
 
-    afficheEnseignant(e); // "TRUILLET, Structure de données"
+    info(afficheEnseignant(e)); // "TRUILLET, Structure de données"
 
     test(getNom(e) == e1_nom);
     test(getMatiere(e) == e1_matiere);
 
-    setNom(e, e2_nom);
-    setMatiere(e, e2_matiere);
+    info(setNom(e, e2_nom));
+    info(setMatiere(e, e2_matiere));
 
     test(getNom(e) == e2_nom);
     test(getMatiere(e) == e2_matiere);
 
-    afficheEnseignant(e); // "GAILDRAT, Programmation orientée objet"
+    info(afficheEnseignant(e)); // "GAILDRAT, Programmation orientée objet"
 
     #ifdef JSON
-    toStringEnseignant(e);
+    info(toStringEnseignant(e));
     #endif
-
 
     return 0;
 }

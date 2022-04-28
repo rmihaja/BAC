@@ -4,6 +4,9 @@
 #include "creneau.h"
 #include <stdbool.h>
 #include <assert.h>
+#ifdef JSON
+#include "jansson.h"
+#endif
 
 typedef struct s_salle *Salle;
 Salle salle(char * n);
@@ -14,6 +17,9 @@ Salle modifierS(Salle s,Horaire hmodif, Creneau cnew);
 bool estVideSalle(Salle s);
 void afficherSalle(Salle s);
 
-
+#ifdef JSON
+json_t* getJsonSalle(Salle s);
+char* toStringSalle(Salle s);
+#endif
 
 #endif

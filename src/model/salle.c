@@ -85,6 +85,37 @@ void afficherSalle(Salle s){
     }
 }
 
+#ifdef JSON
+json_t* getJsonSalle(Salle s) {
+
+    json_t *root = json_object();
+    json_t *json_arr = json_array();
+
+    json_object_set_new(root, "nom", json_string(s->nom));
+    json_object_set_new(root, "creneaux", json_arr);
+
+    for(int i = 0; i < 24; i++) {
+        json_array_append(json_arr, getJsonCreneau(s->creneaux[i]));
+    }
+
+    return root;
+}
+
+char* toStringSalle(Salle f) {
+
+    json_t *json_salle = getJsonSalle(f);
+    char *str = json_dumps(json_salle, 0);
+
+    #ifdef DEBUG
+    puts(str);
+    #endif
+
+    // deallocation json object memory
+    json_decref(json_salle);
+
+    return str;
+}
+#endif
 
 #ifdef TEST
 
@@ -105,24 +136,30 @@ int main() {
 
     Salle s = salle(s1_nom);
 
-    assert(ajouterS(s,c2));
+    info(ajouterS(s,c2));
     test(isFreeSalle(s,h1) == true);
 
-    assert(ajouterS(s,c1));
+    info(ajouterS(s,c1));
     test(isFreeSalle(s,h1) == false);
 
-    modifierS(s, h1, c2);
+    info(modifierS(s, h1, c2));
 
     test(isFreeSalle(s, h1) == true);
     test(isFreeSalle(s, h2) == false);
 
     test(estVideSalle(s) == false);
 
-    supprimerS(s, h2);
+    info(supprimerS(s, h2));
 
     test(isFreeSalle(s, h2) == true);
 
     test(estVideSalle(s) == true);
+
+    info(afficherSalle(s));
+
+    #ifdef JSON
+    info(toStringSalle(s));
+    #endif
 
     return 0;
 }

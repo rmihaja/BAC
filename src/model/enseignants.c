@@ -66,7 +66,7 @@ Enseignants supprimerEs(Enseignant g, Enseignants es){
     while((getNom(courant->e) != getNom(g)) && (getMatiere(courant->e) != getMatiere(g)) && (i<es->taille-1)){
         precedent=courant;
         courant=courant->suivant;
-        i++;        
+        i++;
     }
     e->suivant=courant->suivant;
     precedent->suivant=e;
@@ -114,10 +114,46 @@ Enseignant getEnseignantM(Enseignants es, char *m){
     return e;
 }
 
+#ifdef JSON
+json_t* getJsonEnseignants(Enseignants es) {
+
+    json_t *root = json_object();
+    json_t *json_arr = json_array();
+
+    // la liste des enseignants sera stocké dans un tableau
+    json_object_set_new(root, "enseignants", json_arr);
+
+    Enseig courant = es->sentinelle->suivant;
+
+    for(int i = 0; i < es->taille; i++) {
+        json_array_append(json_arr, getJsonEnseignant(courant->e));
+        courant = courant->suivant;
+    }
+
+    return root;
+}
+
+char* toStringEnseignants(Enseignants es) {
+
+    json_t *json_enseignants = getJsonEnseignants(es);
+    char *str = json_dumps(json_enseignants, 0);
+
+    #ifdef DEBUG
+    puts(str);
+    #endif
+
+    // deallocate json object memory
+    json_decref(json_enseignants);
+
+    return str;
+}
+#endif
 
 #ifdef TEST
 
 int main() {
+
+    // init
 
     char* e1_nom = "TRUILLET";
     char* e2_nom = "GAILDRAT";
@@ -126,19 +162,25 @@ int main() {
     Enseignant e1 = enseignant(e1_nom, e1_matiere);
     Enseignant e2 = enseignant(e2_nom, e2_matiere);
 
+    // testing
+
     Enseignants es = enseignants();
 
-    test(ajouterEs(e1,es));
-    test(ajouterEs(e2,es));
+    info(ajouterEs(e1,es));
+    info(ajouterEs(e2,es));
 
-    test(supprimerEs(e1,es));
+    info(supprimerEs(e1,es));
     test(getEnseignantN(es,"GAILDRAT") == e2);
     test(getEnseignantM(es,"Programmation orientée objet") == e2);
 
-    afficherEnseignants (es);
+    info(afficherEnseignants(es));
+
+    #ifdef JSON
+    info(toStringEnseignants(es));
+    #endif
 
 
     return 0;
 }
 
-#endif 
+#endif
