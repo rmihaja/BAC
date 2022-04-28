@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <assert.h>
 #include "enseignant.h"
-
 
 #ifdef DEBUG
 #include "tests.h"
@@ -18,6 +18,19 @@ Enseignant enseignant (char* n, char* m){
     e->matiere=m;
     return e;
 }
+
+#ifdef JSON
+Enseignant enseignantParser(json_t *json_enseignant) {
+    json_t *nom = json_object_get(json_enseignant, "nom");
+    json_t *matiere = json_object_get(json_enseignant, "matiere");
+
+    assert(json_is_string(nom) && json_is_string(matiere));
+
+    Enseignant e = enseignant((char*) json_string_value(nom), (char*) json_string_value(matiere));
+
+    return e;
+}
+#endif
 
 void afficheEnseignant (Enseignant e){
     printf("%s, %s\n",getNom(e), getMatiere(e));
@@ -69,6 +82,7 @@ char* toStringEnseignant(Enseignant e) {
 #endif
 
 #ifdef TEST
+#include <string.h>
 
 int main() {
 
@@ -97,8 +111,9 @@ int main() {
     info(afficheEnseignant(e)); // "GAILDRAT, Programmation orientée objet"
 
     #ifdef JSON
-    info(toStringEnseignant(e));
+    test(strcmp(toStringEnseignant(e), toStringEnseignant(enseignantParser(getJsonEnseignant(e)))) == 0);
     #endif
+
 
     return 0;
 }

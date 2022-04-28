@@ -18,6 +18,7 @@ Enseignant getEnseignantN(Enseignants es, char *n);
 Enseignant getEnseignantM(Enseignants es, char *m);
 
 #ifdef JSON
+Enseignants enseignantsParser(json_t* json_enseignants);
 json_t* getJsonEnseignants(Enseignants es);
 char* toStringEnseignants(Enseignants es);
 #endif

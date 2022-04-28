@@ -21,6 +21,7 @@ Enseignant getE(Creneau c);
 char * getF(Creneau c);
 
 #ifdef JSON
+Creneau creneauParser(json_t* json_creneau);
 json_t* getJsonCreneau(Creneau c);
 char* toStringCreneau(Creneau c);
 #endif

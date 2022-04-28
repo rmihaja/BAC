@@ -22,6 +22,24 @@ Creneau creneau(Enseignant e, Horaire h, char *f, char* s){
     return c;
 }
 
+#ifdef JSON
+Creneau creneauParser(json_t *json_creneau) {
+    json_t *formation = json_object_get(json_creneau, "formation");
+    json_t *salle = json_object_get(json_creneau, "salle");
+    json_t *horaire = json_object_get(json_creneau, "horaire");
+    json_t *enseignant = json_object_get(json_creneau, "enseignant");
+
+    assert(json_is_string(formation)
+        && json_is_string(salle)
+        && json_is_object(horaire)
+        && json_is_object(enseignant));
+
+    Creneau c = creneau(enseignantParser(enseignant), horaireParser(horaire), (char*) json_string_value(formation), (char*) json_string_value(salle));
+
+    return c;
+}
+#endif
+
 Creneau setCreneauE(Enseignant e, Creneau c){
     c->enseignant=e;
     return c;
@@ -94,6 +112,7 @@ char* toStringCreneau(Creneau c) {
 #endif
 
 #ifdef TEST
+#include <string.h>
 
 int main() {
 
@@ -132,7 +151,7 @@ int main() {
     info(afficheCreneau(c));
 
     #ifdef JSON
-    info(toStringCreneau(c));
+    test(strcmp(toStringCreneau(c), toStringCreneau(creneauParser(getJsonCreneau(c)))) == 0);
     #endif
 
     return 0;

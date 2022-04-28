@@ -186,16 +186,17 @@ $$
     "salles": [
         {
             "nom": "108"
-            "creneaux":
-            {
-                "formation": "CUPGE",
-                "salle": "108",
-                "horaire" : {
-                    "debut": 8,
-                    "fin": 9
-                },
-                "enseignants": // { ... }
-            }
+            "creneaux": [
+                {
+                    "formation": "CUPGE",
+                    "salle": "108",
+                    "horaire" : {
+                        "debut": 8,
+                        "fin": 9
+                    },
+                    "enseignant": // { ... }
+                }, // ...
+            ]
         }
     ],
     "formation": // { ... }

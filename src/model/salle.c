@@ -20,6 +20,26 @@ Salle salle(char * n){
     return s;
 }
 
+#ifdef JSON
+Salle salleParser(json_t *json_salle) {
+    json_t *nom = json_object_get(json_salle, "nom");
+    json_t *json_arr_c = json_object_get(json_salle, "creneaux");
+
+    assert(json_is_string(nom) && json_is_array(json_arr_c));
+
+    Salle s = salle((char*) json_string_value(nom));
+
+    size_t index;
+    json_t *value;
+    // ? https://jansson.readthedocs.io/en/latest/apiref.html#c.json_array_foreach
+    json_array_foreach(json_arr_c, index, value) {
+        ajouterS(s, creneauParser(value));
+    }
+
+    return s;
+}
+#endif
+
 bool isFreeSalle(Salle s, Horaire h){
     bool b;
     for (int i=getDebut(h); i<getFin(h); i++){
@@ -125,6 +145,7 @@ char* toStringSalle(Salle f) {
 #endif
 
 #ifdef TEST
+#include <string.h>
 
 int main() {
 
@@ -165,7 +186,7 @@ int main() {
     info(afficherSalle(s));
 
     #ifdef JSON
-    info(toStringSalle(s));
+    test(strcmp(toStringSalle(s), toStringSalle(salleParser(getJsonSalle(s)))) == 0);
     #endif
 
     return 0;

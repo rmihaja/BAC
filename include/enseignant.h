@@ -1,8 +1,6 @@
 #ifndef __ENSEIGNANT_H__
 #define __ENSEIGNANT_H__
 
-#include <stdlib.h>
-#include <stdio.h>
 #ifdef JSON
 #include "jansson.h"
 #endif
@@ -17,6 +15,7 @@ char* getMatiere(Enseignant e);
 char* getNom(Enseignant e);
 
 #ifdef JSON
+Enseignant enseignantParser(json_t* json_enseignant);
 json_t* getJsonEnseignant(Enseignant e);
 char* toStringEnseignant(Enseignant e);
 #endif

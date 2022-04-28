@@ -25,6 +25,26 @@ Enseignants enseignants(){
     return es;
 }
 
+#ifdef JSON
+Enseignants enseignantsParser(json_t *json_enseignants) {
+    json_t *json_arr_e = json_object_get(json_enseignants, "enseignants");
+
+    assert(json_is_array(json_arr_e));
+
+    Enseignants es = enseignants();
+
+    size_t index;
+    json_t *value;
+    // ? https://jansson.readthedocs.io/en/latest/apiref.html#c.json_array_foreach
+    json_array_foreach(json_arr_e, index, value) {
+        ajouterEs(enseignantParser(value), es);
+    }
+
+    return es;
+}
+#endif
+
+
 Enseig enseig(Enseignant e, Enseignants es){
     Enseig g=(Enseig) malloc(sizeof(struct s_enseig));
     g->e=e;
@@ -150,6 +170,7 @@ char* toStringEnseignants(Enseignants es) {
 #endif
 
 #ifdef TEST
+#include <string.h>
 
 int main() {
 
@@ -176,7 +197,7 @@ int main() {
     info(afficherEnseignants(es));
 
     #ifdef JSON
-    info(toStringEnseignants(es));
+    test(strcmp(toStringEnseignants(es), toStringEnseignants(enseignantsParser(getJsonEnseignants(es)))) == 0);
     #endif
 
 

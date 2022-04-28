@@ -20,6 +20,19 @@ Horaire horaire(int d, int f){
     return h;
 }
 
+#ifdef JSON
+Horaire horaireParser(json_t *json_horaire) {
+    json_t *debut = json_object_get(json_horaire, "debut");
+    json_t *fin = json_object_get(json_horaire, "fin");
+
+    assert(json_is_integer(debut) && json_is_integer(fin));
+
+    Horaire h = horaire((int) json_integer_value(debut), (int) json_integer_value(fin));
+
+    return h;
+}
+#endif
+
 int getDebut(Horaire h){
     return h->debut;
 }
@@ -78,6 +91,7 @@ char* toStringHoraire(Horaire h) {
 #endif
 
 #ifdef TEST
+#include <string.h>
 
 int main() {
 
@@ -109,7 +123,7 @@ int main() {
     info(afficheHoraire(h));
 
     #ifdef JSON
-    info(toStringHoraire(h));
+    test(strcmp(toStringHoraire(h), toStringHoraire(horaireParser(getJsonHoraire(h)))) == 0);
     #endif
 
     return 0;

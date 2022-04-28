@@ -23,6 +23,25 @@ Salles salles (){
     return s;
 }
 
+#ifdef JSON
+Salles sallesParser(json_t* json_salles) {
+    json_t *json_arr_s = json_object_get(json_salles, "salles");
+
+    assert(json_is_array(json_arr_s));
+
+    Salles Ss = salles();
+
+    size_t index;
+    json_t *value;
+    // ? https://jansson.readthedocs.io/en/latest/apiref.html#c.json_array_foreach
+    json_array_foreach(json_arr_s, index, value) {
+        ajouterSs(Ss, salleParser(value));
+    }
+
+    return Ss;
+}
+#endif
+
 Sal sal(Salle s){
     Sal l=(Sal) malloc(sizeof(struct s_sal));
     l->s=s;
@@ -96,6 +115,7 @@ char* toStringSalles(Salles Ss) {
 #endif
 
 #ifdef TEST
+#include <string.h>
 
 int main() {
 
@@ -128,7 +148,7 @@ int main() {
     info(afficheSalles(S));
 
     #ifdef JSON
-    info(toStringSalles(S));
+    test(strcmp(toStringSalles(S), toStringSalles(sallesParser(getJsonSalles(S)))) == 0);
     #endif
 
     return 0;

@@ -19,6 +19,7 @@ Creneau* getCreneauS(Salle s);
 char* getNomS(Salle s);
 
 #ifdef JSON
+Salle salleParser(json_t* json_salle);
 json_t* getJsonSalle(Salle s);
 char* toStringSalle(Salle s);
 #endif

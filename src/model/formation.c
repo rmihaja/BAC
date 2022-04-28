@@ -2,18 +2,18 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <assert.h>
 
-typedef struct s_edt{
+typedef struct s_edt {
     Creneau creneau;
     Creneau* suivant;
-}*Edt;
+} *Edt;
 
 struct s_formation {
     char * nom;
-    edt edt;
+    Edt edt;
     int nbr;
 };
-
 
 Formation formation(char* n){
     Formation f=(Formation)malloc(sizeof(struct s_formation));
@@ -23,6 +23,26 @@ Formation formation(char* n){
     f->nbr=0;
     return f;
 }
+
+#ifdef JSON
+Formation formationParser(json_t *json_formation) {
+    json_t *nom = json_object_get(json_formation, "nom");
+    json_t *json_arr_c = json_object_get(json_formation, "creneaux");
+
+    assert(json_is_string(nom) && json_is_array(json_arr_c));
+
+    Formation f = formation((char*) json_string_value(nom));
+
+    size_t index;
+    json_t *value;
+    // ? https://jansson.readthedocs.io/en/latest/apiref.html#c.json_array_foreach
+    json_array_foreach(json_arr_c, index, value) {
+        ajouterC(f, creneauParser(value));
+    }
+
+    return f;
+}
+#endif
 
 Edt edt(Formation f, Creneau c){
     Edt e=(Edt)malloc(sizeof(struct s_edt));
@@ -96,3 +116,5 @@ char* toStringFormation(Formation f) {
     return str;
 }
 #endif
+
+// TODO faire TU

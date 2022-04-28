@@ -14,6 +14,7 @@ Salle getSalle(Salles Ss, char* salle);
 void afficheSalles(Salles Ss);
 
 #ifdef JSON
+Salles sallesParser(json_t* json_salles);
 json_t* getJsonSalles(Salles s);
 char* toStringSalles(Salles s);
 #endif

@@ -7,7 +7,6 @@
 #include "jansson.h"
 #endif
 
-
 typedef struct s_formation *Formation;
 
 Formation formation(char* n);
@@ -16,6 +15,7 @@ Formation ajouterH(Formation f, Creneau c);
 Formation supprimerH (Formation f, Horaire h);
 
 #ifdef JSON
+Formation formationParser(json_t* json_formation);
 json_t* getJsonFormation(Formation f);
 char* toStringFormation(Formation f);
 #endif
