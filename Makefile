@@ -41,10 +41,11 @@ init: $(LIBS) $(LIBTOOLS)
 # ? using pattern rules to automatically compile .o files from MODULES source list
 # https://www.gnu.org/software/make/manual/html_node/Static-Usage.html#Static-Usage
 $(LIBS): $(LIB)/%.a: $(SRC)/%
+	rm -f $(MODULE)/*
 	cd $< && make init
 
-$(LIBTOOLS): $(LIB)/%.a: $(SRC)/%
-	cd $< && make init
+#$(LIBTOOLS): $(LIB)/%.a: $(SRC)/%
+#	cd $< && make init
 
 # dependencies unit tests
 
@@ -62,7 +63,7 @@ testdep/%: $(SRC)/%.c $(LIBTOOLS)
 
 # project cleanup
 
-prune:S
+prune:
 	rm -f $(MODULE)/*
 #	rm -f $(LIB)/*
 	rm -f $(DEST)/*
