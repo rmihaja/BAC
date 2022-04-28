@@ -74,11 +74,18 @@
 			     COULEUR_NORMALE , __LINE__ , __func__ , n )
 #define VAL_POINTER(n)  fprintf ( stderr , COULEUR_INFO POSITION "\t" TEST_str(n) " = %p\n" \
 				  COULEUR_NORMALE , __LINE__ , __func__ , (void *) n )
+
 #define TEST_RES(x) ( x ) ? \
       fprintf ( stderr , COULEUR_SUCCES POSITION "\t" TEST_str(x)  " --> vrai \n" \
 		COULEUR_NORMALE , __LINE__ , __func__ ) :		\
       fprintf ( stderr , COULEUR_ECHEC POSITION "\t" TEST_str(x)  " --> faux \n" \
 		COULEUR_NORMALE , __LINE__ , __func__ )
+
+#define INFO_RES(x)   do { \
+      x ;  \
+      fprintf ( stderr , COULEUR_INFO POSITION "\t" TEST_str(x) " --> OK  \n" \
+				  COULEUR_NORMALE , __LINE__ , __func__ ) ;  \
+    } while ( 0 )
 
 #define ASSERT(x)   do { \
     if ( ! ( x ) ) {							\
@@ -89,5 +96,6 @@
 
 #define debug(...) fprintf ( stderr ,COULEUR_INFO __VA_ARGS__ )
 #define test(x) TEST_RES(x)
+#define info(x) INFO_RES(x)
 
 #endif

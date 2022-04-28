@@ -50,7 +50,32 @@ void afficheHoraire(Horaire h){
     printf("%dh00 à %dh00\n",getDebut(h),getFin(h));
 }
 
+#ifdef JSON
+json_t* getJsonHoraire(Horaire h) {
 
+    json_t *root = json_object();
+
+    json_object_set_new(root, "debut", json_integer(getDebut(h)));
+    json_object_set_new(root, "fin", json_integer(getFin(h)));
+
+    return root;
+}
+
+char* toStringHoraire(Horaire h) {
+
+    json_t *json_horaire = getJsonHoraire(h);
+    char* str = json_dumps(json_horaire, 0);
+
+    #ifdef DEBUG
+    puts(str);
+    #endif
+
+    // deallocate json object memory
+    json_decref(json_horaire);
+
+    return str;
+}
+#endif
 
 #ifdef TEST
 
@@ -72,16 +97,20 @@ int main() {
     test(getDebut(h) == h1_debut);
     test(getFin(h) == h1_fin);
 
-    setDebut(h, h2_debut);
-    setFin(h, h2_fin);
+    info(setDebut(h, h2_debut));
+    info(setFin(h, h2_fin));
 
     test(getDebut(h) == h2_debut);
     test(getFin(h) == h2_fin);
 
     test(duree(h) == h2_fin - h2_debut);
 
-    affiche1H(duree(h));
-    afficheHoraire(h);
+    info(affiche1H(duree(h)));
+    info(afficheHoraire(h));
+
+    #ifdef JSON
+    info(toStringHoraire(h));
+    #endif
 
     return 0;
 }
