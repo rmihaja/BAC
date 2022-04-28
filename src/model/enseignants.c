@@ -73,7 +73,6 @@ bool appartient(Enseignant g, Enseignants es){
         }
         courant=courant->suivant;
     }
-    free(courant);
     return b;
 }
 
@@ -91,19 +90,20 @@ Enseignants supprimerEs(Enseignant g, Enseignants es){
     e->suivant=courant->suivant;
     precedent->suivant=e;
     free(courant);
-    free(precedent);
     es->taille--;
     return es;
 }
 
 void afficherEnseignants (Enseignants es){
-    printf("******* Enseignants *******");
+    printf("---------------------\n");
+    printf("Liste des enseignants\n");
+    printf("---------------------\n\n");
     Enseig courant = es->sentinelle->suivant;
     for(int i=0; i<es->taille;i++){
+        printf("- ");
         afficheEnseignant(courant->e);
         courant=courant->suivant;
     }
-    printf("***************************");
 }
 
 Enseignant getEnseignantN(Enseignants es, char *n){
@@ -190,11 +190,11 @@ int main() {
     info(ajouterEs(e1,es));
     info(ajouterEs(e2,es));
 
+    info(afficherEnseignants(es));
+
     info(supprimerEs(e1,es));
     test(getEnseignantN(es,"GAILDRAT") == e2);
     test(getEnseignantM(es,"Programmation orientée objet") == e2);
-
-    info(afficherEnseignants(es));
 
     #ifdef JSON
     test(strcmp(toStringEnseignants(es), toStringEnseignants(enseignantsParser(getJsonEnseignants(es)))) == 0);
