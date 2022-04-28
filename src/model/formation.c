@@ -78,9 +78,15 @@ Formation supprimerH (Formation f, Horaire h){
     Edt precedent=f->edt;
     Edt courant=f->edt->suivant;
     int i=0;
-    while(i<f->nbr && ){
-
+    while(i<f->nbr && getH(courant->creneau)!=h){
+        precedent=courant;
+        courant=courant->suivant;
+        i++;
     }
+    if(i!=f->nbr){
+        precedent->suivant=courant->suivant;
+    }
+    free(courant);
     return f;
 }
 
@@ -117,4 +123,17 @@ char* toStringFormation(Formation f) {
 }
 #endif
 
-// TODO faire TU
+void afficheFormation(Formation f){
+    printf("    %s     \n", f->nom);
+    for(int i=0;i<4;i++){
+        printf("\n");
+        if(s->creneaux[i]==NULL){
+            printf("\n VIDE \n");
+        }else{
+            printf("%d", getS(s->creneaux[i]));
+            afficheHoraire(getH(s->creneaux[i]));
+            afficheEnseignant(getE(s->creneaux[i]));
+        }
+        printf("___");
+    }
+}
