@@ -184,7 +184,6 @@ int main() {
     info(afficherSalle(s));
 
     #ifdef JSON
-    #ifdef JSON
     info(ajouterS(s,c2));
     test(strcmp(toStringSalle(s), toStringSalle(salleParser(getJsonSalle(s)))) == 0);
     #endif
