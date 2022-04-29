@@ -57,8 +57,21 @@ bool estComplet(Formation f){
     return f->nbr == 4;
 }
 
+bool estLibre(Formation f, Horaire h){
+    b=false;
+    Edt e=f->edt->suivant;
+    for (int i=0; i<4 && !b; i++){
+        b=getH(e->creneau)==h;
+        e=e->suivant;
+    }
+    free(e);
+    return b;
+}
+
 Formation ajouterC(Formation f, Creneau c){
     assert(!estComplet(f));
+    assert(getF(c)==f->nom);
+    assert(estLibre(f,getH(c)));
     Edt e=edt(c);
     e->suivant=f->edt->suivant;
     f->edt->suivant=e;
@@ -66,14 +79,14 @@ Formation ajouterC(Formation f, Creneau c){
     return f;
 }
 
-Formation supprimerH (Formation f, Horaire h){
+Formation supprimerC (Formation f, Creneau c){
     assert(f->nbr!=0);
     Edt precedent=f->edt;
     Edt courant=f->edt->suivant;
     int i=0;
     bool isFound = false;
     while(i<f->nbr && !isFound){
-        isFound = getDebut(getH(courant->creneau)) == getDebut(h) && getFin(getH(courant->creneau)) == getFin(h);
+        isFound = (courant->creneau==c);
         precedent=courant;
         courant=courant->suivant;
         i++;

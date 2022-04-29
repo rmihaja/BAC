@@ -12,6 +12,8 @@ Salles salles();
 Salles ajouterSs(Salles Ss, Salle a);
 Salle getSalle(Salles Ss, char* salle);
 void afficheSalles(Salles Ss);
+char * getNomSParIndice(Salles Ss, int n);
+int getnbr(Salles Ss);
 
 #ifdef JSON
 Salles sallesParser(json_t* json_salles);

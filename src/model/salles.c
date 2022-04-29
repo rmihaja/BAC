@@ -75,6 +75,20 @@ Salle getSalle(Salles Ss, char* nom){
     return r;
 }
 
+char * getNomSParIndice(Salles Ss, int n){
+    assert(n<Ss->nbr);
+    Salle r=NULL;
+    Sal courant=Ss->salles;
+    for(int i=0;i<n;i++){
+        courant=courant->suivante;
+    }
+    return getNomS(courant);
+}
+
+int getnbr(Salles Ss){
+    return Ss->nbr;
+}
+
 void afficheSalles(Salles Ss){
     Sal courant=Ss->salles;
     for(int i=0;i<Ss->nbr;i++){

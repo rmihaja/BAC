@@ -1,5 +1,6 @@
 // ? structure modèle de toutes les modules du projet
 #include <stdbool.h>
+#include <assert.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include "controle.h"
@@ -31,7 +32,8 @@ Controle controle(){
 }
 
 Controle reserver(Controle Ct, Creneau c){
-
+    assert(Ct->isAdmin);
+    
 }
 
 Controle annuler(Controle Ct, Creneau c){
@@ -43,7 +45,20 @@ Controle modifier(Controle Ct, Creneau c){
 }
 
 void afficherEDTEnseignants(Controle Ct, Enseignant e){
-
+    printf("-------\n");
+    printf("Enseignant : %s\n", getNom(e));
+    printf("- %s -\n", getMatiere(e));
+    printf("-------\n\n");
+    for(int i=0; i<getnbr(Ct->salles);i++){
+        Salle courant=getSalle(getNomSParIndice(Ct->salles,i));
+        for(int j=8; j<20; j++){
+            if(getE(getCreneauS(courant))==e){
+                printf("%s %s \n", getS(c), getF(c));
+                printf("De ")
+                afficheHoraire(getH(c));
+            }
+        }
+    }
 }
 
 
