@@ -7,11 +7,11 @@
 #endif
 
 struct s_salle{
-    char * nom;
+    int nom;
     Creneau creneaux[24];
 };
 
-Salle salle(char * n){
+Salle salle(int n){
     Salle s= (Salle)malloc(sizeof(struct s_salle));
     s->nom=n;
     for(int i=0; i<24; i++){
@@ -77,7 +77,7 @@ Salle modifierS(Salle s,Horaire hmodif, Creneau cnew){
     return s;
 }
 
-char* getNomS(Salle s){
+int getNomS(Salle s){
     return s->nom;
 }
 
@@ -88,7 +88,7 @@ Creneau* getCreneauS(Salle s){
 
 void afficherSalle(Salle s){
     printf("-------\n");
-    printf("Salle : %s\n", s->nom);
+    printf("Salle : %d\n", s->nom);
     printf("-------\n\n");
     for(int i=8;i<20;i++){
         printf("de ");

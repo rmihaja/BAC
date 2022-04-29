@@ -22,9 +22,13 @@ struct s_controle{
 
 Controle controle(){
     Controle c=(Controle)malloc(sizeof(struct s_controle));
+    //if(no json)
     c->isAdmin=false;
     c->enseignants=enseignants();
     c->salles=salles();
+    ajouterSs(c->salles,salle(1));
+    ajouterSs(c->salles,salle(2));
+    ajouterSs(c->salles,salle(3));
     c->formations[0]=formation(CUPGE chimie);
     c->formations[1]=formation(CUPGE physique);
     c->formations[2]=formation(CUPGE informatique);
@@ -33,7 +37,10 @@ Controle controle(){
 
 Controle reserver(Controle Ct, Creneau c){
     assert(Ct->isAdmin);
-    
+    assert(c!=NULL);
+    Salle s=getSalle(Ct->salles,getS(c));
+    ajouterS(s,c);
+
 }
 
 Controle annuler(Controle Ct, Creneau c){
