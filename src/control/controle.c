@@ -40,15 +40,39 @@ Controle reserver(Controle Ct, Creneau c){
     assert(c!=NULL);
     Salle s=getSalle(Ct->salles,getS(c));
     ajouterS(s,c);
-
+    char * f=getF(c);
+    int n=0;
+    for (int i=0; i<3; i++){
+        if(f==getNomF(Ct->formations[i])){
+            n=i;
+        }
+    }
+    ajouterC(Ct->formations[n],c);
+    return Ct;
 }
 
 Controle annuler(Controle Ct, Creneau c){
-
+    assert(Ct->isAdmin);
+    assert(c!=NULL);
+    Salle s=getSalle(Ct->salles,getS(c));
+    supprimerS(s,getH(c));
+    char * f=getF(c);
+    int n=0;
+    for (int i=0; i<3; i++){
+        if(f==getNomF(Ct->formations[i])){
+            n=i;
+        }
+    }
+    supprimerC(Ct->formations[n],c);
+    return Ct;
 }
 
-Controle modifier(Controle Ct, Creneau c){
-
+Controle modifier(Controle Ct, Creneau cmodif, Creneau c){
+    assert(Ct->isAdmin);
+    assert(c!=NULL);
+    assert(cmodif!=NULL);
+    annuler(Ct,cmodif);
+    ajouter(Ct,c);
 }
 
 void afficherEDTEnseignants(Controle Ct, Enseignant e){

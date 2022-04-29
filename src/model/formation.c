@@ -27,6 +27,14 @@ Formation formation(char* n){
     return f;
 }
 
+int getnbrF(Formation f){
+    return f->nbr;
+}
+
+char * getNomF(Formation f){
+    return f->nom;
+}
+
 #ifdef JSON
 Formation formationParser(json_t *json_formation) {
     json_t *nom = json_object_get(json_formation, "nom");

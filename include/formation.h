@@ -14,6 +14,8 @@ bool estComplet(Formation f);
 Formation ajouterC(Formation f, Creneau c);
 Formation supprimerH (Formation f, Horaire h);
 void afficheFormation(Formation f);
+int getnbrF(Formation f);
+char * getNomF(Formation f);
 
 #ifdef JSON
 Formation formationParser(json_t* json_formation);
