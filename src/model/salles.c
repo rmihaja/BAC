@@ -63,7 +63,7 @@ Salles ajouterSs(Salles Ss, Salle a){
 }
 
 Salle getSalle(Salles Ss, char* nom){
-    Salle r=salle(0);
+    Salle r=NULL;
     Sal courant=Ss->salles;
     for(int i=0;i<Ss->nbr;i++){
         if(getNomS(courant->s)==nom){
