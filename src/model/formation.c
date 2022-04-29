@@ -90,6 +90,25 @@ Formation supprimerH (Formation f, Horaire h){
     return f;
 }
 
+void afficheFormation(Formation f){
+    Edt courant=f->edt;
+    printf("-----------\n");
+    printf("EDT %s\n", f->nom);
+    printf("-----------\n\n");
+    for(int i=0; i< f->nbr; i++){
+        printf("de ");
+        afficheHoraire(getH(courant->creneau));
+        if(f->edt==NULL){
+            printf("VIDE");
+        }else{
+            printf("%s",getS(courant->creneau));
+            afficheEnseignant(getE(courant->creneau));
+        }
+        printf("\n\n");
+        courant=courant->suivant;
+    }
+}
+
 #ifdef JSON
 // TODO à tester
 json_t* getJsonFormation(Formation f) {

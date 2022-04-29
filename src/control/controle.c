@@ -10,7 +10,7 @@
 #endif
 
 //afficheEnseignants existe déjà dans enseignants
-//pareil pour salles, salle
+//pareil pour salles, salle, formation
 
 struct s_controle{
     bool isAdmin;
@@ -40,10 +40,6 @@ Controle annuler(Controle Ct, Creneau c){
 
 Controle modifier(Controle Ct, Creneau c){
 
-}
-
-void afficherEDTFormation(Controle Ct, Formation f){
-    
 }
 
 void afficherEDTEnseignants(Controle Ct, Enseignant e){
