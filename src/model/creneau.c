@@ -131,8 +131,6 @@ int main() {
 
     Creneau c = creneau(e1, h1, f1, s1);
 
-    // TODO définir format toString
-
     test(getNom(getE(c)) == getNom(e1));
     test(getDebut(getH(c)) == getDebut(h1));
     test(getF(c) == f1);

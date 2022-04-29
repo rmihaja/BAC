@@ -66,7 +66,6 @@ bool appartient(Enseignant g, Enseignants es){
     Enseig e=enseig(g,es);
     bool b= false;
     Enseig courant= es->sentinelle->suivant;
-    // TODO Mihaja check infinite loop
     for(int i=0; i<es->taille-1; i++){
         if((getNom(courant->e) != getNom(e->e)) && (getMatiere(courant->e) != getMatiere(e->e)) && !b){
             b= true;
