@@ -1,12 +1,15 @@
 {
     "files.associations": {
         "enseignant.h": "c",
-        "creneau.h": "c"
+        "creneau.h": "c",
+        "stdlib.h": "c"
     },
     "C_Cpp.errorSquiggles": "Disabled",
     "cSpell.words": [
         "controle",
+        "creneaux",
         "duree",
+        "enseig",
         "matiere"
     ]
 }

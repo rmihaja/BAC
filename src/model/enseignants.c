@@ -25,6 +25,26 @@ Enseignants enseignants(){
     return es;
 }
 
+#ifdef JSON
+Enseignants enseignantsParser(json_t *json_enseignants) {
+    json_t *json_arr_e = json_object_get(json_enseignants, "enseignants");
+
+    assert(json_is_array(json_arr_e));
+
+    Enseignants es = enseignants();
+
+    size_t index;
+    json_t *value;
+    // ? https://jansson.readthedocs.io/en/latest/apiref.html#c.json_array_foreach
+    json_array_foreach(json_arr_e, index, value) {
+        ajouterEs(enseignantParser(value), es);
+    }
+
+    return es;
+}
+#endif
+
+
 Enseig enseig(Enseignant e, Enseignants es){
     Enseig g=(Enseig) malloc(sizeof(struct s_enseig));
     g->e=e;
@@ -53,7 +73,6 @@ bool appartient(Enseignant g, Enseignants es){
         }
         courant=courant->suivant;
     }
-    free(courant);
     return b;
 }
 
@@ -66,24 +85,25 @@ Enseignants supprimerEs(Enseignant g, Enseignants es){
     while((getNom(courant->e) != getNom(g)) && (getMatiere(courant->e) != getMatiere(g)) && (i<es->taille-1)){
         precedent=courant;
         courant=courant->suivant;
-        i++;        
+        i++;
     }
     e->suivant=courant->suivant;
     precedent->suivant=e;
     free(courant);
-    free(precedent);
     es->taille--;
     return es;
 }
 
 void afficherEnseignants (Enseignants es){
-    printf("******* Enseignants *******");
+    printf("---------------------\n");
+    printf("Liste des enseignants\n");
+    printf("---------------------\n\n");
     Enseig courant = es->sentinelle->suivant;
     for(int i=0; i<es->taille;i++){
+        printf("- ");
         afficheEnseignant(courant->e);
         courant=courant->suivant;
     }
-    printf("***************************");
 }
 
 Enseignant getEnseignantN(Enseignants es, char *n){
@@ -114,10 +134,47 @@ Enseignant getEnseignantM(Enseignants es, char *m){
     return e;
 }
 
+#ifdef JSON
+json_t* getJsonEnseignants(Enseignants es) {
+
+    json_t *root = json_object();
+    json_t *json_arr = json_array();
+
+    // la liste des enseignants sera stocké dans un tableau
+    json_object_set_new(root, "enseignants", json_arr);
+
+    Enseig courant = es->sentinelle->suivant;
+
+    for(int i = 0; i < es->taille; i++) {
+        json_array_append(json_arr, getJsonEnseignant(courant->e));
+        courant = courant->suivant;
+    }
+
+    return root;
+}
+
+char* toStringEnseignants(Enseignants es) {
+
+    json_t *json_enseignants = getJsonEnseignants(es);
+    char *str = json_dumps(json_enseignants, 0);
+
+    #ifdef DEBUG
+    puts(str);
+    #endif
+
+    // deallocate json object memory
+    json_decref(json_enseignants);
+
+    return str;
+}
+#endif
 
 #ifdef TEST
+#include <string.h>
 
 int main() {
+
+    // init
 
     char* e1_nom = "TRUILLET";
     char* e2_nom = "GAILDRAT";
@@ -126,19 +183,25 @@ int main() {
     Enseignant e1 = enseignant(e1_nom, e1_matiere);
     Enseignant e2 = enseignant(e2_nom, e2_matiere);
 
+    // testing
+
     Enseignants es = enseignants();
 
-    test(ajouterEs(e1,es));
-    test(ajouterEs(e2,es));
+    info(ajouterEs(e1,es));
+    info(ajouterEs(e2,es));
 
-    test(supprimerEs(e1,es));
+    info(supprimerEs(e1,es));
     test(getEnseignantN(es,"GAILDRAT") == e2);
     test(getEnseignantM(es,"Programmation orientée objet") == e2);
 
-    afficherEnseignants (es);
+    info(afficherEnseignants(es));
+
+    #ifdef JSON
+    test(strcmp(toStringEnseignants(es), toStringEnseignants(enseignantsParser(getJsonEnseignants(es)))) == 0);
+    #endif
 
 
     return 0;
 }
 
-#endif 
+#endif
