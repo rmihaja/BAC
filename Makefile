@@ -48,15 +48,22 @@ $(LIBS): $(LIB)/%.a: $(SRC)/%
 #	cd $< && make init
 
 # dependencies unit tests
-
 # ! build on .o files if .a compile fail (case study on WSL)
+
 test/%: $(SRC)/%.c $(LIBTOOLS)
 	gcc $(INCLUDE) -L $(LIB) $(WARNINGS) $(DEBUG) $(TEST) $< -o $(SRC)/$* $(LTOOLSDEPENDENCY) || gcc $(INCLUDE) $(TOOLS) $(WARNINGS) $(DEBUG) $(TEST) $< -o $(SRC)/$*
 	./$(SRC)/$*
 	rm $(SRC)/$*
 
-# ! build on .o files if .a compile fail (case study on WSL)
 testdep/%: $(SRC)/%.c $(LIBTOOLS)
+	gcc $(INCLUDE) -L $(LIB) $(WARNINGS) $(DEBUG) $(TEST) $(DEPTEST) $< -o $(SRC)/$* $(LTOOLSDEPENDENCY) || gcc $(INCLUDE) $(TOOLS) $(WARNINGS) $(DEBUG) $(TEST) $(DEPTEST) $< -o $(SRC)/$*
+	./$(SRC)/$*
+	rm $(SRC)/$*
+
+testmodels: $(MODULES) $(LIBTOOLS)
+	echo "all model unit tests done with success"
+
+$(MODULES): $(MODULE)/%.o: $(SRC)/model/%.c
 	gcc $(INCLUDE) -L $(LIB) $(WARNINGS) $(DEBUG) $(TEST) $(DEPTEST) $< -o $(SRC)/$* $(LTOOLSDEPENDENCY) || gcc $(INCLUDE) $(TOOLS) $(WARNINGS) $(DEBUG) $(TEST) $(DEPTEST) $< -o $(SRC)/$*
 	./$(SRC)/$*
 	rm $(SRC)/$*

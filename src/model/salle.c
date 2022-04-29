@@ -7,11 +7,11 @@
 #endif
 
 struct s_salle{
-    int nom;
+    char * nom;
     Creneau creneaux[24];
 };
 
-Salle salle(int n){
+Salle salle(char * n){
     Salle s= (Salle)malloc(sizeof(struct s_salle));
     s->nom=n;
     for(int i=0; i<24; i++){
@@ -77,7 +77,7 @@ Salle modifierS(Salle s,Horaire hmodif, Creneau cnew){
     return s;
 }
 
-int getNomS(Salle s){
+char* getNomS(Salle s){
     return s->nom;
 }
 
@@ -88,7 +88,7 @@ Creneau* getCreneauS(Salle s){
 
 void afficherSalle(Salle s){
     printf("-------\n");
-    printf("Salle : %d\n", s->nom);
+    printf("Salle : %s\n", s->nom);
     printf("-------\n\n");
     for(int i=8;i<20;i++){
         printf("de ");
@@ -113,7 +113,6 @@ json_t* getJsonSalle(Salle s) {
     json_object_set_new(root, "creneaux", json_arr);
 
     for(int i = 0; i < 24; i++) {
-        json_array_append(json_arr, getJsonCreneau(s->creneaux[i]));
         if(s->creneaux[i] == NULL) {
             json_array_append(json_arr, json_null());
         } else {

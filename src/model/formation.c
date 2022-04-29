@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
+#include <string.h>
 
 #ifdef DEBUG
 #include "tests.h"
@@ -20,7 +21,7 @@ struct s_formation {
 
 Formation formation(char* n){
     Formation f=(Formation)malloc(sizeof(struct s_formation));
-    f->edt=malloc(sizeof(sizeof(struct s_edt)));
+    f->edt=(Edt)malloc(sizeof(struct s_edt));
     f->edt->suivant=f->edt;
     f->nom=n;
     f->nbr=0;
@@ -66,20 +67,20 @@ bool estComplet(Formation f){
 }
 
 bool estLibre(Formation f, Horaire h){
-    b=false;
-    Edt e=f->edt->suivant;
-    for (int i=0; i<4 && !b; i++){
-        b=getH(e->creneau)==h;
-        e=e->suivant;
+    bool b=false;
+    Edt courant=f->edt->suivant;
+    for (int i=0; i<f->nbr && !b; i++){
+        b = (getDebut(getH(courant->creneau)) >= getDebut(h) && getDebut(getH(courant->creneau)) <= getFin(h))
+            || (getFin(getH(courant->creneau)) >= getDebut(h) && getFin(getH(courant->creneau)) <= getFin(h));
+        courant=courant->suivant;
     }
-    free(e);
     return b;
 }
 
 Formation ajouterC(Formation f, Creneau c){
     assert(!estComplet(f));
-    assert(getF(c)==f->nom);
-    assert(estLibre(f,getH(c)));
+    assert(strcmp(getF(c), f->nom) == 0);
+    // assert(estLibre(f,getH(c)));
     Edt e=edt(c);
     e->suivant=f->edt->suivant;
     f->edt->suivant=e;
@@ -103,40 +104,22 @@ Formation supprimerC (Formation f, Creneau c){
         precedent->suivant = courant->suivant;
         free(courant);
     }
+    f->nbr--;
     return f;
 }
 
 void afficheFormation(Formation f){
-    Edt courant=f->edt;
-    printf("-----------\n");
-    printf("EDT %s\n", f->nom);
-    printf("-----------\n\n");
-    for(int i=0; i< f->nbr; i++){
-        printf("de ");
-        afficheHoraire(getH(courant->creneau));
-        if(f->edt==NULL){
-            printf("VIDE");
-        }else{
-            printf("%s",getS(courant->creneau));
-            afficheEnseignant(getE(courant->creneau));
-        }
-        printf("\n\n");
-        courant=courant->suivant;
-    }
-}
-
-#ifdef JSON
-// TODO à tester
-json_t* getJsonFormation(Formation f) {
-
-void afficheFormation(Formation f){
-    printf("-----------\n");
-    printf("Formation : %s\n", f->nom);
-    printf("-----------\n\n");
+    printf("---------------------\n");
+    printf("EDT de la formation : %s\n", f->nom);
+    printf("---------------------\n\n");
     Edt courant = f->edt->suivant;
     for(int i=0;i<f->nbr;i++){
-        afficheCreneau(courant->creneau);
-        courant = courant->suivant;
+        printf("Salle %s\n",getS(courant->creneau));
+        printf("de ");
+        afficheHoraire(getH(courant->creneau));
+        afficheEnseignant(getE(courant->creneau));
+        courant=courant->suivant;
+        printf("\n");
     }
 }
 
@@ -175,7 +158,6 @@ char* toStringFormation(Formation f) {
 #endif
 
 #ifdef TEST
-#include <string.h>
 
 int main() {
 
@@ -214,7 +196,7 @@ int main() {
     test(estComplet(f) == false);
 
     // info(supprimerH(f, h2)); // devrait produire une erreur
-    info(supprimerH(f, h1));
+    info(supprimerC(f, c1));
 
     info(ajouterC(f, c1_bis));
 

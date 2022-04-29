@@ -8,7 +8,7 @@
 #endif
 
 typedef struct s_salle *Salle;
-Salle salle(int n);
+Salle salle(char * n);
 bool isFreeSalle(Salle s, Horaire h);
 Salle ajouterS(Salle s, Creneau c);
 Salle supprimerS(Salle s, Horaire h);
@@ -16,7 +16,7 @@ Salle modifierS(Salle s,Horaire hmodif, Creneau cnew);
 bool estVideSalle(Salle s);
 void afficherSalle(Salle s);
 Creneau* getCreneauS(Salle s);
-int getNomS(Salle s);
+char* getNomS(Salle s);
 
 #ifdef JSON
 Salle salleParser(json_t* json_salle);
