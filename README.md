@@ -1,7 +1,7 @@
 Razafimahefa Mihaja
 Rouzade Ambre
 
-__# BAC__
+__BAC__
 
 Book a classroom
 
