@@ -3,6 +3,9 @@
 
 #include "creneau.h"
 #include <stdbool.h>
+#ifdef JSON
+#include "jansson.h"
+#endif
 
 typedef struct s_salle *Salle;
 Salle salle(char * n);
@@ -15,6 +18,10 @@ void afficherSalle(Salle s);
 Creneau* getCreneauS(Salle s);
 char* getNomS(Salle s);
 
-
+#ifdef JSON
+Salle salleParser(json_t* json_salle);
+json_t* getJsonSalle(Salle s);
+char* toStringSalle(Salle s);
+#endif
 
 #endif

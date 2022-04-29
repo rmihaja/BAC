@@ -22,6 +22,24 @@ Creneau creneau(Enseignant e, Horaire h, char *f, char* s){
     return c;
 }
 
+#ifdef JSON
+Creneau creneauParser(json_t *json_creneau) {
+    json_t *formation = json_object_get(json_creneau, "formation");
+    json_t *salle = json_object_get(json_creneau, "salle");
+    json_t *horaire = json_object_get(json_creneau, "horaire");
+    json_t *enseignant = json_object_get(json_creneau, "enseignant");
+
+    assert(json_is_string(formation)
+        && json_is_string(salle)
+        && json_is_object(horaire)
+        && json_is_object(enseignant));
+
+    Creneau c = creneau(enseignantParser(enseignant), horaireParser(horaire), (char*) json_string_value(formation), (char*) json_string_value(salle));
+
+    return c;
+}
+#endif
+
 Creneau setCreneauE(Enseignant e, Creneau c){
     c->enseignant=e;
     return c;
@@ -64,7 +82,37 @@ void afficheCreneau(Creneau c){
     afficheHoraire(getH(c));
 }
 
+#ifdef JSON
+json_t* getJsonCreneau(Creneau c) {
+
+    json_t *root = json_object();
+
+    json_object_set_new(root, "enseignant", getJsonEnseignant(getE(c)));
+    json_object_set_new(root, "horaire", getJsonHoraire(getH(c)));
+    json_object_set_new(root, "formation", json_string(getF(c)));
+    json_object_set_new(root, "salle", json_string(getS(c)));
+
+    return root;
+}
+
+char* toStringCreneau(Creneau c) {
+
+    json_t *json_creneau = getJsonCreneau(c);
+    char *str = json_dumps(json_creneau, 0);
+
+    #ifdef DEBUG
+    puts(str);
+    #endif
+
+    // deallocate json object memory
+    json_decref(json_creneau);
+
+    return str;
+}
+#endif
+
 #ifdef TEST
+#include <string.h>
 
 int main() {
 
@@ -90,17 +138,21 @@ int main() {
     test(getF(c) == f1);
     test(getS(c) == s1);
 
-    setCreneauE(e2,c);
-    setCreneauF(f2,c);
-    setCreneauH(h2,c);
-    setCreneauS(s2,c);
+    info(setCreneauE(e2,c));
+    info(setCreneauF(f2,c));
+    info(setCreneauH(h2,c));
+    info(setCreneauS(s2,c));
 
     test(getMatiere(getE(c)) == getMatiere(e2));
     test(getFin(getH(c)) == getFin(h2));
     test(getF(c) == f2);
     test(getS(c) == s2);
 
+    info(afficheCreneau(c));
 
+    #ifdef JSON
+    test(strcmp(toStringCreneau(c), toStringCreneau(creneauParser(getJsonCreneau(c)))) == 0);
+    #endif
 
     return 0;
 }

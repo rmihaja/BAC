@@ -23,6 +23,25 @@ Salles salles (){
     return s;
 }
 
+#ifdef JSON
+Salles sallesParser(json_t* json_salles) {
+    json_t *json_arr_s = json_object_get(json_salles, "salles");
+
+    assert(json_is_array(json_arr_s));
+
+    Salles Ss = salles();
+
+    size_t index;
+    json_t *value;
+    // ? https://jansson.readthedocs.io/en/latest/apiref.html#c.json_array_foreach
+    json_array_foreach(json_arr_s, index, value) {
+        ajouterSs(Ss, salleParser(value));
+    }
+
+    return Ss;
+}
+#endif
+
 Sal sal(Salle s){
     Sal l=(Sal) malloc(sizeof(struct s_sal));
     l->s=s;
@@ -65,7 +84,38 @@ void afficheSalles(Salles Ss){
     }
 }
 
+#ifdef JSON
+json_t* getJsonSalles(Salles Ss) {
+
+    json_t *root = json_object();
+    json_t *json_arr = json_array();
+
+    json_object_set_new(root, "salles", json_arr);
+
+    // TODO à finir
+    // json_array_append(json_arr, getJsonSalle());
+
+    return root;
+}
+
+char* toStringSalles(Salles Ss) {
+
+    json_t *json_salles = getJsonSalles(Ss);
+    char *str = json_dumps(json_salles, 0);
+
+    #ifdef DEBUG
+    puts(str);
+    #endif
+
+    // deallocation json object memory
+    json_decref(json_salles);
+
+    return str;
+}
+#endif
+
 #ifdef TEST
+#include <string.h>
 
 int main() {
 
@@ -81,12 +131,25 @@ int main() {
 
     Salles S = salles();
 
-    ajouterSs(S, s1);
-    test(getSalle(S, s1_nom) == s1);
+    test(toStringSalles(S) == "");
 
-    ajouterSs(S, s2);
+    info(getSalle(S, s1_nom)); // devrait produire une erreur
+
+    info(ajouterSs(S, s1));
+    test(getSalle(S, s1_nom) == s1);
+    info(ajouterSs(S, s1)); // devrait produire une erreur
+
+    test(toStringSalles(S) == toStringSalle(s1));
+
+    info(ajouterSs(S, s2));
     test(getSalle(S, s2_nom) == s2);
     test(getSalle(S, s1_nom) == s1);
+
+    info(afficheSalles(S));
+
+    #ifdef JSON
+    test(strcmp(toStringSalles(S), toStringSalles(sallesParser(getJsonSalles(S)))) == 0);
+    #endif
 
     return 0;
 }

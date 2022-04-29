@@ -3,6 +3,9 @@
 
 #include "enseignant.h"
 #include "horaire.h"
+#ifdef JSON
+#include "jansson.h"
+#endif
 
 typedef struct s_creneau *Creneau;
 
@@ -17,6 +20,10 @@ Horaire getH(Creneau c);
 Enseignant getE(Creneau c);
 char * getF(Creneau c);
 
-
+#ifdef JSON
+Creneau creneauParser(json_t* json_creneau);
+json_t* getJsonCreneau(Creneau c);
+char* toStringCreneau(Creneau c);
+#endif
 
 #endif
