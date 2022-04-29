@@ -33,7 +33,9 @@ Salle salleParser(json_t *json_salle) {
     json_t *value;
     // ? https://jansson.readthedocs.io/en/latest/apiref.html#c.json_array_foreach
     json_array_foreach(json_arr_c, index, value) {
-        ajouterS(s, creneauParser(value));
+        if(!json_is_null(value)) {
+            ajouterS(s, creneauParser(value));
+        }
     }
 
     return s;
@@ -41,41 +43,28 @@ Salle salleParser(json_t *json_salle) {
 #endif
 
 bool isFreeSalle(Salle s, Horaire h){
-    bool b;
-    for (int i=getDebut(h); i<getFin(h); i++){
-        if(s->creneaux[i]==NULL){
-            b=true;
-        }else{
-            b=false;
-        }
+    bool b = true;
+    for (int i=getDebut(h); i<getFin(h) && b; i++){
+        b = s->creneaux[i] == NULL;
     }
     return b;
 }
 
 Salle ajouterS(Salle s, Creneau c){
     if(isFreeSalle(s,getH(c))){
-        // TODO Mihaja check infinite loop
-        for(int i=getDebut(getH(s->creneaux[i])); i<getFin(getH(s->creneaux[i]));i++){
-            s->creneaux[i]=c;
+        for(int i=getDebut(getH(c)); i<getFin(getH(c));i++){
+            s->creneaux[i] = c;
         }
     }
     return s;
 }
 
 bool estVideSalle(Salle s){
-    bool b=true;
-    int i=8;
-    while(i<21 && s->creneaux[i]==NULL){
-        i++;
-    }
-    if(s->creneaux[i]!=NULL){
-        b=false;
-    }
-    return b;
+    return isFreeSalle(s, horaire(8, 20));
 }
 
 Salle supprimerS(Salle s, Horaire h){
-    assert(estVideSalle(s));
+    assert(!estVideSalle(s));
     for(int i=getDebut(h); i<=getFin(h); i++){
         s->creneaux[i]=NULL;
     }
@@ -98,17 +87,19 @@ Creneau* getCreneauS(Salle s){
 
 
 void afficherSalle(Salle s){
-    printf("    Salle%c     \n", s->nom);
-    for(int i=8;i<21;i++){
-        printf("\n");
+    printf("-------\n");
+    printf("Salle : %s\n", s->nom);
+    printf("-------\n\n");
+    for(int i=8;i<20;i++){
+        printf("de ");
+        afficheHoraire(horaire(i, i+1));
         if(s->creneaux[i]==NULL){
-            printf("\n VIDE \n");
+            printf("VIDE");
         }else{
-            afficheHoraire(getH(s->creneaux[i]));
             afficheEnseignant(getE(s->creneaux[i]));
-            printf("%d", getF(s->creneaux[i]));
+            printf("%s", getF(s->creneaux[i]));
         }
-        printf("___");
+        printf("\n\n");
     }
 }
 
@@ -123,6 +114,11 @@ json_t* getJsonSalle(Salle s) {
 
     for(int i = 0; i < 24; i++) {
         json_array_append(json_arr, getJsonCreneau(s->creneaux[i]));
+        if(s->creneaux[i] == NULL) {
+            json_array_append(json_arr, json_null());
+        } else {
+            json_array_append(json_arr, getJsonCreneau(s->creneaux[i]));
+        }
     }
 
     return root;
@@ -170,6 +166,8 @@ int main() {
     info(ajouterS(s,c1));
     test(isFreeSalle(s,h1) == false);
 
+    info(afficherSalle(s));
+
     info(modifierS(s, h1, c2));
 
     test(isFreeSalle(s, h1) == true);
@@ -186,6 +184,8 @@ int main() {
     info(afficherSalle(s));
 
     #ifdef JSON
+    #ifdef JSON
+    info(ajouterS(s,c2));
     test(strcmp(toStringSalle(s), toStringSalle(salleParser(getJsonSalle(s)))) == 0);
     #endif
 

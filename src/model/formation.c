@@ -108,5 +108,3 @@ void afficheFormation(Formation f){
         printf("___");
     }
 }
-
-
