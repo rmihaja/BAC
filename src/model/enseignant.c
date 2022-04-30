@@ -128,8 +128,8 @@ Enseignant setNom(Enseignant e, char* n) {
 }
 
 bool equalsEnseignant(Enseignant e1, Enseignant e2) {
-    return strcmp(e1->nom, e2->nom) == 0
-        && strcmp(e1->matiere, e2->matiere) == 0;
+    return strcmp(getNom(e1), getNom(e2)) == 0
+        && strcmp(getMatiere(e1), getMatiere(e2)) == 0;
 }
 
 

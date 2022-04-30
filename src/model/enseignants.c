@@ -31,8 +31,8 @@
   * @endinternal
   */
 typedef struct s_element_es {
-    Enseignant e;
-    struct s_element_es* suivant;
+    Enseignant e; /*! Référence de Enseignant à stocker */
+    struct s_element_es* suivant; /*! Référence de l'élément suivant */
 }*ElementEs;
 
 /**
@@ -47,8 +47,8 @@ typedef struct s_element_es {
  * @endinternal
  */
 struct s_enseignants {
-    ElementEs sentinelle;
-    int taille;
+    ElementEs sentinelle; /*! Sentinelle de l'objet Enseignants */
+    int taille; /*! Taille de l'objet Enseignants excluant la Sentinelle */
 };
 
 

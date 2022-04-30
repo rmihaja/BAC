@@ -99,7 +99,7 @@ Horaire setFin(Horaire h, int fin);
  *
  * @param h1 Horaire 1 à comparer.
  * @param h2 Horaire 2 à comparer.
- * @return true si Horaire 1 et Horaire 2 possède les mêmes
+ * @return true si Horaire 1 et Horaire 2 possèdent les mêmes
  * attributs Debut et Fin.
  * @return false si un ou plusieurs attributs de Horaire 1
  * et Horaire 2 diffèrent.

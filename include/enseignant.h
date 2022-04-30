@@ -87,7 +87,7 @@ Enseignant setMatiere(Enseignant e, char* matiere);
  *
  * @param e1 Enseignant 1 à comparer.
  * @param e2 Enseignant 2 à comparer.
- * @return true si Enseignant 1 et Enseignant 2 possède les mêmes
+ * @return true si Enseignant 1 et Enseignant 2 possèdent les mêmes
  * attributs Nom et Matiere.
  * @return false si un ou plusieurs attributs de Enseignant 1 et
  * Enseignant 2 diffèrent.
@@ -111,6 +111,5 @@ void afficheEnseignant(Enseignant e);
  * @return Représentation JSON de Enseignant de type char*.
  */
 char* toStringEnseignant(Enseignant e);
-// #endif
 
 #endif
