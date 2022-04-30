@@ -30,7 +30,7 @@ Enseignants enseignants();
  * @brief Construit un nouvel objet Enseignants à partir
  * de sa représentation en objet JSON.
  *
- * @pre Précondition: json_enseignants doit contenir une
+ * @pre json_enseignants doit contenir une
  * clé "enseignants" stockant un tableau de Enseignant.
  *
  * @param json_enseignants Objet JSON de Enseignants.
@@ -70,7 +70,7 @@ Enseignant getEnseignantByMatiere(Enseignants es, char* matiere);
  * @brief Accesseur de la représentation en objet JSON de Enseignants.
  *
  * @param es Référence de Enseignants.
- * @return Objet JSON de de Enseignants de type json_t*.
+ * @return Objet JSON de Enseignants de type json_t*.
  */
 json_t* getJsonEnseignants(Enseignants es);
 
@@ -85,7 +85,7 @@ json_t* getJsonEnseignants(Enseignants es);
 bool appartient(Enseignants es, Enseignant e);
 
 /**
- * @brief ajouter une référence de l'objet Enseignant
+ * @brief Ajoute une référence de l'objet Enseignant
  * à la liste des Enseignants.
  *
  * @pre Enseignants ne doit posséder aucune autre
@@ -93,7 +93,8 @@ bool appartient(Enseignants es, Enseignant e);
  *
  * @param es Référence de Enseignants.
  * @param e Référence de Enseignant à ajouter.
- * @return Enseignants possédant une référence de Enseignant.
+ * @return Enseignants possédant une référence de Enseignant
+ * parmi sa liste de Salle.
  */
 Enseignants ajouterEs(Enseignants es, Enseignant e);
 

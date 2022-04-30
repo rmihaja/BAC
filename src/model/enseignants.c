@@ -32,7 +32,8 @@
   */
 typedef struct s_element_es {
     Enseignant e;                   /*!< Référence de Enseignant à stocker */
-    struct s_element_es* suivant;   /*!< Référence de l'élément suivant */
+    struct s_element_es* suivant;   /*!< Référence de l'élément suivant
+                                         de la liste des Enseignants */
 }*ElementEs;
 
 /**
@@ -40,7 +41,7 @@ typedef struct s_element_es {
  *
  * @struct s_enseignants
  * @details
- * Structure permettant de représenter une liste chaînée d'élément
+ * Structure permettant de représenter une liste chaînée d'éléments
  * contenant un objet Enseignant, avec un accès constant de
  * la tête de liste, à l'aide d'une sentinelle, et de sa taille.
  *
@@ -77,7 +78,7 @@ Enseignants enseignants() {
  *
  * @details
  * Constructeur par défaut de l'objet ElementEs, élément de la liste
- * Enseignants, stockant l'objet Enseignant en paramètre.
+ * Enseignants, stockant l'objet Enseignant passé en paramètre.
  *
  * @endinternal
  */
@@ -126,8 +127,8 @@ Enseignants enseignantsParser(json_t* json_enseignants) {
  *
  * @details
  * Itère parmi la liste des Enseignants jusqu'à trouver
- * un Enseignant dont Nom correspond au paramètre.
- * Sinon renvoie une erreur.
+ * un Enseignant dont l'attribut Nom correspond au paramètre.
+ * Sinon, renvoie une erreur.
  *
  * @endinternal
  */
