@@ -1,13 +1,14 @@
 /**
  * @file enseignant.c
  * @author Mihaja RAZAFIMAHEFA & Ambre ROUZADE
- * @brief Code source de la structure de données Enseignant
+ * @brief Code source de la structure de données Enseignant.
  *
  * @copyright Copyright (c) 2022
  *
  */
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 #include <assert.h>
 #include "enseignant.h"
 
@@ -15,17 +16,23 @@
 #include "tests.h"
 #endif
 
-/**
- * @internal
- *
- * @struct s_enseignant
- * @details
- * Structure permettant de stocker les attributs
- * d'un enseignant sous forme de chaînes de caractères.
- *
- * @endinternal
- *
- */
+
+/************************************************************\
+*                  Structure de Enseignant                   *
+\************************************************************/
+
+ /**
+  * @internal
+  *
+  * @struct s_enseignant
+  * @details
+  * Structure permettant de stocker les attributs
+  * (nom et matière) d'un enseignant sous forme de
+  * chaînes de caractères.
+  *
+  * @endinternal
+  *
+  */
 struct s_enseignant {
     char* nom; /*! Nom de l'objet Enseignant */
     char* matiere; /*! Matiere de l'objet Enseignant */
@@ -55,13 +62,14 @@ Enseignant enseignant(char* n, char* m) {
  * @internal
  *
  * @details
- * Construit l'objet Enseignant en manipulant l'API de jansson.
+ * Construit l'objet Enseignant en manipulant l'API Jansson.
  * Pour cela, à partir d'une recherche par clé (s'il existe),
- * nous pouvons accéder aux attributs (constantes) de Enseignant,
- * que nous construisons ensuite à partir du constructeur par défaut
- * à partir d'un cast.
+ * nous pouvons accéder aux attributs "nom" et "matiere" de Enseignant,
+ * que nous construisons ensuite à l'aide du constructeur
+ * par défaut.
  *
  * @sa [json_object](https://jansson.readthedocs.io/en/latest/apiref.html#object) ,
+ * [json_object_get](https://jansson.readthedocs.io/en/latest/apiref.html#c.json_object_get) ,
  * [json_string](https://jansson.readthedocs.io/en/latest/apiref.html#string)
  *
  * @endinternal
@@ -70,16 +78,13 @@ Enseignant enseignant(char* n, char* m) {
 Enseignant enseignantParser(json_t* json_enseignant) {
     json_t* nom = json_object_get(json_enseignant, "nom");
     json_t* matiere = json_object_get(json_enseignant, "matiere");
-
     assert(json_is_string(nom) && json_is_string(matiere));
-
-    Enseignant e = enseignant((char*)json_string_value(nom), (char*)json_string_value(matiere));
-
-    return e;
+    return enseignant((char*)json_string_value(nom), (char*)json_string_value(matiere));
 }
 
+
 /************************************************************\
-*                      Getters, setters                      *
+*              Getters, setters et opérateurs                *
 \************************************************************/
 
 char* getNom(Enseignant e) {
@@ -90,6 +95,20 @@ char* getMatiere(Enseignant e) {
     return e->matiere;
 }
 
+/**
+ * @internal
+ *
+ * Renvoie la représentation objet JSON de Enseignant
+ * en utilisant l'API Jansson.
+ * Pour cela, on construit un nouvel objet JSON pour ensuite
+ * pouvoir y attacher les attributs clé-valeurs de Enseignant, défini par
+ * "nom" et "matiere".
+ *
+ * @sa [json_object](https://jansson.readthedocs.io/en/latest/apiref.html#object) ,
+ * [json_object_set_new](https://jansson.readthedocs.io/en/latest/apiref.html#c.json_object_set_new)
+ *
+ * @endinternal
+ */
 json_t* getJsonEnseignant(Enseignant e) {
     json_t* root = json_object();
     json_object_set_new(root, "nom", json_string(getNom(e)));
@@ -106,6 +125,12 @@ Enseignant setNom(Enseignant e, char* n) {
     e->nom = n;
     return e;
 }
+
+bool equalsEnseignant(Enseignant e1, Enseignant e2) {
+    return strcmp(e1->nom, e2->nom) == 0
+        && strcmp(e1->matiere, e2->matiere) == 0;
+}
+
 
 /************************************************************\
 *                 Représentations externes                   *
@@ -153,12 +178,12 @@ char* toStringEnseignant(Enseignant e) {
     return str;
 }
 
+
 /************************************************************\
 *               Tests unitaires de Enseignant                *
 \************************************************************/
 
 #ifdef TEST
-#include <string.h>
 
 int main() {
 
@@ -184,11 +209,12 @@ int main() {
     test(getNom(e) == e2_nom);
     test(getMatiere(e) == e2_matiere);
 
+    test(equalsEnseignant(e, e));
+    test(!equalsEnseignant(e, enseignant(e1_nom, e1_matiere)));
+
     info(afficheEnseignant(e)); // "GAILDRAT, Programmation orientée objet"
 
-#ifdef JSON
     test(strcmp(toStringEnseignant(e), toStringEnseignant(enseignantParser(getJsonEnseignant(e)))) == 0);
-#endif
 
     return 0;
 }
