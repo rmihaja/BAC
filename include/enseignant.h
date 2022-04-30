@@ -12,11 +12,11 @@
 #include <stdbool.h>
 #include "jansson.h"
 
-/**
- * @brief Objet Enseignant.
- *
- */
-typedef struct s_enseignant *Enseignant;
+ /**
+  * @brief Objet Enseignant.
+  *
+  */
+typedef struct s_enseignant* Enseignant;
 
 /**
  * @brief Construit un nouvel objet Enseignant avec un Nom
@@ -26,7 +26,7 @@ typedef struct s_enseignant *Enseignant;
  * @param matiere Matière de Enseignant de type char*.
  * @return Instance allouée de Enseignant.
  */
-Enseignant enseignant(char *nom, char *matiere);
+Enseignant enseignant(char* nom, char* matiere);
 
 /**
  * @brief construit un nouvel objet Enseignant à partir de sa
@@ -38,7 +38,7 @@ Enseignant enseignant(char *nom, char *matiere);
  * @param json_enseignant Objet JSON de Enseignant.
  * @return Instance allouée de Enseignant.
  */
-Enseignant enseignantParser(json_t *json_enseignant);
+Enseignant enseignantParser(json_t* json_enseignant);
 
 /**
  * @brief Accesseur de l'objet Nom de Enseignant.
@@ -46,7 +46,7 @@ Enseignant enseignantParser(json_t *json_enseignant);
  * @param e Référence de Enseignant.
  * @return Valeur du Nom de type char*.
  */
-char *getNom(Enseignant e);
+char* getNom(Enseignant e);
 
 /**
  * @brief Accesseur de l'objet Matiere de Enseignant.
@@ -54,7 +54,7 @@ char *getNom(Enseignant e);
  * @param e Référence de Enseignant.
  * @return Valeur de la Matiere de type char*.
  */
-char *getMatiere(Enseignant e);
+char* getMatiere(Enseignant e);
 
 /**
  * @brief Accesseur de la représentation en objet JSON de Enseignant.
@@ -62,7 +62,7 @@ char *getMatiere(Enseignant e);
  * @param e Référence de Enseignant.
  * @return Représentation JSON de Enseignant de type json_t*.
  */
-json_t *getJsonEnseignant(Enseignant e);
+json_t* getJsonEnseignant(Enseignant e);
 
 /**
  * @brief Définie l'objet Nom de Enseignant.
@@ -71,7 +71,7 @@ json_t *getJsonEnseignant(Enseignant e);
  * @param nom Valeur du Nom de type char*.
  * @return Enseignant avec la nouvelle valeur de Nom.
  */
-Enseignant setNom(Enseignant e, char *n);
+Enseignant setNom(Enseignant e, char* n);
 
 /**
  * @brief Définie l'objet Matiere de Enseignant.
@@ -80,7 +80,7 @@ Enseignant setNom(Enseignant e, char *n);
  * @param matiere Valeur de Matière de type char*.
  * @return Enseignant avec la nouvelle valeur de Matiere.
  */
-Enseignant setMatiere(Enseignant e, char *matiere);
+Enseignant setMatiere(Enseignant e, char* matiere);
 
 /**
  * @brief compare deux Enseignant.
@@ -110,7 +110,7 @@ void afficheEnseignant(Enseignant e);
  * @param e Référence de Enseignant.
  * @return Représentation JSON de Enseignant de type char*.
  */
-char *toStringEnseignant(Enseignant e);
+char* toStringEnseignant(Enseignant e);
 // #endif
 
 #endif

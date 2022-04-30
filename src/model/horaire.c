@@ -157,7 +157,7 @@ void affiche1H(int heure) {
  * @endinternal
  */
 void afficheHoraire(Horaire h) {
-    printf("%dh00 à %dh00\n" ,getDebut(h) ,getFin(h));
+    printf("%dh00 à %dh00\n", getDebut(h), getFin(h));
 }
 
 /**

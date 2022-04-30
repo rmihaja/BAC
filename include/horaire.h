@@ -13,11 +13,11 @@
 #include <stdbool.h>
 #include "jansson.h"
 
-/**
- * @brief Objet Horaire.
- *
- */
-typedef struct s_horaire *Horaire;
+ /**
+  * @brief Objet Horaire.
+  *
+  */
+typedef struct s_horaire* Horaire;
 
 /**
  * @brief construit un nouvel objet Horaire avec un Début et une Fin.
