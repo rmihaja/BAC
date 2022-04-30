@@ -33,11 +33,16 @@
   * @endinternal
   */
 struct s_creneau {
-    Enseignant enseignant; /*! Référence de Enseignant de l'objet Creneau */
-    Horaire horaire; /*! Référence de Horaire de l'objet Creneau */
-    char* formation; /*! Formation de l'objet Creneau */
-    char* salle; /*! Salle de l'objet Creneau */
+    Enseignant enseignant;  /*!< Référence de Enseignant de l'objet Creneau */
+    Horaire horaire;        /*!< Référence de Horaire de l'objet Creneau */
+    char* formation;        /*!< Formation de l'objet Creneau */
+    char* salle;            /*!< Salle de l'objet Creneau */
 };
+
+
+/************************************************************\
+*                  Constructeurs de Creneau                  *
+\************************************************************/
 
 /**
  * @internal
@@ -172,9 +177,12 @@ bool equalsCreneau(Creneau c1, Creneau c2) {
  * @details
  * Imprime les attributs de l'objet Creneau en réutilisant l'affichage
  * des objets Enseignant et Horaire, respectant alors le format :
+ *
+ * @code {.txt}
  * Salle Formation
  * NOM, Matiere
  * Horaire
+ * @endcode
  *
  * @sa afficheEnseignant , afficheHoraire
  *

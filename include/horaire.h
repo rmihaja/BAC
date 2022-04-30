@@ -29,7 +29,7 @@ typedef struct s_horaire* Horaire;
  *
  * @param debut Heure de début de Horaire de type int.
  * @param fin Heur de fin de Horaire de type int.
- * @return Instance allouée de Horaire.
+ * @return Nouvelle instance allouée de Horaire.
  */
 Horaire horaire(int debut, int fin);
 
@@ -40,7 +40,7 @@ Horaire horaire(int debut, int fin);
  * @pre json_horaire doit contenir une clé "debut" et "fin".
  *
  * @param json_horaire Objet JSON de Horaire.
- * @return Instance allouée de Horaire .
+ * @return Nouvelle instance allouée de Horaire .
  */
 Horaire horaireParser(json_t* json_horaire);
 

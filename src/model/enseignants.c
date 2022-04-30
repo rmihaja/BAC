@@ -31,8 +31,8 @@
   * @endinternal
   */
 typedef struct s_element_es {
-    Enseignant e; /*! Référence de Enseignant à stocker */
-    struct s_element_es* suivant; /*! Référence de l'élément suivant */
+    Enseignant e;                   /*!< Référence de Enseignant à stocker */
+    struct s_element_es* suivant;   /*!< Référence de l'élément suivant */
 }*ElementEs;
 
 /**
@@ -47,8 +47,8 @@ typedef struct s_element_es {
  * @endinternal
  */
 struct s_enseignants {
-    ElementEs sentinelle; /*! Sentinelle de l'objet Enseignants */
-    int taille; /*! Taille de l'objet Enseignants excluant la Sentinelle */
+    ElementEs sentinelle;           /*!< Sentinelle de l'objet Enseignants */
+    int taille;                     /*!< Taille de l'objet Enseignants excluant la Sentinelle */
 };
 
 
@@ -276,6 +276,8 @@ Enseignants supprimerEs(Enseignants es, Enseignant e) {
  * Enseignant à partir de sa représentation externe sur stdout,
  * précédé d'un tiret.
  * L'impression suit alors le format :
+ *
+ * @code {.txt}
  * ---------------------
  * Liste des enseignants
  * ---------------------
@@ -283,6 +285,7 @@ Enseignants supprimerEs(Enseignants es, Enseignant e) {
  * - NOM, Matiere
  * - NOM, Matiere
  * - NOM, Matiere
+ * @endcode
  *
  * @sa afficheEnseignant
  *

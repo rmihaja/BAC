@@ -22,7 +22,7 @@ typedef struct s_enseignants* Enseignants;
 /**
  * @brief Construit un nouvel objet Enseignants.
  *
- * @return Instance allouée de Enseignants.
+ * @return Nouvelle instance allouée de Enseignants.
  */
 Enseignants enseignants();
 
@@ -34,7 +34,7 @@ Enseignants enseignants();
  * clé "enseignants" stockant un tableau de Enseignant.
  *
  * @param json_enseignants Objet JSON de Enseignants.
- * @return Instance allouée de Enseignants.
+ * @return Nouvelle instance allouée de Enseignants.
  */
 Enseignants enseignantsParser(json_t* json_enseignants);
 
@@ -103,9 +103,9 @@ Enseignants ajouterEs(Enseignants es, Enseignant e);
  *
  * @pre Enseignants ne doit pas être vide.
  *
- * @param e
- * @param es
- * @return Enseignants
+ * @param e Référence de Enseignants.
+ * @param es Référence de Enseignant à supprimer.
+ * @return Enseignants ne possédant aucune référence de Enseignant.
  */
 Enseignants supprimerEs(Enseignants es, Enseignant e);
 

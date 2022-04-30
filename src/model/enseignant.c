@@ -34,8 +34,8 @@
   *
   */
 struct s_enseignant {
-    char* nom; /*! Nom de l'objet Enseignant */
-    char* matiere; /*! Matiere de l'objet Enseignant */
+    char* nom;      /*!< Nom de l'objet Enseignant. */
+    char* matiere;  /*!< Matiere de l'objet Enseignant. */
 };
 
 
@@ -142,7 +142,10 @@ bool equalsEnseignant(Enseignant e1, Enseignant e2) {
  *
  * @details
  * Imprime les attributs de l'objet Enseignant selon le format :
+ *
+ * @code {.txt}
  * NOM, Matiere
+ * @endcode
  *
  * @endinternal
  */

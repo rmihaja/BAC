@@ -20,11 +20,11 @@ typedef struct s_enseignant* Enseignant;
 
 /**
  * @brief Construit un nouvel objet Enseignant avec un Nom
- * et une Matière
+ * et une Matière.
  *
  * @param nom Nom de Enseignant de type char*.
  * @param matiere Matière de Enseignant de type char*.
- * @return Instance allouée de Enseignant.
+ * @return Nouvelle instance allouée de Enseignant.
  */
 Enseignant enseignant(char* nom, char* matiere);
 
@@ -36,7 +36,7 @@ Enseignant enseignant(char* nom, char* matiere);
  * "nom" et "matiere".
  *
  * @param json_enseignant Objet JSON de Enseignant.
- * @return Instance allouée de Enseignant.
+ * @return Nouvelle instance allouée de Enseignant.
  */
 Enseignant enseignantParser(json_t* json_enseignant);
 

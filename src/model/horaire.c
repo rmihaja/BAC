@@ -26,8 +26,8 @@
   * @endinternal
   */
 struct s_horaire {
-    int debut; /*! Heure de début de l'objet Horaire. */
-    int fin; /*! Heure de fin de l'objet Horaire. */
+    int debut; /*!< Heure de début de l'objet Horaire. */
+    int fin; /*!< Heure de fin de l'objet Horaire. */
 };
 
 
@@ -152,7 +152,10 @@ void affiche1H(int heure) {
  *
  * @details
  * Imprime les attributs de l'objet Enseignant selon le format :
- * Debut à Fin (les attributs étant suivi du chaîne de caractère "h00").
+ *
+ * @code {.txt}
+ * Debut à Fin          //< les attributs sont suivis du chaîne de caractères "h00"
+ * @endcode
  *
  * @endinternal
  */

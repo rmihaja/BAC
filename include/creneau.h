@@ -28,7 +28,7 @@ typedef struct s_creneau* Creneau;
  * @param h Horaire du Creneau de type Horaire.
  * @param formation Formation du Creneau de type char*.
  * @param salle Salle du Creneau de type char*.
- * @return Instance allouée du Creneau.
+ * @return Nouvelle instance allouée du Creneau.
  */
 Creneau creneau(Enseignant e, Horaire h, char* formation, char* salle);
 
@@ -40,7 +40,7 @@ Creneau creneau(Enseignant e, Horaire h, char* formation, char* salle);
  * "horaire", "formation", "salle".
  *
  * @param json_creneau Objet JSON du Creneau.
- * @return Instance allouée du Creneau.
+ * @return Nouvelle instance allouée du Creneau.
  */
 Creneau creneauParser(json_t* json_creneau);
 
