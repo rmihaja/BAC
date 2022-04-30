@@ -22,7 +22,7 @@ typedef struct s_horaire* Horaire;
 /**
  * @brief construit un nouvel objet Horaire avec un Début et une Fin.
  *
- * @pre Pré-condition: Debut doit être dans l'intervalle
+ * @pre Debut doit être dans l'intervalle
  * \f$ \llbracket 8, 19 \rrbracket \f$ et Fin doit être dans l'intervalle
  * \f$ \llbracket 9, 20 \rrbracket \f$.
  * Debut et Fin ne doivent pas être égaux.
@@ -37,7 +37,7 @@ Horaire horaire(int debut, int fin);
  * @brief construit un nouvel objet Horaire à partir de sa représentation
  * objet JSON.
  *
- * @pre Precondition: json_horaire doit contenir une clé "debut" et "fin".
+ * @pre json_horaire doit contenir une clé "debut" et "fin".
  *
  * @param json_horaire Objet JSON de Horaire.
  * @return Instance allouée de Horaire .
@@ -64,7 +64,7 @@ int getFin(Horaire h);
  * @brief Accesseur de la représentation en objet JSON de Horaire.
  *
  * @param h Référence de Horaire.
- * @return Représentation JSON de Enseignant de type json_t*.
+ * @return Objet JSON de Enseignant de type json_t*.
  */
 json_t* getJsonHoraire(Horaire h);
 
@@ -119,7 +119,7 @@ void affiche1H(int i);
  * @brief Imprime les attributs de Horaire sur stdout,
  * suivi d'un retour à la ligne.
  *
- * @param h Horaire à afficher.
+ * @param h Référence de Horaire à afficher.
  */
 void afficheHoraire(Horaire h);
 

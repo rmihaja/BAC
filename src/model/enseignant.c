@@ -98,6 +98,7 @@ char* getMatiere(Enseignant e) {
 /**
  * @internal
  *
+ * @details
  * Renvoie la représentation objet JSON de Enseignant
  * en utilisant l'API Jansson.
  * Pour cela, on construit un nouvel objet JSON pour ensuite
@@ -158,7 +159,7 @@ void afficheEnseignant(Enseignant e) {
  * Pour cela, on accède d'abord à la représentation JSON
  * objet pour pouvoir le repasser à l'API.
  * Enfin, avant de renvoyer la chaîne de caractères, il
- * ne faut pas oublier de libérer la mémoire alloué à
+ * ne faut pas oublier de libérer la mémoire allouée à
  * l'objet JSON (à faire manuellement en décrémentant son
  * nombre de référencement).
  *

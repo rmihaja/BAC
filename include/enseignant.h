@@ -29,10 +29,10 @@ typedef struct s_enseignant* Enseignant;
 Enseignant enseignant(char* nom, char* matiere);
 
 /**
- * @brief construit un nouvel objet Enseignant à partir de sa
+ * @brief Construit un nouvel objet Enseignant à partir de sa
  * représentation en objet JSON.
  *
- * @pre Precondition: json_enseignant doit contenir une clé
+ * @pre json_enseignant doit contenir une clé
  * "nom" et "matiere".
  *
  * @param json_enseignant Objet JSON de Enseignant.
@@ -60,7 +60,7 @@ char* getMatiere(Enseignant e);
  * @brief Accesseur de la représentation en objet JSON de Enseignant.
  *
  * @param e Référence de Enseignant.
- * @return Représentation JSON de Enseignant de type json_t*.
+ * @return Objet JSON de Enseignant de type json_t*.
  */
 json_t* getJsonEnseignant(Enseignant e);
 
@@ -99,7 +99,7 @@ bool equalsEnseignant(Enseignant e1, Enseignant e2);
  * @brief Imprime les attributs de Enseignant sur stdout,
  * suivi d'un retour à la ligne.
  *
- * @param e Enseignant à afficher.
+ * @param e Référence de Enseignant à afficher.
  */
 void afficheEnseignant(Enseignant e);
 
