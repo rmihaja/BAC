@@ -10,8 +10,8 @@
 #define __ENSEIGNANTS_H__
 
 #include <stdbool.h>
+#include <jansson.h>
 #include "enseignant.h"
-#include "jansson.h"
 
  /**
   * @brief Objet Enseignants.

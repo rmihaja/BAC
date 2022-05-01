@@ -10,7 +10,7 @@
 #define __SALLES_H__
 
 #include "salle.h"
-#include "jansson.h"
+#include <jansson.h>
 
  /**
   * @brief Objet Salles.

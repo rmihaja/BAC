@@ -10,9 +10,9 @@
 #define __CRENEAU_H__
 
 #include <stdbool.h>
+#include <jansson.h>
 #include "enseignant.h"
 #include "horaire.h"
-#include "jansson.h"
 
  /**
   * @brief Objet Creneau.

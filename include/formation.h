@@ -9,9 +9,9 @@
 #ifndef __FORMATION_H__
 #define __FORMATION_H__
 
-#include "creneau.h"
 #include <stdbool.h>
-#include "jansson.h"
+#include <jansson.h>
+#include "creneau.h"
 
  /**
   * @brief Objet Formation.
