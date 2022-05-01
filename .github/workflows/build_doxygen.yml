@@ -1,0 +1,4 @@
+name: Build Doxygen
+uses: mattnotmitt/doxygen-action@1.8.18
+with:
+    enable-latex: true
