@@ -1,0 +1,242 @@
+\hypertarget{horaire_8c}{}\doxysection{Référence du fichier src/model/horaire.c}
+\label{horaire_8c}\index{src/model/horaire.c@{src/model/horaire.c}}
+
+
+Code source de la structure de données Horaire.  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}horaire.\+h\char`\"{}}\newline
+Graphe des dépendances par inclusion de horaire.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{horaire_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Structures de données}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structs__horaire}{s\+\_\+horaire}}
+\begin{DoxyCompactList}\small\item\em Structure représentant un objet Horaire. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{horaire_8h_a7d15432e6baf86e174c39b8ecb22e529}{Horaire}} \mbox{\hyperlink{horaire_8c_a8658dc60a3913d086540485841e719a8}{horaire}} (int debut, int fin)
+\begin{DoxyCompactList}\small\item\em construit un nouvel objet Horaire avec un Début et une Fin. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{horaire_8h_a7d15432e6baf86e174c39b8ecb22e529}{Horaire}} \mbox{\hyperlink{horaire_8c_abd55c0f4321d91131d5d615dce5362ba}{horaire\+Parser}} (\mbox{\hyperlink{structjson__t}{json\+\_\+t}} $\ast$json\+\_\+horaire)
+\begin{DoxyCompactList}\small\item\em construit un nouvel objet Horaire à partir de sa représentation objet J\+S\+ON. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{horaire_8c_a69c11d1e07aea34dba410667cde75ddc}{get\+Debut}} (\mbox{\hyperlink{horaire_8h_a7d15432e6baf86e174c39b8ecb22e529}{Horaire}} h)
+\begin{DoxyCompactList}\small\item\em Accesseur de l\textquotesingle{}objet Debut de Horaire. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{horaire_8c_adb14833152b31f498085f0605a92777c}{get\+Fin}} (\mbox{\hyperlink{horaire_8h_a7d15432e6baf86e174c39b8ecb22e529}{Horaire}} h)
+\begin{DoxyCompactList}\small\item\em Accesseur de l\textquotesingle{}objet Fin de Horaire. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structjson__t}{json\+\_\+t}} $\ast$ \mbox{\hyperlink{horaire_8c_a23a1b469afe9ac047fd16c3c14bec4cf}{get\+Json\+Horaire}} (\mbox{\hyperlink{horaire_8h_a7d15432e6baf86e174c39b8ecb22e529}{Horaire}} h)
+\begin{DoxyCompactList}\small\item\em Accesseur de la représentation en objet J\+S\+ON de Horaire. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{horaire_8c_a387453dd42f4ee9291ba24007472961b}{duree}} (\mbox{\hyperlink{horaire_8h_a7d15432e6baf86e174c39b8ecb22e529}{Horaire}} h)
+\begin{DoxyCompactList}\small\item\em Calcule la durée d\textquotesingle{}une horaire. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{horaire_8h_a7d15432e6baf86e174c39b8ecb22e529}{Horaire}} \mbox{\hyperlink{horaire_8c_a26ea9540178258360db5c7622e9ffa69}{set\+Debut}} (\mbox{\hyperlink{horaire_8h_a7d15432e6baf86e174c39b8ecb22e529}{Horaire}} h, int debut)
+\begin{DoxyCompactList}\small\item\em Définie l\textquotesingle{}objet Debut de Horaire. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{horaire_8h_a7d15432e6baf86e174c39b8ecb22e529}{Horaire}} \mbox{\hyperlink{horaire_8c_a731c93de7ce69d84edbe70795d321de9}{set\+Fin}} (\mbox{\hyperlink{horaire_8h_a7d15432e6baf86e174c39b8ecb22e529}{Horaire}} h, int fin)
+\begin{DoxyCompactList}\small\item\em Définie l\textquotesingle{}objet Fin de Horaire. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{horaire_8c_a028de36840e3fb1650786ad28c81e8ca}{equals\+Horaire}} (\mbox{\hyperlink{horaire_8h_a7d15432e6baf86e174c39b8ecb22e529}{Horaire}} h1, \mbox{\hyperlink{horaire_8h_a7d15432e6baf86e174c39b8ecb22e529}{Horaire}} h2)
+\begin{DoxyCompactList}\small\item\em compare deux Horaire. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{horaire_8c_adc0a151517dc35dfb2af1bf9607246da}{affiche\+Horaire}} (\mbox{\hyperlink{horaire_8h_a7d15432e6baf86e174c39b8ecb22e529}{Horaire}} h)
+\begin{DoxyCompactList}\small\item\em Imprime les attributs de Horaire sur stdout, suivi d\textquotesingle{}un retour à la ligne. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{horaire_8c_a3cbd04fff5877078d91fc519413f42c1}{to\+String\+Horaire}} (\mbox{\hyperlink{horaire_8h_a7d15432e6baf86e174c39b8ecb22e529}{Horaire}} h)
+\begin{DoxyCompactList}\small\item\em Accesseur de la représentation en chaîne de caractère J\+S\+ON de Horaire. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Code source de la structure de données Horaire. 
+
+\begin{DoxyAuthor}{Auteur}
+Mihaja R\+A\+Z\+A\+F\+I\+M\+A\+H\+E\+FA \& Ambre R\+O\+U\+Z\+A\+DE 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{horaire_8c_adc0a151517dc35dfb2af1bf9607246da}\label{horaire_8c_adc0a151517dc35dfb2af1bf9607246da}} 
+\index{horaire.c@{horaire.c}!afficheHoraire@{afficheHoraire}}
+\index{afficheHoraire@{afficheHoraire}!horaire.c@{horaire.c}}
+\doxysubsubsection{\texorpdfstring{afficheHoraire()}{afficheHoraire()}}
+{\footnotesize\ttfamily void affiche\+Horaire (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{horaire_8h_a7d15432e6baf86e174c39b8ecb22e529}{Horaire}}}]{h }\end{DoxyParamCaption})}
+
+
+
+Imprime les attributs de Horaire sur stdout, suivi d\textquotesingle{}un retour à la ligne. 
+
+Imprime les attributs de l\textquotesingle{}objet Enseignant selon le format \+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{Debut\}h00 à \{Fin\}h00}
+\end{DoxyCode}
+\mbox{\Hypertarget{horaire_8c_a387453dd42f4ee9291ba24007472961b}\label{horaire_8c_a387453dd42f4ee9291ba24007472961b}} 
+\index{horaire.c@{horaire.c}!duree@{duree}}
+\index{duree@{duree}!horaire.c@{horaire.c}}
+\doxysubsubsection{\texorpdfstring{duree()}{duree()}}
+{\footnotesize\ttfamily int duree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{horaire_8h_a7d15432e6baf86e174c39b8ecb22e529}{Horaire}}}]{h }\end{DoxyParamCaption})}
+
+
+
+Calcule la durée d\textquotesingle{}une horaire. 
+
+Calcule $ \vert Fin - Debut \vert $. Mais comme $ Fin \gt Debut $ par construction, on peut alors tout simplement calculer $ Fin - Debut $\mbox{\Hypertarget{horaire_8c_a028de36840e3fb1650786ad28c81e8ca}\label{horaire_8c_a028de36840e3fb1650786ad28c81e8ca}} 
+\index{horaire.c@{horaire.c}!equalsHoraire@{equalsHoraire}}
+\index{equalsHoraire@{equalsHoraire}!horaire.c@{horaire.c}}
+\doxysubsubsection{\texorpdfstring{equalsHoraire()}{equalsHoraire()}}
+{\footnotesize\ttfamily bool equals\+Horaire (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{horaire_8h_a7d15432e6baf86e174c39b8ecb22e529}{Horaire}}}]{h1,  }\item[{\mbox{\hyperlink{horaire_8h_a7d15432e6baf86e174c39b8ecb22e529}{Horaire}}}]{h2 }\end{DoxyParamCaption})}
+
+
+
+compare deux Horaire. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em h1} & Horaire 1 à comparer. \\
+\hline
+{\em h2} & Horaire 2 à comparer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+true si Horaire 1 et Horaire 2 possèdent les mêmes attributs Debut et Fin. 
+
+false si un ou plusieurs attributs de Horaire 1 et Horaire 2 diffèrent. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{horaire_8c_a69c11d1e07aea34dba410667cde75ddc}\label{horaire_8c_a69c11d1e07aea34dba410667cde75ddc}} 
+\index{horaire.c@{horaire.c}!getDebut@{getDebut}}
+\index{getDebut@{getDebut}!horaire.c@{horaire.c}}
+\doxysubsubsection{\texorpdfstring{getDebut()}{getDebut()}}
+{\footnotesize\ttfamily int get\+Debut (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{horaire_8h_a7d15432e6baf86e174c39b8ecb22e529}{Horaire}}}]{h }\end{DoxyParamCaption})}
+
+
+
+Accesseur de l\textquotesingle{}objet Debut de Horaire. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em h} & Référence de Horaire. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Valeur de Debut de type int. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{horaire_8c_adb14833152b31f498085f0605a92777c}\label{horaire_8c_adb14833152b31f498085f0605a92777c}} 
+\index{horaire.c@{horaire.c}!getFin@{getFin}}
+\index{getFin@{getFin}!horaire.c@{horaire.c}}
+\doxysubsubsection{\texorpdfstring{getFin()}{getFin()}}
+{\footnotesize\ttfamily int get\+Fin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{horaire_8h_a7d15432e6baf86e174c39b8ecb22e529}{Horaire}}}]{h }\end{DoxyParamCaption})}
+
+
+
+Accesseur de l\textquotesingle{}objet Fin de Horaire. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em h} & Référence de Horaire. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Valeur de Fin de type int. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{horaire_8c_a23a1b469afe9ac047fd16c3c14bec4cf}\label{horaire_8c_a23a1b469afe9ac047fd16c3c14bec4cf}} 
+\index{horaire.c@{horaire.c}!getJsonHoraire@{getJsonHoraire}}
+\index{getJsonHoraire@{getJsonHoraire}!horaire.c@{horaire.c}}
+\doxysubsubsection{\texorpdfstring{getJsonHoraire()}{getJsonHoraire()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structjson__t}{json\+\_\+t}}$\ast$ get\+Json\+Horaire (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{horaire_8h_a7d15432e6baf86e174c39b8ecb22e529}{Horaire}}}]{h }\end{DoxyParamCaption})}
+
+
+
+Accesseur de la représentation en objet J\+S\+ON de Horaire. 
+
+Renvoie la représentation objet J\+S\+ON de Horaire en utilisant l\textquotesingle{}A\+PI Jansson. Pour cela, on construit un nouvel objet J\+S\+ON pour ensuite pouvoir y attacher les attributs clé-\/valeurs de Horaire, défini par \char`\"{}debut\char`\"{} et \char`\"{}fin\char`\"{}.
+
+\begin{DoxySeeAlso}{Voir également}
+\href{https://jansson.readthedocs.io/en/latest/apiref.html\#object}{\texttt{ json\+\_\+object}} , \href{https://jansson.readthedocs.io/en/latest/apiref.html\#c.json_object_set_new}{\texttt{ json\+\_\+object\+\_\+set\+\_\+new}}
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{horaire_8c_a8658dc60a3913d086540485841e719a8}\label{horaire_8c_a8658dc60a3913d086540485841e719a8}} 
+\index{horaire.c@{horaire.c}!horaire@{horaire}}
+\index{horaire@{horaire}!horaire.c@{horaire.c}}
+\doxysubsubsection{\texorpdfstring{horaire()}{horaire()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{horaire_8h_a7d15432e6baf86e174c39b8ecb22e529}{Horaire}} horaire (\begin{DoxyParamCaption}\item[{int}]{debut,  }\item[{int}]{fin }\end{DoxyParamCaption})}
+
+
+
+construit un nouvel objet Horaire avec un Début et une Fin. 
+
+Constructeur par défaut de l\textquotesingle{}objet Horaire.\mbox{\Hypertarget{horaire_8c_abd55c0f4321d91131d5d615dce5362ba}\label{horaire_8c_abd55c0f4321d91131d5d615dce5362ba}} 
+\index{horaire.c@{horaire.c}!horaireParser@{horaireParser}}
+\index{horaireParser@{horaireParser}!horaire.c@{horaire.c}}
+\doxysubsubsection{\texorpdfstring{horaireParser()}{horaireParser()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{horaire_8h_a7d15432e6baf86e174c39b8ecb22e529}{Horaire}} horaire\+Parser (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structjson__t}{json\+\_\+t}} $\ast$}]{json\+\_\+horaire }\end{DoxyParamCaption})}
+
+
+
+construit un nouvel objet Horaire à partir de sa représentation objet J\+S\+ON. 
+
+Construit l\textquotesingle{}objet Horaire en manipulant l\textquotesingle{}A\+PI Jansson. Pour cela, à partir d\textquotesingle{}une recherche par clé (s\textquotesingle{}il existe), nous pouvons accéder aux attributs \char`\"{}debut\char`\"{} et \char`\"{}fin\char`\"{} de Horaire, que nous construisons ensuite à l\textquotesingle{}aide du constructeur par défaut.
+
+\begin{DoxySeeAlso}{Voir également}
+\href{https://jansson.readthedocs.io/en/latest/apiref.html\#object}{\texttt{ json\+\_\+object}} , \href{https://jansson.readthedocs.io/en/latest/apiref.html\#c.json_object_get}{\texttt{ json\+\_\+object\+\_\+get}} , \href{https://jansson.readthedocs.io/en/latest/apiref.html\#c.json_integer_value}{\texttt{ json\+\_\+integer\+\_\+value}}
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{horaire_8c_a26ea9540178258360db5c7622e9ffa69}\label{horaire_8c_a26ea9540178258360db5c7622e9ffa69}} 
+\index{horaire.c@{horaire.c}!setDebut@{setDebut}}
+\index{setDebut@{setDebut}!horaire.c@{horaire.c}}
+\doxysubsubsection{\texorpdfstring{setDebut()}{setDebut()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{horaire_8h_a7d15432e6baf86e174c39b8ecb22e529}{Horaire}} set\+Debut (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{horaire_8h_a7d15432e6baf86e174c39b8ecb22e529}{Horaire}}}]{h,  }\item[{int}]{debut }\end{DoxyParamCaption})}
+
+
+
+Définie l\textquotesingle{}objet Debut de Horaire. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em h} & Référence de Horaire à modifier. \\
+\hline
+{\em debut} & Valeur de Debut de type int. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Horaire avec la nouvelle valeur de Debut. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{horaire_8c_a731c93de7ce69d84edbe70795d321de9}\label{horaire_8c_a731c93de7ce69d84edbe70795d321de9}} 
+\index{horaire.c@{horaire.c}!setFin@{setFin}}
+\index{setFin@{setFin}!horaire.c@{horaire.c}}
+\doxysubsubsection{\texorpdfstring{setFin()}{setFin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{horaire_8h_a7d15432e6baf86e174c39b8ecb22e529}{Horaire}} set\+Fin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{horaire_8h_a7d15432e6baf86e174c39b8ecb22e529}{Horaire}}}]{h,  }\item[{int}]{fin }\end{DoxyParamCaption})}
+
+
+
+Définie l\textquotesingle{}objet Fin de Horaire. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em h} & Référence de Horaire à modifier. \\
+\hline
+{\em fin} & Valeur de Fin de type int. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Horaire avec la nouvelle valeur de Fin. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{horaire_8c_a3cbd04fff5877078d91fc519413f42c1}\label{horaire_8c_a3cbd04fff5877078d91fc519413f42c1}} 
+\index{horaire.c@{horaire.c}!toStringHoraire@{toStringHoraire}}
+\index{toStringHoraire@{toStringHoraire}!horaire.c@{horaire.c}}
+\doxysubsubsection{\texorpdfstring{toStringHoraire()}{toStringHoraire()}}
+{\footnotesize\ttfamily char$\ast$ to\+String\+Horaire (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{horaire_8h_a7d15432e6baf86e174c39b8ecb22e529}{Horaire}}}]{h }\end{DoxyParamCaption})}
+
+
+
+Accesseur de la représentation en chaîne de caractère J\+S\+ON de Horaire. 
+
+Renvoie la représentation J\+S\+ON en chaîne de caractères de Horaire en utilisant l\textquotesingle{}A\+PI Jansson. Pour cela, on accède d\textquotesingle{}abord à la représentation J\+S\+ON objet pour pouvoir le repasser à l\textquotesingle{}A\+PI. Enfin, avant de renvoyer la chaîne de caractères, il ne faut pas oublier de libérer la mémoire allouée à l\textquotesingle{}objet J\+S\+ON (à faire manuellement en décrémentant son nombre de référencement).
+
+\begin{DoxySeeAlso}{Voir également}
+\href{https://jansson.readthedocs.io/en/latest/apiref.html\#c.json_dumps}{\texttt{ json\+\_\+dumps}} , \href{https://jansson.readthedocs.io/en/latest/apiref.html\#c.json_decref}{\texttt{ json\+\_\+decref}}
+\end{DoxySeeAlso}

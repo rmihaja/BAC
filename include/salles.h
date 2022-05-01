@@ -82,6 +82,17 @@ json_t* getJsonSalles(Salles ss);
 int sizeSalles(Salles ss);
 
 /**
+ * @brief vérifie si Salles possède une référence de
+ * l'objet Salle avec le même nom.
+ *
+ * @param ss Référence de Salles.
+ * @param s Référence de Salle à comparer.
+ * @return true si une Salle de Salles a le même nom que
+ * Salle.
+ */
+bool appartientSalles(Salles ss, Salle s);
+
+/**
  * @brief Ajoute une référence de l'objet Salle à
  * la liste des Salles.
  *
@@ -101,15 +112,27 @@ Salles ajouterSs(Salles ss, Salle s);
  *
  * @param ss Salles à afficher.
  */
-void afficheSalles(Salles ss);
+void afficherSalles(Salles ss);
+
+/**
+ * @brief Imprime le nom de toute Salle de la liste
+ * des Salles sur stdout, précédé de son indice dans la liste
+ * si ordonné, d'un tiret sinon et suivi d'un retour à la ligne.
+ *
+ * @param ss Salles à afficher.
+ * @param isOrdered indique si la liste doit être ordonnée par son indice.
+ *
+ */
+void afficherSallesN(Salles ss, bool isOrdered);
+
 
 /**
  * @brief Accesseur de la représentation en chaîne de caractère
  * JSON de Salles.
  *
- * @param s Référence de Salles.
+ * @param ss Référence de Salles.
  * @return Représentation JSON de Salles de type char*.
  */
-char* toStringSalles(Salles s);
+char* toStringSalles(Salles ss);
 
 #endif

@@ -9,6 +9,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <assert.h>
+#include <string.h>
 #include "enseignants.h"
 
 #ifdef DEBUG
@@ -24,6 +25,7 @@
   * @internal
   *
   * @struct s_element_es
+  * @brief Structure représentant un élément de la liste chaînée Enseignants.
   * @details
   * Structure permettant de stocker un élément de la liste des Enseignants,
   * en stockant la référence de Enseignant puis l'élément suivant.
@@ -40,6 +42,7 @@ typedef struct s_element_es {
  * @internal
  *
  * @struct s_enseignants
+ * @brief Structure représentant une liste chaînée de Enseignant.
  * @details
  * Structure permettant de représenter une liste chaînée d'éléments
  * contenant un objet Enseignant, avec un accès constant de
@@ -106,12 +109,11 @@ ElementEs elementEs(Enseignant e) {
  *
  */
 Enseignants enseignantsParser(json_t* json_enseignants) {
-    json_t* json_arr_e = json_object_get(json_enseignants, "enseignants");
-    assert(json_is_array(json_arr_e));
+    assert(json_is_array(json_enseignants));
     Enseignants es = enseignants();
     size_t index;
     json_t* value;
-    json_array_foreach(json_arr_e, index, value) {
+    json_array_foreach(json_enseignants, index, value) {
         ajouterEs(es, enseignantParser(value));
     }
     return es;
@@ -137,7 +139,7 @@ Enseignant getEnseignantByNom(Enseignants es, char* nom) {
     ElementEs courant = es->sentinelle;
     for (int i = 0; i < sizeEnseignants(es) && !isFound; i++) {
         courant = courant->suivant;
-        isFound = nom == getNom(courant->e);
+        isFound = strcmp(nom, getNom(courant->e)) == 0;
     }
     assert(isFound);
     return courant->e;
@@ -158,7 +160,7 @@ Enseignant getEnseignantByPrenom(Enseignants es, char* prenom) {
     ElementEs courant = es->sentinelle;
     for (int i = 0; i < sizeEnseignants(es) && !isFound; i++) {
         courant = courant->suivant;
-        isFound = prenom == getPrenom(courant->e);
+        isFound = strcmp(prenom, getPrenom(courant->e)) == 0;
     }
     assert(isFound);
     return courant->e;
@@ -167,7 +169,7 @@ Enseignant getEnseignantByPrenom(Enseignants es, char* prenom) {
 Enseignant getEnseignantByIndice(Enseignants es, int indice) {
     assert(0 <= indice && indice < sizeEnseignants(es));
     ElementEs courant = es->sentinelle->suivant;
-    for (int i = 0; i < sizeEnseignants(es); i++) {
+    for (int i = 0; i < indice; i++) {
         courant = courant->suivant;
     }
     return courant->e;
@@ -191,12 +193,10 @@ Enseignant getEnseignantByIndice(Enseignants es, int indice) {
  * @endinternal
  */
 json_t* getJsonEnseignants(Enseignants es) {
-    json_t* root = json_object();
-    json_t* json_arr = json_array();
-    json_object_set_new(root, "enseignants", json_arr);
+    json_t* root = json_array();
     ElementEs courant = es->sentinelle->suivant;
     for (int i = 0; i < sizeEnseignants(es); i++) {
-        json_array_append(json_arr, getJsonEnseignant(courant->e));
+        json_array_append(root, getJsonEnseignant(courant->e));
         courant = courant->suivant;
     }
     return root;
@@ -215,11 +215,11 @@ int sizeEnseignants(Enseignants es) {
  *
  * @endinternal
  */
-bool appartient(Enseignants es, Enseignant e) {
+bool appartientEnseignants(Enseignants es, Enseignant e) {
     bool isEqual = false;
     ElementEs courant = es->sentinelle->suivant;
-    for (int i = 0; i < sizeEnseignants(es); i++) {
-        isEqual = equalsEnseignant(courant->e, e) && !isEqual;
+    for (int i = 0; i < sizeEnseignants(es) && !isEqual; i++) {
+        isEqual = equalsEnseignant(courant->e, e);
         courant = courant->suivant;
     }
     return isEqual;
@@ -229,19 +229,20 @@ bool appartient(Enseignants es, Enseignant e) {
  * @internal
  *
  * @details
- * Vérifie d'abord si Enseignant à ajouter ne fait pas déjà parti
- * de la liste des Enseignants. Si non, alors Enseignant devient
- * la nouvelle tête de liste.
+ * Ajoute Enseignants à la tête de la liste des Enseignants
+ * si Enseignant n'en fait pas encore parti. Si non,
+ * on renvoie une erreur.
+ *
+ * @sa appartientEnseignants
  *
  * @endinternal
  */
 Enseignants ajouterEs(Enseignants es, Enseignant e) {
+    assert(!appartientEnseignants(es, e));
     ElementEs e_es = elementEs(e);
-    if (!appartient(es, e)) {
-        e_es->suivant = es->sentinelle->suivant;
-        es->sentinelle->suivant = e_es;
-        es->taille++;
-    }
+    e_es->suivant = es->sentinelle->suivant;
+    es->sentinelle->suivant = e_es;
+    es->taille++;
     return es;
 }
 
@@ -288,30 +289,35 @@ Enseignants supprimerEs(Enseignants es, Enseignant e) {
  * @details
  * Itère la liste des Enseignants pour pouvoir afficher chaque
  * Enseignant à partir de sa représentation externe sur stdout,
- * précédé d'un tiret.
+ * précédé de son indice dans la liste si l'ordre est paramétré à
+ * True, ou d'un tiret sinon.
  * L'impression suit alors le format :
  *
  * @code {.txt}
- * ---------------------
- * Liste des enseignants
- * ---------------------
- *
  * - {Enseignant}
  * - {Enseignant}
- * - ...
+ * ...
+ * @endcode
+ * ou :
+ * @code {.txt}
+ * 1) {Enseignant}
+ * 2) {Enseignant}
+ * ...
  * @endcode
  *
  * @sa afficheEnseignant
  *
  * @endinternal
  */
-void afficherEnseignants(Enseignants es) {
-    // printf("---------------------\n");
-    // printf("Liste des enseignants\n");
-    // printf("---------------------\n\n");
+void afficherEnseignants(Enseignants es, bool isOrdered) {
     ElementEs courant = es->sentinelle->suivant;
     for (int i = 0; i < sizeEnseignants(es);i++) {
-        printf("- ");
+        if (isOrdered) {
+            printf("%d) ", i + 1);
+        }
+        else {
+            printf("- ");
+        }
         afficheEnseignant(courant->e);
         courant = courant->suivant;
     }
@@ -362,8 +368,8 @@ int main() {
     char* e2_nom = "GAILDRAT";
     char* e1_prenom = "Philippe";
     char* e2_prenom = "Véronique";
-    Enseignant e1 = enseignant(e1_nom, e1_prenom);
-    Enseignant e2 = enseignant(e2_nom, e2_prenom);
+    Enseignant e1 = enseignantCopie(e1_nom, e1_prenom);
+    Enseignant e2 = enseignantCopie(e2_nom, e2_prenom);
 
     // testing
 
@@ -372,18 +378,18 @@ int main() {
     info(ajouterEs(es, e1));
     info(ajouterEs(es, e2));
 
-    test(getEnseignantByNom(es, e2_nom) == e2);
-    test(getEnseignantByPrenom(es, e2_prenom) == e2);
+    test(equalsEnseignant(getEnseignantByNom(es, e2_nom), e2));
+    test(equalsEnseignant(getEnseignantByPrenom(es, e2_prenom), e2));
 
     test(sizeEnseignants(es) == 2);
 
-    test(appartient(es, e1));
+    test(appartientEnseignants(es, e1));
     info(supprimerEs(es, e2));
-    test(!appartient(es, e2));
+    test(!appartientEnseignants(es, e2));
 
     test(sizeEnseignants(es) == 1);
 
-    info(afficherEnseignants(es));
+    info(afficherEnseignants(es, false));
 
     test(strcmp(toStringEnseignants(es), toStringEnseignants(enseignantsParser(getJsonEnseignants(es)))) == 0);
 

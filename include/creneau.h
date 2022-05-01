@@ -22,22 +22,24 @@ typedef struct s_creneau* Creneau;
 
 /**
  * @brief Construit un nouvel objet Creneau avec un objet
- * Enseignant, un objet Horaire, une Formation et une Salle.
+ * Enseignant, un objet Horaire, un Enseignement,
+ * une Formation et une Salle.
  *
  * @param e Enseignant du Creneau de type Enseignant.
  * @param h Horaire du Creneau de type Horaire.
+ * @param enseignement Enseignement du Creneau de type char*.
  * @param formation Formation du Creneau de type char*.
  * @param salle Salle du Creneau de type char*.
  * @return Nouvelle instance allouée du Creneau.
  */
-Creneau creneau(Enseignant e, Horaire h, char* formation, char* salle);
+Creneau creneau(Enseignant e, Horaire h, char* enseignement, char* formation, char* salle);
 
 /**
  * @brief Construit un nouvel objet Creneau à partir
  * de sa représentation en objet JSON.
  *
  * @pre json_creneau doit contenir une clé "enseignant",
- * "horaire", "formation", "salle".
+ * "horaire", "enseignement", "formation", "salle".
  *
  * @param json_creneau Objet JSON du Creneau.
  * @return Nouvelle instance allouée du Creneau.
@@ -59,6 +61,14 @@ Enseignant getCreneauE(Creneau c);
  * @return Référence de Horaire du Creneau.
  */
 Horaire getCreneauH(Creneau c);
+
+/**
+ * @brief Accesseur de l'objet Enseignement du Creneau.
+ *
+ * @param c Référence du Creneau.
+ * @return Valeur de Enseignement de type char*.
+ */
+char* getCreneauENS(Creneau c);
 
 /**
  * @brief Accesseur de l'objet Formation du Creneau.
@@ -101,6 +111,15 @@ Creneau setCreneauE(Enseignant e, Creneau c);
  * @return Creneau avec la nouvelle référence de Horaire.
  */
 Creneau setCreneauH(Horaire h, Creneau c);
+
+/**
+ * @brief Définie l'objet Enseignement du Creneau.
+ *
+ * @param enseignement Valeur de Enseignement de type char*.
+ * @param c Référence du Creneau à modifier.
+ * @return Creneau avec la nouvelle valeur de Enseignement.
+ */
+Creneau setCreneauENS(char* enseignement, Creneau c);
 
 /**
  * @brief Définie l'objet Formation du Creneau.

@@ -9,6 +9,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <assert.h>
+#include <string.h>
 #include "salle.h"
 
 #ifdef DEBUG
@@ -23,6 +24,7 @@
   * @internal
   *
   * @struct s_salle
+  * @brief Structure représentant un objet Salle.
   * @details
   * Structure permettant de stocker l'attribut nom d'une
   * salle, ainsi qu'un tableau de Creneau pour pouvoir stocker les
@@ -32,7 +34,7 @@
   * @endinternal
   */
 struct s_salle {
-    char* nom;              /*!< Nom de l'objet Salle. */
+    char nom[BUFSIZ];       /*!< Nom de l'objet Salle. */
     Creneau creneaux[24];   /*!< Tableau de Créneau de l'objet Salle.
                                 Chaque intervalle d'heure est délimitée par ses indices,
                                 d'où la taille de 24 pour marquer un jour. */
@@ -51,12 +53,17 @@ struct s_salle {
  *
  * @endinternal
  */
-Salle salle(char* n) {
+Salle salle() {
     Salle s = (Salle)malloc(sizeof(struct s_salle));
-    s->nom = n;
     for (int i = 0; i < 24; i++) {
         s->creneaux[i] = NULL;
     }
+    return s;
+}
+
+Salle salleCopie(char* nom) {
+    Salle s = salle();
+    setSalleN(s, nom);
     return s;
 }
 
@@ -83,7 +90,7 @@ Salle salleParser(json_t* json_salle) {
     json_t* nom = json_object_get(json_salle, "nom");
     json_t* json_arr_c = json_object_get(json_salle, "creneaux");
     assert(json_is_string(nom) && json_is_array(json_arr_c));
-    Salle s = salle((char*)json_string_value(nom));
+    Salle s = salleCopie((char*)json_string_value(nom));
     size_t index;
     json_t* value;
     json_array_foreach(json_arr_c, index, value) {
@@ -140,6 +147,11 @@ json_t* getJsonSalle(Salle s) {
         }
     }
     return root;
+}
+
+Salle setSalleN(Salle s, char* nom) {
+    strcpy(s->nom, nom);
+    return s;
 }
 
 /**
@@ -247,9 +259,9 @@ bool isEmptySalle(Salle s) {
  * L'impression suit alors le format :
  *
  * @code {.txt}
- * -------
- * Salle : {Nom de Salle}
- * -------
+ * -----------------
+ * EDT de la Salle : {Nom de Salle}
+ * -----------------
  *
  * de 8h00 à 9h00
  * VIDE                             //< si la référence à l'indice itéré est NULL
@@ -261,14 +273,14 @@ bool isEmptySalle(Salle s) {
  * ...
  * @endcode
  *
- * @sa afficherHoraire , afficheEnseignant , getCreneauE , getCreneauF , Creneau
+ * @sa afficheHoraire , afficheEnseignant , getCreneauE , getCreneauF , Creneau
  *
  * @endinternal
  */
-void afficherSalle(Salle s) {
-    printf("-------\n");
-    printf("Salle : %s\n", s->nom);
-    printf("-------\n\n");
+void afficheSalle(Salle s) {
+    printf("-----------------\n");
+    printf("EDT de la Salle : %s\n", getSalleN(s));
+    printf("-----------------\n\n");
     for (int i = 8;i < 20;i++) {
         printf("de ");
         afficheHoraire(horaire(i, i + 1));
@@ -277,7 +289,7 @@ void afficherSalle(Salle s) {
         }
         else {
             afficheEnseignant(getCreneauE(s->creneaux[i]));
-            printf("%s", getCreneauF(s->creneaux[i]));
+            printf("%s\n%s", getCreneauENS(s->creneaux[i]), getCreneauF(s->creneaux[i]));
         }
         printf("\n\n");
     }
@@ -301,8 +313,8 @@ void afficherSalle(Salle s) {
  *
  * @endinternal
  */
-char* toStringSalle(Salle f) {
-    json_t* json_salle = getJsonSalle(f);
+char* toStringSalle(Salle s) {
+    json_t* json_salle = getJsonSalle(s);
     char* str = json_dumps(json_salle, 0);
 #ifdef DEBUG
     puts(str);
@@ -319,7 +331,6 @@ char* toStringSalle(Salle f) {
 \************************************************************/
 
 #ifdef TEST
-#include <string.h>
 
 int main() {
 
@@ -331,12 +342,12 @@ int main() {
     Horaire h1 = horaire(8, 9);
     Horaire h2 = horaire(15, 17);
 
-    Creneau c1 = creneau(enseignant("TRUILLET", "Structure de données"), h1, "CUPGE", s1_nom);
-    Creneau c2 = creneau(enseignant("GAILDRAT", "Programmation orientée objet"), h2, "CUPGE", s2_nom);
+    Creneau c1 = creneau(enseignantCopie("TRUILLET", "Philippe"), h1, "Structure de données", "CUPGE", s1_nom);
+    Creneau c2 = creneau(enseignantCopie("GAILDRAT", "Véronique"), h2, "Programmation orientée objet", "CUPGE", s2_nom);
 
     // testing
 
-    Salle s = salle(s1_nom);
+    Salle s = salleCopie(s1_nom);
 
     info(ajouterSalleC(s, c2));
     test(isFreeSalle(s, h1) == true);
@@ -344,7 +355,7 @@ int main() {
     info(ajouterSalleC(s, c1));
     test(isFreeSalle(s, h1) == false);
 
-    info(afficherSalle(s));
+    info(afficheSalle(s));
 
     info(modifierSalleHC(s, h1, c2));
 
@@ -359,7 +370,7 @@ int main() {
 
     test(isEmptySalle(s) == true);
 
-    info(afficherSalle(s));
+    info(afficheSalle(s));
 
     info(ajouterSalleC(s, c2));
     test(strcmp(toStringSalle(s), toStringSalle(salleParser(getJsonSalle(s)))) == 0);

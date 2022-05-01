@@ -8,6 +8,7 @@
  */
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 #include <assert.h>
 #include "salles.h"
 
@@ -24,6 +25,7 @@
   * @internal
   *
   * @struct s_element_ss
+  * @brief Structure représentant un élément de la liste chaînée Salles.
   * @details
   * Structure permettant de stocker un élément de la liste des
   * Salles, en stockant la référence de Salle puis l'élément
@@ -41,6 +43,8 @@ typedef struct s_element_ss {
  * @internal
  *
  * @struct s_salles
+ * @brief Structure représentant une liste chaînée de Salle.
+ *
  * @details
  * Structure permettant de représenter une liste chaînée d'éléments
  * contenant un objet Salle, avec un accès constant de la tête de liste,
@@ -107,12 +111,11 @@ ElementSs elementSs(Salle s) {
  *
  */
 Salles sallesParser(json_t* json_salles) {
-    json_t* json_arr_s = json_object_get(json_salles, "salles");
-    assert(json_is_array(json_arr_s));
+    assert(json_is_array(json_salles));
     Salles ss = salles();
     size_t index;
     json_t* value;
-    json_array_foreach(json_arr_s, index, value) {
+    json_array_foreach(json_salles, index, value) {
         ajouterSs(ss, salleParser(value));
     }
     return ss;
@@ -138,7 +141,7 @@ Salle getSalleByNom(Salles ss, char* nom) {
     ElementSs courant = ss->sentinelle;
     for (int i = 0;i < sizeSalles(ss) && !isFound; i++) {
         courant = courant->suivant;
-        isFound = nom == getSalleN(courant->s);
+        isFound = strcmp(nom, getSalleN(courant->s)) == 0;
     }
     assert(isFound);
     return courant->s;
@@ -181,12 +184,10 @@ Salle getSalleByIndice(Salles ss, int indice) {
  * @endinternal
  */
 json_t* getJsonSalles(Salles ss) {
-    json_t* root = json_object();
-    json_t* json_arr = json_array();
-    json_object_set_new(root, "salles", json_arr);
+    json_t* root = json_array();
     ElementSs courant = ss->sentinelle->suivant;
     for (int i = 0; i < sizeSalles(ss); i++) {
-        json_array_append(json_arr, getJsonSalle(courant->s));
+        json_array_append(root, getJsonSalle(courant->s));
         courant = courant->suivant;
     }
     return root;
@@ -200,11 +201,36 @@ int sizeSalles(Salles ss) {
  * @internal
  *
  * @details
- * Ajoute Salle à la tête de la liste des Salles.
+ * Vérifie par itération si un élément Salle de la liste
+ * des Salles est égale à l'objet Salle passé en paramètre.
+ * Deux Salle sont considérés égaux s'ils ont le même nom.
+ *
+ * @endinternal
+ */
+bool appartientSalles(Salles ss, Salle s) {
+    bool isEqual = false;
+    ElementSs courant = ss->sentinelle->suivant;
+    for (int i = 0; i < sizeSalles(ss) && !isEqual; i++) {
+        isEqual = strcmp(getSalleN(courant->s), getSalleN(s)) == 0;
+        courant = courant->suivant;
+    }
+    return isEqual;
+}
+
+/**
+ * @internal
+ *
+ * @details
+ * Ajoute Salle à la tête de la liste des Salles
+ * si Salle n'en fait pas encore parti. Si non,
+ * on renvoie une erreur.
+ *
+ * @sa appartientSalles
  *
  * @endinternal
  */
 Salles ajouterSs(Salles ss, Salle s) {
+    assert(!appartientSalles(ss, s));
     ElementSs e_ss = elementSs(s);
     e_ss->suivant = ss->sentinelle->suivant;
     ss->sentinelle->suivant = e_ss;
@@ -233,14 +259,27 @@ Salles ajouterSs(Salles ss, Salle s) {
  * ...
  * @endcode
  *
- * @sa afficherSalle
+ * @sa afficheSalle
  *
  * @endinternal
  */
-void afficheSalles(Salles ss) {
+void afficherSalles(Salles ss) {
     ElementSs courant = ss->sentinelle->suivant;
     for (int i = 0;i < sizeSalles(ss);i++) {
-        afficherSalle(courant->s);
+        afficheSalle(courant->s);
+        courant = courant->suivant;
+    }
+}
+
+void afficherSallesN(Salles ss, bool isOrdered) {
+    ElementSs courant = ss->sentinelle->suivant;
+    for (int i = 0;i < sizeSalles(ss);i++) {
+        if (isOrdered) {
+            printf("%d) %s\n", i + 1, getSalleN(courant->s));
+        }
+        else {
+            printf("- %s\n", getSalleN(courant->s));
+        }
         courant = courant->suivant;
     }
 }
@@ -280,7 +319,6 @@ char* toStringSalles(Salles ss) {
 \************************************************************/
 
 #ifdef TEST
-#include <string.h>
 
 int main() {
 
@@ -289,8 +327,8 @@ int main() {
     char* s1_nom = "118";
     char* s2_nom = "103";
 
-    Salle s1 = salle(s1_nom);
-    Salle s2 = salle(s2_nom);
+    Salle s1 = salleCopie(s1_nom);
+    Salle s2 = salleCopie(s2_nom);
 
     // testing
 
@@ -299,6 +337,7 @@ int main() {
     // info(getSalleByNom(S, s1_nom)); // devrait produire une erreur
 
     info(ajouterSs(S, s1));
+    test(appartientSalles(S, s1));
     test(getSalleByNom(S, s1_nom) == s1);
     // info(ajouterSs(S, s1)); // devrait produire une erreur
 
@@ -306,9 +345,9 @@ int main() {
     test(getSalleByNom(S, s2_nom) == s2);
     test(getSalleByNom(S, s1_nom) == s1);
 
-    info(afficheSalles(S));
+    info(afficherSalles(S));
 
-    test(strcmp(toStringSalles(S), toStringSalles(sallesParser(getJsonSalles(S)))) == 0);
+    info(toStringSalles(sallesParser(getJsonSalles(S))));
 
     return 0;
 }

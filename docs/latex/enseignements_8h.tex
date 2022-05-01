@@ -1,0 +1,308 @@
+\hypertarget{enseignements_8h}{}\doxysection{Référence du fichier include/enseignements.h}
+\label{enseignements_8h}\index{include/enseignements.h@{include/enseignements.h}}
+
+
+En-\/tête de la struture de données Enseignements.  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$jansson.\+h$>$}\newline
+Graphe des dépendances par inclusion de enseignements.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{enseignements_8h__incl}
+\end{center}
+\end{figure}
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{enseignements_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Définitions de type}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structs__enseignements}{s\+\_\+enseignements}} $\ast$ \mbox{\hyperlink{enseignements_8h_a3a745579c04cf9eac5f2b2041b6c2751}{Enseignements}}
+\begin{DoxyCompactList}\small\item\em Objet Enseignements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{enseignements_8h_a3a745579c04cf9eac5f2b2041b6c2751}{Enseignements}} \mbox{\hyperlink{enseignements_8h_a910d5bf69b2e437e5c47c7db4630212b}{enseignements}} ()
+\begin{DoxyCompactList}\small\item\em Construit un nouvel objet Enseignements. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{enseignements_8h_a3a745579c04cf9eac5f2b2041b6c2751}{Enseignements}} \mbox{\hyperlink{enseignements_8h_acdad3d071d52208e998e37c3f86bf501}{enseignements\+Parser}} (\mbox{\hyperlink{structjson__t}{json\+\_\+t}} $\ast$json\+\_\+enseignements)
+\begin{DoxyCompactList}\small\item\em Construit un nouvel objet Enseignements à partir de sa représentation en objet J\+S\+ON. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{enseignements_8h_aee5a1763b2e5c5a22dcf589aa0b170e6}{get\+Enseignement\+By\+Indice}} (\mbox{\hyperlink{enseignements_8h_a3a745579c04cf9eac5f2b2041b6c2751}{Enseignements}} ens, int indice)
+\begin{DoxyCompactList}\small\item\em Accesseur d\textquotesingle{}un Enseignement à partir de son Indice dans Enseignements. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structjson__t}{json\+\_\+t}} $\ast$ \mbox{\hyperlink{enseignements_8h_ae45cdacd6c8b5a7827bce6e26325359b}{get\+Json\+Enseignements}} (\mbox{\hyperlink{enseignements_8h_a3a745579c04cf9eac5f2b2041b6c2751}{Enseignements}} ens)
+\begin{DoxyCompactList}\small\item\em Accesseur de la représentation en objet J\+S\+ON de Enseignements. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{enseignements_8h_a7b361341ff4cfd4269b7cb6b5d28bbfb}{size\+Enseignements}} (\mbox{\hyperlink{enseignements_8h_a3a745579c04cf9eac5f2b2041b6c2751}{Enseignements}} ens)
+\begin{DoxyCompactList}\small\item\em Accesseur de la taille de Enseignements. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{enseignements_8h_ae3db35e09c2dd0ecc59cdce15a472908}{appartient\+Enseignements}} (\mbox{\hyperlink{enseignements_8h_a3a745579c04cf9eac5f2b2041b6c2751}{Enseignements}} ens, char $\ast$nom)
+\begin{DoxyCompactList}\small\item\em vérifie si Enseignements possède une référence de l\textquotesingle{}objet Enseignement. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{enseignements_8h_a3a745579c04cf9eac5f2b2041b6c2751}{Enseignements}} \mbox{\hyperlink{enseignements_8h_aa20676a740732aea1b9c8726325f70d2}{ajouter\+Ens}} (\mbox{\hyperlink{enseignements_8h_a3a745579c04cf9eac5f2b2041b6c2751}{Enseignements}} ens, char $\ast$nom)
+\begin{DoxyCompactList}\small\item\em Ajoute une référence de l\textquotesingle{}objet Enseignement à la liste des Enseignements. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{enseignements_8h_a3a745579c04cf9eac5f2b2041b6c2751}{Enseignements}} \mbox{\hyperlink{enseignements_8h_ab7b5a3d7c2fc8c17509a9714265553ab}{supprimer\+Ens}} (\mbox{\hyperlink{enseignements_8h_a3a745579c04cf9eac5f2b2041b6c2751}{Enseignements}} ens, char $\ast$nom)
+\begin{DoxyCompactList}\small\item\em Supprime toute référence de l\textquotesingle{}objet Enseignement dans la liste des Enseignements. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{enseignements_8h_a199a1729b33089398ea4a4eb78cb89b4}{afficher\+Enseignements}} (\mbox{\hyperlink{enseignements_8h_a3a745579c04cf9eac5f2b2041b6c2751}{Enseignements}} ens, bool is\+Ordered)
+\begin{DoxyCompactList}\small\item\em Imprime tout Enseignement de la liste des Enseignements sur stdout, suivi d\textquotesingle{}un retour à ligne. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{enseignements_8h_a5aabe67cd422824cab8c959cddbed2dc}{to\+String\+Enseignements}} (\mbox{\hyperlink{enseignements_8h_a3a745579c04cf9eac5f2b2041b6c2751}{Enseignements}} ens)
+\begin{DoxyCompactList}\small\item\em Accesseur de la représentation en chaîne de caractère J\+S\+ON de Enseignements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+En-\/tête de la struture de données Enseignements. 
+
+\begin{DoxyAuthor}{Auteur}
+Mihaja R\+A\+Z\+A\+F\+I\+M\+A\+H\+E\+FA \& Ambre R\+O\+U\+Z\+A\+DE 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Documentation des définitions de type}
+\mbox{\Hypertarget{enseignements_8h_a3a745579c04cf9eac5f2b2041b6c2751}\label{enseignements_8h_a3a745579c04cf9eac5f2b2041b6c2751}} 
+\index{enseignements.h@{enseignements.h}!Enseignements@{Enseignements}}
+\index{Enseignements@{Enseignements}!enseignements.h@{enseignements.h}}
+\doxysubsubsection{\texorpdfstring{Enseignements}{Enseignements}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structs__enseignements}{s\+\_\+enseignements}}$\ast$ \mbox{\hyperlink{enseignements_8h_a3a745579c04cf9eac5f2b2041b6c2751}{Enseignements}}}
+
+
+
+Objet Enseignements. 
+
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{enseignements_8h_a199a1729b33089398ea4a4eb78cb89b4}\label{enseignements_8h_a199a1729b33089398ea4a4eb78cb89b4}} 
+\index{enseignements.h@{enseignements.h}!afficherEnseignements@{afficherEnseignements}}
+\index{afficherEnseignements@{afficherEnseignements}!enseignements.h@{enseignements.h}}
+\doxysubsubsection{\texorpdfstring{afficherEnseignements()}{afficherEnseignements()}}
+{\footnotesize\ttfamily void afficher\+Enseignements (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enseignements_8h_a3a745579c04cf9eac5f2b2041b6c2751}{Enseignements}}}]{ens,  }\item[{bool}]{is\+Ordered }\end{DoxyParamCaption})}
+
+
+
+Imprime tout Enseignement de la liste des Enseignements sur stdout, suivi d\textquotesingle{}un retour à ligne. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ens} & Enseignements à afficher. \\
+\hline
+{\em is\+Ordered} & indique si la liste doit être ordonnée par son indice.\\
+\hline
+\end{DoxyParams}
+Itère la liste des Enseignements pour pouvoir afficher le Nom de chaque Enseignement sur stdout, précédé de son indice dans la liste si l\textquotesingle{}ordre est paramétré à True, ou d\textquotesingle{}un tiret sinon. L\textquotesingle{}impression suit alors le format \+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{-\/ \{Nom de \mbox{\hyperlink{structs__enseignement}{Enseignement}}\}}
+\DoxyCodeLine{-\/ \{Nom de \mbox{\hyperlink{structs__enseignement}{Enseignement}}\}}
+\DoxyCodeLine{...}
+\end{DoxyCode}
+ ou \+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1) \{Nom de \mbox{\hyperlink{structs__enseignement}{Enseignement}}\}}
+\DoxyCodeLine{2) \{Nom de \mbox{\hyperlink{structs__enseignement}{Enseignement}}\}}
+\DoxyCodeLine{...}
+\end{DoxyCode}
+\mbox{\Hypertarget{enseignements_8h_aa20676a740732aea1b9c8726325f70d2}\label{enseignements_8h_aa20676a740732aea1b9c8726325f70d2}} 
+\index{enseignements.h@{enseignements.h}!ajouterEns@{ajouterEns}}
+\index{ajouterEns@{ajouterEns}!enseignements.h@{enseignements.h}}
+\doxysubsubsection{\texorpdfstring{ajouterEns()}{ajouterEns()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{enseignements_8h_a3a745579c04cf9eac5f2b2041b6c2751}{Enseignements}} ajouter\+Ens (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enseignements_8h_a3a745579c04cf9eac5f2b2041b6c2751}{Enseignements}}}]{ens,  }\item[{char $\ast$}]{nom }\end{DoxyParamCaption})}
+
+
+
+Ajoute une référence de l\textquotesingle{}objet Enseignement à la liste des Enseignements. 
+
+\begin{DoxyPrecond}{Précondition}
+Enseignements ne doit posséder aucune autre référence à Enseignement.
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Paramètres}
+{\em ens} & Référence de Enseignements. \\
+\hline
+{\em nom} & Valeur de Enseignement à ajouter de type char$\ast$. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Enseignements possédant une référence de Enseignement parmi sa liste de Salle.
+\end{DoxyReturn}
+Ajoute Enseignements à la tête de la liste des Enseignements si Enseignement n\textquotesingle{}en fait pas encore parti. Si non, on renvoie une erreur.
+
+\begin{DoxySeeAlso}{Voir également}
+\mbox{\hyperlink{enseignements_8c_ae3db35e09c2dd0ecc59cdce15a472908}{appartient\+Enseignements}}
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{enseignements_8h_ae3db35e09c2dd0ecc59cdce15a472908}\label{enseignements_8h_ae3db35e09c2dd0ecc59cdce15a472908}} 
+\index{enseignements.h@{enseignements.h}!appartientEnseignements@{appartientEnseignements}}
+\index{appartientEnseignements@{appartientEnseignements}!enseignements.h@{enseignements.h}}
+\doxysubsubsection{\texorpdfstring{appartientEnseignements()}{appartientEnseignements()}}
+{\footnotesize\ttfamily bool appartient\+Enseignements (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enseignements_8h_a3a745579c04cf9eac5f2b2041b6c2751}{Enseignements}}}]{ens,  }\item[{char $\ast$}]{nom }\end{DoxyParamCaption})}
+
+
+
+vérifie si Enseignements possède une référence de l\textquotesingle{}objet Enseignement. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ens} & Référence de Enseignements. \\
+\hline
+{\em nom} & Valeur de Enseignement de type char$\ast$ à rechercher. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+true si un Enseignement de Enseignements est égale à Enseignement.
+\end{DoxyReturn}
+Vérifie par itération si un Nom de Enseignement de la liste des Enseignements est égale au Nom de Enseignement passé en paramètre.\mbox{\Hypertarget{enseignements_8h_a910d5bf69b2e437e5c47c7db4630212b}\label{enseignements_8h_a910d5bf69b2e437e5c47c7db4630212b}} 
+\index{enseignements.h@{enseignements.h}!enseignements@{enseignements}}
+\index{enseignements@{enseignements}!enseignements.h@{enseignements.h}}
+\doxysubsubsection{\texorpdfstring{enseignements()}{enseignements()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{enseignements_8h_a3a745579c04cf9eac5f2b2041b6c2751}{Enseignements}} enseignements (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construit un nouvel objet Enseignements. 
+
+\begin{DoxyReturn}{Renvoie}
+Nouvelle instance allouée de Enseignements.
+\end{DoxyReturn}
+Constructeur par défaut de l\textquotesingle{}objet Enseignements.\mbox{\Hypertarget{enseignements_8h_acdad3d071d52208e998e37c3f86bf501}\label{enseignements_8h_acdad3d071d52208e998e37c3f86bf501}} 
+\index{enseignements.h@{enseignements.h}!enseignementsParser@{enseignementsParser}}
+\index{enseignementsParser@{enseignementsParser}!enseignements.h@{enseignements.h}}
+\doxysubsubsection{\texorpdfstring{enseignementsParser()}{enseignementsParser()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{enseignements_8h_a3a745579c04cf9eac5f2b2041b6c2751}{Enseignements}} enseignements\+Parser (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structjson__t}{json\+\_\+t}} $\ast$}]{json\+\_\+enseignements }\end{DoxyParamCaption})}
+
+
+
+Construit un nouvel objet Enseignements à partir de sa représentation en objet J\+S\+ON. 
+
+\begin{DoxyPrecond}{Précondition}
+json\+\_\+enseignements doit contenir une clé \char`\"{}enseignements\char`\"{} stockant un tableau de Enseignement.
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Paramètres}
+{\em json\+\_\+enseignements} & Objet J\+S\+ON de Enseignements. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Nouvelle instance allouée de Enseignements.
+\end{DoxyReturn}
+Construit l\textquotesingle{}objet Enseignements en manipulant l\textquotesingle{}A\+PI Jansson. Pour cela, on vérifie d\textquotesingle{}abord que json\+\_\+enseignements est bien un tableau de caractère possédant le nom de chaque Enseignement. On itère alors le tableau pour pouvoir ajouter chaque nom de Enseignement à l\textquotesingle{}objet Enseignements, à partir de la valeur renvoyée par l\textquotesingle{}A\+PI.
+
+\begin{DoxySeeAlso}{Voir également}
+\href{https://jansson.readthedocs.io/en/latest/apiref.html\#string}{\texttt{ json\+\_\+string}} , \href{https://jansson.readthedocs.pio/en/latest/apiref.html\#c.json_array_foreach}{\texttt{ json\+\_\+array\+\_\+foreach}}
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{enseignements_8h_aee5a1763b2e5c5a22dcf589aa0b170e6}\label{enseignements_8h_aee5a1763b2e5c5a22dcf589aa0b170e6}} 
+\index{enseignements.h@{enseignements.h}!getEnseignementByIndice@{getEnseignementByIndice}}
+\index{getEnseignementByIndice@{getEnseignementByIndice}!enseignements.h@{enseignements.h}}
+\doxysubsubsection{\texorpdfstring{getEnseignementByIndice()}{getEnseignementByIndice()}}
+{\footnotesize\ttfamily char$\ast$ get\+Enseignement\+By\+Indice (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enseignements_8h_a3a745579c04cf9eac5f2b2041b6c2751}{Enseignements}}}]{ens,  }\item[{int}]{indice }\end{DoxyParamCaption})}
+
+
+
+Accesseur d\textquotesingle{}un Enseignement à partir de son Indice dans Enseignements. 
+
+\begin{DoxyPrecond}{Précondition}
+Indice doit être positif et strictement inférieur à la taille de la liste. Enseignements ne doit pas être vide.
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Paramètres}
+{\em ens} & Référence de Enseignements. \\
+\hline
+{\em indice} & Indice à laquelle se trouve Enseignement recherchée. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Enseignement à l\textquotesingle{}indice indiquée de type char$\ast$. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{enseignements_8h_ae45cdacd6c8b5a7827bce6e26325359b}\label{enseignements_8h_ae45cdacd6c8b5a7827bce6e26325359b}} 
+\index{enseignements.h@{enseignements.h}!getJsonEnseignements@{getJsonEnseignements}}
+\index{getJsonEnseignements@{getJsonEnseignements}!enseignements.h@{enseignements.h}}
+\doxysubsubsection{\texorpdfstring{getJsonEnseignements()}{getJsonEnseignements()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structjson__t}{json\+\_\+t}}$\ast$ get\+Json\+Enseignements (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enseignements_8h_a3a745579c04cf9eac5f2b2041b6c2751}{Enseignements}}}]{ens }\end{DoxyParamCaption})}
+
+
+
+Accesseur de la représentation en objet J\+S\+ON de Enseignements. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ens} & Référence de Enseignements. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Objet J\+S\+ON de Enseignements de type json\+\_\+t$\ast$.
+\end{DoxyReturn}
+Renvoie la représentation objet J\+S\+ON de Enseignements en utilisant l\textquotesingle{}A\+PI Jansson. Pour cela, on construit un nouvel tableau J\+S\+ON et en itérant la liste des Enseignements, on ajoute à ce tableau l\textquotesingle{}attribut Nom de chaque Enseignement.
+
+\begin{DoxySeeAlso}{Voir également}
+\href{https://jansson.readthedocs.io/en/latest/apiref.html\#string}{\texttt{ json\+\_\+string}} , \href{https://jansson.readthedocs.io/en/latest/apiref.html\#c.json_array}{\texttt{ json\+\_\+array}} , \href{https://jansson.readthedocs.io/en/latest/apiref.html\#c.json_array_append}{\texttt{ json\+\_\+array\+\_\+append}}
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{enseignements_8h_a7b361341ff4cfd4269b7cb6b5d28bbfb}\label{enseignements_8h_a7b361341ff4cfd4269b7cb6b5d28bbfb}} 
+\index{enseignements.h@{enseignements.h}!sizeEnseignements@{sizeEnseignements}}
+\index{sizeEnseignements@{sizeEnseignements}!enseignements.h@{enseignements.h}}
+\doxysubsubsection{\texorpdfstring{sizeEnseignements()}{sizeEnseignements()}}
+{\footnotesize\ttfamily int size\+Enseignements (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enseignements_8h_a3a745579c04cf9eac5f2b2041b6c2751}{Enseignements}}}]{ens }\end{DoxyParamCaption})}
+
+
+
+Accesseur de la taille de Enseignements. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ens} & Référence de Enseignements \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+int Taille de Enseignements de type int. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{enseignements_8h_ab7b5a3d7c2fc8c17509a9714265553ab}\label{enseignements_8h_ab7b5a3d7c2fc8c17509a9714265553ab}} 
+\index{enseignements.h@{enseignements.h}!supprimerEns@{supprimerEns}}
+\index{supprimerEns@{supprimerEns}!enseignements.h@{enseignements.h}}
+\doxysubsubsection{\texorpdfstring{supprimerEns()}{supprimerEns()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{enseignements_8h_a3a745579c04cf9eac5f2b2041b6c2751}{Enseignements}} supprimer\+Ens (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enseignements_8h_a3a745579c04cf9eac5f2b2041b6c2751}{Enseignements}}}]{ens,  }\item[{char $\ast$}]{nom }\end{DoxyParamCaption})}
+
+
+
+Supprime toute référence de l\textquotesingle{}objet Enseignement dans la liste des Enseignements. 
+
+\begin{DoxyPrecond}{Précondition}
+Enseignements ne doit pas être vide.
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Paramètres}
+{\em ens} & Référence de Enseignements. \\
+\hline
+{\em nom} & Valeur de Enseignement à supprimer de type char$\ast$. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Enseignements ne possédant aucune référence de Enseignement.
+\end{DoxyReturn}
+Vérifie d\textquotesingle{}abord que la liste ne soit pas vide. Ensuite, On itère jusqu\textquotesingle{}à ce qu\textquotesingle{}on trouve un élément de la liste des Enseignements dont le Nom de Enseignement stocké est égale à celui en paramètre. Dans ce cas, on l\textquotesingle{}isole de la liste chaînée pour pouvoir libérer sa mémoire. Sinon, aucun élément ne sera supprimé.\mbox{\Hypertarget{enseignements_8h_a5aabe67cd422824cab8c959cddbed2dc}\label{enseignements_8h_a5aabe67cd422824cab8c959cddbed2dc}} 
+\index{enseignements.h@{enseignements.h}!toStringEnseignements@{toStringEnseignements}}
+\index{toStringEnseignements@{toStringEnseignements}!enseignements.h@{enseignements.h}}
+\doxysubsubsection{\texorpdfstring{toStringEnseignements()}{toStringEnseignements()}}
+{\footnotesize\ttfamily char$\ast$ to\+String\+Enseignements (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enseignements_8h_a3a745579c04cf9eac5f2b2041b6c2751}{Enseignements}}}]{ens }\end{DoxyParamCaption})}
+
+
+
+Accesseur de la représentation en chaîne de caractère J\+S\+ON de Enseignements. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em ens} & Référence de Enseignements. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Représentation J\+S\+ON de Enseignements de type char$\ast$.
+\end{DoxyReturn}
+Renvoie la représentation J\+S\+ON en chaîne de caractères de Enseignements en utilisant l\textquotesingle{}A\+PI Jansson. Pour cela, on accède d\textquotesingle{}abord à la représentation J\+S\+ON objet pour pouvoir le repasser à l\textquotesingle{}A\+PI. Enfin, avant de renvoyer la chaîne de caractères, il ne faut pas oublier de libérer la mémoire allouée à l\textquotesingle{}objet J\+S\+ON (à faire manuellement en décrémentant son nombre de référencement).
+
+\begin{DoxySeeAlso}{Voir également}
+\href{https://jansson.readthedocs.io/en/latest/apiref.html\#c.json_dumps}{\texttt{ json\+\_\+dumps}} , \href{https://jansson.readthedocs.io/en/latest/apiref.html\#c.json_decref}{\texttt{ json\+\_\+decref}}
+\end{DoxySeeAlso}

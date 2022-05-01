@@ -1,0 +1,494 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>BAC: Référence du fichier src/model/salles.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">BAC
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5dd65160827af56e6353642206b80129.html">model</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Structures de données</a> &#124;
+<a href="#typedef-members">Définitions de type</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier salles.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Code source de la structure de données Salles.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;assert.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="salles_8h_source.html">salles.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de salles.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="salles_8c__incl.png" border="0" usemap="#src_2model_2salles_8c" alt=""/></div>
+<map name="src_2model_2salles_8c" id="src_2model_2salles_8c">
+<area shape="rect" title="Code source de la structure de données Salles." alt="" coords="303,5,441,32"/>
+<area shape="rect" title=" " alt="" coords="150,453,221,480"/>
+<area shape="rect" title=" " alt="" coords="508,453,575,480"/>
+<area shape="rect" title=" " alt="" coords="337,80,407,107"/>
+<area shape="rect" title=" " alt="" coords="432,80,507,107"/>
+<area shape="rect" href="salles_8h.html" title="En&#45;tête de la structure de données Salles." alt="" coords="240,80,312,107"/>
+<area shape="rect" href="salle_8h.html" title="En&#45;tête de la structure de données Salle." alt="" coords="243,155,309,181"/>
+<area shape="rect" href="jansson_8h_source.html" title=" " alt="" coords="350,379,434,405"/>
+<area shape="rect" title=" " alt="" coords="65,379,148,405"/>
+<area shape="rect" href="creneau_8h.html" title="En&#45;tête de la structure de données Creneau." alt="" coords="233,229,319,256"/>
+<area shape="rect" href="enseignant_8h.html" title="En&#45;tête de la structure de données Enseignant." alt="" coords="248,304,355,331"/>
+<area shape="rect" href="horaire_8h.html" title="En&#45;tête de la structure de données Horaire." alt="" coords="144,304,224,331"/>
+<area shape="rect" title=" " alt="" coords="249,453,324,480"/>
+<area shape="rect" href="jansson__config_8h_source.html" title=" " alt="" coords="348,453,479,480"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Structures de données</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs__element__ss.html">s_element_ss</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure représentant un élément de la liste chaînée Salles.  <a href="structs__element__ss.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs__salles.html">s_salles</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure représentant une liste chaînée de Salle.  <a href="structs__salles.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Définitions de type</h2></td></tr>
+<tr class="memitem:a9b740385ce4e6d7be2a932300934faa6"><td class="memItemLeft" align="right" valign="top"><a id="a9b740385ce4e6d7be2a932300934faa6"></a>
+typedef struct <a class="el" href="structs__element__ss.html">s_element_ss</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>ElementSs</b></td></tr>
+<tr class="separator:a9b740385ce4e6d7be2a932300934faa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:ac02e4f1630510ccd6fdd0c277cafdffb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="salles_8h.html#a3fcdc914e6ca3e80045f4e63a1957377">Salles</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="salles_8c.html#ac02e4f1630510ccd6fdd0c277cafdffb">salles</a> ()</td></tr>
+<tr class="memdesc:ac02e4f1630510ccd6fdd0c277cafdffb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construit un nouvel objet Salles.  <a href="salles_8c.html#ac02e4f1630510ccd6fdd0c277cafdffb">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac02e4f1630510ccd6fdd0c277cafdffb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a207eaa53ab992ad23fdf77d7e6811b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs__element__ss.html">ElementSs</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="salles_8c.html#a2a207eaa53ab992ad23fdf77d7e6811b">elementSs</a> (<a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a> s)</td></tr>
+<tr class="separator:a2a207eaa53ab992ad23fdf77d7e6811b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3886cb9ed8553593ed171d979a460fce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="salles_8h.html#a3fcdc914e6ca3e80045f4e63a1957377">Salles</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="salles_8c.html#a3886cb9ed8553593ed171d979a460fce">sallesParser</a> (<a class="el" href="structjson__t.html">json_t</a> *json_salles)</td></tr>
+<tr class="memdesc:a3886cb9ed8553593ed171d979a460fce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construit un nouvel objet Salles à partir de sa représentation en objet JSON.  <a href="salles_8c.html#a3886cb9ed8553593ed171d979a460fce">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a3886cb9ed8553593ed171d979a460fce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdea96723c8f485a76e3d699ac0b1390"><td class="memItemLeft" align="right" valign="top"><a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="salles_8c.html#abdea96723c8f485a76e3d699ac0b1390">getSalleByNom</a> (<a class="el" href="salles_8h.html#a3fcdc914e6ca3e80045f4e63a1957377">Salles</a> ss, char *nom)</td></tr>
+<tr class="memdesc:abdea96723c8f485a76e3d699ac0b1390"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de l'objet Salle à partir de son Nom parmi la liste des Salles.  <a href="salles_8c.html#abdea96723c8f485a76e3d699ac0b1390">Plus de détails...</a><br /></td></tr>
+<tr class="separator:abdea96723c8f485a76e3d699ac0b1390"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd5c65aab9d59d4750226a4514803a0e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="salles_8c.html#afd5c65aab9d59d4750226a4514803a0e">getSalleByIndice</a> (<a class="el" href="salles_8h.html#a3fcdc914e6ca3e80045f4e63a1957377">Salles</a> ss, int indice)</td></tr>
+<tr class="memdesc:afd5c65aab9d59d4750226a4514803a0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de l'objet Salle à partir de son Indice dans la liste des Salles.  <a href="salles_8c.html#afd5c65aab9d59d4750226a4514803a0e">Plus de détails...</a><br /></td></tr>
+<tr class="separator:afd5c65aab9d59d4750226a4514803a0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7010787930286af027afdff88383450c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structjson__t.html">json_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="salles_8c.html#a7010787930286af027afdff88383450c">getJsonSalles</a> (<a class="el" href="salles_8h.html#a3fcdc914e6ca3e80045f4e63a1957377">Salles</a> ss)</td></tr>
+<tr class="memdesc:a7010787930286af027afdff88383450c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de la représentation en objet JSON de Salles.  <a href="salles_8c.html#a7010787930286af027afdff88383450c">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a7010787930286af027afdff88383450c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40537ff3eb25274577738acbf861f0b6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="salles_8c.html#a40537ff3eb25274577738acbf861f0b6">sizeSalles</a> (<a class="el" href="salles_8h.html#a3fcdc914e6ca3e80045f4e63a1957377">Salles</a> ss)</td></tr>
+<tr class="memdesc:a40537ff3eb25274577738acbf861f0b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de la taille de la liste des Salles.  <a href="salles_8c.html#a40537ff3eb25274577738acbf861f0b6">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a40537ff3eb25274577738acbf861f0b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a324e84d22fd44a6e6b232933aca6edc0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="salles_8c.html#a324e84d22fd44a6e6b232933aca6edc0">appartientSalles</a> (<a class="el" href="salles_8h.html#a3fcdc914e6ca3e80045f4e63a1957377">Salles</a> ss, <a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a> s)</td></tr>
+<tr class="memdesc:a324e84d22fd44a6e6b232933aca6edc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">vérifie si Salles possède une référence de l'objet Salle avec le même nom.  <a href="salles_8c.html#a324e84d22fd44a6e6b232933aca6edc0">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a324e84d22fd44a6e6b232933aca6edc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76a3083fba5f890794ca7435f55c1447"><td class="memItemLeft" align="right" valign="top"><a class="el" href="salles_8h.html#a3fcdc914e6ca3e80045f4e63a1957377">Salles</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="salles_8c.html#a76a3083fba5f890794ca7435f55c1447">ajouterSs</a> (<a class="el" href="salles_8h.html#a3fcdc914e6ca3e80045f4e63a1957377">Salles</a> ss, <a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a> s)</td></tr>
+<tr class="memdesc:a76a3083fba5f890794ca7435f55c1447"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute une référence de l'objet Salle à la liste des Salles.  <a href="salles_8c.html#a76a3083fba5f890794ca7435f55c1447">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a76a3083fba5f890794ca7435f55c1447"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93034d6aceaa66b13bbf9b67ea0086e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="salles_8c.html#a93034d6aceaa66b13bbf9b67ea0086e9">afficherSalles</a> (<a class="el" href="salles_8h.html#a3fcdc914e6ca3e80045f4e63a1957377">Salles</a> ss)</td></tr>
+<tr class="memdesc:a93034d6aceaa66b13bbf9b67ea0086e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imprime toute Salle de la liste des Salles sur stdout, suivi d'un retour à la ligne.  <a href="salles_8c.html#a93034d6aceaa66b13bbf9b67ea0086e9">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a93034d6aceaa66b13bbf9b67ea0086e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad573d69e5414188c49d1ffc91fcd5d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="salles_8c.html#aad573d69e5414188c49d1ffc91fcd5d8">afficherSallesN</a> (<a class="el" href="salles_8h.html#a3fcdc914e6ca3e80045f4e63a1957377">Salles</a> ss, bool isOrdered)</td></tr>
+<tr class="memdesc:aad573d69e5414188c49d1ffc91fcd5d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imprime le nom de toute Salle de la liste des Salles sur stdout, précédé de son indice dans la liste si ordonné, d'un tiret sinon et suivi d'un retour à la ligne.  <a href="salles_8c.html#aad573d69e5414188c49d1ffc91fcd5d8">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aad573d69e5414188c49d1ffc91fcd5d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61f69e19752418a201cc8eacfb9b481a"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="salles_8c.html#a61f69e19752418a201cc8eacfb9b481a">toStringSalles</a> (<a class="el" href="salles_8h.html#a3fcdc914e6ca3e80045f4e63a1957377">Salles</a> ss)</td></tr>
+<tr class="memdesc:a61f69e19752418a201cc8eacfb9b481a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de la représentation en chaîne de caractère JSON de Salles.  <a href="salles_8c.html#a61f69e19752418a201cc8eacfb9b481a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a61f69e19752418a201cc8eacfb9b481a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Code source de la structure de données Salles. </p>
+<dl class="section author"><dt>Auteur</dt><dd>Mihaja RAZAFIMAHEFA &amp; Ambre ROUZADE </dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2022 </dd></dl>
+</div><h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a93034d6aceaa66b13bbf9b67ea0086e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93034d6aceaa66b13bbf9b67ea0086e9">&#9670;&nbsp;</a></span>afficherSalles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void afficherSalles </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="salles_8h.html#a3fcdc914e6ca3e80045f4e63a1957377">Salles</a>&#160;</td>
+          <td class="paramname"><em>ss</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Imprime toute Salle de la liste des Salles sur stdout, suivi d'un retour à la ligne. </p>
+<p>Itère la liste des Salles pour pouvoir afficher chaque Salle à partir de sa représentation externe sur stdout. L'impression suit alors le format :</p>
+<div class="fragment"><div class="line">{<a class="code" href="structs__salle.html">Salle</a>}</div>
+<div class="line"> </div>
+<div class="line">{<a class="code" href="structs__salle.html">Salle</a>}</div>
+<div class="line"> </div>
+<div class="line">...</div>
+</div><!-- fragment --><dl class="section see"><dt>Voir également</dt><dd><a class="el" href="salle_8c.html#a1cb3e935f91451a8c6d741222acf6921" title="Imprime le nom de Salle ainsi que son tableau de Creneau sur stdout, suivi d&#39;un retour à la ligne.">afficheSalle</a></dd></dl>
+
+</div>
+</div>
+<a id="aad573d69e5414188c49d1ffc91fcd5d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad573d69e5414188c49d1ffc91fcd5d8">&#9670;&nbsp;</a></span>afficherSallesN()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void afficherSallesN </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="salles_8h.html#a3fcdc914e6ca3e80045f4e63a1957377">Salles</a>&#160;</td>
+          <td class="paramname"><em>ss</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isOrdered</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Imprime le nom de toute Salle de la liste des Salles sur stdout, précédé de son indice dans la liste si ordonné, d'un tiret sinon et suivi d'un retour à la ligne. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ss</td><td>Salles à afficher. </td></tr>
+    <tr><td class="paramname">isOrdered</td><td>indique si la liste doit être ordonnée par son indice. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a76a3083fba5f890794ca7435f55c1447"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76a3083fba5f890794ca7435f55c1447">&#9670;&nbsp;</a></span>ajouterSs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="salles_8h.html#a3fcdc914e6ca3e80045f4e63a1957377">Salles</a> ajouterSs </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="salles_8h.html#a3fcdc914e6ca3e80045f4e63a1957377">Salles</a>&#160;</td>
+          <td class="paramname"><em>ss</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a>&#160;</td>
+          <td class="paramname"><em>s</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ajoute une référence de l'objet Salle à la liste des Salles. </p>
+<p>Ajoute Salle à la tête de la liste des Salles si Salle n'en fait pas encore parti. Si non, on renvoie une erreur.</p>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="salles_8c.html#a324e84d22fd44a6e6b232933aca6edc0" title="vérifie si Salles possède une référence de l&#39;objet Salle avec le même nom.">appartientSalles</a></dd></dl>
+
+</div>
+</div>
+<a id="a324e84d22fd44a6e6b232933aca6edc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a324e84d22fd44a6e6b232933aca6edc0">&#9670;&nbsp;</a></span>appartientSalles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool appartientSalles </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="salles_8h.html#a3fcdc914e6ca3e80045f4e63a1957377">Salles</a>&#160;</td>
+          <td class="paramname"><em>ss</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a>&#160;</td>
+          <td class="paramname"><em>s</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>vérifie si Salles possède une référence de l'objet Salle avec le même nom. </p>
+<p>Vérifie par itération si un élément Salle de la liste des Salles est égale à l'objet Salle passé en paramètre. Deux Salle sont considérés égaux s'ils ont le même nom.</p>
+
+</div>
+</div>
+<a id="a2a207eaa53ab992ad23fdf77d7e6811b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a207eaa53ab992ad23fdf77d7e6811b">&#9670;&nbsp;</a></span>elementSs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs__element__ss.html">ElementSs</a> elementSs </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a>&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Constructeur par défaut de l'objet ElementSs, élément de la liste Salles, stockant l'objet Salle passé en paramètre.</p>
+
+</div>
+</div>
+<a id="a7010787930286af027afdff88383450c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7010787930286af027afdff88383450c">&#9670;&nbsp;</a></span>getJsonSalles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structjson__t.html">json_t</a>* getJsonSalles </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="salles_8h.html#a3fcdc914e6ca3e80045f4e63a1957377">Salles</a>&#160;</td>
+          <td class="paramname"><em>ss</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur de la représentation en objet JSON de Salles. </p>
+<p>Renvoie la représentation objet JSON de Salles en utilisant l'API Jansson. Pour cela, on construit un nouvel objet JSON et on y attache la clé "salles" qui est un tableau. En itérant ensuite la liste des Salles, on ajoute à ce tableau la représentation objet JSON de chaque Salle.</p>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="salle_8c.html#a55ae6e47c9d774d27de418af1ecb590d" title="Accesseur de la représentation en objet JSON de Salle.">getJsonSalle</a> , <a href="https://jansson.readthedocs.io/en/latest/apiref.html#c.json_array">json_array</a> , <a href="https://jansson.readthedocs.io/en/latest/apiref.html#c.json_array_append">json_array_append</a></dd></dl>
+
+</div>
+</div>
+<a id="afd5c65aab9d59d4750226a4514803a0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd5c65aab9d59d4750226a4514803a0e">&#9670;&nbsp;</a></span>getSalleByIndice()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a> getSalleByIndice </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="salles_8h.html#a3fcdc914e6ca3e80045f4e63a1957377">Salles</a>&#160;</td>
+          <td class="paramname"><em>ss</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>indice</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur de l'objet Salle à partir de son Indice dans la liste des Salles. </p>
+<p>Itère parmi la liste des Salles Indice fois puis renvoie la référence de Salle stockée par l'élément courant.</p>
+
+</div>
+</div>
+<a id="abdea96723c8f485a76e3d699ac0b1390"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdea96723c8f485a76e3d699ac0b1390">&#9670;&nbsp;</a></span>getSalleByNom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a> getSalleByNom </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="salles_8h.html#a3fcdc914e6ca3e80045f4e63a1957377">Salles</a>&#160;</td>
+          <td class="paramname"><em>ss</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>nom</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur de l'objet Salle à partir de son Nom parmi la liste des Salles. </p>
+<p>Itère parmi la liste des Salles jusqu'à trouver une Salle dont l'attribut Nom correspond au paramètre. Sinon, renvoie une erreur.</p>
+
+</div>
+</div>
+<a id="ac02e4f1630510ccd6fdd0c277cafdffb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac02e4f1630510ccd6fdd0c277cafdffb">&#9670;&nbsp;</a></span>salles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="salles_8h.html#a3fcdc914e6ca3e80045f4e63a1957377">Salles</a> salles </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construit un nouvel objet Salles. </p>
+<p>Constructeur par défaut de l'objet Salles.</p>
+
+</div>
+</div>
+<a id="a3886cb9ed8553593ed171d979a460fce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3886cb9ed8553593ed171d979a460fce">&#9670;&nbsp;</a></span>sallesParser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="salles_8h.html#a3fcdc914e6ca3e80045f4e63a1957377">Salles</a> sallesParser </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structjson__t.html">json_t</a> *&#160;</td>
+          <td class="paramname"><em>json_salles</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construit un nouvel objet Salles à partir de sa représentation en objet JSON. </p>
+<p>Construit l'objet Salles en manipulant l'API Jansson. Pour cela, à partir d'une recherche par clé (s'il existe) de "salles", nous pouvons obtenir un tableau de Salle. Ensuite, on itère le tableau pour pouvoir ajouter chaque Salle à l'objet Salles, en faisant chaque fois appel à son constructeur à partir de la valeur renvoyée par l'API.</p>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="salle_8c.html#a1c71efa01bf679e14820b05834540308" title="Construit un nouvel objet Salle à partir de sa représentation en objet JSON.">salleParser</a> , <a href="https://jansson.readthedocs.io/en/latest/apiref.html#c.json_array_foreach">json_array_foreach</a></dd></dl>
+
+</div>
+</div>
+<a id="a40537ff3eb25274577738acbf861f0b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40537ff3eb25274577738acbf861f0b6">&#9670;&nbsp;</a></span>sizeSalles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int sizeSalles </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="salles_8h.html#a3fcdc914e6ca3e80045f4e63a1957377">Salles</a>&#160;</td>
+          <td class="paramname"><em>ss</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur de la taille de la liste des Salles. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ss</td><td>Référence de Salles. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Taille de la liste des Salles de type int. </dd></dl>
+
+</div>
+</div>
+<a id="a61f69e19752418a201cc8eacfb9b481a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61f69e19752418a201cc8eacfb9b481a">&#9670;&nbsp;</a></span>toStringSalles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* toStringSalles </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="salles_8h.html#a3fcdc914e6ca3e80045f4e63a1957377">Salles</a>&#160;</td>
+          <td class="paramname"><em>ss</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur de la représentation en chaîne de caractère JSON de Salles. </p>
+<p>Renvoie la représentation JSON en chaîne de caractères de Salles en utilisant l'API Jansson. Pour cela, on accède d'abord à la représentation JSON objet pour pouvoir le repasser à l'API. Enfin, avant de renvoyer la chaîne de caractères, il ne faut pas oublier de libérer la mémoire allouée à l'objet JSON (à faire manuellement en décrémentant son nombre de référencement).</p>
+<dl class="section see"><dt>Voir également</dt><dd><a href="https://jansson.readthedocs.io/en/latest/apiref.html#c.json_dumps">json_dumps</a> , <a href="https://jansson.readthedocs.io/en/latest/apiref.html#c.json_decref">json_decref</a></dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<div class="ttc" id="astructs__salle_html"><div class="ttname"><a href="structs__salle.html">s_salle</a></div><div class="ttdoc">Structure représentant un objet Salle.</div><div class="ttdef"><b>Definition:</b> salle.c:36</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

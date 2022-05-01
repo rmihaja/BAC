@@ -74,11 +74,12 @@ Enseignant getEnseignantByPrenom(Enseignants es, char* prenom);
  * à la taille de la liste.
  * Enseignants ne doit pas être vide.
  *
- * @param ss Référence de Salles.
- * @param indice Indice à laquelle se trouve la Salle recherchée.
- * @return Nom de la Salle de type char*.
+ * @param es Référence de Enseignants.
+ * @param indice Indice à laquelle se trouve Enseignant recherchée.
+ * @return Enseignant à l'indice indiquée.
  */
 Enseignant getEnseignantByIndice(Enseignants es, int indice);
+
 /**
  * @brief Accesseur de la représentation en objet JSON de Enseignants.
  *
@@ -103,7 +104,7 @@ int sizeEnseignants(Enseignants es);
  * @param e Référence de Enseignant à rechercher.
  * @return true si un Enseignant de Enseignants est égale à Enseignant.
  */
-bool appartient(Enseignants es, Enseignant e);
+bool appartientEnseignants(Enseignants es, Enseignant e);
 
 /**
  * @brief Ajoute une référence de l'objet Enseignant
@@ -115,7 +116,7 @@ bool appartient(Enseignants es, Enseignant e);
  * @param es Référence de Enseignants.
  * @param e Référence de Enseignant à ajouter.
  * @return Enseignants possédant une référence de Enseignant
- * parmi sa liste de Salle.
+ * parmi sa liste de Enseignement.
  */
 Enseignants ajouterEs(Enseignants es, Enseignant e);
 
@@ -136,8 +137,9 @@ Enseignants supprimerEs(Enseignants es, Enseignant e);
  * sur stdout, suivi d'un retour à ligne.
  *
  * @param es Enseignants à afficher.
+ * @param isOrdered indique si la liste doit être ordonnée par son indice.
  */
-void afficherEnseignants(Enseignants es);
+void afficherEnseignants(Enseignants es, bool isOrdered);
 
 /**
  * @brief Accesseur de la représentation en chaîne de caractère

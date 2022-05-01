@@ -1,0 +1,198 @@
+\hypertarget{formations_8c}{}\doxysection{Référence du fichier src/model/formations.c}
+\label{formations_8c}\index{src/model/formations.c@{src/model/formations.c}}
+
+
+Code source de la structure de données Formations.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}formations.\+h\char`\"{}}\newline
+Graphe des dépendances par inclusion de formations.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{formations_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Structures de données}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structs__formations}{s\+\_\+formations}}
+\begin{DoxyCompactList}\small\item\em Structure représentant un tableau de Formation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{formations_8h_a721b09043353162835f38f4980591651}{Formations}} \mbox{\hyperlink{formations_8c_a553871c0732ffc540d738af9b0036607}{formations}} (int taille\+\_\+max)
+\begin{DoxyCompactList}\small\item\em Construit un nouvel objet Formations avec un tableau de Formation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{formations_8h_a721b09043353162835f38f4980591651}{Formations}} \mbox{\hyperlink{formations_8c_ac5e2ed83b461073864c671cd01900750}{formations\+Parser}} (\mbox{\hyperlink{structjson__t}{json\+\_\+t}} $\ast$json\+\_\+formations)
+\begin{DoxyCompactList}\small\item\em Construit un nouvel objet Formation à partir de sa représentation en objet J\+S\+ON. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{formation_8h_afe25e6e58ec3a6c60a6b1a9805b3483a}{Formation}} \mbox{\hyperlink{formations_8c_abb6d550d5c34e37c38c5afde1bc40882}{get\+Formation\+By\+Indice}} (\mbox{\hyperlink{formations_8h_a721b09043353162835f38f4980591651}{Formations}} fs, int indice)
+\begin{DoxyCompactList}\small\item\em Accesseur de l\textquotesingle{}objet Formation à partir de son Indice dans Formations. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structjson__t}{json\+\_\+t}} $\ast$ \mbox{\hyperlink{formations_8c_a4a1dc8720101b5f46db5e29bc34d4384}{get\+Json\+Formations}} (\mbox{\hyperlink{formations_8h_a721b09043353162835f38f4980591651}{Formations}} fs)
+\begin{DoxyCompactList}\small\item\em Accesseur de la représentation en objet J\+S\+ON de Formations. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{formations_8c_a6736f9ff911cefae7356b3359356ab61}{size\+Formations}} (\mbox{\hyperlink{formations_8h_a721b09043353162835f38f4980591651}{Formations}} fs)
+\begin{DoxyCompactList}\small\item\em Accesseur de la taille de Formations. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{formations_8c_a70ee7c2575d45177acb082bfdb4428ca}{appartient\+Formations}} (\mbox{\hyperlink{formations_8h_a721b09043353162835f38f4980591651}{Formations}} fs, char $\ast$nom)
+\item 
+\mbox{\hyperlink{formations_8h_a721b09043353162835f38f4980591651}{Formations}} \mbox{\hyperlink{formations_8c_aec675ad615bcaaaafbf046ed211475e3}{ajouter\+Fs}} (\mbox{\hyperlink{formations_8h_a721b09043353162835f38f4980591651}{Formations}} fs, \mbox{\hyperlink{formation_8h_afe25e6e58ec3a6c60a6b1a9805b3483a}{Formation}} f)
+\begin{DoxyCompactList}\small\item\em Ajoute une référence de l\textquotesingle{}objet Formation à Formations. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{formations_8c_a92da74c233b51e61fad3e4956599bf00}{afficher\+Formations}} (\mbox{\hyperlink{formations_8h_a721b09043353162835f38f4980591651}{Formations}} fs)
+\item 
+void \mbox{\hyperlink{formations_8c_abb6b05d50f3535cc27ff18fea31d4d36}{afficher\+FormationsN}} (\mbox{\hyperlink{formations_8h_a721b09043353162835f38f4980591651}{Formations}} fs, bool is\+Ordered)
+\begin{DoxyCompactList}\small\item\em Imprime le nom de toute Formation de Formations sur stdout, précédé de son indice dans la liste si ordonné, d\textquotesingle{}un tiret sinon et suivi d\textquotesingle{}un retour à la ligne. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Code source de la structure de données Formations. 
+
+\begin{DoxyAuthor}{Auteur}
+Mihaja R\+A\+Z\+A\+F\+I\+M\+A\+H\+E\+FA \& Ambre R\+O\+U\+Z\+A\+DE 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{formations_8c_a92da74c233b51e61fad3e4956599bf00}\label{formations_8c_a92da74c233b51e61fad3e4956599bf00}} 
+\index{formations.c@{formations.c}!afficherFormations@{afficherFormations}}
+\index{afficherFormations@{afficherFormations}!formations.c@{formations.c}}
+\doxysubsubsection{\texorpdfstring{afficherFormations()}{afficherFormations()}}
+{\footnotesize\ttfamily void afficher\+Formations (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{formations_8h_a721b09043353162835f38f4980591651}{Formations}}}]{fs }\end{DoxyParamCaption})}
+
+sa affiche\+Formation\mbox{\Hypertarget{formations_8c_abb6b05d50f3535cc27ff18fea31d4d36}\label{formations_8c_abb6b05d50f3535cc27ff18fea31d4d36}} 
+\index{formations.c@{formations.c}!afficherFormationsN@{afficherFormationsN}}
+\index{afficherFormationsN@{afficherFormationsN}!formations.c@{formations.c}}
+\doxysubsubsection{\texorpdfstring{afficherFormationsN()}{afficherFormationsN()}}
+{\footnotesize\ttfamily void afficher\+FormationsN (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{formations_8h_a721b09043353162835f38f4980591651}{Formations}}}]{fs,  }\item[{bool}]{is\+Ordered }\end{DoxyParamCaption})}
+
+
+
+Imprime le nom de toute Formation de Formations sur stdout, précédé de son indice dans la liste si ordonné, d\textquotesingle{}un tiret sinon et suivi d\textquotesingle{}un retour à la ligne. 
+
+Itère la liste des Enseignements pour pouvoir afficher le Nom de chaque Formation sur stdout, précédé de son indice dans la liste si l\textquotesingle{}ordre est paramétré à True, ou d\textquotesingle{}un tiret sinon. L\textquotesingle{}impression suit alors le format \+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{-\/ \{Nom de \mbox{\hyperlink{structs__formation}{Formation}}\}}
+\DoxyCodeLine{-\/ \{Nom de \mbox{\hyperlink{structs__formation}{Formation}}\}}
+\DoxyCodeLine{...}
+\end{DoxyCode}
+
+
+// ou \+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1) \{Nom de \mbox{\hyperlink{structs__formation}{Formation}}\}}
+\DoxyCodeLine{2) \{Nom de \mbox{\hyperlink{structs__formation}{Formation}}\}}
+\DoxyCodeLine{...}
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{Voir également}
+\mbox{\hyperlink{formation_8c_ae9dc638e438ff6e76bb0c829e1f54c0c}{get\+FormationN}}
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{formations_8c_aec675ad615bcaaaafbf046ed211475e3}\label{formations_8c_aec675ad615bcaaaafbf046ed211475e3}} 
+\index{formations.c@{formations.c}!ajouterFs@{ajouterFs}}
+\index{ajouterFs@{ajouterFs}!formations.c@{formations.c}}
+\doxysubsubsection{\texorpdfstring{ajouterFs()}{ajouterFs()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{formations_8h_a721b09043353162835f38f4980591651}{Formations}} ajouter\+Fs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{formations_8h_a721b09043353162835f38f4980591651}{Formations}}}]{fs,  }\item[{\mbox{\hyperlink{formation_8h_afe25e6e58ec3a6c60a6b1a9805b3483a}{Formation}}}]{f }\end{DoxyParamCaption})}
+
+
+
+Ajoute une référence de l\textquotesingle{}objet Formation à Formations. 
+
+Ajoute Formations à la tête de la liste des Formations si Formation n\textquotesingle{}en fait pas encore parti. Si non, on renvoie une erreur.
+
+\begin{DoxySeeAlso}{Voir également}
+\mbox{\hyperlink{formations_8c_a70ee7c2575d45177acb082bfdb4428ca}{appartient\+Formations}}
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{formations_8c_a70ee7c2575d45177acb082bfdb4428ca}\label{formations_8c_a70ee7c2575d45177acb082bfdb4428ca}} 
+\index{formations.c@{formations.c}!appartientFormations@{appartientFormations}}
+\index{appartientFormations@{appartientFormations}!formations.c@{formations.c}}
+\doxysubsubsection{\texorpdfstring{appartientFormations()}{appartientFormations()}}
+{\footnotesize\ttfamily bool appartient\+Formations (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{formations_8h_a721b09043353162835f38f4980591651}{Formations}}}]{fs,  }\item[{char $\ast$}]{nom }\end{DoxyParamCaption})}
+
+Vérifie par itération si un Nom de Formation de Formations est égale au Nom de Formation passé en paramètre.\mbox{\Hypertarget{formations_8c_a553871c0732ffc540d738af9b0036607}\label{formations_8c_a553871c0732ffc540d738af9b0036607}} 
+\index{formations.c@{formations.c}!formations@{formations}}
+\index{formations@{formations}!formations.c@{formations.c}}
+\doxysubsubsection{\texorpdfstring{formations()}{formations()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{formations_8h_a721b09043353162835f38f4980591651}{Formations}} formations (\begin{DoxyParamCaption}\item[{int}]{taille\+\_\+max }\end{DoxyParamCaption})}
+
+
+
+Construit un nouvel objet Formations avec un tableau de Formation. 
+
+Constructeur par défaut de l\textquotesingle{}objet Formations.\mbox{\Hypertarget{formations_8c_ac5e2ed83b461073864c671cd01900750}\label{formations_8c_ac5e2ed83b461073864c671cd01900750}} 
+\index{formations.c@{formations.c}!formationsParser@{formationsParser}}
+\index{formationsParser@{formationsParser}!formations.c@{formations.c}}
+\doxysubsubsection{\texorpdfstring{formationsParser()}{formationsParser()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{formations_8h_a721b09043353162835f38f4980591651}{Formations}} formations\+Parser (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structjson__t}{json\+\_\+t}} $\ast$}]{json\+\_\+formations }\end{DoxyParamCaption})}
+
+
+
+Construit un nouvel objet Formation à partir de sa représentation en objet J\+S\+ON. 
+
+Construit l\textquotesingle{}objet Formations en manipulant l\textquotesingle{}A\+PI Jansson. Pour cela, à partir d\textquotesingle{}une recherche par clé (s\textquotesingle{}il existe) de \char`\"{}formations\char`\"{}, nous pouvons obtenir un tableau de Formation. Ensuite, on itère le tableau pour pouvoir ajouter chaque Formation à l\textquotesingle{}objet Formations, en faisant chaque fois appel à son constructeur à partir de la valeur renvoyée par l\textquotesingle{}A\+PI.
+
+\begin{DoxySeeAlso}{Voir également}
+\href{https://jansson.readthedocs.io/en/latest/apiref.html\#string}{\texttt{ json\+\_\+string}} , \href{https://jansson.readthedocs.pio/en/latest/apiref.html\#c.json_array_foreach}{\texttt{ json\+\_\+array\+\_\+foreach}}
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{formations_8c_abb6d550d5c34e37c38c5afde1bc40882}\label{formations_8c_abb6d550d5c34e37c38c5afde1bc40882}} 
+\index{formations.c@{formations.c}!getFormationByIndice@{getFormationByIndice}}
+\index{getFormationByIndice@{getFormationByIndice}!formations.c@{formations.c}}
+\doxysubsubsection{\texorpdfstring{getFormationByIndice()}{getFormationByIndice()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{formation_8h_afe25e6e58ec3a6c60a6b1a9805b3483a}{Formation}} get\+Formation\+By\+Indice (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{formations_8h_a721b09043353162835f38f4980591651}{Formations}}}]{fs,  }\item[{int}]{indice }\end{DoxyParamCaption})}
+
+
+
+Accesseur de l\textquotesingle{}objet Formation à partir de son Indice dans Formations. 
+
+\begin{DoxyPrecond}{Précondition}
+Indice doit être positif et strictement inférieur à la taille de la liste. Formations ne doit pas être vide.
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Paramètres}
+{\em fs} & Référence de Formations. \\
+\hline
+{\em indice} & Indice à laquelle se trouve la Formation recherchée. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Formation à l\textquotesingle{}indice indiquée 
+\end{DoxyReturn}
+\mbox{\Hypertarget{formations_8c_a4a1dc8720101b5f46db5e29bc34d4384}\label{formations_8c_a4a1dc8720101b5f46db5e29bc34d4384}} 
+\index{formations.c@{formations.c}!getJsonFormations@{getJsonFormations}}
+\index{getJsonFormations@{getJsonFormations}!formations.c@{formations.c}}
+\doxysubsubsection{\texorpdfstring{getJsonFormations()}{getJsonFormations()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structjson__t}{json\+\_\+t}}$\ast$ get\+Json\+Formations (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{formations_8h_a721b09043353162835f38f4980591651}{Formations}}}]{fs }\end{DoxyParamCaption})}
+
+
+
+Accesseur de la représentation en objet J\+S\+ON de Formations. 
+
+Renvoie la représentation objet J\+S\+ON de Formations en utilisant l\textquotesingle{}A\+PI Jansson. Pour cela, on construit un nouvel tableau J\+S\+ON et en itérant la liste des Formations, on ajoute à ce tableau l\textquotesingle{}attribut Nom de chaque Formation.
+
+\begin{DoxySeeAlso}{Voir également}
+\href{https://jansson.readthedocs.io/en/latest/apiref.html\#string}{\texttt{ json\+\_\+string}} , \href{https://jansson.readthedocs.io/en/latest/apiref.html\#c.json_array}{\texttt{ json\+\_\+array}} , \href{https://jansson.readthedocs.io/en/latest/apiref.html\#c.json_array_append}{\texttt{ json\+\_\+array\+\_\+append}}
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{formations_8c_a6736f9ff911cefae7356b3359356ab61}\label{formations_8c_a6736f9ff911cefae7356b3359356ab61}} 
+\index{formations.c@{formations.c}!sizeFormations@{sizeFormations}}
+\index{sizeFormations@{sizeFormations}!formations.c@{formations.c}}
+\doxysubsubsection{\texorpdfstring{sizeFormations()}{sizeFormations()}}
+{\footnotesize\ttfamily int size\+Formations (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{formations_8h_a721b09043353162835f38f4980591651}{Formations}}}]{fs }\end{DoxyParamCaption})}
+
+
+
+Accesseur de la taille de Formations. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em fs} & Référence de Formations. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Taille de Formations de type int. 
+\end{DoxyReturn}

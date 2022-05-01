@@ -1,0 +1,538 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>BAC: Référence du fichier src/model/enseignants.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">BAC
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5dd65160827af56e6353642206b80129.html">model</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Structures de données</a> &#124;
+<a href="#typedef-members">Définitions de type</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier enseignants.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Code source de la structure de données Enseignants.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;assert.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="enseignants_8h_source.html">enseignants.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de enseignants.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="enseignants_8c__incl.png" border="0" usemap="#src_2model_2enseignants_8c" alt=""/></div>
+<map name="src_2model_2enseignants_8c" id="src_2model_2enseignants_8c">
+<area shape="rect" title="Code source de la structure de données Enseignants." alt="" coords="272,5,452,32"/>
+<area shape="rect" title=" " alt="" coords="5,304,76,331"/>
+<area shape="rect" title=" " alt="" coords="354,304,421,331"/>
+<area shape="rect" title=" " alt="" coords="399,80,474,107"/>
+<area shape="rect" title=" " alt="" coords="499,80,569,107"/>
+<area shape="rect" href="enseignants_8h.html" title="En&#45;tête de la struture de données Enseignants." alt="" coords="188,80,301,107"/>
+<area shape="rect" title=" " alt="" coords="238,229,321,256"/>
+<area shape="rect" href="jansson_8h_source.html" title=" " alt="" coords="121,229,205,256"/>
+<area shape="rect" href="enseignant_8h.html" title="En&#45;tête de la structure de données Enseignant." alt="" coords="167,155,274,181"/>
+<area shape="rect" title=" " alt="" coords="101,304,175,331"/>
+<area shape="rect" href="jansson__config_8h_source.html" title=" " alt="" coords="199,304,330,331"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Structures de données</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs__element__es.html">s_element_es</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure représentant un élément de la liste chaînée Enseignants.  <a href="structs__element__es.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs__enseignants.html">s_enseignants</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure représentant une liste chaînée de Enseignant.  <a href="structs__enseignants.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Définitions de type</h2></td></tr>
+<tr class="memitem:a6ea8cc6be867305673825bc2e18f999b"><td class="memItemLeft" align="right" valign="top"><a id="a6ea8cc6be867305673825bc2e18f999b"></a>
+typedef struct <a class="el" href="structs__element__es.html">s_element_es</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>ElementEs</b></td></tr>
+<tr class="separator:a6ea8cc6be867305673825bc2e18f999b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a816e467e0474815f7181243f0273cf0b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enseignants_8h.html#a522fa8ae991992c4e6d4237f17f5fd3a">Enseignants</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enseignants_8c.html#a816e467e0474815f7181243f0273cf0b">enseignants</a> ()</td></tr>
+<tr class="memdesc:a816e467e0474815f7181243f0273cf0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construit un nouvel objet Enseignants.  <a href="enseignants_8c.html#a816e467e0474815f7181243f0273cf0b">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a816e467e0474815f7181243f0273cf0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1315e95e43926231bfdc1a7d820ec100"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structs__element__es.html">ElementEs</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enseignants_8c.html#a1315e95e43926231bfdc1a7d820ec100">elementEs</a> (<a class="el" href="enseignant_8h.html#ae182509dd066fcbc24384cd848812d78">Enseignant</a> e)</td></tr>
+<tr class="separator:a1315e95e43926231bfdc1a7d820ec100"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63139a8ad525607dd5b4467e9a588baf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enseignants_8h.html#a522fa8ae991992c4e6d4237f17f5fd3a">Enseignants</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enseignants_8c.html#a63139a8ad525607dd5b4467e9a588baf">enseignantsParser</a> (<a class="el" href="structjson__t.html">json_t</a> *json_enseignants)</td></tr>
+<tr class="memdesc:a63139a8ad525607dd5b4467e9a588baf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construit un nouvel objet Enseignants à partir de sa représentation en objet JSON.  <a href="enseignants_8c.html#a63139a8ad525607dd5b4467e9a588baf">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a63139a8ad525607dd5b4467e9a588baf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f45c8897f5811c81be6611e821934f4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enseignant_8h.html#ae182509dd066fcbc24384cd848812d78">Enseignant</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enseignants_8c.html#a7f45c8897f5811c81be6611e821934f4">getEnseignantByNom</a> (<a class="el" href="enseignants_8h.html#a522fa8ae991992c4e6d4237f17f5fd3a">Enseignants</a> es, char *nom)</td></tr>
+<tr class="memdesc:a7f45c8897f5811c81be6611e821934f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de l'objet Enseignant à partir de son Nom parmi la liste des Enseignants.  <a href="enseignants_8c.html#a7f45c8897f5811c81be6611e821934f4">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a7f45c8897f5811c81be6611e821934f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a111ef13d36773e0d4dcba3294ec68d4f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enseignant_8h.html#ae182509dd066fcbc24384cd848812d78">Enseignant</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enseignants_8c.html#a111ef13d36773e0d4dcba3294ec68d4f">getEnseignantByPrenom</a> (<a class="el" href="enseignants_8h.html#a522fa8ae991992c4e6d4237f17f5fd3a">Enseignants</a> es, char *prenom)</td></tr>
+<tr class="memdesc:a111ef13d36773e0d4dcba3294ec68d4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de l'objet Enseignant à partir de sa Prenom parmi la liste des Enseignants.  <a href="enseignants_8c.html#a111ef13d36773e0d4dcba3294ec68d4f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a111ef13d36773e0d4dcba3294ec68d4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab19867af3d2f5fd819e4fc8dd0756617"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enseignant_8h.html#ae182509dd066fcbc24384cd848812d78">Enseignant</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enseignants_8c.html#ab19867af3d2f5fd819e4fc8dd0756617">getEnseignantByIndice</a> (<a class="el" href="enseignants_8h.html#a522fa8ae991992c4e6d4237f17f5fd3a">Enseignants</a> es, int indice)</td></tr>
+<tr class="memdesc:ab19867af3d2f5fd819e4fc8dd0756617"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de l'objet Enseignant à partir de son Indice dans Enseignants.  <a href="enseignants_8c.html#ab19867af3d2f5fd819e4fc8dd0756617">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ab19867af3d2f5fd819e4fc8dd0756617"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92254487ca1dba46a48d4d34522ac8ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structjson__t.html">json_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enseignants_8c.html#a92254487ca1dba46a48d4d34522ac8ec">getJsonEnseignants</a> (<a class="el" href="enseignants_8h.html#a522fa8ae991992c4e6d4237f17f5fd3a">Enseignants</a> es)</td></tr>
+<tr class="memdesc:a92254487ca1dba46a48d4d34522ac8ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de la représentation en objet JSON de Enseignants.  <a href="enseignants_8c.html#a92254487ca1dba46a48d4d34522ac8ec">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a92254487ca1dba46a48d4d34522ac8ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee01b615a2434cc8afd03712b102988c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enseignants_8c.html#aee01b615a2434cc8afd03712b102988c">sizeEnseignants</a> (<a class="el" href="enseignants_8h.html#a522fa8ae991992c4e6d4237f17f5fd3a">Enseignants</a> es)</td></tr>
+<tr class="memdesc:aee01b615a2434cc8afd03712b102988c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de la taille de Enseignants.  <a href="enseignants_8c.html#aee01b615a2434cc8afd03712b102988c">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aee01b615a2434cc8afd03712b102988c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaacb78baaa03edcea41edee0b7d434c6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enseignants_8c.html#aaacb78baaa03edcea41edee0b7d434c6">appartientEnseignants</a> (<a class="el" href="enseignants_8h.html#a522fa8ae991992c4e6d4237f17f5fd3a">Enseignants</a> es, <a class="el" href="enseignant_8h.html#ae182509dd066fcbc24384cd848812d78">Enseignant</a> e)</td></tr>
+<tr class="memdesc:aaacb78baaa03edcea41edee0b7d434c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">vérifie si Enseignants possède une référence de l'objet Enseignant.  <a href="enseignants_8c.html#aaacb78baaa03edcea41edee0b7d434c6">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aaacb78baaa03edcea41edee0b7d434c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdf174f78ae63524710a5f087a89acff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enseignants_8h.html#a522fa8ae991992c4e6d4237f17f5fd3a">Enseignants</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enseignants_8c.html#afdf174f78ae63524710a5f087a89acff">ajouterEs</a> (<a class="el" href="enseignants_8h.html#a522fa8ae991992c4e6d4237f17f5fd3a">Enseignants</a> es, <a class="el" href="enseignant_8h.html#ae182509dd066fcbc24384cd848812d78">Enseignant</a> e)</td></tr>
+<tr class="memdesc:afdf174f78ae63524710a5f087a89acff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute une référence de l'objet Enseignant à la liste des Enseignants.  <a href="enseignants_8c.html#afdf174f78ae63524710a5f087a89acff">Plus de détails...</a><br /></td></tr>
+<tr class="separator:afdf174f78ae63524710a5f087a89acff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d66fd97ec13406af5b9bedd2bb5f528"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enseignants_8h.html#a522fa8ae991992c4e6d4237f17f5fd3a">Enseignants</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enseignants_8c.html#a5d66fd97ec13406af5b9bedd2bb5f528">supprimerEs</a> (<a class="el" href="enseignants_8h.html#a522fa8ae991992c4e6d4237f17f5fd3a">Enseignants</a> es, <a class="el" href="enseignant_8h.html#ae182509dd066fcbc24384cd848812d78">Enseignant</a> e)</td></tr>
+<tr class="memdesc:a5d66fd97ec13406af5b9bedd2bb5f528"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supprime toute référence de l'objet Enseignant dans la liste des Enseignants.  <a href="enseignants_8c.html#a5d66fd97ec13406af5b9bedd2bb5f528">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a5d66fd97ec13406af5b9bedd2bb5f528"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8691fdc4070406770c63a907ad183812"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enseignants_8c.html#a8691fdc4070406770c63a907ad183812">afficherEnseignants</a> (<a class="el" href="enseignants_8h.html#a522fa8ae991992c4e6d4237f17f5fd3a">Enseignants</a> es, bool isOrdered)</td></tr>
+<tr class="memdesc:a8691fdc4070406770c63a907ad183812"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imprime tout Enseignant de la liste des Enseignants sur stdout, suivi d'un retour à ligne.  <a href="enseignants_8c.html#a8691fdc4070406770c63a907ad183812">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a8691fdc4070406770c63a907ad183812"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9901f6ef0fccded4246651fae7bf0764"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="enseignants_8c.html#a9901f6ef0fccded4246651fae7bf0764">toStringEnseignants</a> (<a class="el" href="enseignants_8h.html#a522fa8ae991992c4e6d4237f17f5fd3a">Enseignants</a> es)</td></tr>
+<tr class="memdesc:a9901f6ef0fccded4246651fae7bf0764"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de la représentation en chaîne de caractère JSON de Enseignants.  <a href="enseignants_8c.html#a9901f6ef0fccded4246651fae7bf0764">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a9901f6ef0fccded4246651fae7bf0764"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Code source de la structure de données Enseignants. </p>
+<dl class="section author"><dt>Auteur</dt><dd>Mihaja RAZAFIMAHEFA &amp; Ambre ROUZADE </dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2022 </dd></dl>
+</div><h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a8691fdc4070406770c63a907ad183812"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8691fdc4070406770c63a907ad183812">&#9670;&nbsp;</a></span>afficherEnseignants()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void afficherEnseignants </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enseignants_8h.html#a522fa8ae991992c4e6d4237f17f5fd3a">Enseignants</a>&#160;</td>
+          <td class="paramname"><em>es</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isOrdered</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Imprime tout Enseignant de la liste des Enseignants sur stdout, suivi d'un retour à ligne. </p>
+<p>Itère la liste des Enseignants pour pouvoir afficher chaque Enseignant à partir de sa représentation externe sur stdout, précédé de son indice dans la liste si l'ordre est paramétré à True, ou d'un tiret sinon. L'impression suit alors le format :</p>
+<div class="fragment"><div class="line">- {<a class="code" href="structs__enseignant.html">Enseignant</a>}</div>
+<div class="line">- {<a class="code" href="structs__enseignant.html">Enseignant</a>}</div>
+<div class="line">...</div>
+</div><!-- fragment --><p> ou : </p><div class="fragment"><div class="line">1) {<a class="code" href="structs__enseignant.html">Enseignant</a>}</div>
+<div class="line">2) {<a class="code" href="structs__enseignant.html">Enseignant</a>}</div>
+<div class="line">...</div>
+</div><!-- fragment --><dl class="section see"><dt>Voir également</dt><dd><a class="el" href="enseignant_8c.html#a4c6fa8dfb8876f117cdd731313628665" title="Imprime les attributs de Enseignant sur stdout, suivi d&#39;un retour à la ligne.">afficheEnseignant</a></dd></dl>
+
+</div>
+</div>
+<a id="afdf174f78ae63524710a5f087a89acff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdf174f78ae63524710a5f087a89acff">&#9670;&nbsp;</a></span>ajouterEs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enseignants_8h.html#a522fa8ae991992c4e6d4237f17f5fd3a">Enseignants</a> ajouterEs </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enseignants_8h.html#a522fa8ae991992c4e6d4237f17f5fd3a">Enseignants</a>&#160;</td>
+          <td class="paramname"><em>es</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="enseignant_8h.html#ae182509dd066fcbc24384cd848812d78">Enseignant</a>&#160;</td>
+          <td class="paramname"><em>e</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ajoute une référence de l'objet Enseignant à la liste des Enseignants. </p>
+<p>Ajoute Enseignants à la tête de la liste des Enseignants si Enseignant n'en fait pas encore parti. Si non, on renvoie une erreur.</p>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="enseignants_8c.html#aaacb78baaa03edcea41edee0b7d434c6" title="vérifie si Enseignants possède une référence de l&#39;objet Enseignant.">appartientEnseignants</a></dd></dl>
+
+</div>
+</div>
+<a id="aaacb78baaa03edcea41edee0b7d434c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaacb78baaa03edcea41edee0b7d434c6">&#9670;&nbsp;</a></span>appartientEnseignants()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool appartientEnseignants </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enseignants_8h.html#a522fa8ae991992c4e6d4237f17f5fd3a">Enseignants</a>&#160;</td>
+          <td class="paramname"><em>es</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="enseignant_8h.html#ae182509dd066fcbc24384cd848812d78">Enseignant</a>&#160;</td>
+          <td class="paramname"><em>e</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>vérifie si Enseignants possède une référence de l'objet Enseignant. </p>
+<p>Vérifie par itération si un élément Enseignant de la liste des Enseignants est égale à l'objet Enseignant passé en paramètre.</p>
+
+</div>
+</div>
+<a id="a1315e95e43926231bfdc1a7d820ec100"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1315e95e43926231bfdc1a7d820ec100">&#9670;&nbsp;</a></span>elementEs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structs__element__es.html">ElementEs</a> elementEs </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enseignant_8h.html#ae182509dd066fcbc24384cd848812d78">Enseignant</a>&#160;</td>
+          <td class="paramname"><em>e</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Constructeur par défaut de l'objet ElementEs, élément de la liste Enseignants, stockant l'objet Enseignant passé en paramètre.</p>
+
+</div>
+</div>
+<a id="a816e467e0474815f7181243f0273cf0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a816e467e0474815f7181243f0273cf0b">&#9670;&nbsp;</a></span>enseignants()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enseignants_8h.html#a522fa8ae991992c4e6d4237f17f5fd3a">Enseignants</a> enseignants </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construit un nouvel objet Enseignants. </p>
+<p>Constructeur par défaut de l'objet Enseignants.</p>
+
+</div>
+</div>
+<a id="a63139a8ad525607dd5b4467e9a588baf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63139a8ad525607dd5b4467e9a588baf">&#9670;&nbsp;</a></span>enseignantsParser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enseignants_8h.html#a522fa8ae991992c4e6d4237f17f5fd3a">Enseignants</a> enseignantsParser </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structjson__t.html">json_t</a> *&#160;</td>
+          <td class="paramname"><em>json_enseignants</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construit un nouvel objet Enseignants à partir de sa représentation en objet JSON. </p>
+<p>Construit l'objet Enseignants en manipulant l'API Jansson. Pour cela, à partir d'une recherche par clé (s'il existe) de "enseignants", nous pouvons obtenir un tableau de Enseignant. Ensuite, on itère le tableau pour pouvoir ajouter chaque Enseignant à l'objet Enseignants, en faisant chaque fois appel à son constructeur à partir de la valeur renvoyée par l'API.</p>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="enseignant_8c.html#a2b82719c4bdeb93a5d088c95ad16b95a" title="Construit un nouvel objet Enseignant à partir de sa représentation en objet JSON.">enseignantParser</a> , <a href="https://jansson.readthedocs.io/en/latest/apiref.html#c.json_array_foreach">json_array_foreach</a></dd></dl>
+
+</div>
+</div>
+<a id="ab19867af3d2f5fd819e4fc8dd0756617"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab19867af3d2f5fd819e4fc8dd0756617">&#9670;&nbsp;</a></span>getEnseignantByIndice()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enseignant_8h.html#ae182509dd066fcbc24384cd848812d78">Enseignant</a> getEnseignantByIndice </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enseignants_8h.html#a522fa8ae991992c4e6d4237f17f5fd3a">Enseignants</a>&#160;</td>
+          <td class="paramname"><em>es</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>indice</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur de l'objet Enseignant à partir de son Indice dans Enseignants. </p>
+<dl class="section pre"><dt>Précondition</dt><dd>Indice doit être positif et strictement inférieur à la taille de la liste. Enseignants ne doit pas être vide.</dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">es</td><td>Référence de Enseignants. </td></tr>
+    <tr><td class="paramname">indice</td><td>Indice à laquelle se trouve Enseignant recherchée. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Enseignant à l'indice indiquée. </dd></dl>
+
+</div>
+</div>
+<a id="a7f45c8897f5811c81be6611e821934f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f45c8897f5811c81be6611e821934f4">&#9670;&nbsp;</a></span>getEnseignantByNom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enseignant_8h.html#ae182509dd066fcbc24384cd848812d78">Enseignant</a> getEnseignantByNom </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enseignants_8h.html#a522fa8ae991992c4e6d4237f17f5fd3a">Enseignants</a>&#160;</td>
+          <td class="paramname"><em>es</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>nom</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur de l'objet Enseignant à partir de son Nom parmi la liste des Enseignants. </p>
+<p>Itère parmi la liste des Enseignants jusqu'à trouver un Enseignant dont l'attribut Nom correspond au paramètre. Sinon, renvoie une erreur.</p>
+
+</div>
+</div>
+<a id="a111ef13d36773e0d4dcba3294ec68d4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a111ef13d36773e0d4dcba3294ec68d4f">&#9670;&nbsp;</a></span>getEnseignantByPrenom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enseignant_8h.html#ae182509dd066fcbc24384cd848812d78">Enseignant</a> getEnseignantByPrenom </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enseignants_8h.html#a522fa8ae991992c4e6d4237f17f5fd3a">Enseignants</a>&#160;</td>
+          <td class="paramname"><em>es</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>prenom</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur de l'objet Enseignant à partir de sa Prenom parmi la liste des Enseignants. </p>
+<p>Itère parmi la liste des Enseignants jusqu'à trouver un Enseignant dont Prenom correspond au paramètre. Sinon renvoie une erreur.</p>
+
+</div>
+</div>
+<a id="a92254487ca1dba46a48d4d34522ac8ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92254487ca1dba46a48d4d34522ac8ec">&#9670;&nbsp;</a></span>getJsonEnseignants()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structjson__t.html">json_t</a>* getJsonEnseignants </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enseignants_8h.html#a522fa8ae991992c4e6d4237f17f5fd3a">Enseignants</a>&#160;</td>
+          <td class="paramname"><em>es</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur de la représentation en objet JSON de Enseignants. </p>
+<p>Renvoie la représentation objet JSON de Enseignants en utilisant l'API Jansson. Pour cela, on construit un nouvel objet JSON et on y attache la clé "enseignants" qui est un tableau. En itérant ensuite la liste des Enseignants, on ajoute à ce tableau la représentation objet JSON de chaque Enseignant.</p>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="enseignant_8c.html#a0164bead94355301e2adbfb30b5c8d1e" title="Accesseur de la représentation en objet JSON de Enseignant.">getJsonEnseignant</a> , <a href="https://jansson.readthedocs.io/en/latest/apiref.html#c.json_array">json_array</a> , <a href="https://jansson.readthedocs.io/en/latest/apiref.html#c.json_array_append">json_array_append</a></dd></dl>
+
+</div>
+</div>
+<a id="aee01b615a2434cc8afd03712b102988c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee01b615a2434cc8afd03712b102988c">&#9670;&nbsp;</a></span>sizeEnseignants()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int sizeEnseignants </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enseignants_8h.html#a522fa8ae991992c4e6d4237f17f5fd3a">Enseignants</a>&#160;</td>
+          <td class="paramname"><em>es</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur de la taille de Enseignants. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">es</td><td>Référence de Enseignants </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>int Taille de Enseignants de type int. </dd></dl>
+
+</div>
+</div>
+<a id="a5d66fd97ec13406af5b9bedd2bb5f528"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d66fd97ec13406af5b9bedd2bb5f528">&#9670;&nbsp;</a></span>supprimerEs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enseignants_8h.html#a522fa8ae991992c4e6d4237f17f5fd3a">Enseignants</a> supprimerEs </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enseignants_8h.html#a522fa8ae991992c4e6d4237f17f5fd3a">Enseignants</a>&#160;</td>
+          <td class="paramname"><em>es</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="enseignant_8h.html#ae182509dd066fcbc24384cd848812d78">Enseignant</a>&#160;</td>
+          <td class="paramname"><em>e</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Supprime toute référence de l'objet Enseignant dans la liste des Enseignants. </p>
+<p>Vérifie d'abord que la liste ne soit pas vide. Ensuite, On itère jusqu'à ce qu'on trouve un élément de la liste des Enseignants dont l'objet Enseignant stocké est égale à celui en paramètre. Dans ce cas, on l'isole de la liste chaînée pour pouvoir libérer sa mémoire. Sinon, aucun élément ne sera supprimé.</p>
+
+</div>
+</div>
+<a id="a9901f6ef0fccded4246651fae7bf0764"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9901f6ef0fccded4246651fae7bf0764">&#9670;&nbsp;</a></span>toStringEnseignants()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* toStringEnseignants </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enseignants_8h.html#a522fa8ae991992c4e6d4237f17f5fd3a">Enseignants</a>&#160;</td>
+          <td class="paramname"><em>es</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur de la représentation en chaîne de caractère JSON de Enseignants. </p>
+<p>Renvoie la représentation JSON en chaîne de caractères de Enseignants en utilisant l'API Jansson. Pour cela, on accède d'abord à la représentation JSON objet pour pouvoir le repasser à l'API. Enfin, avant de renvoyer la chaîne de caractères, il ne faut pas oublier de libérer la mémoire allouée à l'objet JSON (à faire manuellement en décrémentant son nombre de référencement).</p>
+<dl class="section see"><dt>Voir également</dt><dd><a href="https://jansson.readthedocs.io/en/latest/apiref.html#c.json_dumps">json_dumps</a> , <a href="https://jansson.readthedocs.io/en/latest/apiref.html#c.json_decref">json_decref</a></dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<div class="ttc" id="astructs__enseignant_html"><div class="ttname"><a href="structs__enseignant.html">s_enseignant</a></div><div class="ttdoc">Structure représentant un objet Enseignant. Structure permettant de stocker les attributs (nom et pré...</div><div class="ttdef"><b>Definition:</b> enseignant.c:37</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

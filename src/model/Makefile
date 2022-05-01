@@ -2,7 +2,7 @@ LIB = model.a
 LIBJANSON = -L /usr/local/lib -ljansson
 DEST = ../../lib
 MODULE = ../../module
-MODULES = $(MODULE)/enseignant.o $(MODULE)/horaire.o $(MODULE)/creneau.o $(MODULE)/salle.o $(MODULE)/formation.o $(MODULE)/salles.o $(MODULE)/enseignants.o
+MODULES = $(MODULE)/enseignant.o $(MODULE)/horaire.o $(MODULE)/creneau.o $(MODULE)/salle.o $(MODULE)/formation.o $(MODULE)/enseignements.o $(MODULE)/formations.o $(MODULE)/salles.o $(MODULE)/enseignants.o
 INCLUDE = -I ../../include
 WARNINGS = -ggdb3 # -Wall -Werror -Wextra
 

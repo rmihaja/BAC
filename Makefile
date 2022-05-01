@@ -2,15 +2,15 @@ PROGRAM = app
 INCLUDE = -I ./include
 LIB = ./lib
 LIBJSONDIR = /usr/local/lib
-LIBS = $(LIB)/control.a $(LIB)/model.a
+LIBS = $(LIB)/view.a $(LIB)/control.a $(LIB)/model.a
 LIBTOOLS = model.a
-LDEPENDENCY = -lcontrol
+LDEPENDENCY = -lcontrol -lview
 LTOOLSDEPENDENCY = -ljansson -lmodel
 WARNINGS = -ggdb3 # -Wall -Werror -Wextra
 MODULE = ./module
 CONTROL = ./control
-MODULES = $(MODULE)/enseignant.o $(MODULE)/horaire.o $(MODULE)/creneau.o $(MODULE)/salle.o $(MODULE)/formation.o $(MODULE)/enseignants.o $(MODULE)/salles.o $(MODULE)/controle.o
-MODELS = $(MODULE)/enseignant.o $(MODULE)/horaire.o $(MODULE)/creneau.o $(MODULE)/salle.o $(MODULE)/formation.o $(MODULE)/enseignants.o $(MODULE)/salles.o
+MODELS = $(MODULE)/enseignant.o $(MODULE)/horaire.o $(MODULE)/creneau.o $(MODULE)/salle.o $(MODULE)/formation.o $(MODULE)/enseignements.o $(MODULE)/formations.o $(MODULE)/enseignants.o $(MODULE)/salles.o
+MODULES = $(MODELS) $(MODULE)/entree.o $(MODULE)/controle.o
 SRC = ./src
 DEST = ./bin
 TEST = -DTEST
@@ -65,7 +65,7 @@ test/%: $(SRC)/%.c $(LIBTOOLS)
 	./$(SRC)/$*
 	rm $(SRC)/$*
 
-testmodels: $(LIBTOOLS) $(MODELS)
+tests: $(LIBTOOLS) $(MODELS)
 	echo "all model unit tests done with success"
 
 $(MODELS): $(MODULE)/%.o: $(SRC)/model/%.c
@@ -78,5 +78,4 @@ $(MODELS): $(MODULE)/%.o: $(SRC)/model/%.c
 prune:
 	rm -f $(MODULE)/*
 	rm -f $(LIB)/*
-	rm -f $(DEST)/debug/*
-	rm -f $(DEST)/release/*
+	rm -f $(DEST)/*/*

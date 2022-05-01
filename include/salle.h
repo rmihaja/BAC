@@ -20,13 +20,22 @@
 typedef struct s_salle* Salle;
 
 /**
+ * @brief Construit un nouvel objet Salle avec un Nom vide
+ * et un tableau de Creneau vide.
+ *
+ * @param nom Nom de Salle de type char*.
+ * @return Nouvelle instance allouée de Salle.
+ */
+Salle salle();
+
+/**
  * @brief Construit un nouvel objet Salle avec un Nom
  * et un tableau de Creneau vide.
  *
  * @param nom Nom de Salle de type char*.
  * @return Nouvelle instance allouée de Salle.
  */
-Salle salle(char* nom);
+Salle salleCopie(char* nom);
 
 /**
  * @brief Construit un nouvel objet Salle à partir de sa
@@ -63,6 +72,15 @@ Creneau* getSalleC(Salle s);
  * @return Objet JSON de Salle de type json_t*.
  */
 json_t* getJsonSalle(Salle s);
+
+/**
+ * @brief Définie l'objet Nom de Salle.
+ *
+ * @param s Référence de Salle à modifier.
+ * @param nom Valeur du Nom de type char*.
+ * @return Salle avec la nouvelle valeur de Nom.
+ */
+Salle setSalleN(Salle s, char* nom);
 
 /**
  * @brief Ajoute une référence de l'objet Creneau au tableau
@@ -132,7 +150,7 @@ bool isEmptySalle(Salle s);
  *
  * @param s Salle à afficher.
  */
-void afficherSalle(Salle s);
+void afficheSalle(Salle s);
 
 /**
  * @brief Accesseur de la représentation en chaîne de caractère

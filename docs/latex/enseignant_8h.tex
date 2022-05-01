@@ -1,0 +1,306 @@
+\hypertarget{enseignant_8h}{}\doxysection{Référence du fichier include/enseignant.h}
+\label{enseignant_8h}\index{include/enseignant.h@{include/enseignant.h}}
+
+
+En-\/tête de la structure de données Enseignant.  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$jansson.\+h$>$}\newline
+Graphe des dépendances par inclusion de enseignant.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{enseignant_8h__incl}
+\end{center}
+\end{figure}
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{enseignant_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Définitions de type}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structs__enseignant}{s\+\_\+enseignant}} $\ast$ \mbox{\hyperlink{enseignant_8h_ae182509dd066fcbc24384cd848812d78}{Enseignant}}
+\begin{DoxyCompactList}\small\item\em Objet Enseignant. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{enseignant_8h_ae182509dd066fcbc24384cd848812d78}{Enseignant}} \mbox{\hyperlink{enseignant_8h_ad398788b1cfe11d9915cdae562321551}{enseignant}} ()
+\begin{DoxyCompactList}\small\item\em Construit un nouvel objet Enseignant avec un Nom et un Prenom vide. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{enseignant_8h_ae182509dd066fcbc24384cd848812d78}{Enseignant}} \mbox{\hyperlink{enseignant_8h_ae9eac2c0eba1c83b986e1d108d08a110}{enseignant\+Copie}} (char $\ast$nom, char $\ast$prenom)
+\begin{DoxyCompactList}\small\item\em Construit un nouvel objet Enseignant avec un Nom et un Prenom. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{enseignant_8h_ae182509dd066fcbc24384cd848812d78}{Enseignant}} \mbox{\hyperlink{enseignant_8h_a2b82719c4bdeb93a5d088c95ad16b95a}{enseignant\+Parser}} (\mbox{\hyperlink{structjson__t}{json\+\_\+t}} $\ast$json\+\_\+enseignant)
+\begin{DoxyCompactList}\small\item\em Construit un nouvel objet Enseignant à partir de sa représentation en objet J\+S\+ON. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{enseignant_8h_a1f766cde2814994a8651f4e669fdf312}{get\+Nom}} (\mbox{\hyperlink{enseignant_8h_ae182509dd066fcbc24384cd848812d78}{Enseignant}} e)
+\begin{DoxyCompactList}\small\item\em Accesseur de l\textquotesingle{}objet Nom de Enseignant. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{enseignant_8h_a11a2b968685dc63bf9916ca0d0493dcc}{get\+Prenom}} (\mbox{\hyperlink{enseignant_8h_ae182509dd066fcbc24384cd848812d78}{Enseignant}} e)
+\begin{DoxyCompactList}\small\item\em Accesseur de l\textquotesingle{}objet Prenom de Enseignant. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structjson__t}{json\+\_\+t}} $\ast$ \mbox{\hyperlink{enseignant_8h_a0164bead94355301e2adbfb30b5c8d1e}{get\+Json\+Enseignant}} (\mbox{\hyperlink{enseignant_8h_ae182509dd066fcbc24384cd848812d78}{Enseignant}} e)
+\begin{DoxyCompactList}\small\item\em Accesseur de la représentation en objet J\+S\+ON de Enseignant. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{enseignant_8h_ae182509dd066fcbc24384cd848812d78}{Enseignant}} \mbox{\hyperlink{enseignant_8h_ab9c81fc8d8087c529f0e8d826726499d}{set\+Nom}} (\mbox{\hyperlink{enseignant_8h_ae182509dd066fcbc24384cd848812d78}{Enseignant}} e, char $\ast$nom)
+\begin{DoxyCompactList}\small\item\em Définie l\textquotesingle{}objet Nom de Enseignant. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{enseignant_8h_ae182509dd066fcbc24384cd848812d78}{Enseignant}} \mbox{\hyperlink{enseignant_8h_ab679f4ddaba22cfab9e9b97f7b5fe680}{set\+Prenom}} (\mbox{\hyperlink{enseignant_8h_ae182509dd066fcbc24384cd848812d78}{Enseignant}} e, char $\ast$prenom)
+\begin{DoxyCompactList}\small\item\em Définie l\textquotesingle{}objet Prenom de Enseignant. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{enseignant_8h_a4ff5794d9c7d03d693be20b969145ce8}{equals\+Enseignant}} (\mbox{\hyperlink{enseignant_8h_ae182509dd066fcbc24384cd848812d78}{Enseignant}} e1, \mbox{\hyperlink{enseignant_8h_ae182509dd066fcbc24384cd848812d78}{Enseignant}} e2)
+\begin{DoxyCompactList}\small\item\em compare deux Enseignant. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{enseignant_8h_a4c6fa8dfb8876f117cdd731313628665}{affiche\+Enseignant}} (\mbox{\hyperlink{enseignant_8h_ae182509dd066fcbc24384cd848812d78}{Enseignant}} e)
+\begin{DoxyCompactList}\small\item\em Imprime les attributs de Enseignant sur stdout, suivi d\textquotesingle{}un retour à la ligne. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{enseignant_8h_aa415506a21999ad1dfe3bc6e61c4451c}{to\+String\+Enseignant}} (\mbox{\hyperlink{enseignant_8h_ae182509dd066fcbc24384cd848812d78}{Enseignant}} e)
+\begin{DoxyCompactList}\small\item\em Accesseur de la représentation en chaîne de caractère J\+S\+ON de Enseignant. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+En-\/tête de la structure de données Enseignant. 
+
+\begin{DoxyAuthor}{Auteur}
+Mihaja R\+A\+Z\+A\+F\+I\+M\+A\+H\+E\+FA \& Ambre R\+O\+U\+Z\+A\+DE 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Documentation des définitions de type}
+\mbox{\Hypertarget{enseignant_8h_ae182509dd066fcbc24384cd848812d78}\label{enseignant_8h_ae182509dd066fcbc24384cd848812d78}} 
+\index{enseignant.h@{enseignant.h}!Enseignant@{Enseignant}}
+\index{Enseignant@{Enseignant}!enseignant.h@{enseignant.h}}
+\doxysubsubsection{\texorpdfstring{Enseignant}{Enseignant}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structs__enseignant}{s\+\_\+enseignant}}$\ast$ \mbox{\hyperlink{enseignant_8h_ae182509dd066fcbc24384cd848812d78}{Enseignant}}}
+
+
+
+Objet Enseignant. 
+
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{enseignant_8h_a4c6fa8dfb8876f117cdd731313628665}\label{enseignant_8h_a4c6fa8dfb8876f117cdd731313628665}} 
+\index{enseignant.h@{enseignant.h}!afficheEnseignant@{afficheEnseignant}}
+\index{afficheEnseignant@{afficheEnseignant}!enseignant.h@{enseignant.h}}
+\doxysubsubsection{\texorpdfstring{afficheEnseignant()}{afficheEnseignant()}}
+{\footnotesize\ttfamily void affiche\+Enseignant (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enseignant_8h_ae182509dd066fcbc24384cd848812d78}{Enseignant}}}]{e }\end{DoxyParamCaption})}
+
+
+
+Imprime les attributs de Enseignant sur stdout, suivi d\textquotesingle{}un retour à la ligne. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em e} & Référence de Enseignant à afficher.\\
+\hline
+\end{DoxyParams}
+Imprime les attributs de l\textquotesingle{}objet Enseignant selon le format \+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{Nom\} \{Prenom\}}
+\end{DoxyCode}
+\mbox{\Hypertarget{enseignant_8h_ad398788b1cfe11d9915cdae562321551}\label{enseignant_8h_ad398788b1cfe11d9915cdae562321551}} 
+\index{enseignant.h@{enseignant.h}!enseignant@{enseignant}}
+\index{enseignant@{enseignant}!enseignant.h@{enseignant.h}}
+\doxysubsubsection{\texorpdfstring{enseignant()}{enseignant()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{enseignant_8h_ae182509dd066fcbc24384cd848812d78}{Enseignant}} enseignant (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construit un nouvel objet Enseignant avec un Nom et un Prenom vide. 
+
+\begin{DoxyReturn}{Renvoie}
+Nouvelle instance allouée de Enseignant.
+\end{DoxyReturn}
+Constructeur par défaut de l\textquotesingle{}objet Enseignant.\mbox{\Hypertarget{enseignant_8h_ae9eac2c0eba1c83b986e1d108d08a110}\label{enseignant_8h_ae9eac2c0eba1c83b986e1d108d08a110}} 
+\index{enseignant.h@{enseignant.h}!enseignantCopie@{enseignantCopie}}
+\index{enseignantCopie@{enseignantCopie}!enseignant.h@{enseignant.h}}
+\doxysubsubsection{\texorpdfstring{enseignantCopie()}{enseignantCopie()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{enseignant_8h_ae182509dd066fcbc24384cd848812d78}{Enseignant}} enseignant\+Copie (\begin{DoxyParamCaption}\item[{char $\ast$}]{nom,  }\item[{char $\ast$}]{prenom }\end{DoxyParamCaption})}
+
+
+
+Construit un nouvel objet Enseignant avec un Nom et un Prenom. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em nom} & Nom de Enseignant de type char$\ast$. \\
+\hline
+{\em prenom} & Prenom de Enseignant de type char$\ast$. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Nouvelle instance allouée de Enseignant. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{enseignant_8h_a2b82719c4bdeb93a5d088c95ad16b95a}\label{enseignant_8h_a2b82719c4bdeb93a5d088c95ad16b95a}} 
+\index{enseignant.h@{enseignant.h}!enseignantParser@{enseignantParser}}
+\index{enseignantParser@{enseignantParser}!enseignant.h@{enseignant.h}}
+\doxysubsubsection{\texorpdfstring{enseignantParser()}{enseignantParser()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{enseignant_8h_ae182509dd066fcbc24384cd848812d78}{Enseignant}} enseignant\+Parser (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structjson__t}{json\+\_\+t}} $\ast$}]{json\+\_\+enseignant }\end{DoxyParamCaption})}
+
+
+
+Construit un nouvel objet Enseignant à partir de sa représentation en objet J\+S\+ON. 
+
+\begin{DoxyPrecond}{Précondition}
+json\+\_\+enseignant doit contenir une clé \char`\"{}nom\char`\"{} et \char`\"{}prenom\char`\"{}.
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Paramètres}
+{\em json\+\_\+enseignant} & Objet J\+S\+ON de Enseignant. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Nouvelle instance allouée de Enseignant.
+\end{DoxyReturn}
+Construit l\textquotesingle{}objet Enseignant en manipulant l\textquotesingle{}A\+PI Jansson. Pour cela, à partir d\textquotesingle{}une recherche par clé (s\textquotesingle{}il existe), nous pouvons accéder aux attributs \char`\"{}nom\char`\"{} et \char`\"{}prenom\char`\"{} de Enseignant, que nous construisons ensuite à l\textquotesingle{}aide du constructeur par défaut.
+
+\begin{DoxySeeAlso}{Voir également}
+\href{https://jansson.readthedocs.io/en/latest/apiref.html\#object}{\texttt{ json\+\_\+object}} , \href{https://jansson.readthedocs.io/en/latest/apiref.html\#c.json_object_get}{\texttt{ json\+\_\+object\+\_\+get}} , \href{https://jansson.readthedocs.io/en/latest/apiref.html\#string}{\texttt{ json\+\_\+string}}
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{enseignant_8h_a4ff5794d9c7d03d693be20b969145ce8}\label{enseignant_8h_a4ff5794d9c7d03d693be20b969145ce8}} 
+\index{enseignant.h@{enseignant.h}!equalsEnseignant@{equalsEnseignant}}
+\index{equalsEnseignant@{equalsEnseignant}!enseignant.h@{enseignant.h}}
+\doxysubsubsection{\texorpdfstring{equalsEnseignant()}{equalsEnseignant()}}
+{\footnotesize\ttfamily bool equals\+Enseignant (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enseignant_8h_ae182509dd066fcbc24384cd848812d78}{Enseignant}}}]{e1,  }\item[{\mbox{\hyperlink{enseignant_8h_ae182509dd066fcbc24384cd848812d78}{Enseignant}}}]{e2 }\end{DoxyParamCaption})}
+
+
+
+compare deux Enseignant. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em e1} & Enseignant 1 à comparer. \\
+\hline
+{\em e2} & Enseignant 2 à comparer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+true si Enseignant 1 et Enseignant 2 possèdent les mêmes attributs Nom et Prenom. 
+
+false si un ou plusieurs attributs de Enseignant 1 et Enseignant 2 diffèrent. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{enseignant_8h_a0164bead94355301e2adbfb30b5c8d1e}\label{enseignant_8h_a0164bead94355301e2adbfb30b5c8d1e}} 
+\index{enseignant.h@{enseignant.h}!getJsonEnseignant@{getJsonEnseignant}}
+\index{getJsonEnseignant@{getJsonEnseignant}!enseignant.h@{enseignant.h}}
+\doxysubsubsection{\texorpdfstring{getJsonEnseignant()}{getJsonEnseignant()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structjson__t}{json\+\_\+t}}$\ast$ get\+Json\+Enseignant (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enseignant_8h_ae182509dd066fcbc24384cd848812d78}{Enseignant}}}]{e }\end{DoxyParamCaption})}
+
+
+
+Accesseur de la représentation en objet J\+S\+ON de Enseignant. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em e} & Référence de Enseignant. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Objet J\+S\+ON de Enseignant de type json\+\_\+t$\ast$.
+\end{DoxyReturn}
+Renvoie la représentation objet J\+S\+ON de Enseignant en utilisant l\textquotesingle{}A\+PI Jansson. Pour cela, on construit un nouvel objet J\+S\+ON pour ensuite pouvoir y attacher les attributs clé-\/valeurs de Enseignant, défini par \char`\"{}nom\char`\"{} et \char`\"{}prenom\char`\"{}.
+
+\begin{DoxySeeAlso}{Voir également}
+\href{https://jansson.readthedocs.io/en/latest/apiref.html\#object}{\texttt{ json\+\_\+object}} , \href{https://jansson.readthedocs.io/en/latest/apiref.html\#c.json_object_set_new}{\texttt{ json\+\_\+object\+\_\+set\+\_\+new}}
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{enseignant_8h_a1f766cde2814994a8651f4e669fdf312}\label{enseignant_8h_a1f766cde2814994a8651f4e669fdf312}} 
+\index{enseignant.h@{enseignant.h}!getNom@{getNom}}
+\index{getNom@{getNom}!enseignant.h@{enseignant.h}}
+\doxysubsubsection{\texorpdfstring{getNom()}{getNom()}}
+{\footnotesize\ttfamily char$\ast$ get\+Nom (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enseignant_8h_ae182509dd066fcbc24384cd848812d78}{Enseignant}}}]{e }\end{DoxyParamCaption})}
+
+
+
+Accesseur de l\textquotesingle{}objet Nom de Enseignant. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em e} & Référence de Enseignant. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Valeur du Nom de type char$\ast$. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{enseignant_8h_a11a2b968685dc63bf9916ca0d0493dcc}\label{enseignant_8h_a11a2b968685dc63bf9916ca0d0493dcc}} 
+\index{enseignant.h@{enseignant.h}!getPrenom@{getPrenom}}
+\index{getPrenom@{getPrenom}!enseignant.h@{enseignant.h}}
+\doxysubsubsection{\texorpdfstring{getPrenom()}{getPrenom()}}
+{\footnotesize\ttfamily char$\ast$ get\+Prenom (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enseignant_8h_ae182509dd066fcbc24384cd848812d78}{Enseignant}}}]{e }\end{DoxyParamCaption})}
+
+
+
+Accesseur de l\textquotesingle{}objet Prenom de Enseignant. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em e} & Référence de Enseignant. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Valeur de la Prenom de type char$\ast$. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{enseignant_8h_ab9c81fc8d8087c529f0e8d826726499d}\label{enseignant_8h_ab9c81fc8d8087c529f0e8d826726499d}} 
+\index{enseignant.h@{enseignant.h}!setNom@{setNom}}
+\index{setNom@{setNom}!enseignant.h@{enseignant.h}}
+\doxysubsubsection{\texorpdfstring{setNom()}{setNom()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{enseignant_8h_ae182509dd066fcbc24384cd848812d78}{Enseignant}} set\+Nom (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enseignant_8h_ae182509dd066fcbc24384cd848812d78}{Enseignant}}}]{e,  }\item[{char $\ast$}]{nom }\end{DoxyParamCaption})}
+
+
+
+Définie l\textquotesingle{}objet Nom de Enseignant. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em e} & Référence de Enseignant à modifier. \\
+\hline
+{\em nom} & Valeur du Nom de type char$\ast$. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Enseignant avec la nouvelle valeur de Nom. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{enseignant_8h_ab679f4ddaba22cfab9e9b97f7b5fe680}\label{enseignant_8h_ab679f4ddaba22cfab9e9b97f7b5fe680}} 
+\index{enseignant.h@{enseignant.h}!setPrenom@{setPrenom}}
+\index{setPrenom@{setPrenom}!enseignant.h@{enseignant.h}}
+\doxysubsubsection{\texorpdfstring{setPrenom()}{setPrenom()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{enseignant_8h_ae182509dd066fcbc24384cd848812d78}{Enseignant}} set\+Prenom (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enseignant_8h_ae182509dd066fcbc24384cd848812d78}{Enseignant}}}]{e,  }\item[{char $\ast$}]{prenom }\end{DoxyParamCaption})}
+
+
+
+Définie l\textquotesingle{}objet Prenom de Enseignant. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em e} & Référence de Enseignant à modifier. \\
+\hline
+{\em prenom} & Valeur de Matière de type char$\ast$. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Enseignant avec la nouvelle valeur de Prenom. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{enseignant_8h_aa415506a21999ad1dfe3bc6e61c4451c}\label{enseignant_8h_aa415506a21999ad1dfe3bc6e61c4451c}} 
+\index{enseignant.h@{enseignant.h}!toStringEnseignant@{toStringEnseignant}}
+\index{toStringEnseignant@{toStringEnseignant}!enseignant.h@{enseignant.h}}
+\doxysubsubsection{\texorpdfstring{toStringEnseignant()}{toStringEnseignant()}}
+{\footnotesize\ttfamily char$\ast$ to\+String\+Enseignant (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{enseignant_8h_ae182509dd066fcbc24384cd848812d78}{Enseignant}}}]{e }\end{DoxyParamCaption})}
+
+
+
+Accesseur de la représentation en chaîne de caractère J\+S\+ON de Enseignant. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em e} & Référence de Enseignant. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Représentation J\+S\+ON de Enseignant de type char$\ast$.
+\end{DoxyReturn}
+Renvoie la représentation J\+S\+ON en chaîne de caractères de Enseignant en utilisant l\textquotesingle{}A\+PI Jansson. Pour cela, on accède d\textquotesingle{}abord à la représentation J\+S\+ON objet pour pouvoir le repasser à l\textquotesingle{}A\+PI. Enfin, avant de renvoyer la chaîne de caractères, il ne faut pas oublier de libérer la mémoire allouée à l\textquotesingle{}objet J\+S\+ON (à faire manuellement en décrémentant son nombre de référencement).
+
+\begin{DoxySeeAlso}{Voir également}
+\href{https://jansson.readthedocs.io/en/latest/apiref.html\#c.json_dumps}{\texttt{ json\+\_\+dumps}} , \href{https://jansson.readthedocs.io/en/latest/apiref.html\#c.json_decref}{\texttt{ json\+\_\+decref}}
+\end{DoxySeeAlso}

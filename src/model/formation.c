@@ -25,6 +25,7 @@
   * @internal
   *
   * @struct s_creneau_f
+  * @brief Structure représentant un élément de la liste chaînée de Creneau de Formation.
   * Structure permettant de stocker un élément de la liste
   * de Creneau, en stockant la référence de Creneau puis
   * l'élément suivant.
@@ -41,6 +42,7 @@ typedef struct s_creneau_f {
  * @internal
  *
  * @struct s_formation
+ * @brief Structure représentant un objet Formation.
  * @details
  * Structure permettant de stocker l'attribut nom d'une
  * formation sous forme de chaîne de caractères, ainsi
@@ -69,11 +71,11 @@ struct s_formation {
  *
  * @endinternal
  */
-Formation formation(char* n) {
+Formation formation(char* nom) {
     Formation f = (Formation)malloc(sizeof(struct s_formation));
     f->sentinelle = (CreneauF)malloc(sizeof(struct s_creneau_f));
     f->sentinelle->suivant = f->sentinelle;
-    f->nom = n;
+    f->nom = nom;
     f->taille = 0;
     return f;
 }
@@ -132,6 +134,15 @@ Formation formationParser(json_t* json_formation) {
 
 char* getFormationN(Formation f) {
     return f->nom;
+}
+
+Creneau getFormationCByIndice(Formation f, int indice) {
+    assert(0 <= indice && indice < sizeFormationC(f));
+    CreneauF courant = f->sentinelle->suivant;
+    for (int i = 0; i < indice; i++) {
+        courant = courant->suivant;
+    }
+    return courant->creneau;
 }
 
 /**
@@ -239,8 +250,8 @@ bool isFreeFormation(Formation f, Horaire h) {
     bool isInCreneauH = false;
     CreneauF courant = f->sentinelle->suivant;
     for (int i = 0; i < f->taille && !isInCreneauH; i++) {
-        isInCreneauH = (getDebut(getCreneauH(courant->creneau)) <= getDebut(h) && getDebut(h) <= getFin(getCreneauH(courant->creneau)))
-            || (getDebut(getCreneauH(courant->creneau)) <= getFin(h) && getFin(h) <= getFin(getCreneauH(courant->creneau)))
+        isInCreneauH = (getDebut(getCreneauH(courant->creneau)) <= getDebut(h) && getDebut(h) < getFin(getCreneauH(courant->creneau)))
+            || (getDebut(getCreneauH(courant->creneau)) < getFin(h) && getFin(h) <= getFin(getCreneauH(courant->creneau)))
             || (getDebut(h) <= getDebut(getCreneauH(courant->creneau)) && getFin(getCreneauH(courant->creneau)) <= getFin(h));
         courant = courant->suivant;
     }
@@ -274,16 +285,14 @@ bool isFullFormation(Formation f) {
  * L'impression suit alors le format :
  *
  * @code {.txt}
- * ---------------------
- * EDT de la formation : {Nom de Formation}
- * ---------------------
- *
  * Salle {Salle de Creneau}
  * de {Horaire de Creneau}
+ * {Enseignement de Creneau}
  * {Enseignant de Creneau}
  *
  * Salle {Salle de Creneau}
  * de {Horaire de Creneau}
+ * {Enseignement de Creneau}
  * {Enseignant de Creneau}
  *
  * ...
@@ -293,15 +302,16 @@ bool isFullFormation(Formation f) {
  *
  * @endinternal
  */
-void afficheFormation(Formation f) {
-    printf("---------------------\n");
-    printf("EDT de la formation : %s\n", getFormationN(f));
-    printf("---------------------\n\n");
+void afficheFormation(Formation f, bool isOrdered) {
     CreneauF courant = f->sentinelle->suivant;
     for (int i = 0;i < f->taille;i++) {
+        if (isOrdered) {
+            printf("(%d)\n", i + 1);
+        }
         printf("Salle %s\n", getCreneauS(courant->creneau));
         printf("de ");
         afficheHoraire(getCreneauH(courant->creneau));
+        printf("%s\n", getCreneauENS(courant->creneau));
         afficheEnseignant(getCreneauE(courant->creneau));
         courant = courant->suivant;
         printf("\n");
@@ -349,19 +359,21 @@ int main() {
     // init
 
     Horaire h1 = horaire(13, 15);
-    Enseignant e1 = enseignant("TRUILLET", "Structure de données");
+    Enseignant e1 = enseignantCopie("TRUILLET", "Philippe");
+    char* ens1 = "Structure de données";
     char* f1_nom = "CUPGE";
     char* s1 = "118";
 
     Horaire h2 = horaire(16, 18);
-    Enseignant e2 = enseignant("GAILDRAT", "Programmation orientée objet");
+    Enseignant e2 = enseignantCopie("GAILDRAT", "Véronique");
+    char* ens2 = "Programmation orientée objet";
     char* f2_nom = "L2 Informatique";
     char* s2 = "103";
 
-    Creneau c1 = creneau(e1, h1, f1_nom, s1);
-    Creneau c1_bis = creneau(e2, h1, f1_nom, s2);
-    Creneau c2 = creneau(e2, h2, f2_nom, s2);
-    Creneau c2_bis = creneau(e2, h2, f1_nom, s2);
+    Creneau c1 = creneau(e1, h1, ens1, f1_nom, s1);
+    Creneau c1_bis = creneau(e2, h1, ens1, f1_nom, s2);
+    Creneau c2 = creneau(e2, h2, ens2, f2_nom, s2);
+    Creneau c2_bis = creneau(e2, h2, ens2, f1_nom, s2);
 
     // testing
 
@@ -371,7 +383,7 @@ int main() {
 
     info(ajouterFormationC(f, c1));
 
-    info(afficheFormation(f));
+    info(afficheFormation(f, false));
 
     // info(ajouterFormationC(f, c1_bis)); // devrait produire une erreur
 

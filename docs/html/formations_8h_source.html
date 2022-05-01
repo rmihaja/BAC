@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>BAC:  Fichier source de include/formations.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">BAC
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">formations.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="formations_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef __FORMATIONS_H__</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define __FORMATIONS_H__</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;jansson.h&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="formation_8h.html">formation.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="formations_8h.html#a721b09043353162835f38f4980591651">   19</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structs__formations.html">s_formations</a>* <a class="code" href="formations_8h.html#a721b09043353162835f38f4980591651">Formations</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<a class="code" href="structs__formations.html">Formations</a> <a class="code" href="formations_8h.html#a553871c0732ffc540d738af9b0036607">formations</a>(<span class="keywordtype">int</span> taille_max);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<a class="code" href="structs__formations.html">Formations</a> <a class="code" href="formations_8h.html#ac5e2ed83b461073864c671cd01900750">formationsParser</a>(<a class="code" href="structjson__t.html">json_t</a>* json_formations);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<a class="code" href="structs__formation.html">Formation</a> <a class="code" href="formations_8h.html#abb6d550d5c34e37c38c5afde1bc40882">getFormationByIndice</a>(<a class="code" href="structs__formations.html">Formations</a> fs, <span class="keywordtype">int</span> indice);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<a class="code" href="structjson__t.html">json_t</a>* <a class="code" href="formations_8h.html#a4a1dc8720101b5f46db5e29bc34d4384">getJsonFormations</a>(<a class="code" href="structs__formations.html">Formations</a> fs);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keywordtype">int</span> <a class="code" href="formations_8h.html#a6736f9ff911cefae7356b3359356ab61">sizeFormations</a>(<a class="code" href="structs__formations.html">Formations</a> fs);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<a class="code" href="structs__formations.html">Formations</a> <a class="code" href="formations_8h.html#aec675ad615bcaaaafbf046ed211475e3">ajouterFs</a>(<a class="code" href="structs__formations.html">Formations</a> fs, <a class="code" href="structs__formation.html">Formation</a> f);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keywordtype">void</span> <a class="code" href="formations_8h.html#a92da74c233b51e61fad3e4956599bf00">afficherFormations</a>(<a class="code" href="structs__formations.html">Formations</a> fs);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keywordtype">void</span> <a class="code" href="formations_8h.html#abb6b05d50f3535cc27ff18fea31d4d36">afficherFormationsN</a>(<a class="code" href="structs__formations.html">Formations</a> fs, <span class="keywordtype">bool</span> isOrdered);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="keywordtype">char</span>* <a class="code" href="formations_8h.html#a6104c15b2b66e17ecec6f9ea7d08a0e9">toStringFormations</a>(<a class="code" href="structs__formations.html">Formations</a> fs);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aformations_8h_html_a721b09043353162835f38f4980591651"><div class="ttname"><a href="formations_8h.html#a721b09043353162835f38f4980591651">Formations</a></div><div class="ttdeci">struct s_formations * Formations</div><div class="ttdoc">Objet Formations.</div><div class="ttdef"><b>Definition:</b> formations.h:19</div></div>
+<div class="ttc" id="aformations_8h_html_a4a1dc8720101b5f46db5e29bc34d4384"><div class="ttname"><a href="formations_8h.html#a4a1dc8720101b5f46db5e29bc34d4384">getJsonFormations</a></div><div class="ttdeci">json_t * getJsonFormations(Formations fs)</div><div class="ttdoc">Accesseur de la représentation en objet JSON de Formations.</div><div class="ttdef"><b>Definition:</b> formations.c:113</div></div>
+<div class="ttc" id="aformations_8h_html_a92da74c233b51e61fad3e4956599bf00"><div class="ttname"><a href="formations_8h.html#a92da74c233b51e61fad3e4956599bf00">afficherFormations</a></div><div class="ttdeci">void afficherFormations(Formations fs)</div><div class="ttdef"><b>Definition:</b> formations.c:173</div></div>
+<div class="ttc" id="astructjson__t_html"><div class="ttname"><a href="structjson__t.html">json_t</a></div><div class="ttdef"><b>Definition:</b> jansson.h:61</div></div>
+<div class="ttc" id="aformations_8h_html_a6104c15b2b66e17ecec6f9ea7d08a0e9"><div class="ttname"><a href="formations_8h.html#a6104c15b2b66e17ecec6f9ea7d08a0e9">toStringFormations</a></div><div class="ttdeci">char * toStringFormations(Formations fs)</div><div class="ttdoc">Accesseur de la représentation en chaîne de caractère JSON de Formations.</div></div>
+<div class="ttc" id="astructs__formations_html"><div class="ttname"><a href="structs__formations.html">s_formations</a></div><div class="ttdoc">Structure représentant un tableau de Formation.</div><div class="ttdef"><b>Definition:</b> formations.c:33</div></div>
+<div class="ttc" id="aformations_8h_html_a6736f9ff911cefae7356b3359356ab61"><div class="ttname"><a href="formations_8h.html#a6736f9ff911cefae7356b3359356ab61">sizeFormations</a></div><div class="ttdeci">int sizeFormations(Formations fs)</div><div class="ttdoc">Accesseur de la taille de Formations.</div><div class="ttdef"><b>Definition:</b> formations.c:121</div></div>
+<div class="ttc" id="aformations_8h_html_ac5e2ed83b461073864c671cd01900750"><div class="ttname"><a href="formations_8h.html#ac5e2ed83b461073864c671cd01900750">formationsParser</a></div><div class="ttdeci">Formations formationsParser(json_t *json_formations)</div><div class="ttdoc">Construit un nouvel objet Formation à partir de sa représentation en objet JSON.</div><div class="ttdef"><b>Definition:</b> formations.c:76</div></div>
+<div class="ttc" id="aformations_8h_html_aec675ad615bcaaaafbf046ed211475e3"><div class="ttname"><a href="formations_8h.html#aec675ad615bcaaaafbf046ed211475e3">ajouterFs</a></div><div class="ttdeci">Formations ajouterFs(Formations fs, Formation f)</div><div class="ttdoc">Ajoute une référence de l'objet Formation à Formations.</div><div class="ttdef"><b>Definition:</b> formations.c:154</div></div>
+<div class="ttc" id="aformations_8h_html_abb6b05d50f3535cc27ff18fea31d4d36"><div class="ttname"><a href="formations_8h.html#abb6b05d50f3535cc27ff18fea31d4d36">afficherFormationsN</a></div><div class="ttdeci">void afficherFormationsN(Formations fs, bool isOrdered)</div><div class="ttdoc">Imprime le nom de toute Formation de Formations sur stdout, précédé de son indice dans la liste si or...</div><div class="ttdef"><b>Definition:</b> formations.c:205</div></div>
+<div class="ttc" id="aformations_8h_html_a553871c0732ffc540d738af9b0036607"><div class="ttname"><a href="formations_8h.html#a553871c0732ffc540d738af9b0036607">formations</a></div><div class="ttdeci">Formations formations(int taille_max)</div><div class="ttdoc">Construit un nouvel objet Formations avec un tableau de Formation.</div><div class="ttdef"><b>Definition:</b> formations.c:52</div></div>
+<div class="ttc" id="aformation_8h_html"><div class="ttname"><a href="formation_8h.html">formation.h</a></div><div class="ttdoc">En-tête de la structure de données Formation.</div></div>
+<div class="ttc" id="aformations_8h_html_abb6d550d5c34e37c38c5afde1bc40882"><div class="ttname"><a href="formations_8h.html#abb6d550d5c34e37c38c5afde1bc40882">getFormationByIndice</a></div><div class="ttdeci">Formation getFormationByIndice(Formations fs, int indice)</div><div class="ttdoc">Accesseur de l'objet Formation à partir de son Indice dans Formations.</div><div class="ttdef"><b>Definition:</b> formations.c:92</div></div>
+<div class="ttc" id="astructs__formation_html"><div class="ttname"><a href="structs__formation.html">s_formation</a></div><div class="ttdoc">Structure représentant un objet Formation.</div><div class="ttdef"><b>Definition:</b> formation.c:55</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

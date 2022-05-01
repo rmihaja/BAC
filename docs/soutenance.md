@@ -83,7 +83,7 @@ Librairies externes :
 $$
     \begin{align*}
         \operatorname{enseignant} \colon \Sigma^\star \times \Sigma^\star & \longrightarrow E \\
-        (nom, matiere) & \longmapsto \operatorname{enseignant}(nom, matiere)
+        (nom, Prenom) & \longmapsto \operatorname{enseignant}(nom, Prenom)
     \end{align*}
 $$
 

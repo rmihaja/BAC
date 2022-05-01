@@ -107,15 +107,6 @@ Horaire setFin(Horaire h, int fin);
 bool equalsHoraire(Horaire h1, Horaire h2);
 
 /**
- * @brief Imprime une heure?
- *
- * // TODO
- * @todo check necessity
- * @param i
- */
-void affiche1H(int i);
-
-/**
  * @brief Imprime les attributs de Horaire sur stdout,
  * suivi d'un retour à la ligne.
  *
@@ -127,9 +118,9 @@ void afficheHoraire(Horaire h);
  * @brief Accesseur de la représentation en chaîne de caractère
  * JSON de Horaire.
  *
- * @param e Référence de Enseignant.
+ * @param h Référence de Horaire.
  * @return Représentation JSON de Enseignant de type char*.
  */
-char* toStringHoraire(Horaire e);
+char* toStringHoraire(Horaire h);
 
 #endif

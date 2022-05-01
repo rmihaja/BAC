@@ -19,6 +19,7 @@
   * @internal
   *
   * @struct s_horaire
+  * @brief Structure représentant un objet Horaire.
   * @details
   * Structure permettant de stocker les attributs
   * (début et fin) d'un horaire sous forme d'entiers.
@@ -143,10 +144,6 @@ bool equalsHoraire(Horaire h1, Horaire h2) {
 *                 Représentations externes                   *
 \************************************************************/
 
-void affiche1H(int heure) {
-    printf("%dh00\n", heure);
-}
-
 /**
  * @internal
  *
@@ -229,7 +226,6 @@ int main() {
     test(equalsHoraire(h, h));
     test(!equalsHoraire(h, horaire(h1_debut, h1_fin)));
 
-    info(affiche1H(duree(h)));
     info(afficheHoraire(h));
 
     test(strcmp(toStringHoraire(h), toStringHoraire(horaireParser(getJsonHoraire(h)))) == 0);

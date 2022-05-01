@@ -1,0 +1,1426 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>BAC: Référence du fichier src/control/controle.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">BAC
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b81b067251166617f9d0a8c0cfc3a4a9.html">control</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Structures de données</a> &#124;
+<a href="#typedef-members">Définitions de type</a> &#124;
+<a href="#enum-members">Énumérations</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier controle.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Code source de la structure de données Controle.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &lt;assert.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="controle_8h_source.html">controle.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de controle.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="controle_8c__incl.png" border="0" usemap="#src_2control_2controle_8c" alt=""/></div>
+<map name="src_2control_2controle_8c" id="src_2control_2controle_8c">
+<area shape="rect" title="Code source de la structure de données Controle." alt="" coords="144,5,303,32"/>
+<area shape="rect" title=" " alt="" coords="755,453,838,480"/>
+<area shape="rect" title=" " alt="" coords="43,80,118,107"/>
+<area shape="rect" title=" " alt="" coords="124,528,195,555"/>
+<area shape="rect" title=" " alt="" coords="219,528,286,555"/>
+<area shape="rect" title=" " alt="" coords="467,80,537,107"/>
+<area shape="rect" href="controle_8h.html" title="En&#45;tête de la structure de données Controle." alt="" coords="356,80,443,107"/>
+<area shape="rect" href="formations_8h.html" title="En&#45;tête de la structure de données Formations." alt="" coords="347,155,452,181"/>
+<area shape="rect" href="enseignants_8h.html" title="En&#45;tête de la struture de données Enseignants." alt="" coords="564,304,677,331"/>
+<area shape="rect" href="enseignements_8h.html" title="En&#45;tête de la struture de données Enseignements." alt="" coords="885,379,1020,405"/>
+<area shape="rect" href="salles_8h.html" title="En&#45;tête de la structure de données Salles." alt="" coords="191,155,263,181"/>
+<area shape="rect" href="entree_8h.html" title="En&#45;tête des fonctions d&#39;entrées." alt="" coords="993,229,1069,256"/>
+<area shape="rect" href="jansson_8h_source.html" title=" " alt="" coords="305,453,389,480"/>
+<area shape="rect" href="formation_8h.html" title="En&#45;tête de la structure de données Formation." alt="" coords="382,229,481,256"/>
+<area shape="rect" title=" " alt="" coords="310,528,385,555"/>
+<area shape="rect" href="jansson__config_8h_source.html" title=" " alt="" coords="409,528,539,555"/>
+<area shape="rect" href="creneau_8h.html" title="En&#45;tête de la structure de données Creneau." alt="" coords="339,304,425,331"/>
+<area shape="rect" href="enseignant_8h.html" title="En&#45;tête de la structure de données Enseignant." alt="" coords="501,379,607,405"/>
+<area shape="rect" href="horaire_8h.html" title="En&#45;tête de la structure de données Horaire." alt="" coords="346,379,426,405"/>
+<area shape="rect" href="salle_8h.html" title="En&#45;tête de la structure de données Salle." alt="" coords="195,229,260,256"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Structures de données</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs__controle.html">s_controle</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Objet Controle.  <a href="structs__controle.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Définitions de type</h2></td></tr>
+<tr class="memitem:a31dd02bca43ba4ad119c540365523dd2"><td class="memItemLeft" align="right" valign="top"><a id="a31dd02bca43ba4ad119c540365523dd2"></a>
+typedef enum <a class="el" href="controle_8c.html#a58ea2806d44139fd0ff194d1ae0f10f2">liste_etat_affichage</a>&#160;</td><td class="memItemRight" valign="bottom"><b>EtatAffichage</b></td></tr>
+<tr class="separator:a31dd02bca43ba4ad119c540365523dd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Énumérations</h2></td></tr>
+<tr class="memitem:a58ea2806d44139fd0ff194d1ae0f10f2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controle_8c.html#a58ea2806d44139fd0ff194d1ae0f10f2">liste_etat_affichage</a> { <br />
+&#160;&#160;<a class="el" href="controle_8c.html#a58ea2806d44139fd0ff194d1ae0f10f2a151abe08217bc386cb1b4d2f3c90a332">BIENVENUE</a>, 
+<a class="el" href="controle_8c.html#a58ea2806d44139fd0ff194d1ae0f10f2a48e4cb37544c8e69715d45e5a83b2109">CLIENT</a>, 
+<a class="el" href="controle_8c.html#a58ea2806d44139fd0ff194d1ae0f10f2a661a9cd32f23e412becdd22c75caae50">EDT</a>, 
+<a class="el" href="controle_8c.html#a58ea2806d44139fd0ff194d1ae0f10f2a8b22fbb60fcbd7a4a5e1e6ff6ee38218">AUTH</a>, 
+<br />
+&#160;&#160;<a class="el" href="controle_8c.html#a58ea2806d44139fd0ff194d1ae0f10f2a3228e792244f936584abc6e3d7542d2c">ADMIN</a>, 
+<a class="el" href="controle_8c.html#a58ea2806d44139fd0ff194d1ae0f10f2a2f5193c68dda7016a2c33947f5756141">ENSEIGNANT</a>, 
+<a class="el" href="controle_8c.html#a58ea2806d44139fd0ff194d1ae0f10f2acd98416ba290d4921fdd6603dad70d4f">ENSEIGNEMENT</a>, 
+<a class="el" href="controle_8c.html#a58ea2806d44139fd0ff194d1ae0f10f2a8b1cfb3aba28dc3854404d68adbd8d95">SALLE</a>, 
+<br />
+&#160;&#160;<a class="el" href="controle_8c.html#a58ea2806d44139fd0ff194d1ae0f10f2a25e2adbc62dc2a7d3f30c617e879cf93">BOOK</a>, 
+<a class="el" href="controle_8c.html#a58ea2806d44139fd0ff194d1ae0f10f2a61aa7ff70b76bff0fda378cf61d6afbc">WRITE</a>
+<br />
+ }</td></tr>
+<tr class="separator:a58ea2806d44139fd0ff194d1ae0f10f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:abb9914b3c0026dfda702998e297d8ef0"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controle_8c.html#abb9914b3c0026dfda702998e297d8ef0">decodeMDP</a> (const char *mdp, char *dest)</td></tr>
+<tr class="memdesc:abb9914b3c0026dfda702998e297d8ef0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Décrypte le mot de passe passé en paramètre.  <a href="controle_8c.html#abb9914b3c0026dfda702998e297d8ef0">Plus de détails...</a><br /></td></tr>
+<tr class="separator:abb9914b3c0026dfda702998e297d8ef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7f3b1bc90c66490d64bea86925d7d22"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controle_8c.html#aa7f3b1bc90c66490d64bea86925d7d22">encodeMDP</a> (char *mdp)</td></tr>
+<tr class="memdesc:aa7f3b1bc90c66490d64bea86925d7d22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encrypte le mot de passe passé en paramètre.  <a href="controle_8c.html#aa7f3b1bc90c66490d64bea86925d7d22">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aa7f3b1bc90c66490d64bea86925d7d22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a335cc1d0715726b1a46dac9191dfb20e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controle_8c.html#a335cc1d0715726b1a46dac9191dfb20e">controleSerializer</a> (<a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a> C)</td></tr>
+<tr class="memdesc:a335cc1d0715726b1a46dac9191dfb20e"><td class="mdescLeft">&#160;</td><td class="mdescRight">imprime sur un fichier du disque (spécifié par Controle) les données courants de l'application sour format JSON  <a href="controle_8c.html#a335cc1d0715726b1a46dac9191dfb20e">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a335cc1d0715726b1a46dac9191dfb20e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a530e59a306682b5d42cebd4d65640087"><td class="memItemLeft" align="right" valign="top"><a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controle_8c.html#a530e59a306682b5d42cebd4d65640087">controleParser</a> (<a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a> C, <a class="el" href="structjson__t.html">json_t</a> *json_controle)</td></tr>
+<tr class="memdesc:a530e59a306682b5d42cebd4d65640087"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construit un objet Controle avec les données JSON renvoyé par l'API Jansson.  <a href="controle_8c.html#a530e59a306682b5d42cebd4d65640087">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a530e59a306682b5d42cebd4d65640087"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada43fb46c2b97617bd5068e94b30b7e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="formations_8h.html#a721b09043353162835f38f4980591651">Formations</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controle_8c.html#ada43fb46c2b97617bd5068e94b30b7e6">populateFormations</a> (<a class="el" href="formations_8h.html#a721b09043353162835f38f4980591651">Formations</a> fs)</td></tr>
+<tr class="memdesc:ada43fb46c2b97617bd5068e94b30b7e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute les formations par défaut à la liste des Formations.  <a href="controle_8c.html#ada43fb46c2b97617bd5068e94b30b7e6">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ada43fb46c2b97617bd5068e94b30b7e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1303134258e4d8e87efe2c2dad1416e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controle_8c.html#a1303134258e4d8e87efe2c2dad1416e6">controleClean</a> (<a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a> C)</td></tr>
+<tr class="memdesc:a1303134258e4d8e87efe2c2dad1416e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construit un objet Controle avec des listes vides et les formations par défaut.  <a href="controle_8c.html#a1303134258e4d8e87efe2c2dad1416e6">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a1303134258e4d8e87efe2c2dad1416e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cc48dc74fda529f014586404b0989f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controle_8c.html#a9cc48dc74fda529f014586404b0989f3">controle</a> (char *cheminData)</td></tr>
+<tr class="memdesc:a9cc48dc74fda529f014586404b0989f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construit un nouvelle objet Controle à partir des données JSON s'il existe.  <a href="controle_8c.html#a9cc48dc74fda529f014586404b0989f3">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a9cc48dc74fda529f014586404b0989f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bfa5451d066dcc3b705d170e18d2142"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controle_8c.html#a5bfa5451d066dcc3b705d170e18d2142">getUserProfile</a> (<a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a> C)</td></tr>
+<tr class="memdesc:a5bfa5451d066dcc3b705d170e18d2142"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de la représentation en chaîne de caractère du Profil courant.  <a href="controle_8c.html#a5bfa5451d066dcc3b705d170e18d2142">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a5bfa5451d066dcc3b705d170e18d2142"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7441ad2ae84ed7a9eba7a493dce07806"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controle_8c.html#a7441ad2ae84ed7a9eba7a493dce07806">afficherProfil</a> (char *profil)</td></tr>
+<tr class="memdesc:a7441ad2ae84ed7a9eba7a493dce07806"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imprime sur stdout le profil de l'utilisateur connecté  <a href="controle_8c.html#a7441ad2ae84ed7a9eba7a493dce07806">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a7441ad2ae84ed7a9eba7a493dce07806"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a224952a1510983c2e446577b4a7df957"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controle_8c.html#a224952a1510983c2e446577b4a7df957">afficherPanneauBienvenue</a> ()</td></tr>
+<tr class="memdesc:a224952a1510983c2e446577b4a7df957"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche l'interface de présentation de l'application.  <a href="controle_8c.html#a224952a1510983c2e446577b4a7df957">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a224952a1510983c2e446577b4a7df957"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70153745a3e44c681f42a19141af4a62"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controle_8c.html#a70153745a3e44c681f42a19141af4a62">afficherPanneauSortie</a> ()</td></tr>
+<tr class="memdesc:a70153745a3e44c681f42a19141af4a62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche l'interface de sortie de l'application.  <a href="controle_8c.html#a70153745a3e44c681f42a19141af4a62">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a70153745a3e44c681f42a19141af4a62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4c2ffd89d5d259ae147e7d68e5c106a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controle_8c.html#ad4c2ffd89d5d259ae147e7d68e5c106a">afficherPanneauClient</a> ()</td></tr>
+<tr class="memdesc:ad4c2ffd89d5d259ae147e7d68e5c106a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche l'interface de sélection d'emploi du temps.  <a href="controle_8c.html#ad4c2ffd89d5d259ae147e7d68e5c106a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ad4c2ffd89d5d259ae147e7d68e5c106a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35857ed2784c7e8963777df6d158bac4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controle_8c.html#a35857ed2784c7e8963777df6d158bac4">afficherEDTEnseignant</a> (<a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a> C, <a class="el" href="enseignant_8h.html#ae182509dd066fcbc24384cd848812d78">Enseignant</a> e)</td></tr>
+<tr class="memdesc:a35857ed2784c7e8963777df6d158bac4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche l'emploi du temps pour un enseignant.  <a href="controle_8c.html#a35857ed2784c7e8963777df6d158bac4">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a35857ed2784c7e8963777df6d158bac4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecb237eb04cc3b350db285abbe1d62c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controle_8c.html#aecb237eb04cc3b350db285abbe1d62c2">afficherEDTFormation</a> (<a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a> C, char *<a class="el" href="formation_8c.html#aa90520a6de1e9802ed490ea6194aab85">formation</a>)</td></tr>
+<tr class="memdesc:aecb237eb04cc3b350db285abbe1d62c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche l'emploi du temps pour une formation.  <a href="controle_8c.html#aecb237eb04cc3b350db285abbe1d62c2">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aecb237eb04cc3b350db285abbe1d62c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec55c69052ad37034e97990f72666ec2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controle_8c.html#aec55c69052ad37034e97990f72666ec2">afficherPanneauEDTEnseignants</a> (<a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a> C)</td></tr>
+<tr class="memdesc:aec55c69052ad37034e97990f72666ec2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche l'emploi du temps par enseignant.  <a href="controle_8c.html#aec55c69052ad37034e97990f72666ec2">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aec55c69052ad37034e97990f72666ec2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1e232ab849e005816bd3871a7895920"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controle_8c.html#ad1e232ab849e005816bd3871a7895920">afficherPanneauEDTFormations</a> (<a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a> C)</td></tr>
+<tr class="memdesc:ad1e232ab849e005816bd3871a7895920"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche l'emploi du temps par formation.  <a href="controle_8c.html#ad1e232ab849e005816bd3871a7895920">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ad1e232ab849e005816bd3871a7895920"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7e6e40aab2f997c6b895675ad2c8256"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controle_8c.html#aa7e6e40aab2f997c6b895675ad2c8256">afficherPanneauEDTSalles</a> (<a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a> C)</td></tr>
+<tr class="memdesc:aa7e6e40aab2f997c6b895675ad2c8256"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche l'emploi du temps par salle.  <a href="controle_8c.html#aa7e6e40aab2f997c6b895675ad2c8256">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aa7e6e40aab2f997c6b895675ad2c8256"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad66ee22ae2052d3a91bc10c4a12110f1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controle_8c.html#ad66ee22ae2052d3a91bc10c4a12110f1">afficherPanneauAdmin</a> ()</td></tr>
+<tr class="memdesc:ad66ee22ae2052d3a91bc10c4a12110f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche l'interface de gestion général.  <a href="controle_8c.html#ad66ee22ae2052d3a91bc10c4a12110f1">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ad66ee22ae2052d3a91bc10c4a12110f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab156bb97bd66438ef4c32f0a79f1b14"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controle_8c.html#aab156bb97bd66438ef4c32f0a79f1b14">afficherPanneauGestionEnseignants</a> ()</td></tr>
+<tr class="memdesc:aab156bb97bd66438ef4c32f0a79f1b14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche l'interface de gestion des enseignants.  <a href="controle_8c.html#aab156bb97bd66438ef4c32f0a79f1b14">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aab156bb97bd66438ef4c32f0a79f1b14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefda132982ff834fd9d6d95932808055"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controle_8c.html#aefda132982ff834fd9d6d95932808055">afficherPanneauAjouterEnseignants</a> (<a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a> C)</td></tr>
+<tr class="memdesc:aefda132982ff834fd9d6d95932808055"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche l'interface d'ajout d'un enseignant.  <a href="controle_8c.html#aefda132982ff834fd9d6d95932808055">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aefda132982ff834fd9d6d95932808055"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8fe7c555db95eb61df5e11e892d9690"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controle_8c.html#ab8fe7c555db95eb61df5e11e892d9690">afficherPanneauModifierEnseignants</a> (<a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a> C)</td></tr>
+<tr class="memdesc:ab8fe7c555db95eb61df5e11e892d9690"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche l'interface de modification d'un enseignant.  <a href="controle_8c.html#ab8fe7c555db95eb61df5e11e892d9690">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ab8fe7c555db95eb61df5e11e892d9690"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23af606252c41e83093fbee102a1c64c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controle_8c.html#a23af606252c41e83093fbee102a1c64c">afficherPanneauSupprimerEnseignants</a> (<a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a> C)</td></tr>
+<tr class="memdesc:a23af606252c41e83093fbee102a1c64c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche l'interface de modification d'un enseignant.  <a href="controle_8c.html#a23af606252c41e83093fbee102a1c64c">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a23af606252c41e83093fbee102a1c64c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cfe6d80bf8dc5990c5d3551bfea89bc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controle_8c.html#a2cfe6d80bf8dc5990c5d3551bfea89bc">afficherPanneauListeEnseignants</a> (<a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a> C)</td></tr>
+<tr class="memdesc:a2cfe6d80bf8dc5990c5d3551bfea89bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche la liste des enseignants.  <a href="controle_8c.html#a2cfe6d80bf8dc5990c5d3551bfea89bc">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a2cfe6d80bf8dc5990c5d3551bfea89bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56c9d67b0d41571038fe075cb0fd9a5d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controle_8c.html#a56c9d67b0d41571038fe075cb0fd9a5d">afficherPanneauGestionEnseignements</a> ()</td></tr>
+<tr class="memdesc:a56c9d67b0d41571038fe075cb0fd9a5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche l'interface de gestion d'un enseignement.  <a href="controle_8c.html#a56c9d67b0d41571038fe075cb0fd9a5d">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a56c9d67b0d41571038fe075cb0fd9a5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29a64237a0885bac638a9143ab3ee080"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controle_8c.html#a29a64237a0885bac638a9143ab3ee080">afficherPanneauAjouterEnseignements</a> (<a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a> C)</td></tr>
+<tr class="memdesc:a29a64237a0885bac638a9143ab3ee080"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche l'interface d'ajout d'un enseignement.  <a href="controle_8c.html#a29a64237a0885bac638a9143ab3ee080">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a29a64237a0885bac638a9143ab3ee080"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83f63e599ce3d8e3c9648febf4d3257a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controle_8c.html#a83f63e599ce3d8e3c9648febf4d3257a">afficherPanneauModifierEnseignements</a> (<a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a> C)</td></tr>
+<tr class="memdesc:a83f63e599ce3d8e3c9648febf4d3257a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche l'interface de modification d'un enseignement.  <a href="controle_8c.html#a83f63e599ce3d8e3c9648febf4d3257a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a83f63e599ce3d8e3c9648febf4d3257a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5d4bc4db4cb426d70db47ac2a54447d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controle_8c.html#ad5d4bc4db4cb426d70db47ac2a54447d">afficherPanneauSupprimerEnseignements</a> (<a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a> C)</td></tr>
+<tr class="memdesc:ad5d4bc4db4cb426d70db47ac2a54447d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche l'interface de suppression d'un enseignement.  <a href="controle_8c.html#ad5d4bc4db4cb426d70db47ac2a54447d">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ad5d4bc4db4cb426d70db47ac2a54447d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c0fffcf7223f478349b420ce48c2d85"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controle_8c.html#a1c0fffcf7223f478349b420ce48c2d85">afficherPanneauListeEnseignements</a> (<a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a> C)</td></tr>
+<tr class="memdesc:a1c0fffcf7223f478349b420ce48c2d85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche la liste des enseignements.  <a href="controle_8c.html#a1c0fffcf7223f478349b420ce48c2d85">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a1c0fffcf7223f478349b420ce48c2d85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd16df38db1d521d5a595a2b40fcb3e7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controle_8c.html#acd16df38db1d521d5a595a2b40fcb3e7">afficherPanneauGestionSalles</a> ()</td></tr>
+<tr class="memdesc:acd16df38db1d521d5a595a2b40fcb3e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche l'interface de gestion d'une salle.  <a href="controle_8c.html#acd16df38db1d521d5a595a2b40fcb3e7">Plus de détails...</a><br /></td></tr>
+<tr class="separator:acd16df38db1d521d5a595a2b40fcb3e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada4f27aaed9113fe59cc44b8cc37e50d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controle_8c.html#ada4f27aaed9113fe59cc44b8cc37e50d">afficherPanneauAjouterSalles</a> (<a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a> C)</td></tr>
+<tr class="memdesc:ada4f27aaed9113fe59cc44b8cc37e50d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche l'interface d'ajout d'une salle.  <a href="controle_8c.html#ada4f27aaed9113fe59cc44b8cc37e50d">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ada4f27aaed9113fe59cc44b8cc37e50d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01ecd9320e1e5a50df1c20ef56e85b7f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controle_8c.html#a01ecd9320e1e5a50df1c20ef56e85b7f">afficherPanneauModifierSalles</a> (<a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a> C)</td></tr>
+<tr class="memdesc:a01ecd9320e1e5a50df1c20ef56e85b7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche l'interface de modification d'une salle.  <a href="controle_8c.html#a01ecd9320e1e5a50df1c20ef56e85b7f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a01ecd9320e1e5a50df1c20ef56e85b7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a289f23bd14ce389f090497d53831c832"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controle_8c.html#a289f23bd14ce389f090497d53831c832">afficherPanneauListeSalles</a> (<a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a> C)</td></tr>
+<tr class="memdesc:a289f23bd14ce389f090497d53831c832"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche la liste des salles.  <a href="controle_8c.html#a289f23bd14ce389f090497d53831c832">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a289f23bd14ce389f090497d53831c832"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec335c9469baf26de09921bde8346340"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controle_8c.html#aec335c9469baf26de09921bde8346340">afficherPanneauGestionCreneaux</a> ()</td></tr>
+<tr class="memdesc:aec335c9469baf26de09921bde8346340"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche l'interface de gestion d'un créneau ou réservation.  <a href="controle_8c.html#aec335c9469baf26de09921bde8346340">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aec335c9469baf26de09921bde8346340"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b5309c88a2180a130f7d3b0121ac2e4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controle_8c.html#a8b5309c88a2180a130f7d3b0121ac2e4">afficherPanneauAjouterCreneaux</a> (<a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a> C)</td></tr>
+<tr class="memdesc:a8b5309c88a2180a130f7d3b0121ac2e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche l'interface d'ajout d'un créneau ou réservation.  <a href="controle_8c.html#a8b5309c88a2180a130f7d3b0121ac2e4">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a8b5309c88a2180a130f7d3b0121ac2e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b1e62fb15ce7f1eff6a667ca1c4e588"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controle_8c.html#a2b1e62fb15ce7f1eff6a667ca1c4e588">afficherPanneauSupprimerCreneaux</a> (<a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a> C)</td></tr>
+<tr class="memdesc:a2b1e62fb15ce7f1eff6a667ca1c4e588"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche l'interface de suppression d'un créneau ou réservation.  <a href="controle_8c.html#a2b1e62fb15ce7f1eff6a667ca1c4e588">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a2b1e62fb15ce7f1eff6a667ca1c4e588"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe7645dfd1ab1580b783bdf671c43c1d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controle_8c.html#afe7645dfd1ab1580b783bdf671c43c1d">afficherPanneauModifierCreneaux</a> (<a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a> C)</td></tr>
+<tr class="memdesc:afe7645dfd1ab1580b783bdf671c43c1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche l'interface de modification d'un créneau ou réservation.  <a href="controle_8c.html#afe7645dfd1ab1580b783bdf671c43c1d">Plus de détails...</a><br /></td></tr>
+<tr class="separator:afe7645dfd1ab1580b783bdf671c43c1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4229ed960803a3c0442f591456f808b1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controle_8c.html#a4229ed960803a3c0442f591456f808b1">afficherPanneauListeCreneaux</a> (<a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a> C)</td></tr>
+<tr class="memdesc:a4229ed960803a3c0442f591456f808b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche la liste des créneaux, par formation.  <a href="controle_8c.html#a4229ed960803a3c0442f591456f808b1">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a4229ed960803a3c0442f591456f808b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86e511b92902d890271c6163ac57a6db"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controle_8c.html#a86e511b92902d890271c6163ac57a6db">afficherPanneauAuthentificationMDP</a> (<a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a> C)</td></tr>
+<tr class="memdesc:a86e511b92902d890271c6163ac57a6db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche l'interface de vérification de mot de passe ou authentification.  <a href="controle_8c.html#a86e511b92902d890271c6163ac57a6db">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a86e511b92902d890271c6163ac57a6db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8637e1180463a3ac4972f045784176f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controle_8c.html#ae8637e1180463a3ac4972f045784176f">afficherPanneauModifierMDP</a> (<a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a> C)</td></tr>
+<tr class="memdesc:ae8637e1180463a3ac4972f045784176f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affiche l'interface de modification d'un mot de passe.  <a href="controle_8c.html#ae8637e1180463a3ac4972f045784176f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ae8637e1180463a3ac4972f045784176f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e582d2147157d8c09b18efeb8c5ac49"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controle_8c.html#a0e582d2147157d8c09b18efeb8c5ac49">afficherProchainPanneau</a> (<a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a> C)</td></tr>
+<tr class="memdesc:a0e582d2147157d8c09b18efeb8c5ac49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gère les panneaux à afficher en fonction du choix de l'utilisateur et du panneau courant.  <a href="controle_8c.html#a0e582d2147157d8c09b18efeb8c5ac49">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a0e582d2147157d8c09b18efeb8c5ac49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b42e026b478cfd7af6b8b4e6f27f646"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controle_8c.html#a3b42e026b478cfd7af6b8b4e6f27f646">run</a> (<a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a> C)</td></tr>
+<tr class="memdesc:a3b42e026b478cfd7af6b8b4e6f27f646"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boucle principale de l'interface de Controle.  <a href="controle_8c.html#a3b42e026b478cfd7af6b8b4e6f27f646">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a3b42e026b478cfd7af6b8b4e6f27f646"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>Code source de la structure de données Controle. </p>
+<dl class="section author"><dt>Auteur</dt><dd>Mihaja RAZAFIMAHEFA &amp; Ambre ROUZADE </dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2022 </dd></dl>
+</div><h2 class="groupheader">Documentation du type de l'énumération</h2>
+<a id="a58ea2806d44139fd0ff194d1ae0f10f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58ea2806d44139fd0ff194d1ae0f10f2">&#9670;&nbsp;</a></span>liste_etat_affichage</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="controle_8c.html#a58ea2806d44139fd0ff194d1ae0f10f2">liste_etat_affichage</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Enumération qui permet de coder l'affichage (état) courant de l'interface utilisateur ou sa "position". </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valeurs énumérées</th></tr><tr><td class="fieldname"><a id="a58ea2806d44139fd0ff194d1ae0f10f2a151abe08217bc386cb1b4d2f3c90a332"></a>BIENVENUE&#160;</td><td class="fielddoc"><p>Écran de démarrage </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a58ea2806d44139fd0ff194d1ae0f10f2a48e4cb37544c8e69715d45e5a83b2109"></a>CLIENT&#160;</td><td class="fielddoc"><p>Panneau client </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a58ea2806d44139fd0ff194d1ae0f10f2a661a9cd32f23e412becdd22c75caae50"></a>EDT&#160;</td><td class="fielddoc"><p>Panneau des emplois du temps </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a58ea2806d44139fd0ff194d1ae0f10f2a8b22fbb60fcbd7a4a5e1e6ff6ee38218"></a>AUTH&#160;</td><td class="fielddoc"><p>Panneau de connexion administrateur </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a58ea2806d44139fd0ff194d1ae0f10f2a3228e792244f936584abc6e3d7542d2c"></a>ADMIN&#160;</td><td class="fielddoc"><p>Panneau administrateur </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a58ea2806d44139fd0ff194d1ae0f10f2a2f5193c68dda7016a2c33947f5756141"></a>ENSEIGNANT&#160;</td><td class="fielddoc"><p>Panneau de gestion des Enseignants </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a58ea2806d44139fd0ff194d1ae0f10f2acd98416ba290d4921fdd6603dad70d4f"></a>ENSEIGNEMENT&#160;</td><td class="fielddoc"><p>Panneau de gestion des Enseignements </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a58ea2806d44139fd0ff194d1ae0f10f2a8b1cfb3aba28dc3854404d68adbd8d95"></a>SALLE&#160;</td><td class="fielddoc"><p>Panneau de gestion des Salles </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a58ea2806d44139fd0ff194d1ae0f10f2a25e2adbc62dc2a7d3f30c617e879cf93"></a>BOOK&#160;</td><td class="fielddoc"><p>Panneau de gestion des Creneau (réservations) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a58ea2806d44139fd0ff194d1ae0f10f2a61aa7ff70b76bff0fda378cf61d6afbc"></a>WRITE&#160;</td><td class="fielddoc"><p>Panneau de manipulation des données (ajout, suppression, modification, affichage, ... ) </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a35857ed2784c7e8963777df6d158bac4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35857ed2784c7e8963777df6d158bac4">&#9670;&nbsp;</a></span>afficherEDTEnseignant()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void afficherEDTEnseignant </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a>&#160;</td>
+          <td class="paramname"><em>C</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="enseignant_8h.html#ae182509dd066fcbc24384cd848812d78">Enseignant</a>&#160;</td>
+          <td class="paramname"><em>e</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche l'emploi du temps pour un enseignant. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">C</td><td>Référence de Controle. </td></tr>
+    <tr><td class="paramname">e</td><td>Enseignant à afficher. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aecb237eb04cc3b350db285abbe1d62c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecb237eb04cc3b350db285abbe1d62c2">&#9670;&nbsp;</a></span>afficherEDTFormation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void afficherEDTFormation </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a>&#160;</td>
+          <td class="paramname"><em>C</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>formation</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche l'emploi du temps pour une formation. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">C</td><td>Référence de Controle. </td></tr>
+    <tr><td class="paramname">formation</td><td>Formation à afficher. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad66ee22ae2052d3a91bc10c4a12110f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad66ee22ae2052d3a91bc10c4a12110f1">&#9670;&nbsp;</a></span>afficherPanneauAdmin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int afficherPanneauAdmin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche l'interface de gestion général. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>0 pour quitter, 1 à 5 sinon. </dd></dl>
+
+</div>
+</div>
+<a id="a8b5309c88a2180a130f7d3b0121ac2e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b5309c88a2180a130f7d3b0121ac2e4">&#9670;&nbsp;</a></span>afficherPanneauAjouterCreneaux()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int afficherPanneauAjouterCreneaux </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a>&#160;</td>
+          <td class="paramname"><em>C</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche l'interface d'ajout d'un créneau ou réservation. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">C</td><td>Référence de Controle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>0 pour quitter, 1 ou -1 pour revenir en arrière </dd></dl>
+
+</div>
+</div>
+<a id="aefda132982ff834fd9d6d95932808055"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefda132982ff834fd9d6d95932808055">&#9670;&nbsp;</a></span>afficherPanneauAjouterEnseignants()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int afficherPanneauAjouterEnseignants </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a>&#160;</td>
+          <td class="paramname"><em>C</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche l'interface d'ajout d'un enseignant. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">C</td><td>Référence de Controle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>0 pour quitter, 1 ou -1 pour revenir en arrière. </dd></dl>
+
+</div>
+</div>
+<a id="a29a64237a0885bac638a9143ab3ee080"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29a64237a0885bac638a9143ab3ee080">&#9670;&nbsp;</a></span>afficherPanneauAjouterEnseignements()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int afficherPanneauAjouterEnseignements </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a>&#160;</td>
+          <td class="paramname"><em>C</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche l'interface d'ajout d'un enseignement. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">C</td><td>Référence de Controle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>0 pour quitter, 1 ou -1 pour revenir en arrière </dd></dl>
+
+</div>
+</div>
+<a id="ada4f27aaed9113fe59cc44b8cc37e50d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada4f27aaed9113fe59cc44b8cc37e50d">&#9670;&nbsp;</a></span>afficherPanneauAjouterSalles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int afficherPanneauAjouterSalles </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a>&#160;</td>
+          <td class="paramname"><em>C</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche l'interface d'ajout d'une salle. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">C</td><td>Référence de Controle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>0 pour quitter, 1 ou -1 pour revenir en arrière </dd></dl>
+
+</div>
+</div>
+<a id="a86e511b92902d890271c6163ac57a6db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86e511b92902d890271c6163ac57a6db">&#9670;&nbsp;</a></span>afficherPanneauAuthentificationMDP()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int afficherPanneauAuthentificationMDP </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a>&#160;</td>
+          <td class="paramname"><em>C</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche l'interface de vérification de mot de passe ou authentification. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">C</td><td>Référence de Controle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>0 pour quitter, 1 sinon. </dd></dl>
+
+</div>
+</div>
+<a id="a224952a1510983c2e446577b4a7df957"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a224952a1510983c2e446577b4a7df957">&#9670;&nbsp;</a></span>afficherPanneauBienvenue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int afficherPanneauBienvenue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche l'interface de présentation de l'application. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>int </dd></dl>
+
+</div>
+</div>
+<a id="ad4c2ffd89d5d259ae147e7d68e5c106a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4c2ffd89d5d259ae147e7d68e5c106a">&#9670;&nbsp;</a></span>afficherPanneauClient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int afficherPanneauClient </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche l'interface de sélection d'emploi du temps. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>int </dd></dl>
+
+</div>
+</div>
+<a id="aec55c69052ad37034e97990f72666ec2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec55c69052ad37034e97990f72666ec2">&#9670;&nbsp;</a></span>afficherPanneauEDTEnseignants()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int afficherPanneauEDTEnseignants </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a>&#160;</td>
+          <td class="paramname"><em>C</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche l'emploi du temps par enseignant. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">C</td><td>Référence de Controle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>-1 pour revenir en arrière. </dd></dl>
+
+</div>
+</div>
+<a id="ad1e232ab849e005816bd3871a7895920"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1e232ab849e005816bd3871a7895920">&#9670;&nbsp;</a></span>afficherPanneauEDTFormations()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int afficherPanneauEDTFormations </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a>&#160;</td>
+          <td class="paramname"><em>C</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche l'emploi du temps par formation. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">C</td><td>Référence de Controle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>-1 pour revenir en arrière. </dd></dl>
+
+</div>
+</div>
+<a id="aa7e6e40aab2f997c6b895675ad2c8256"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7e6e40aab2f997c6b895675ad2c8256">&#9670;&nbsp;</a></span>afficherPanneauEDTSalles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int afficherPanneauEDTSalles </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a>&#160;</td>
+          <td class="paramname"><em>C</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche l'emploi du temps par salle. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">C</td><td>Référence de Controle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>-1 pour revenir en arrière. </dd></dl>
+
+</div>
+</div>
+<a id="aec335c9469baf26de09921bde8346340"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec335c9469baf26de09921bde8346340">&#9670;&nbsp;</a></span>afficherPanneauGestionCreneaux()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int afficherPanneauGestionCreneaux </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche l'interface de gestion d'un créneau ou réservation. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">C</td><td>Référence de Controle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>0 pour quitter, 1 à 4 sinon. </dd></dl>
+
+</div>
+</div>
+<a id="aab156bb97bd66438ef4c32f0a79f1b14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab156bb97bd66438ef4c32f0a79f1b14">&#9670;&nbsp;</a></span>afficherPanneauGestionEnseignants()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int afficherPanneauGestionEnseignants </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche l'interface de gestion des enseignants. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>0 pour quitter, 1 à 4 sinon. </dd></dl>
+
+</div>
+</div>
+<a id="a56c9d67b0d41571038fe075cb0fd9a5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56c9d67b0d41571038fe075cb0fd9a5d">&#9670;&nbsp;</a></span>afficherPanneauGestionEnseignements()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int afficherPanneauGestionEnseignements </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche l'interface de gestion d'un enseignement. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">C</td><td>Référence de Controle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>0 pour quitter, 1 à 4 sinon. </dd></dl>
+
+</div>
+</div>
+<a id="acd16df38db1d521d5a595a2b40fcb3e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd16df38db1d521d5a595a2b40fcb3e7">&#9670;&nbsp;</a></span>afficherPanneauGestionSalles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int afficherPanneauGestionSalles </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche l'interface de gestion d'une salle. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">C</td><td>Référence de Controle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>0 pour quitter, 1 à 3 sinon. </dd></dl>
+
+</div>
+</div>
+<a id="a4229ed960803a3c0442f591456f808b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4229ed960803a3c0442f591456f808b1">&#9670;&nbsp;</a></span>afficherPanneauListeCreneaux()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int afficherPanneauListeCreneaux </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a>&#160;</td>
+          <td class="paramname"><em>C</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche la liste des créneaux, par formation. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">C</td><td>Référence de Controle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>-1 pour revenir en arrière. </dd></dl>
+
+</div>
+</div>
+<a id="a2cfe6d80bf8dc5990c5d3551bfea89bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cfe6d80bf8dc5990c5d3551bfea89bc">&#9670;&nbsp;</a></span>afficherPanneauListeEnseignants()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int afficherPanneauListeEnseignants </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a>&#160;</td>
+          <td class="paramname"><em>C</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche la liste des enseignants. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">C</td><td>Référence de Controle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>-1 pour revenir en arrière. </dd></dl>
+
+</div>
+</div>
+<a id="a1c0fffcf7223f478349b420ce48c2d85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c0fffcf7223f478349b420ce48c2d85">&#9670;&nbsp;</a></span>afficherPanneauListeEnseignements()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int afficherPanneauListeEnseignements </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a>&#160;</td>
+          <td class="paramname"><em>C</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche la liste des enseignements. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">C</td><td>Référence de Controle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>-1 pour revenir en arrière. </dd></dl>
+
+</div>
+</div>
+<a id="a289f23bd14ce389f090497d53831c832"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a289f23bd14ce389f090497d53831c832">&#9670;&nbsp;</a></span>afficherPanneauListeSalles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int afficherPanneauListeSalles </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a>&#160;</td>
+          <td class="paramname"><em>C</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche la liste des salles. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">C</td><td>Référence de Controle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>-1 pour revenir en arrière. </dd></dl>
+
+</div>
+</div>
+<a id="afe7645dfd1ab1580b783bdf671c43c1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe7645dfd1ab1580b783bdf671c43c1d">&#9670;&nbsp;</a></span>afficherPanneauModifierCreneaux()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int afficherPanneauModifierCreneaux </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a>&#160;</td>
+          <td class="paramname"><em>C</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche l'interface de modification d'un créneau ou réservation. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">C</td><td>Référence de Controle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>0 pour quitter, 1 ou -1 pour revenir en arrière </dd></dl>
+
+</div>
+</div>
+<a id="ab8fe7c555db95eb61df5e11e892d9690"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8fe7c555db95eb61df5e11e892d9690">&#9670;&nbsp;</a></span>afficherPanneauModifierEnseignants()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int afficherPanneauModifierEnseignants </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a>&#160;</td>
+          <td class="paramname"><em>C</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche l'interface de modification d'un enseignant. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">C</td><td>Référence de Controle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>0 pour quitter, 1 ou -1 pour revenir en arrière </dd></dl>
+
+</div>
+</div>
+<a id="a83f63e599ce3d8e3c9648febf4d3257a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83f63e599ce3d8e3c9648febf4d3257a">&#9670;&nbsp;</a></span>afficherPanneauModifierEnseignements()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int afficherPanneauModifierEnseignements </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a>&#160;</td>
+          <td class="paramname"><em>C</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche l'interface de modification d'un enseignement. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">C</td><td>Référence de Controle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>0 pour quitter, 1 ou -1 pour revenir en arrière </dd></dl>
+
+</div>
+</div>
+<a id="ae8637e1180463a3ac4972f045784176f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8637e1180463a3ac4972f045784176f">&#9670;&nbsp;</a></span>afficherPanneauModifierMDP()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int afficherPanneauModifierMDP </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a>&#160;</td>
+          <td class="paramname"><em>C</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche l'interface de modification d'un mot de passe. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">C</td><td>Référence de Controle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>0 pour quitter, 1 ou -1 pour revenir en arrière </dd></dl>
+
+</div>
+</div>
+<a id="a01ecd9320e1e5a50df1c20ef56e85b7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01ecd9320e1e5a50df1c20ef56e85b7f">&#9670;&nbsp;</a></span>afficherPanneauModifierSalles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int afficherPanneauModifierSalles </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a>&#160;</td>
+          <td class="paramname"><em>C</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche l'interface de modification d'une salle. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">C</td><td>Référence de Controle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>0 pour quitter, 1 ou -1 pour revenir en arrière </dd></dl>
+
+</div>
+</div>
+<a id="a70153745a3e44c681f42a19141af4a62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70153745a3e44c681f42a19141af4a62">&#9670;&nbsp;</a></span>afficherPanneauSortie()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int afficherPanneauSortie </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche l'interface de sortie de l'application. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>int </dd></dl>
+
+</div>
+</div>
+<a id="a2b1e62fb15ce7f1eff6a667ca1c4e588"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b1e62fb15ce7f1eff6a667ca1c4e588">&#9670;&nbsp;</a></span>afficherPanneauSupprimerCreneaux()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int afficherPanneauSupprimerCreneaux </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a>&#160;</td>
+          <td class="paramname"><em>C</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche l'interface de suppression d'un créneau ou réservation. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">C</td><td>Référence de Controle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>0 pour quitter, 1 ou -1 pour revenir en arrière </dd></dl>
+
+</div>
+</div>
+<a id="a23af606252c41e83093fbee102a1c64c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23af606252c41e83093fbee102a1c64c">&#9670;&nbsp;</a></span>afficherPanneauSupprimerEnseignants()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int afficherPanneauSupprimerEnseignants </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a>&#160;</td>
+          <td class="paramname"><em>C</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche l'interface de modification d'un enseignant. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">C</td><td>Référence de Controle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>0 pour quitter, 1 ou -1 pour revenir en arrière </dd></dl>
+
+</div>
+</div>
+<a id="ad5d4bc4db4cb426d70db47ac2a54447d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5d4bc4db4cb426d70db47ac2a54447d">&#9670;&nbsp;</a></span>afficherPanneauSupprimerEnseignements()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int afficherPanneauSupprimerEnseignements </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a>&#160;</td>
+          <td class="paramname"><em>C</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Affiche l'interface de suppression d'un enseignement. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">C</td><td>Référence de Controle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>0 pour quitter, 1 ou -1 pour revenir en arrière </dd></dl>
+
+</div>
+</div>
+<a id="a0e582d2147157d8c09b18efeb8c5ac49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e582d2147157d8c09b18efeb8c5ac49">&#9670;&nbsp;</a></span>afficherProchainPanneau()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int afficherProchainPanneau </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a>&#160;</td>
+          <td class="paramname"><em>C</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gère les panneaux à afficher en fonction du choix de l'utilisateur et du panneau courant. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">C</td><td>Référence de Controle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>0 pour quitter, &gt;0 pour passer à un autre panneau. </dd></dl>
+
+</div>
+</div>
+<a id="a7441ad2ae84ed7a9eba7a493dce07806"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7441ad2ae84ed7a9eba7a493dce07806">&#9670;&nbsp;</a></span>afficherProfil()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int afficherProfil </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>profil</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Imprime sur stdout le profil de l'utilisateur connecté </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">profil</td><td>Profile de l'utilisateur. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>1 </dd></dl>
+
+</div>
+</div>
+<a id="a9cc48dc74fda529f014586404b0989f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cc48dc74fda529f014586404b0989f3">&#9670;&nbsp;</a></span>controle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a> controle </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>cheminData</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construit un nouvelle objet Controle à partir des données JSON s'il existe. </p>
+<p>Constructeur par défaut de l'objet Controle.</p>
+
+</div>
+</div>
+<a id="a1303134258e4d8e87efe2c2dad1416e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1303134258e4d8e87efe2c2dad1416e6">&#9670;&nbsp;</a></span>controleClean()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a> controleClean </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a>&#160;</td>
+          <td class="paramname"><em>C</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construit un objet Controle avec des listes vides et les formations par défaut. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">C</td><td>Référence de Controle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Controle </dd></dl>
+
+</div>
+</div>
+<a id="a530e59a306682b5d42cebd4d65640087"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a530e59a306682b5d42cebd4d65640087">&#9670;&nbsp;</a></span>controleParser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a> controleParser </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a>&#160;</td>
+          <td class="paramname"><em>C</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structjson__t.html">json_t</a> *&#160;</td>
+          <td class="paramname"><em>json_controle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construit un objet Controle avec les données JSON renvoyé par l'API Jansson. </p>
+<p>On accède aux clé-valeurs de "enseignants", "enseignements", "formations", "salles" qui sont tous des tableaux puis on contruit les attributs de Controle en faisant à chaque fois appel aux constructeurs avec les données JSON en paramètres.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">C</td><td>Référence de Controle. </td></tr>
+    <tr><td class="paramname">json_controle</td><td>Objet JSON de Controle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Controle avec les données JSON comme attributs. </dd></dl>
+
+</div>
+</div>
+<a id="a335cc1d0715726b1a46dac9191dfb20e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a335cc1d0715726b1a46dac9191dfb20e">&#9670;&nbsp;</a></span>controleSerializer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void controleSerializer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a>&#160;</td>
+          <td class="paramname"><em>C</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>imprime sur un fichier du disque (spécifié par Controle) les données courants de l'application sour format JSON </p>
+<dl class="section see"><dt>Voir également</dt><dd><a href="https://jansson.readthedocs.io/en/latest/apiref.html#c.json_dump_file">json_dump_file</a></dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">C</td><td>Référence de Controle </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abb9914b3c0026dfda702998e297d8ef0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb9914b3c0026dfda702998e297d8ef0">&#9670;&nbsp;</a></span>decodeMDP()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* decodeMDP </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>mdp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>dest</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Décrypte le mot de passe passé en paramètre. </p>
+<dl class="section note"><dt>Note</dt><dd>On utilise l'algorithme ROT13 pour l'encodage de nos caractères.</dd></dl>
+<dl class="section pre"><dt>Précondition</dt><dd>dest doit être alloué</dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mdp</td><td>Mot de passe crypté. </td></tr>
+    <tr><td class="paramname">dest</td><td>Adresse où sera stocké le mot de passe décrypté </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Mot de passe décrypté de type char*. </dd></dl>
+
+</div>
+</div>
+<a id="aa7f3b1bc90c66490d64bea86925d7d22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7f3b1bc90c66490d64bea86925d7d22">&#9670;&nbsp;</a></span>encodeMDP()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* encodeMDP </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>mdp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Encrypte le mot de passe passé en paramètre. </p>
+<dl class="section note"><dt>Note</dt><dd>On utilise l'algorithme ROT13 pour l'encodage de nos caractères.</dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mdp</td><td>Mot de passe crypté. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Mot de passe décrypté de type char*. </dd></dl>
+
+</div>
+</div>
+<a id="a5bfa5451d066dcc3b705d170e18d2142"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bfa5451d066dcc3b705d170e18d2142">&#9670;&nbsp;</a></span>getUserProfile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* getUserProfile </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a>&#160;</td>
+          <td class="paramname"><em>C</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur de la représentation en chaîne de caractère du Profil courant. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">C</td><td>Référence de Controle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Profil de l'utilisateur courant de type char*. </dd></dl>
+
+</div>
+</div>
+<a id="ada43fb46c2b97617bd5068e94b30b7e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada43fb46c2b97617bd5068e94b30b7e6">&#9670;&nbsp;</a></span>populateFormations()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="formations_8h.html#a721b09043353162835f38f4980591651">Formations</a> populateFormations </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="formations_8h.html#a721b09043353162835f38f4980591651">Formations</a>&#160;</td>
+          <td class="paramname"><em>fs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ajoute les formations par défaut à la liste des Formations. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fs</td><td>Référence de Formations. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Formations rempli avec les parcours de CUPGE. </dd></dl>
+
+</div>
+</div>
+<a id="a3b42e026b478cfd7af6b8b4e6f27f646"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b42e026b478cfd7af6b8b4e6f27f646">&#9670;&nbsp;</a></span>run()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int run </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a>&#160;</td>
+          <td class="paramname"><em>C</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Boucle principale de l'interface de Controle. </p>
+<p>Affiche d'abord le panneau Bienvenue à l'initialisation puis exécute la boucle.</p>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="controle_8c.html#a0e582d2147157d8c09b18efeb8c5ac49" title="Gère les panneaux à afficher en fonction du choix de l&#39;utilisateur et du panneau courant.">afficherProchainPanneau</a></dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

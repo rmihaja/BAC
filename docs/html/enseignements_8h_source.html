@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>BAC:  Fichier source de include/enseignements.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">BAC
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">enseignements.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="enseignements_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef __ENSEIGNEMENTS_H__</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define __ENSEIGNEMENTS_H__</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;jansson.h&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="enseignements_8h.html#a3a745579c04cf9eac5f2b2041b6c2751">   19</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structs__enseignements.html">s_enseignements</a>* <a class="code" href="enseignements_8h.html#a3a745579c04cf9eac5f2b2041b6c2751">Enseignements</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<a class="code" href="structs__enseignements.html">Enseignements</a> <a class="code" href="enseignements_8h.html#a910d5bf69b2e437e5c47c7db4630212b">enseignements</a>();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<a class="code" href="structs__enseignements.html">Enseignements</a> <a class="code" href="enseignements_8h.html#acdad3d071d52208e998e37c3f86bf501">enseignementsParser</a>(<a class="code" href="structjson__t.html">json_t</a>* json_enseignements);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keywordtype">char</span>* <a class="code" href="enseignements_8h.html#aee5a1763b2e5c5a22dcf589aa0b170e6">getEnseignementByIndice</a>(<a class="code" href="structs__enseignements.html">Enseignements</a> ens, <span class="keywordtype">int</span> indice);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<a class="code" href="structjson__t.html">json_t</a>* <a class="code" href="enseignements_8h.html#ae45cdacd6c8b5a7827bce6e26325359b">getJsonEnseignements</a>(<a class="code" href="structs__enseignements.html">Enseignements</a> ens);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keywordtype">int</span> <a class="code" href="enseignements_8h.html#a7b361341ff4cfd4269b7cb6b5d28bbfb">sizeEnseignements</a>(<a class="code" href="structs__enseignements.html">Enseignements</a> ens);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="enseignements_8h.html#ae3db35e09c2dd0ecc59cdce15a472908">appartientEnseignements</a>(<a class="code" href="structs__enseignements.html">Enseignements</a> ens, <span class="keywordtype">char</span>* nom);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<a class="code" href="structs__enseignements.html">Enseignements</a> <a class="code" href="enseignements_8h.html#aa20676a740732aea1b9c8726325f70d2">ajouterEns</a>(<a class="code" href="structs__enseignements.html">Enseignements</a> ens, <span class="keywordtype">char</span>* nom);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<a class="code" href="structs__enseignements.html">Enseignements</a> <a class="code" href="enseignements_8h.html#ab7b5a3d7c2fc8c17509a9714265553ab">supprimerEns</a>(<a class="code" href="structs__enseignements.html">Enseignements</a> ens, <span class="keywordtype">char</span>* nom);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="keywordtype">void</span> <a class="code" href="enseignements_8h.html#a199a1729b33089398ea4a4eb78cb89b4">afficherEnseignements</a>(<a class="code" href="structs__enseignements.html">Enseignements</a> ens, <span class="keywordtype">bool</span> isOrdered);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="keywordtype">char</span>* <a class="code" href="enseignements_8h.html#a5aabe67cd422824cab8c959cddbed2dc">toStringEnseignements</a>(<a class="code" href="structs__enseignements.html">Enseignements</a> ens);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aenseignements_8h_html_aee5a1763b2e5c5a22dcf589aa0b170e6"><div class="ttname"><a href="enseignements_8h.html#aee5a1763b2e5c5a22dcf589aa0b170e6">getEnseignementByIndice</a></div><div class="ttdeci">char * getEnseignementByIndice(Enseignements ens, int indice)</div><div class="ttdoc">Accesseur d'un Enseignement à partir de son Indice dans Enseignements.</div><div class="ttdef"><b>Definition:</b> enseignements.c:126</div></div>
+<div class="ttc" id="aenseignements_8h_html_ae45cdacd6c8b5a7827bce6e26325359b"><div class="ttname"><a href="enseignements_8h.html#ae45cdacd6c8b5a7827bce6e26325359b">getJsonEnseignements</a></div><div class="ttdeci">json_t * getJsonEnseignements(Enseignements ens)</div><div class="ttdoc">Accesseur de la représentation en objet JSON de Enseignements.</div><div class="ttdef"><b>Definition:</b> enseignements.c:151</div></div>
+<div class="ttc" id="astructs__enseignements_html"><div class="ttname"><a href="structs__enseignements.html">s_enseignements</a></div><div class="ttdoc">Structure représentant une liste chaînée de Enseignement.</div><div class="ttdef"><b>Definition:</b> enseignements.c:53</div></div>
+<div class="ttc" id="aenseignements_8h_html_a3a745579c04cf9eac5f2b2041b6c2751"><div class="ttname"><a href="enseignements_8h.html#a3a745579c04cf9eac5f2b2041b6c2751">Enseignements</a></div><div class="ttdeci">struct s_enseignements * Enseignements</div><div class="ttdoc">Objet Enseignements.</div><div class="ttdef"><b>Definition:</b> enseignements.h:19</div></div>
+<div class="ttc" id="aenseignements_8h_html_aa20676a740732aea1b9c8726325f70d2"><div class="ttname"><a href="enseignements_8h.html#aa20676a740732aea1b9c8726325f70d2">ajouterEns</a></div><div class="ttdeci">Enseignements ajouterEns(Enseignements ens, char *nom)</div><div class="ttdoc">Ajoute une référence de l'objet Enseignement à la liste des Enseignements.</div><div class="ttdef"><b>Definition:</b> enseignements.c:196</div></div>
+<div class="ttc" id="astructjson__t_html"><div class="ttname"><a href="structjson__t.html">json_t</a></div><div class="ttdef"><b>Definition:</b> jansson.h:61</div></div>
+<div class="ttc" id="aenseignements_8h_html_ab7b5a3d7c2fc8c17509a9714265553ab"><div class="ttname"><a href="enseignements_8h.html#ab7b5a3d7c2fc8c17509a9714265553ab">supprimerEns</a></div><div class="ttdeci">Enseignements supprimerEns(Enseignements ens, char *nom)</div><div class="ttdoc">Supprime toute référence de l'objet Enseignement dans la liste des Enseignements.</div><div class="ttdef"><b>Definition:</b> enseignements.c:219</div></div>
+<div class="ttc" id="aenseignements_8h_html_acdad3d071d52208e998e37c3f86bf501"><div class="ttname"><a href="enseignements_8h.html#acdad3d071d52208e998e37c3f86bf501">enseignementsParser</a></div><div class="ttdeci">Enseignements enseignementsParser(json_t *json_enseignements)</div><div class="ttdoc">Construit un nouvel objet Enseignements à partir de sa représentation en objet JSON.</div><div class="ttdef"><b>Definition:</b> enseignements.c:110</div></div>
+<div class="ttc" id="aenseignements_8h_html_a199a1729b33089398ea4a4eb78cb89b4"><div class="ttname"><a href="enseignements_8h.html#a199a1729b33089398ea4a4eb78cb89b4">afficherEnseignements</a></div><div class="ttdeci">void afficherEnseignements(Enseignements ens, bool isOrdered)</div><div class="ttdoc">Imprime tout Enseignement de la liste des Enseignements sur stdout, suivi d'un retour à ligne.</div><div class="ttdef"><b>Definition:</b> enseignements.c:265</div></div>
+<div class="ttc" id="aenseignements_8h_html_ae3db35e09c2dd0ecc59cdce15a472908"><div class="ttname"><a href="enseignements_8h.html#ae3db35e09c2dd0ecc59cdce15a472908">appartientEnseignements</a></div><div class="ttdeci">bool appartientEnseignements(Enseignements ens, char *nom)</div><div class="ttdoc">vérifie si Enseignements possède une référence de l'objet Enseignement.</div><div class="ttdef"><b>Definition:</b> enseignements.c:174</div></div>
+<div class="ttc" id="aenseignements_8h_html_a7b361341ff4cfd4269b7cb6b5d28bbfb"><div class="ttname"><a href="enseignements_8h.html#a7b361341ff4cfd4269b7cb6b5d28bbfb">sizeEnseignements</a></div><div class="ttdeci">int sizeEnseignements(Enseignements ens)</div><div class="ttdoc">Accesseur de la taille de Enseignements.</div><div class="ttdef"><b>Definition:</b> enseignements.c:161</div></div>
+<div class="ttc" id="aenseignements_8h_html_a5aabe67cd422824cab8c959cddbed2dc"><div class="ttname"><a href="enseignements_8h.html#a5aabe67cd422824cab8c959cddbed2dc">toStringEnseignements</a></div><div class="ttdeci">char * toStringEnseignements(Enseignements ens)</div><div class="ttdoc">Accesseur de la représentation en chaîne de caractère JSON de Enseignements.</div><div class="ttdef"><b>Definition:</b> enseignements.c:296</div></div>
+<div class="ttc" id="aenseignements_8h_html_a910d5bf69b2e437e5c47c7db4630212b"><div class="ttname"><a href="enseignements_8h.html#a910d5bf69b2e437e5c47c7db4630212b">enseignements</a></div><div class="ttdeci">Enseignements enseignements()</div><div class="ttdoc">Construit un nouvel objet Enseignements.</div><div class="ttdef"><b>Definition:</b> enseignements.c:71</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

@@ -1,0 +1,481 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>BAC: Référence du fichier include/entree.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">BAC
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle">
+<div class="title">Référence du fichier entree.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>En-tête des fonctions d'entrées.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de entree.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="entree_8h__incl.png" border="0" usemap="#include_2entree_8h" alt=""/></div>
+<map name="include_2entree_8h" id="include_2entree_8h">
+<area shape="rect" title="En&#45;tête des fonctions d&#39;entrées." alt="" coords="5,5,132,32"/>
+<area shape="rect" title=" " alt="" coords="27,80,110,107"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier :</div>
+<div class="dyncontent">
+<div class="center"><img src="entree_8h__dep__incl.png" border="0" usemap="#include_2entree_8hdep" alt=""/></div>
+<map name="include_2entree_8hdep" id="include_2entree_8hdep">
+<area shape="rect" title="En&#45;tête des fonctions d&#39;entrées." alt="" coords="134,5,261,32"/>
+<area shape="rect" href="controle_8h.html" title="En&#45;tête de la structure de données Controle." alt="" coords="48,80,187,107"/>
+<area shape="rect" href="entree_8c.html" title="Code source des fonctions d&#39;entrées." alt="" coords="211,80,344,107"/>
+<area shape="rect" href="app_8c.html" title="Code du programme principal." alt="" coords="5,155,85,181"/>
+<area shape="rect" href="controle_8c.html" title="Code source de la structure de données Controle." alt="" coords="110,155,269,181"/>
+</map>
+</div>
+</div>
+<p><a href="entree_8h_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a929fcb2eea5ce883e43dcb6c4cbbc598"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="entree_8h.html#a929fcb2eea5ce883e43dcb6c4cbbc598">println</a>(...)&#160;&#160;&#160;printf( __VA_ARGS__ &quot;\n\n&quot; )</td></tr>
+<tr class="memdesc:a929fcb2eea5ce883e43dcb6c4cbbc598"><td class="mdescLeft">&#160;</td><td class="mdescRight">permet d'imprimer une chaîne suivi deux retours à la ligne.  <a href="entree_8h.html#a929fcb2eea5ce883e43dcb6c4cbbc598">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a929fcb2eea5ce883e43dcb6c4cbbc598"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a585594b3c05e7076dcb0da38f0deb0da"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="entree_8h.html#a585594b3c05e7076dcb0da38f0deb0da">display</a>(format, ...)&#160;&#160;&#160;printf(format &quot;\n\n&quot;, __VA_ARGS__)</td></tr>
+<tr class="memdesc:a585594b3c05e7076dcb0da38f0deb0da"><td class="mdescLeft">&#160;</td><td class="mdescRight">permet d'imprimer une variable selon un format, suivi de deux retours à la ligne.  <a href="entree_8h.html#a585594b3c05e7076dcb0da38f0deb0da">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a585594b3c05e7076dcb0da38f0deb0da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b20d41d6252e9871430c242cb1a56e7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="entree_8h.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a>&#160;&#160;&#160;256</td></tr>
+<tr class="memdesc:a6b20d41d6252e9871430c242cb1a56e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">nombre de caractère maximale que le module peut lire par entrée.  <a href="entree_8h.html#a6b20d41d6252e9871430c242cb1a56e7">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a6b20d41d6252e9871430c242cb1a56e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:aec41046318734a4ad9f9ff4bbde577c7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="entree_8h.html#aec41046318734a4ad9f9ff4bbde577c7">getCharInput</a> (char *dest)</td></tr>
+<tr class="memdesc:aec41046318734a4ad9f9ff4bbde577c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Teste une entrée utilisateur de format chaîne de caractères attendu.  <a href="entree_8h.html#aec41046318734a4ad9f9ff4bbde577c7">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aec41046318734a4ad9f9ff4bbde577c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1249db64b03feb61aaa43ce79464edea"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="entree_8h.html#a1249db64b03feb61aaa43ce79464edea">getIntInput</a> (int *i)</td></tr>
+<tr class="memdesc:a1249db64b03feb61aaa43ce79464edea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Teste une entrée utilisateur de format entier attendu.  <a href="entree_8h.html#a1249db64b03feb61aaa43ce79464edea">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a1249db64b03feb61aaa43ce79464edea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23300a856cb19289a538ba335223fabc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="entree_8h.html#a23300a856cb19289a538ba335223fabc">getUserInput</a> (char *message, char *description, char *value)</td></tr>
+<tr class="memdesc:a23300a856cb19289a538ba335223fabc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lit une entrée utilisateur de format chaîne de caractères.  <a href="entree_8h.html#a23300a856cb19289a538ba335223fabc">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a23300a856cb19289a538ba335223fabc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a056e2a2226cb0c5adf0337d02288dd8d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="entree_8h.html#a056e2a2226cb0c5adf0337d02288dd8d">getChoiceInput</a> (char *message, int maxValue)</td></tr>
+<tr class="memdesc:a056e2a2226cb0c5adf0337d02288dd8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lit le choix entier de l'utilisateur parmi une liste à afficher. Le choix est défini entre 0 (Quitter) et maxValue.  <a href="entree_8h.html#a056e2a2226cb0c5adf0337d02288dd8d">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a056e2a2226cb0c5adf0337d02288dd8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03bdba1aad9c43382cd5694ed81faae1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="entree_8h.html#a03bdba1aad9c43382cd5694ed81faae1">getIntervalInput</a> (char *message, int minValue, int maxValue)</td></tr>
+<tr class="memdesc:a03bdba1aad9c43382cd5694ed81faae1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lit l'entrée d'un entier de l'utilisateur parmi une intervalle défini par minValue et maxValue.  <a href="entree_8h.html#a03bdba1aad9c43382cd5694ed81faae1">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a03bdba1aad9c43382cd5694ed81faae1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5062fdcb27b2b911ceb4cef7d95634fa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="entree_8h.html#a5062fdcb27b2b911ceb4cef7d95634fa">getAnyInput</a> ()</td></tr>
+<tr class="memdesc:a5062fdcb27b2b911ceb4cef7d95634fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">demande une réponse physique de l'utilisateur par un appuie sur la touche &lt;ENTREE&gt;  <a href="entree_8h.html#a5062fdcb27b2b911ceb4cef7d95634fa">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a5062fdcb27b2b911ceb4cef7d95634fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71c9ed735bfc20ce85f33f98a7339e0b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="entree_8h.html#a71c9ed735bfc20ce85f33f98a7339e0b">getCancelInput</a> ()</td></tr>
+<tr class="memdesc:a71c9ed735bfc20ce85f33f98a7339e0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renvoie au gestionnaire d'évènement une demande de revenir en arrière, marquée par l'entier -1.  <a href="entree_8h.html#a71c9ed735bfc20ce85f33f98a7339e0b">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a71c9ed735bfc20ce85f33f98a7339e0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afceb557cf908fb98e4a4e4c417aab406"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="entree_8h.html#afceb557cf908fb98e4a4e4c417aab406">getRetryInput</a> (char *description)</td></tr>
+<tr class="memdesc:afceb557cf908fb98e4a4e4c417aab406"><td class="mdescLeft">&#160;</td><td class="mdescRight">Présente une erreur à l'utilisateur le demandant de réessayer. Puis lit le choix de l'utilisateur.  <a href="entree_8h.html#afceb557cf908fb98e4a4e4c417aab406">Plus de détails...</a><br /></td></tr>
+<tr class="separator:afceb557cf908fb98e4a4e4c417aab406"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p>En-tête des fonctions d'entrées. </p>
+<dl class="section author"><dt>Auteur</dt><dd>Mihaja RAZAFIMAHEFA &amp; Ambre ROUZADE </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Dû à la technicité des fonctions présentées ici, la documentation se trouvera exclusivement dans le code source.</dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2022 </dd></dl>
+</div><h2 class="groupheader">Documentation des macros</h2>
+<a id="a6b20d41d6252e9871430c242cb1a56e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b20d41d6252e9871430c242cb1a56e7">&#9670;&nbsp;</a></span>BUFFER_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUFFER_SIZE&#160;&#160;&#160;256</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>nombre de caractère maximale que le module peut lire par entrée. </p>
+
+</div>
+</div>
+<a id="a585594b3c05e7076dcb0da38f0deb0da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a585594b3c05e7076dcb0da38f0deb0da">&#9670;&nbsp;</a></span>display</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define display</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">format, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;printf(format &quot;\n\n&quot;, __VA_ARGS__)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>permet d'imprimer une variable selon un format, suivi de deux retours à la ligne. </p>
+
+</div>
+</div>
+<a id="a929fcb2eea5ce883e43dcb6c4cbbc598"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a929fcb2eea5ce883e43dcb6c4cbbc598">&#9670;&nbsp;</a></span>println</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define println</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em></td><td>)</td>
+          <td>&#160;&#160;&#160;printf( __VA_ARGS__ &quot;\n\n&quot; )</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>permet d'imprimer une chaîne suivi deux retours à la ligne. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a5062fdcb27b2b911ceb4cef7d95634fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5062fdcb27b2b911ceb4cef7d95634fa">&#9670;&nbsp;</a></span>getAnyInput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getAnyInput </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>demande une réponse physique de l'utilisateur par un appuie sur la touche &lt;ENTREE&gt; </p>
+<dl class="section return"><dt>Renvoie</dt><dd>0 </dd></dl>
+
+</div>
+</div>
+<a id="a71c9ed735bfc20ce85f33f98a7339e0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71c9ed735bfc20ce85f33f98a7339e0b">&#9670;&nbsp;</a></span>getCancelInput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getCancelInput </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renvoie au gestionnaire d'évènement une demande de revenir en arrière, marquée par l'entier -1. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>-1 </dd></dl>
+
+</div>
+</div>
+<a id="aec41046318734a4ad9f9ff4bbde577c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec41046318734a4ad9f9ff4bbde577c7">&#9670;&nbsp;</a></span>getCharInput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool getCharInput </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>dest</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Teste une entrée utilisateur de format chaîne de caractères attendu. </p>
+<dl class="section pre"><dt>Précondition</dt><dd>dest doit être une adresse allouée de taille BUFFER_SIZE</dd></dl>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dest</td><td>adresse où sera stocké l'entrée utilisateur </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>true si l'entrée utilisateur a été lu entièrement (dans la limite de BUFFERSIZE)</dd></dl>
+<dl class="section see"><dt>Voir également</dt><dd><a href="https://stackoverflow.com/questions/7831755/what-is-the-simplest-way-of-getting-user-input-in-c">code source</a> </dd></dl>
+
+</div>
+</div>
+<a id="a056e2a2226cb0c5adf0337d02288dd8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a056e2a2226cb0c5adf0337d02288dd8d">&#9670;&nbsp;</a></span>getChoiceInput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getChoiceInput </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>message</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>maxValue</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lit le choix entier de l'utilisateur parmi une liste à afficher. Le choix est défini entre 0 (Quitter) et maxValue. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>Liste de choix affichée à l'utilisateur. </td></tr>
+    <tr><td class="paramname">maxValue</td><td>Valeur maximale du choix utilisateur (inclus). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>int représentant le choix de l'utilisateur </dd></dl>
+
+</div>
+</div>
+<a id="a03bdba1aad9c43382cd5694ed81faae1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03bdba1aad9c43382cd5694ed81faae1">&#9670;&nbsp;</a></span>getIntervalInput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getIntervalInput </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>message</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>minValue</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>maxValue</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lit l'entrée d'un entier de l'utilisateur parmi une intervalle défini par minValue et maxValue. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>Message à afficher avant de prendre l'entrée. </td></tr>
+    <tr><td class="paramname">minValue</td><td>Valeur minimale du choix (inclus). </td></tr>
+    <tr><td class="paramname">maxValue</td><td>Valeur maximale du choix (inclus). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>int parmi l'intervalle d'entier. </dd></dl>
+
+</div>
+</div>
+<a id="a1249db64b03feb61aaa43ce79464edea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1249db64b03feb61aaa43ce79464edea">&#9670;&nbsp;</a></span>getIntInput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool getIntInput </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Teste une entrée utilisateur de format entier attendu. </p>
+<dl class="section pre"><dt>Précondition</dt><dd>i doit être une adresse d'entier allouée</dd></dl>
+<p>fgets et sscanf permet de renvoie true si l'entrée utilisateur rentre dans line et qu'elle respecte bien le format attendu.</p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>adresse où sera stocké l'entrée utilisateur </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>true si l'entrée utilisateur a été lu en entier (dans la limite de BUFFERSIZE) </dd></dl>
+
+</div>
+</div>
+<a id="afceb557cf908fb98e4a4e4c417aab406"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afceb557cf908fb98e4a4e4c417aab406">&#9670;&nbsp;</a></span>getRetryInput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getRetryInput </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>description</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Présente une erreur à l'utilisateur le demandant de réessayer. Puis lit le choix de l'utilisateur. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">description</td><td>valeur qui présente l'erreur </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>0 si l'utilisateur veut quitter l'opération, 1 si il veut réessayer. </dd></dl>
+
+</div>
+</div>
+<a id="a23300a856cb19289a538ba335223fabc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23300a856cb19289a538ba335223fabc">&#9670;&nbsp;</a></span>getUserInput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool getUserInput </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>message</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>description</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lit une entrée utilisateur de format chaîne de caractères. </p>
+<p>L'affichage sera présenté comme suit : </p><div class="fragment"><div class="line">{Message}</div>
+<div class="line"> </div>
+<div class="line">{Description} : _</div>
+</div><!-- fragment --><dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>Message à afficher à l'utilisateur avant de présenter l'entrée </td></tr>
+    <tr><td class="paramname">description</td><td>Donnée abstrait attendu à l'utilisateur, affiché sur la même ligne que l'entrée </td></tr>
+    <tr><td class="paramname">value</td><td>adresse où sera stocké l'entrée utilisateur </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>true </dd>
+<dd>
+false </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>

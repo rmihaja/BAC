@@ -26,6 +26,7 @@
   *
   * @struct s_enseignant
   * @details
+  * @brief Structure représentant un objet Enseignant.
   * Structure permettant de stocker les attributs
   * (nom et prénom) d'un enseignant sous forme de
   * chaînes de caractères.
@@ -34,8 +35,8 @@
   *
   */
 struct s_enseignant {
-    char* nom;      /*!< Nom de l'objet Enseignant. */
-    char* prenom;  /*!< Prenom de l'objet Enseignant. */
+    char nom[BUFSIZ];      /*!< Nom de l'objet Enseignant. */
+    char prenom[BUFSIZ];   /*!< Prenom de l'objet Enseignant. */
 };
 
 
@@ -51,10 +52,15 @@ struct s_enseignant {
  *
  * @endinternal
  */
-Enseignant enseignant(char* nom, char* prenom) {
+Enseignant enseignant() {
     Enseignant e = (Enseignant)malloc(sizeof(struct s_enseignant));
-    e->nom = nom;
-    e->prenom = prenom;
+    return e;
+}
+
+Enseignant enseignantCopie(char* nom, char* prenom) {
+    Enseignant e = enseignant();
+    setNom(e, nom);
+    setPrenom(e, prenom);
     return e;
 }
 
@@ -79,7 +85,7 @@ Enseignant enseignantParser(json_t* json_enseignant) {
     json_t* nom = json_object_get(json_enseignant, "nom");
     json_t* prenom = json_object_get(json_enseignant, "prenom");
     assert(json_is_string(nom) && json_is_string(prenom));
-    return enseignant((char*)json_string_value(nom), (char*)json_string_value(prenom));
+    return enseignantCopie((char*)json_string_value(nom), (char*)json_string_value(prenom));
 }
 
 
@@ -117,13 +123,13 @@ json_t* getJsonEnseignant(Enseignant e) {
     return root;
 }
 
-Enseignant setPrenom(Enseignant e, char* prenom) {
-    e->prenom = prenom;
+Enseignant setNom(Enseignant e, char* nom) {
+    strcpy(e->nom, nom);
     return e;
 }
 
-Enseignant setNom(Enseignant e, char* n) {
-    e->nom = n;
+Enseignant setPrenom(Enseignant e, char* prenom) {
+    strcpy(e->prenom, prenom);
     return e;
 }
 
@@ -200,21 +206,21 @@ int main() {
 
     // testing
 
-    Enseignant e = enseignant(e1_nom, e1_prenom);
+    Enseignant e = enseignantCopie(e1_nom, e1_prenom);
 
     info(afficheEnseignant(e)); // "TRUILLET Philippe"
 
-    test(getNom(e) == e1_nom);
-    test(getPrenom(e) == e1_prenom);
+    test(strcmp(getNom(e), e1_nom) == 0);
+    test(strcmp(getPrenom(e), e1_prenom) == 0);
 
     info(setNom(e, e2_nom));
     info(setPrenom(e, e2_prenom));
 
-    test(getNom(e) == e2_nom);
-    test(getPrenom(e) == e2_prenom);
+    test(strcmp(getNom(e), e2_nom) == 0);
+    test(strcmp(getPrenom(e), e2_prenom) == 0);
 
     test(equalsEnseignant(e, e));
-    test(!equalsEnseignant(e, enseignant(e1_nom, e1_prenom)));
+    test(!equalsEnseignant(e, enseignantCopie(e1_nom, e1_prenom)));
 
     info(afficheEnseignant(e)); // "GAILDRAT Véronique"
 

@@ -49,6 +49,20 @@ Formation formationParser(json_t* json_formation);
 char* getFormationN(Formation f);
 
 /**
+ * @brief Accesseur de l'objet Creneau à partir
+ * de son Indice dans Formation.
+ *
+ * @pre Indice doit être positif et strictement inférieur
+ * à la taille de la liste.
+ * Formation ne doit pas être vide.
+ *
+ * @param f Référence de Formation.
+ * @param indice Indice à laquelle se trouve Creneau recherchée.
+ * @return Creneau à l'indice indiquée.
+ */
+Creneau getFormationCByIndice(Formation f, int indice);
+
+/**
  * @brief Accesseur de la représentation en objet JSON
  * de Formation.
  *
@@ -125,8 +139,10 @@ bool isFullFormation(Formation f);
  * sur stdout, suivi d'un retour à la ligne.
  *
  * @param f Formation à afficher.
+ * @param isOrdered permet de préfixer l'indice de Creneau dans
+ * la liste de Creneau sur son affichage
  */
-void afficheFormation(Formation f);
+void afficheFormation(Formation f, bool isOrdered);
 
 /**
  * @brief Accesseur de la représentation en chaîne de caractère

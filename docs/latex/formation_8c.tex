@@ -1,0 +1,280 @@
+\hypertarget{formation_8c}{}\doxysection{Référence du fichier src/model/formation.c}
+\label{formation_8c}\index{src/model/formation.c@{src/model/formation.c}}
+
+
+Code source de la structure de données Formation.  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}formation.\+h\char`\"{}}\newline
+Graphe des dépendances par inclusion de formation.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{formation_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Structures de données}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structs__creneau__f}{s\+\_\+creneau\+\_\+f}}
+\begin{DoxyCompactList}\small\item\em Structure représentant un élément de la liste chaînée de Creneau de Formation. Structure permettant de stocker un élément de la liste de Creneau, en stockant la référence de Creneau puis l\textquotesingle{}élément suivant. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structs__formation}{s\+\_\+formation}}
+\begin{DoxyCompactList}\small\item\em Structure représentant un objet Formation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Définitions de type}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{formation_8c_a1b5f9b43e81b8698adec824bd7479746}\label{formation_8c_a1b5f9b43e81b8698adec824bd7479746}} 
+typedef struct \mbox{\hyperlink{structs__creneau__f}{s\+\_\+creneau\+\_\+f}} $\ast$ {\bfseries CreneauF}
+\end{DoxyCompactItemize}
+\doxysubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{formation_8h_afe25e6e58ec3a6c60a6b1a9805b3483a}{Formation}} \mbox{\hyperlink{formation_8c_aa90520a6de1e9802ed490ea6194aab85}{formation}} (char $\ast$nom)
+\begin{DoxyCompactList}\small\item\em Construit un nouvel objet Formation avec un Nom et une liste de Creneau vide. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structs__creneau__f}{CreneauF}} \mbox{\hyperlink{formation_8c_ad4e146dc2dcb67a651f03985674b41ad}{creneauF}} (\mbox{\hyperlink{creneau_8h_ace9e94fa094f9c711ef43caa079fdc9d}{Creneau}} c)
+\item 
+\mbox{\hyperlink{formation_8h_afe25e6e58ec3a6c60a6b1a9805b3483a}{Formation}} \mbox{\hyperlink{formation_8c_a16956043852023f6174cac1f798689ed}{formation\+Parser}} (\mbox{\hyperlink{structjson__t}{json\+\_\+t}} $\ast$json\+\_\+formation)
+\begin{DoxyCompactList}\small\item\em Construit un nouvel objet Formation à partir de sa représentation en objet J\+S\+ON. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{formation_8c_ae9dc638e438ff6e76bb0c829e1f54c0c}{get\+FormationN}} (\mbox{\hyperlink{formation_8h_afe25e6e58ec3a6c60a6b1a9805b3483a}{Formation}} f)
+\begin{DoxyCompactList}\small\item\em Accesseur de l\textquotesingle{}objet Nom de Formation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{creneau_8h_ace9e94fa094f9c711ef43caa079fdc9d}{Creneau}} \mbox{\hyperlink{formation_8c_a1aa13edb930b23f3134c1c44fc898fa0}{get\+Formation\+C\+By\+Indice}} (\mbox{\hyperlink{formation_8h_afe25e6e58ec3a6c60a6b1a9805b3483a}{Formation}} f, int indice)
+\begin{DoxyCompactList}\small\item\em Accesseur de l\textquotesingle{}objet Creneau à partir de son Indice dans Formation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structjson__t}{json\+\_\+t}} $\ast$ \mbox{\hyperlink{formation_8c_a3d8ecb325554f7a9252b5b6df719de06}{get\+Json\+Formation}} (\mbox{\hyperlink{formation_8h_afe25e6e58ec3a6c60a6b1a9805b3483a}{Formation}} f)
+\begin{DoxyCompactList}\small\item\em Accesseur de la représentation en objet J\+S\+ON de Formation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{formation_8c_a955e120fe190dc195b170a91c6c5994f}{size\+FormationC}} (\mbox{\hyperlink{formation_8h_afe25e6e58ec3a6c60a6b1a9805b3483a}{Formation}} f)
+\begin{DoxyCompactList}\small\item\em Accesseur de la taille de la liste de Creneau de Formation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{formation_8h_afe25e6e58ec3a6c60a6b1a9805b3483a}{Formation}} \mbox{\hyperlink{formation_8c_a8f5cba40008b944ddf459403215dc16b}{ajouter\+FormationC}} (\mbox{\hyperlink{formation_8h_afe25e6e58ec3a6c60a6b1a9805b3483a}{Formation}} f, \mbox{\hyperlink{creneau_8h_ace9e94fa094f9c711ef43caa079fdc9d}{Creneau}} c)
+\begin{DoxyCompactList}\small\item\em Ajoute une référence de l\textquotesingle{}objet Creneau à la liste de Créneau de Formation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{formation_8h_afe25e6e58ec3a6c60a6b1a9805b3483a}{Formation}} \mbox{\hyperlink{formation_8c_a846b28a0ed44cadf0f3ac997f5f7d40b}{supprimer\+FormationH}} (\mbox{\hyperlink{formation_8h_afe25e6e58ec3a6c60a6b1a9805b3483a}{Formation}} f, \mbox{\hyperlink{horaire_8h_a7d15432e6baf86e174c39b8ecb22e529}{Horaire}} h)
+\begin{DoxyCompactList}\small\item\em Supprime tout Creneau alloué à Formation dans l\textquotesingle{}intervalle de Horaire. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{formation_8c_a4f6f550d634407991ebf376d6290f0b9}{is\+Free\+Formation}} (\mbox{\hyperlink{formation_8h_afe25e6e58ec3a6c60a6b1a9805b3483a}{Formation}} f, \mbox{\hyperlink{horaire_8h_a7d15432e6baf86e174c39b8ecb22e529}{Horaire}} h)
+\begin{DoxyCompactList}\small\item\em Vérifie si Formation ne contient aucun créneau réservé dans l\textquotesingle{}intervalle de Horaire. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{formation_8c_ab71497e21f31f25684f2828dad5f8513}{is\+Full\+Formation}} (\mbox{\hyperlink{formation_8h_afe25e6e58ec3a6c60a6b1a9805b3483a}{Formation}} f)
+\begin{DoxyCompactList}\small\item\em Vérifie si Formation a atteint son maximum de Creneau allouable pour la journée. Le maximum est fixé à 4 Creneau. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{formation_8c_a415a55ead6c9d69c46630ccb6ea98592}{affiche\+Formation}} (\mbox{\hyperlink{formation_8h_afe25e6e58ec3a6c60a6b1a9805b3483a}{Formation}} f, bool is\+Ordered)
+\begin{DoxyCompactList}\small\item\em Imprime le nom de Formation ainsi que sa liste de Creneau sur stdout, suivi d\textquotesingle{}un retour à la ligne. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{formation_8c_abbdb3cc3b399a55bdd65b00e9175fadf}{to\+String\+Formation}} (\mbox{\hyperlink{formation_8h_afe25e6e58ec3a6c60a6b1a9805b3483a}{Formation}} f)
+\begin{DoxyCompactList}\small\item\em Accesseur de la représentation en chaîne de caractère J\+S\+ON de Formation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Code source de la structure de données Formation. 
+
+\begin{DoxyAuthor}{Auteur}
+Mihaja R\+A\+Z\+A\+F\+I\+M\+A\+H\+E\+FA \& Ambre R\+O\+U\+Z\+A\+DE 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Documentation des fonctions}
+\mbox{\Hypertarget{formation_8c_a415a55ead6c9d69c46630ccb6ea98592}\label{formation_8c_a415a55ead6c9d69c46630ccb6ea98592}} 
+\index{formation.c@{formation.c}!afficheFormation@{afficheFormation}}
+\index{afficheFormation@{afficheFormation}!formation.c@{formation.c}}
+\doxysubsubsection{\texorpdfstring{afficheFormation()}{afficheFormation()}}
+{\footnotesize\ttfamily void affiche\+Formation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{formation_8h_afe25e6e58ec3a6c60a6b1a9805b3483a}{Formation}}}]{f,  }\item[{bool}]{is\+Ordered }\end{DoxyParamCaption})}
+
+
+
+Imprime le nom de Formation ainsi que sa liste de Creneau sur stdout, suivi d\textquotesingle{}un retour à la ligne. 
+
+Imprime le Nom de l\textquotesingle{}objet Formation suivi par une représentation de sa liste de Creneau qu\textquotesingle{}on itère. L\textquotesingle{}impression suit alors le format \+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{structs__salle}{Salle}} \{\mbox{\hyperlink{structs__salle}{Salle}} de \mbox{\hyperlink{structs__creneau}{Creneau}}\}}
+\DoxyCodeLine{de \{\mbox{\hyperlink{structs__horaire}{Horaire}} de \mbox{\hyperlink{structs__creneau}{Creneau}}\}}
+\DoxyCodeLine{\{\mbox{\hyperlink{structs__enseignement}{Enseignement}} de \mbox{\hyperlink{structs__creneau}{Creneau}}\}}
+\DoxyCodeLine{\{\mbox{\hyperlink{structs__enseignant}{Enseignant}} de \mbox{\hyperlink{structs__creneau}{Creneau}}\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{structs__salle}{Salle}} \{\mbox{\hyperlink{structs__salle}{Salle}} de \mbox{\hyperlink{structs__creneau}{Creneau}}\}}
+\DoxyCodeLine{de \{\mbox{\hyperlink{structs__horaire}{Horaire}} de \mbox{\hyperlink{structs__creneau}{Creneau}}\}}
+\DoxyCodeLine{\{\mbox{\hyperlink{structs__enseignement}{Enseignement}} de \mbox{\hyperlink{structs__creneau}{Creneau}}\}}
+\DoxyCodeLine{\{\mbox{\hyperlink{structs__enseignant}{Enseignant}} de \mbox{\hyperlink{structs__creneau}{Creneau}}\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{...}
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{Voir également}
+\mbox{\hyperlink{horaire_8c_adc0a151517dc35dfb2af1bf9607246da}{affiche\+Horaire}} , \mbox{\hyperlink{enseignant_8c_a4c6fa8dfb8876f117cdd731313628665}{affiche\+Enseignant}}
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{formation_8c_a8f5cba40008b944ddf459403215dc16b}\label{formation_8c_a8f5cba40008b944ddf459403215dc16b}} 
+\index{formation.c@{formation.c}!ajouterFormationC@{ajouterFormationC}}
+\index{ajouterFormationC@{ajouterFormationC}!formation.c@{formation.c}}
+\doxysubsubsection{\texorpdfstring{ajouterFormationC()}{ajouterFormationC()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{formation_8h_afe25e6e58ec3a6c60a6b1a9805b3483a}{Formation}} ajouter\+FormationC (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{formation_8h_afe25e6e58ec3a6c60a6b1a9805b3483a}{Formation}}}]{f,  }\item[{\mbox{\hyperlink{creneau_8h_ace9e94fa094f9c711ef43caa079fdc9d}{Creneau}}}]{c }\end{DoxyParamCaption})}
+
+
+
+Ajoute une référence de l\textquotesingle{}objet Creneau à la liste de Créneau de Formation. 
+
+Lorsque toutes les conditions de Formation et Creneau sont réunies, Creneau devient la tête de la liste de Creneau.
+
+\begin{DoxySeeAlso}{Voir également}
+\mbox{\hyperlink{formation_8c_ab71497e21f31f25684f2828dad5f8513}{is\+Full\+Formation}} , \mbox{\hyperlink{formation_8c_a4f6f550d634407991ebf376d6290f0b9}{is\+Free\+Formation}}
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{formation_8c_ad4e146dc2dcb67a651f03985674b41ad}\label{formation_8c_ad4e146dc2dcb67a651f03985674b41ad}} 
+\index{formation.c@{formation.c}!creneauF@{creneauF}}
+\index{creneauF@{creneauF}!formation.c@{formation.c}}
+\doxysubsubsection{\texorpdfstring{creneauF()}{creneauF()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structs__creneau__f}{CreneauF}} creneauF (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{creneau_8h_ace9e94fa094f9c711ef43caa079fdc9d}{Creneau}}}]{c }\end{DoxyParamCaption})}
+
+Constructeur par défaut de l\textquotesingle{}objet CreneauF, élément de la liste de Creneau, stockant l\textquotesingle{}objet Creneau passé en paramètre.\mbox{\Hypertarget{formation_8c_aa90520a6de1e9802ed490ea6194aab85}\label{formation_8c_aa90520a6de1e9802ed490ea6194aab85}} 
+\index{formation.c@{formation.c}!formation@{formation}}
+\index{formation@{formation}!formation.c@{formation.c}}
+\doxysubsubsection{\texorpdfstring{formation()}{formation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{formation_8h_afe25e6e58ec3a6c60a6b1a9805b3483a}{Formation}} formation (\begin{DoxyParamCaption}\item[{char $\ast$}]{nom }\end{DoxyParamCaption})}
+
+
+
+Construit un nouvel objet Formation avec un Nom et une liste de Creneau vide. 
+
+Constructeur par défaut de l\textquotesingle{}objet Formation.\mbox{\Hypertarget{formation_8c_a16956043852023f6174cac1f798689ed}\label{formation_8c_a16956043852023f6174cac1f798689ed}} 
+\index{formation.c@{formation.c}!formationParser@{formationParser}}
+\index{formationParser@{formationParser}!formation.c@{formation.c}}
+\doxysubsubsection{\texorpdfstring{formationParser()}{formationParser()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{formation_8h_afe25e6e58ec3a6c60a6b1a9805b3483a}{Formation}} formation\+Parser (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structjson__t}{json\+\_\+t}} $\ast$}]{json\+\_\+formation }\end{DoxyParamCaption})}
+
+
+
+Construit un nouvel objet Formation à partir de sa représentation en objet J\+S\+ON. 
+
+Construit l\textquotesingle{}objet Salles en manipulant l\textquotesingle{}A\+PI Jansson. Pour cela, à partir d\textquotesingle{}une recherche par clé (s\textquotesingle{}il existe), nous pouvons accéder à l\textquotesingle{}attribut \char`\"{}nom\char`\"{} de Formation que nous construisons à l\textquotesingle{}aide du constructeur par défaut. Nous accédons ensuite à la clé \char`\"{}salles\char`\"{}, qui est un tableau de Creneau. On itère le tableau pour pouvoir ajouter chaque Creneau à la liste de Creneau, en faisant chaque fois appel à son constructeur à partir de la valeur renvoyée par l\textquotesingle{}A\+PI.
+
+\begin{DoxySeeAlso}{Voir également}
+\mbox{\hyperlink{creneau_8c_a1284510554cec007a9dcbfac22b664e6}{creneau\+Parser}} , \href{https://jansson.readthedocs.io/en/latest/apiref.html\#c.json_array_foreach}{\texttt{ json\+\_\+array\+\_\+foreach}}
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{formation_8c_a1aa13edb930b23f3134c1c44fc898fa0}\label{formation_8c_a1aa13edb930b23f3134c1c44fc898fa0}} 
+\index{formation.c@{formation.c}!getFormationCByIndice@{getFormationCByIndice}}
+\index{getFormationCByIndice@{getFormationCByIndice}!formation.c@{formation.c}}
+\doxysubsubsection{\texorpdfstring{getFormationCByIndice()}{getFormationCByIndice()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{creneau_8h_ace9e94fa094f9c711ef43caa079fdc9d}{Creneau}} get\+Formation\+C\+By\+Indice (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{formation_8h_afe25e6e58ec3a6c60a6b1a9805b3483a}{Formation}}}]{f,  }\item[{int}]{indice }\end{DoxyParamCaption})}
+
+
+
+Accesseur de l\textquotesingle{}objet Creneau à partir de son Indice dans Formation. 
+
+\begin{DoxyPrecond}{Précondition}
+Indice doit être positif et strictement inférieur à la taille de la liste. Formation ne doit pas être vide.
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Paramètres}
+{\em f} & Référence de Formation. \\
+\hline
+{\em indice} & Indice à laquelle se trouve Creneau recherchée. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Creneau à l\textquotesingle{}indice indiquée. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{formation_8c_ae9dc638e438ff6e76bb0c829e1f54c0c}\label{formation_8c_ae9dc638e438ff6e76bb0c829e1f54c0c}} 
+\index{formation.c@{formation.c}!getFormationN@{getFormationN}}
+\index{getFormationN@{getFormationN}!formation.c@{formation.c}}
+\doxysubsubsection{\texorpdfstring{getFormationN()}{getFormationN()}}
+{\footnotesize\ttfamily char$\ast$ get\+FormationN (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{formation_8h_afe25e6e58ec3a6c60a6b1a9805b3483a}{Formation}}}]{f }\end{DoxyParamCaption})}
+
+
+
+Accesseur de l\textquotesingle{}objet Nom de Formation. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em f} & Référence de Formation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Valeur du Nom de Formation de type char$\ast$. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{formation_8c_a3d8ecb325554f7a9252b5b6df719de06}\label{formation_8c_a3d8ecb325554f7a9252b5b6df719de06}} 
+\index{formation.c@{formation.c}!getJsonFormation@{getJsonFormation}}
+\index{getJsonFormation@{getJsonFormation}!formation.c@{formation.c}}
+\doxysubsubsection{\texorpdfstring{getJsonFormation()}{getJsonFormation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structjson__t}{json\+\_\+t}}$\ast$ get\+Json\+Formation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{formation_8h_afe25e6e58ec3a6c60a6b1a9805b3483a}{Formation}}}]{f }\end{DoxyParamCaption})}
+
+
+
+Accesseur de la représentation en objet J\+S\+ON de Formation. 
+
+Renvoie la représentation objet J\+S\+ON de Formation en utilisant l\textquotesingle{}A\+PI Jansson. Pour cela, on construit un nouvel objet J\+S\+ON et on y attache les clés \char`\"{}nom\char`\"{} qui stocke la valeur Nom de Formation et \char`\"{}creneaux\char`\"{} qui est un tableau. En itérant ensuite la liste de Creneau de Formation, on ajoute à ce tableau la représentation objet J\+S\+ON de chaque Creneau.
+
+\begin{DoxySeeAlso}{Voir également}
+\mbox{\hyperlink{creneau_8c_a63b9939f2f2873c84068b5a47f4879ff}{get\+Json\+Creneau}} , \href{https://jansson.readthedocs.io/en/latest/apiref.html\#c.json_array}{\texttt{ json\+\_\+array}} , \href{https://jansson.readthedocs.io/en/latest/apiref.html\#c.json_array_append}{\texttt{ json\+\_\+array\+\_\+append}}
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{formation_8c_a4f6f550d634407991ebf376d6290f0b9}\label{formation_8c_a4f6f550d634407991ebf376d6290f0b9}} 
+\index{formation.c@{formation.c}!isFreeFormation@{isFreeFormation}}
+\index{isFreeFormation@{isFreeFormation}!formation.c@{formation.c}}
+\doxysubsubsection{\texorpdfstring{isFreeFormation()}{isFreeFormation()}}
+{\footnotesize\ttfamily bool is\+Free\+Formation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{formation_8h_afe25e6e58ec3a6c60a6b1a9805b3483a}{Formation}}}]{f,  }\item[{\mbox{\hyperlink{horaire_8h_a7d15432e6baf86e174c39b8ecb22e529}{Horaire}}}]{h }\end{DoxyParamCaption})}
+
+
+
+Vérifie si Formation ne contient aucun créneau réservé dans l\textquotesingle{}intervalle de Horaire. 
+
+Une Formation est considéré comme \char`\"{}libre\char`\"{} si pour tout Creneau dans sa liste de Creneau, aucune borne (Debut et Fin) de Horaire indiqué en paramètre n\textquotesingle{}englobe un Horaire de Creneau et n\textquotesingle{}est dans l\textquotesingle{}intervalle Horaire indiqué pour tout Creneau dans la liste de Formation.\mbox{\Hypertarget{formation_8c_ab71497e21f31f25684f2828dad5f8513}\label{formation_8c_ab71497e21f31f25684f2828dad5f8513}} 
+\index{formation.c@{formation.c}!isFullFormation@{isFullFormation}}
+\index{isFullFormation@{isFullFormation}!formation.c@{formation.c}}
+\doxysubsubsection{\texorpdfstring{isFullFormation()}{isFullFormation()}}
+{\footnotesize\ttfamily bool is\+Full\+Formation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{formation_8h_afe25e6e58ec3a6c60a6b1a9805b3483a}{Formation}}}]{f }\end{DoxyParamCaption})}
+
+
+
+Vérifie si Formation a atteint son maximum de Creneau allouable pour la journée. Le maximum est fixé à 4 Creneau. 
+
+La taille maximale de Creneau allouable à une Formation est 4, défini par la spécification du T\+AD.\mbox{\Hypertarget{formation_8c_a955e120fe190dc195b170a91c6c5994f}\label{formation_8c_a955e120fe190dc195b170a91c6c5994f}} 
+\index{formation.c@{formation.c}!sizeFormationC@{sizeFormationC}}
+\index{sizeFormationC@{sizeFormationC}!formation.c@{formation.c}}
+\doxysubsubsection{\texorpdfstring{sizeFormationC()}{sizeFormationC()}}
+{\footnotesize\ttfamily int size\+FormationC (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{formation_8h_afe25e6e58ec3a6c60a6b1a9805b3483a}{Formation}}}]{f }\end{DoxyParamCaption})}
+
+
+
+Accesseur de la taille de la liste de Creneau de Formation. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em f} & Référence de Formation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+Taille de la liste des Creneau de Formation de type int. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{formation_8c_a846b28a0ed44cadf0f3ac997f5f7d40b}\label{formation_8c_a846b28a0ed44cadf0f3ac997f5f7d40b}} 
+\index{formation.c@{formation.c}!supprimerFormationH@{supprimerFormationH}}
+\index{supprimerFormationH@{supprimerFormationH}!formation.c@{formation.c}}
+\doxysubsubsection{\texorpdfstring{supprimerFormationH()}{supprimerFormationH()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{formation_8h_afe25e6e58ec3a6c60a6b1a9805b3483a}{Formation}} supprimer\+FormationH (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{formation_8h_afe25e6e58ec3a6c60a6b1a9805b3483a}{Formation}}}]{f,  }\item[{\mbox{\hyperlink{horaire_8h_a7d15432e6baf86e174c39b8ecb22e529}{Horaire}}}]{h }\end{DoxyParamCaption})}
+
+
+
+Supprime tout Creneau alloué à Formation dans l\textquotesingle{}intervalle de Horaire. 
+
+Si un Creneau correspond à Horaire, alors on le détache de la liste chaînée de Creneau.
+
+\begin{DoxyWarning}{Avertissement}
+On ne supprime qu\textquotesingle{}un et un seul Creneau dans l\textquotesingle{}intervalle de Horaire, il faut alors s\textquotesingle{}assurer que Horaire correspond à un et un seul Creneau de Formation.
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{Voir également}
+\mbox{\hyperlink{horaire_8c_a028de36840e3fb1650786ad28c81e8ca}{equals\+Horaire}}
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{formation_8c_abbdb3cc3b399a55bdd65b00e9175fadf}\label{formation_8c_abbdb3cc3b399a55bdd65b00e9175fadf}} 
+\index{formation.c@{formation.c}!toStringFormation@{toStringFormation}}
+\index{toStringFormation@{toStringFormation}!formation.c@{formation.c}}
+\doxysubsubsection{\texorpdfstring{toStringFormation()}{toStringFormation()}}
+{\footnotesize\ttfamily char$\ast$ to\+String\+Formation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{formation_8h_afe25e6e58ec3a6c60a6b1a9805b3483a}{Formation}}}]{f }\end{DoxyParamCaption})}
+
+
+
+Accesseur de la représentation en chaîne de caractère J\+S\+ON de Formation. 
+
+Renvoie la représentation J\+S\+ON en chaîne de caractères de Formation en utilisant l\textquotesingle{}A\+PI Jansson. Pour cela, on accède d\textquotesingle{}abord à la représentation J\+S\+ON objet pour pouvoir le repasser à l\textquotesingle{}A\+PI. Enfin, avant de renvoyer la chaîne de caractères, il ne faut pas oublier de libérer la mémoire allouée à l\textquotesingle{}objet J\+S\+ON (à faire manuellement en décrémentant son nombre de référencement).
+
+\begin{DoxySeeAlso}{Voir également}
+\href{https://jansson.readthedocs.io/en/latest/apiref.html\#c.json_dumps}{\texttt{ json\+\_\+dumps}} , \href{https://jansson.readthedocs.io/en/latest/apiref.html\#c.json_decref}{\texttt{ json\+\_\+decref}}
+\end{DoxySeeAlso}
