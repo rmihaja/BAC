@@ -1,14 +1,15 @@
 PROGRAM = app
 INCLUDE = -I ./include
 LIB = ./lib
+LIBJSONDIR = /usr/local/lib
 LIBS = $(LIB)/control.a $(LIB)/model.a
-LIBTOOLS = $(LIB)/model.a
+LIBTOOLS = model.a
 LDEPENDENCY = -lcontrol
 LTOOLSDEPENDENCY = -ljansson -lmodel
 WARNINGS = -ggdb3 # -Wall -Werror -Wextra
 MODULE = ./module
 CONTROL = ./control
-MODULES = $(MODULE)/enseignant.o $(MODULE)/horaire.o $(MODULE)/creneau.o $(MODULE)/salle.o $(MODULE)/formation.o $(MODULE)/enseignants.o $(MODULE)/salles.o $(MODULE)/control.o
+MODULES = $(MODULE)/enseignant.o $(MODULE)/horaire.o $(MODULE)/creneau.o $(MODULE)/salle.o $(MODULE)/formation.o $(MODULE)/enseignants.o $(MODULE)/salles.o $(MODULE)/controle.o
 MODELS = $(MODULE)/enseignant.o $(MODULE)/horaire.o $(MODULE)/creneau.o $(MODULE)/salle.o $(MODULE)/formation.o $(MODULE)/enseignants.o $(MODULE)/salles.o
 SRC = ./src
 DEST = ./bin
@@ -20,18 +21,28 @@ DEBUG = -DDEBUG
 start: $(DEST)/release/$(PROGRAM)
 	$<
 
-# ! build on .o files if .a compile fail (case study on WSL)
 $(DEST)/release/$(PROGRAM): $(SRC)/$(PROGRAM).c $(LIBS)
-	gcc $(INCLUDE) -L $(LIB) $(WARNINGS) $< -o $@ $(LDEPENDENCY) $(LTOOLSDEPENDENCY) || gcc $(INCLUDE) $(MODULES) $(TOOLS) $(WARNINGS) $< -o $@
+	gcc $(INCLUDE) -L $(LIB) -L $(LIBJSONDIR) $(WARNINGS) $< -o ./$@ $(LDEPENDENCY) $(LTOOLSDEPENDENCY)
 
 # program debug
 
 debug: $(DEST)/debug/$(PROGRAM)
 	$<
 
-# ! build on .o files if .a compile fail (case study on WSL)
 $(DEST)/debug/$(PROGRAM): $(SRC)/$(PROGRAM).c $(LIBS)
-	gcc $(INCLUDE) -L $(LIB) $(WARNINGS) $(DEBUG) $< -o ./$@ $(LDEPENDENCY) $(LTOOLSDEPENDENCY) || gcc $(INCLUDE) $(MODULES) $(TOOLS) $(WARNINGS) $(DEBUG) $< -o ./$@
+	gcc $(INCLUDE) -L $(LIB) -L $(LIBJSONDIR) $(WARNINGS) $(DEBUG) $< -o ./$@ $(LDEPENDENCY) $(LTOOLSDEPENDENCY)
+
+# external dependency compile
+
+install:
+	rm -rf jansson-2.14*
+	wget https://github.com/akheron/jansson/releases/download/v2.14/jansson-2.14.tar.bz2
+	bunzip2 -c jansson-2.14.tar.bz2 | tar xf -
+	cd jansson-2.14 && ./configure --prefix=$(LIBJSONDIR)
+	cd jansson-2.14 && make
+	cd jansson-2.14 && make check
+	cd jansson-2.14 && sudo make install
+	rm -rf jansson-2.14*
 
 # library compile
 
@@ -40,18 +51,17 @@ init: $(LIBS)
 # ? using pattern rules to automatically compile .o files from MODULES source list
 # https://www.gnu.org/software/make/manual/html_node/Static-Usage.html#Static-Usage
 $(LIBS): $(LIB)/%.a: $(SRC)/%
-	rm -f $(MODULE)/*
+#	make prune
 	cd $< && make init
 
-$(LIBTOOLS): $(LIB)/%.a: $(SRC)/%
+$(LIBTOOLS): %.a: $(SRC)/%
 	cd $< && make init
 	rm -f $(MODULE)/*
 
 # dependencies unit tests
-# ! build on .o files if .a compile fail (case study on WSL)
 
 test/%: $(SRC)/%.c $(LIBTOOLS)
-	gcc $(INCLUDE) -L $(LIB) $(WARNINGS) $(DEBUG) $(TEST) $< -o $(SRC)/$* $(LTOOLSDEPENDENCY) || gcc $(INCLUDE) $(TOOLS) $(WARNINGS) $(DEBUG) $(TEST) $< -o $(SRC)/$*
+	gcc $(INCLUDE) -L $(LIB) -L $(LIBJSONDIR) $(WARNINGS) $(DEBUG) $(TEST) $< -o $(SRC)/$* $(LTOOLSDEPENDENCY)
 	./$(SRC)/$*
 	rm $(SRC)/$*
 
@@ -59,7 +69,7 @@ testmodels: $(LIBTOOLS) $(MODELS)
 	echo "all model unit tests done with success"
 
 $(MODELS): $(MODULE)/%.o: $(SRC)/model/%.c
-	gcc $(INCLUDE) -L $(LIB) $(WARNINGS) $(DEBUG) $(TEST) $< -o $(SRC)/$* $(LTOOLSDEPENDENCY) || gcc $(INCLUDE) $(TOOLS) $(WARNINGS) $(DEBUG) $(TEST) $< -o $(SRC)/$*
+	gcc $(INCLUDE) -L $(LIB) -L $(LIBJSONDIR) $(WARNINGS) $(DEBUG) $(TEST) $< -o $(SRC)/$* $(LTOOLSDEPENDENCY)
 	./$(SRC)/$*
 	rm $(SRC)/$*
 
@@ -67,7 +77,6 @@ $(MODELS): $(MODULE)/%.o: $(SRC)/model/%.c
 
 prune:
 	rm -f $(MODULE)/*
-	rm -f $(LIB)/libmodel.a
-	rm -f $(LIB)/libcontrol.a
+	rm -f $(LIB)/*
 	rm -f $(DEST)/debug/*
 	rm -f $(DEST)/release/*

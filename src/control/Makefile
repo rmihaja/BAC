@@ -1,4 +1,5 @@
 LIB = control.a
+LIBJANSON = -L /usr/local/lib -ljansson
 DEST = ../../lib
 MODULE = ../../module
 MODULES = $(MODULE)/controle.o
@@ -15,4 +16,4 @@ $(LIB): $(MODULES)
 # ? using pattern rules to automatically compile .o files from MODULES source list
 # https://www.gnu.org/software/make/manual/html_node/Static-Usage.html#Static-Usage
 $(MODULES): $(MODULE)/%.o: %.c
-	gcc $(INCLUDE) $(WARNINGS) -c -o $@ $<
+	gcc $(INCLUDE) $(LIBJANSON) $(WARNINGS) -c -o $@ $<
