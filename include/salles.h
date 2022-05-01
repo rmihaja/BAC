@@ -52,18 +52,18 @@ Salles sallesParser(json_t* json_salles);
 Salle getSalleByNom(Salles ss, char* nom);
 
 /**
- * @brief Accesseur du Nom de l'objet Salle à partir
+ * @brief Accesseur de l'objet Salle à partir
  * de son Indice dans la liste des Salles.
  *
  * @pre Indice doit être positif et strictement inférieur
  * à la taille de la liste.
- * Salles ne doit pas être vide.
+ * La liste des Salles ne doit pas être vide.
  *
  * @param ss Référence de Salles.
  * @param indice Indice à laquelle se trouve la Salle recherchée.
  * @return Nom de la Salle de type char*.
  */
-char* getSalleNByIndice(Salles ss, int indice);
+Salle getSalleByIndice(Salles ss, int indice);
 
 /**
  * @brief Accesseur de la représentation en objet JSON de Salles.

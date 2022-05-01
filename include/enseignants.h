@@ -67,12 +67,33 @@ Enseignant getEnseignantByNom(Enseignants es, char* nom);
 Enseignant getEnseignantByMatiere(Enseignants es, char* matiere);
 
 /**
+ * @brief Accesseur de l'objet Enseignant à partir
+ * de son Indice dans Enseignants.
+ *
+ * @pre Indice doit être positif et strictement inférieur
+ * à la taille de la liste.
+ * Enseignants ne doit pas être vide.
+ *
+ * @param ss Référence de Salles.
+ * @param indice Indice à laquelle se trouve la Salle recherchée.
+ * @return Nom de la Salle de type char*.
+ */
+Enseignant getEnseignantByIndice(Enseignants es, int indice);
+/**
  * @brief Accesseur de la représentation en objet JSON de Enseignants.
  *
  * @param es Référence de Enseignants.
  * @return Objet JSON de Enseignants de type json_t*.
  */
 json_t* getJsonEnseignants(Enseignants es);
+
+/**
+ * @brief Accesseur de la taille de Enseignants.
+ *
+ * @param es Référence de Enseignants
+ * @return int Taille de Enseignants de type int.
+ */
+int sizeEnseignants(Enseignants es);
 
 /**
  * @brief vérifie si Enseignants possède une référence de

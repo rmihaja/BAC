@@ -136,7 +136,7 @@ Salles sallesParser(json_t* json_salles) {
 Salle getSalleByNom(Salles ss, char* nom) {
     bool isFound = false;
     ElementSs courant = ss->sentinelle;
-    for (int i = 0;i < ss->taille && !isFound; i++) {
+    for (int i = 0;i < sizeSalles(ss) && !isFound; i++) {
         courant = courant->suivant;
         isFound = nom == getSalleN(courant->s);
     }
@@ -154,13 +154,13 @@ Salle getSalleByNom(Salles ss, char* nom) {
  *
  * @endinternal
  */
-char* getSalleNByIndice(Salles ss, int indice) {
-    assert(0 <= indice && indice < ss->taille);
+Salle getSalleByIndice(Salles ss, int indice) {
+    assert(0 <= indice && indice < sizeSalles(ss));
     ElementSs courant = ss->sentinelle->suivant;
     for (int i = 0;i < indice;i++) {
         courant = courant->suivant;
     }
-    return getSalleN(courant->s);
+    return courant->s;
 }
 
 /**
@@ -180,20 +180,20 @@ char* getSalleNByIndice(Salles ss, int indice) {
  *
  * @endinternal
  */
-json_t* getJsonSalles(Salles Ss) {
+json_t* getJsonSalles(Salles ss) {
     json_t* root = json_object();
     json_t* json_arr = json_array();
     json_object_set_new(root, "salles", json_arr);
-    ElementSs courant = Ss->sentinelle->suivant;
-    for (int i = 0; i < Ss->taille; i++) {
+    ElementSs courant = ss->sentinelle->suivant;
+    for (int i = 0; i < sizeSalles(ss); i++) {
         json_array_append(json_arr, getJsonSalle(courant->s));
         courant = courant->suivant;
     }
     return root;
 }
 
-int sizeSalles(Salles Ss) {
-    return Ss->taille;
+int sizeSalles(Salles ss) {
+    return ss->taille;
 }
 
 /**
@@ -237,9 +237,9 @@ Salles ajouterSs(Salles ss, Salle s) {
  *
  * @endinternal
  */
-void afficheSalles(Salles Ss) {
-    ElementSs courant = Ss->sentinelle->suivant;
-    for (int i = 0;i < Ss->taille;i++) {
+void afficheSalles(Salles ss) {
+    ElementSs courant = ss->sentinelle->suivant;
+    for (int i = 0;i < sizeSalles(ss);i++) {
         afficherSalle(courant->s);
         courant = courant->suivant;
     }
@@ -263,8 +263,8 @@ void afficheSalles(Salles Ss) {
  *
  * @endinternal
  */
-char* toStringSalles(Salles Ss) {
-    json_t* json_salles = getJsonSalles(Ss);
+char* toStringSalles(Salles ss) {
+    json_t* json_salles = getJsonSalles(ss);
     char* str = json_dumps(json_salles, 0);
 #ifdef DEBUG
     puts(str);

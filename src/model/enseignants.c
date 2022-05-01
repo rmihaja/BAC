@@ -135,7 +135,7 @@ Enseignants enseignantsParser(json_t* json_enseignants) {
 Enseignant getEnseignantByNom(Enseignants es, char* nom) {
     bool isFound = false;
     ElementEs courant = es->sentinelle;
-    for (int i = 0; i < es->taille && !isFound; i++) {
+    for (int i = 0; i < sizeEnseignants(es) && !isFound; i++) {
         courant = courant->suivant;
         isFound = nom == getNom(courant->e);
     }
@@ -156,11 +156,20 @@ Enseignant getEnseignantByNom(Enseignants es, char* nom) {
 Enseignant getEnseignantByMatiere(Enseignants es, char* matiere) {
     bool isFound = false;
     ElementEs courant = es->sentinelle;
-    for (int i = 0; i < es->taille && !isFound; i++) {
+    for (int i = 0; i < sizeEnseignants(es) && !isFound; i++) {
         courant = courant->suivant;
         isFound = matiere == getMatiere(courant->e);
     }
     assert(isFound);
+    return courant->e;
+}
+
+Enseignant getEnseignantByIndice(Enseignants es, int indice) {
+    assert(0 <= indice && indice < sizeEnseignants(es));
+    ElementEs courant = es->sentinelle->suivant;
+    for (int i = 0; i < sizeEnseignants(es); i++) {
+        courant = courant->suivant;
+    }
     return courant->e;
 }
 
@@ -186,11 +195,15 @@ json_t* getJsonEnseignants(Enseignants es) {
     json_t* json_arr = json_array();
     json_object_set_new(root, "enseignants", json_arr);
     ElementEs courant = es->sentinelle->suivant;
-    for (int i = 0; i < es->taille; i++) {
+    for (int i = 0; i < sizeEnseignants(es); i++) {
         json_array_append(json_arr, getJsonEnseignant(courant->e));
         courant = courant->suivant;
     }
     return root;
+}
+
+int sizeEnseignants(Enseignants es) {
+    return es->taille;
 }
 
 /**
@@ -205,7 +218,7 @@ json_t* getJsonEnseignants(Enseignants es) {
 bool appartient(Enseignants es, Enseignant e) {
     bool isEqual = false;
     ElementEs courant = es->sentinelle->suivant;
-    for (int i = 0; i < es->taille; i++) {
+    for (int i = 0; i < sizeEnseignants(es); i++) {
         isEqual = equalsEnseignant(courant->e, e) && !isEqual;
         courant = courant->suivant;
     }
@@ -247,11 +260,11 @@ Enseignants ajouterEs(Enseignants es, Enseignant e) {
  * @endinternal
  */
 Enseignants supprimerEs(Enseignants es, Enseignant e) {
-    assert(!es->taille == 0);
+    assert(!sizeEnseignants(es) == 0);
     ElementEs precedent = es->sentinelle;
     ElementEs courant = es->sentinelle->suivant;
     int i = 0;
-    while (!equalsEnseignant(e, courant->e) && (i < es->taille)) {
+    while (!equalsEnseignant(e, courant->e) && (i < sizeEnseignants(es))) {
         precedent = courant;
         courant = courant->suivant;
         i++;
@@ -293,11 +306,11 @@ Enseignants supprimerEs(Enseignants es, Enseignant e) {
  * @endinternal
  */
 void afficherEnseignants(Enseignants es) {
-    printf("---------------------\n");
-    printf("Liste des enseignants\n");
-    printf("---------------------\n\n");
+    // printf("---------------------\n");
+    // printf("Liste des enseignants\n");
+    // printf("---------------------\n\n");
     ElementEs courant = es->sentinelle->suivant;
-    for (int i = 0; i < es->taille;i++) {
+    for (int i = 0; i < sizeEnseignants(es);i++) {
         printf("- ");
         afficheEnseignant(courant->e);
         courant = courant->suivant;
@@ -362,9 +375,13 @@ int main() {
     test(getEnseignantByNom(es, e2_nom) == e2);
     test(getEnseignantByMatiere(es, e2_matiere) == e2);
 
+    test(sizeEnseignants(es) == 2);
+
     test(appartient(es, e1));
     info(supprimerEs(es, e2));
     test(!appartient(es, e2));
+
+    test(sizeEnseignants(es) == 1);
 
     info(afficherEnseignants(es));
 
