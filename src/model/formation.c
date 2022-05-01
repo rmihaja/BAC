@@ -275,7 +275,7 @@ bool isFullFormation(Formation f) {
  *
  * @code {.txt}
  * ---------------------
- * EDT de la formation : Nom
+ * EDT de la formation : {Nom de Formation}
  * ---------------------
  *
  * Salle {Salle de Creneau}
