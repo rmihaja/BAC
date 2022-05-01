@@ -53,18 +53,18 @@ Enseignants enseignantsParser(json_t* json_enseignants);
 Enseignant getEnseignantByNom(Enseignants es, char* nom);
 
 /**
- * @brief Accesseur de l'objet Enseignant à partir de sa Matiere
+ * @brief Accesseur de l'objet Enseignant à partir de sa Prenom
  * parmi la liste des Enseignants.
  *
  * @pre Enseignants doit posséder une référence Enseignant ayant
- * matiere comme valeur de son attribut Matiere.
+ * prenom comme valeur de son attribut Prenom.
  *
  * @param es Référence de Enseignants.
- * @param matiere Valeur de Matiere à rechercher.
- * @return Référence de Enseignant possédant matiere comme valeur
- * de son attribut Matiere.
+ * @param prenom Valeur de Prenom à rechercher.
+ * @return Référence de Enseignant possédant prenom comme valeur
+ * de son attribut Prenom.
  */
-Enseignant getEnseignantByMatiere(Enseignants es, char* matiere);
+Enseignant getEnseignantByPrenom(Enseignants es, char* prenom);
 
 /**
  * @brief Accesseur de l'objet Enseignant à partir

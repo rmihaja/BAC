@@ -257,7 +257,7 @@ int main() {
     info(setCreneauH(h2, c));
     info(setCreneauS(s2, c));
 
-    test(getMatiere(getCreneauE(c)) == getMatiere(e2));
+    test(getPrenom(getCreneauE(c)) == getPrenom(e2));
     test(getFin(getCreneauH(c)) == getFin(h2));
     test(getCreneauF(c) == f2);
     test(getCreneauS(c) == s2);

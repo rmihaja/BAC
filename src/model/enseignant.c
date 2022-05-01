@@ -27,7 +27,7 @@
   * @struct s_enseignant
   * @details
   * Structure permettant de stocker les attributs
-  * (nom et matière) d'un enseignant sous forme de
+  * (nom et prénom) d'un enseignant sous forme de
   * chaînes de caractères.
   *
   * @endinternal
@@ -35,7 +35,7 @@
   */
 struct s_enseignant {
     char* nom;      /*!< Nom de l'objet Enseignant. */
-    char* matiere;  /*!< Matiere de l'objet Enseignant. */
+    char* prenom;  /*!< Prenom de l'objet Enseignant. */
 };
 
 
@@ -51,10 +51,10 @@ struct s_enseignant {
  *
  * @endinternal
  */
-Enseignant enseignant(char* n, char* m) {
+Enseignant enseignant(char* nom, char* prenom) {
     Enseignant e = (Enseignant)malloc(sizeof(struct s_enseignant));
-    e->nom = n;
-    e->matiere = m;
+    e->nom = nom;
+    e->prenom = prenom;
     return e;
 }
 
@@ -64,7 +64,7 @@ Enseignant enseignant(char* n, char* m) {
  * @details
  * Construit l'objet Enseignant en manipulant l'API Jansson.
  * Pour cela, à partir d'une recherche par clé (s'il existe),
- * nous pouvons accéder aux attributs "nom" et "matiere" de Enseignant,
+ * nous pouvons accéder aux attributs "nom" et "prenom" de Enseignant,
  * que nous construisons ensuite à l'aide du constructeur
  * par défaut.
  *
@@ -77,9 +77,9 @@ Enseignant enseignant(char* n, char* m) {
  */
 Enseignant enseignantParser(json_t* json_enseignant) {
     json_t* nom = json_object_get(json_enseignant, "nom");
-    json_t* matiere = json_object_get(json_enseignant, "matiere");
-    assert(json_is_string(nom) && json_is_string(matiere));
-    return enseignant((char*)json_string_value(nom), (char*)json_string_value(matiere));
+    json_t* prenom = json_object_get(json_enseignant, "prenom");
+    assert(json_is_string(nom) && json_is_string(prenom));
+    return enseignant((char*)json_string_value(nom), (char*)json_string_value(prenom));
 }
 
 
@@ -91,8 +91,8 @@ char* getNom(Enseignant e) {
     return e->nom;
 }
 
-char* getMatiere(Enseignant e) {
-    return e->matiere;
+char* getPrenom(Enseignant e) {
+    return e->prenom;
 }
 
 /**
@@ -103,7 +103,7 @@ char* getMatiere(Enseignant e) {
  * en utilisant l'API Jansson.
  * Pour cela, on construit un nouvel objet JSON pour ensuite
  * pouvoir y attacher les attributs clé-valeurs de Enseignant, défini par
- * "nom" et "matiere".
+ * "nom" et "prenom".
  *
  * @sa [json_object](https://jansson.readthedocs.io/en/latest/apiref.html#object) ,
  * [json_object_set_new](https://jansson.readthedocs.io/en/latest/apiref.html#c.json_object_set_new)
@@ -113,12 +113,12 @@ char* getMatiere(Enseignant e) {
 json_t* getJsonEnseignant(Enseignant e) {
     json_t* root = json_object();
     json_object_set_new(root, "nom", json_string(getNom(e)));
-    json_object_set_new(root, "matiere", json_string(getMatiere(e)));
+    json_object_set_new(root, "prenom", json_string(getPrenom(e)));
     return root;
 }
 
-Enseignant setMatiere(Enseignant e, char* matiere) {
-    e->matiere = matiere;
+Enseignant setPrenom(Enseignant e, char* prenom) {
+    e->prenom = prenom;
     return e;
 }
 
@@ -129,7 +129,7 @@ Enseignant setNom(Enseignant e, char* n) {
 
 bool equalsEnseignant(Enseignant e1, Enseignant e2) {
     return strcmp(getNom(e1), getNom(e2)) == 0
-        && strcmp(getMatiere(e1), getMatiere(e2)) == 0;
+        && strcmp(getPrenom(e1), getPrenom(e2)) == 0;
 }
 
 
@@ -144,13 +144,13 @@ bool equalsEnseignant(Enseignant e1, Enseignant e2) {
  * Imprime les attributs de l'objet Enseignant selon le format :
  *
  * @code {.txt}
- * {Nom}, {Matiere}
+ * {Nom} {Prenom}
  * @endcode
  *
  * @endinternal
  */
 void afficheEnseignant(Enseignant e) {
-    printf("%s, %s\n", getNom(e), getMatiere(e));
+    printf("%s %s\n", getNom(e), getPrenom(e));
 }
 
 /**
@@ -195,28 +195,28 @@ int main() {
 
     char* e1_nom = "TRUILLET";
     char* e2_nom = "GAILDRAT";
-    char* e1_matiere = "Structure de données";
-    char* e2_matiere = "Programmation orientée objet";
+    char* e1_prenom = "Philippe";
+    char* e2_prenom = "Véronique";
 
     // testing
 
-    Enseignant e = enseignant(e1_nom, e1_matiere);
+    Enseignant e = enseignant(e1_nom, e1_prenom);
 
-    info(afficheEnseignant(e)); // "TRUILLET, Structure de données"
+    info(afficheEnseignant(e)); // "TRUILLET Philippe"
 
     test(getNom(e) == e1_nom);
-    test(getMatiere(e) == e1_matiere);
+    test(getPrenom(e) == e1_prenom);
 
     info(setNom(e, e2_nom));
-    info(setMatiere(e, e2_matiere));
+    info(setPrenom(e, e2_prenom));
 
     test(getNom(e) == e2_nom);
-    test(getMatiere(e) == e2_matiere);
+    test(getPrenom(e) == e2_prenom);
 
     test(equalsEnseignant(e, e));
-    test(!equalsEnseignant(e, enseignant(e1_nom, e1_matiere)));
+    test(!equalsEnseignant(e, enseignant(e1_nom, e1_prenom)));
 
-    info(afficheEnseignant(e)); // "GAILDRAT, Programmation orientée objet"
+    info(afficheEnseignant(e)); // "GAILDRAT Véronique"
 
     test(strcmp(toStringEnseignant(e), toStringEnseignant(enseignantParser(getJsonEnseignant(e)))) == 0);
 

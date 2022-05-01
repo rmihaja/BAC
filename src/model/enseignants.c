@@ -148,17 +148,17 @@ Enseignant getEnseignantByNom(Enseignants es, char* nom) {
  *
  * @details
  * Itère parmi la liste des Enseignants jusqu'à trouver
- * un Enseignant dont Matiere correspond au paramètre.
+ * un Enseignant dont Prenom correspond au paramètre.
  * Sinon renvoie une erreur.
  *
  * @endinternal
  */
-Enseignant getEnseignantByMatiere(Enseignants es, char* matiere) {
+Enseignant getEnseignantByPrenom(Enseignants es, char* prenom) {
     bool isFound = false;
     ElementEs courant = es->sentinelle;
     for (int i = 0; i < sizeEnseignants(es) && !isFound; i++) {
         courant = courant->suivant;
-        isFound = matiere == getMatiere(courant->e);
+        isFound = prenom == getPrenom(courant->e);
     }
     assert(isFound);
     return courant->e;
@@ -360,10 +360,10 @@ int main() {
 
     char* e1_nom = "TRUILLET";
     char* e2_nom = "GAILDRAT";
-    char* e1_matiere = "Structure de données";
-    char* e2_matiere = "Programmation orientée objet";
-    Enseignant e1 = enseignant(e1_nom, e1_matiere);
-    Enseignant e2 = enseignant(e2_nom, e2_matiere);
+    char* e1_prenom = "Philippe";
+    char* e2_prenom = "Véronique";
+    Enseignant e1 = enseignant(e1_nom, e1_prenom);
+    Enseignant e2 = enseignant(e2_nom, e2_prenom);
 
     // testing
 
@@ -373,7 +373,7 @@ int main() {
     info(ajouterEs(es, e2));
 
     test(getEnseignantByNom(es, e2_nom) == e2);
-    test(getEnseignantByMatiere(es, e2_matiere) == e2);
+    test(getEnseignantByPrenom(es, e2_prenom) == e2);
 
     test(sizeEnseignants(es) == 2);
 
