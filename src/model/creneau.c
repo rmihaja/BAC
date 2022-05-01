@@ -179,9 +179,9 @@ bool equalsCreneau(Creneau c1, Creneau c2) {
  * des objets Enseignant et Horaire, respectant alors le format :
  *
  * @code {.txt}
- * Salle Formation
- * NOM, Matiere
- * Horaire
+ * {Salle} {Formation}
+ * {Enseignant}
+ * {Horaire}
  * @endcode
  *
  * @sa afficheEnseignant , afficheHoraire

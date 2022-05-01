@@ -154,7 +154,7 @@ void affiche1H(int heure) {
  * Imprime les attributs de l'objet Enseignant selon le format :
  *
  * @code {.txt}
- * Debut à Fin          //< les attributs sont suivis du chaîne de caractères "h00"
+ * {Debut}h00 à {Fin}h00
  * @endcode
  *
  * @endinternal

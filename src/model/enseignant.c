@@ -144,7 +144,7 @@ bool equalsEnseignant(Enseignant e1, Enseignant e2) {
  * Imprime les attributs de l'objet Enseignant selon le format :
  *
  * @code {.txt}
- * NOM, Matiere
+ * {Nom}, {Matiere}
  * @endcode
  *
  * @endinternal

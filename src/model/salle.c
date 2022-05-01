@@ -88,7 +88,7 @@ Salle salleParser(json_t* json_salle) {
     json_t* value;
     json_array_foreach(json_arr_c, index, value) {
         if (!json_is_null(value)) {
-            ajouterS(s, creneauParser(value));
+            ajouterSalleC(s, creneauParser(value));
         }
     }
     return s;
@@ -145,13 +145,16 @@ json_t* getJsonSalle(Salle s) {
 /**
  * @internal
  *
+ * @details
  * Si Salle est libre dans l'intervalle de Horaire,
  * on fixe sur chaque indice de l'intervalle une référence de Creneau
  * afin de la "réserver".
  *
+ * @sa isFreeSalle
+ *
  * @endinternal
  */
-Salle ajouterS(Salle s, Creneau c) {
+Salle ajouterSalleC(Salle s, Creneau c) {
     if (isFreeSalle(s, getCreneauH(c))) {
         for (int i = getDebut(getCreneauH(c)); i < getFin(getCreneauH(c));i++) {
             s->creneaux[i] = c;
@@ -163,13 +166,16 @@ Salle ajouterS(Salle s, Creneau c) {
 /**
  * @internal
  *
+ * @details
  * Si un Creneau a été instancié dans l'intervalle Horaire
  * de suppression, on réinitialise le tableau dans l'intervalle par NULL
  * pour marquer Horaire comme "libre" ou "non réservé".
  *
+ * @sa isEmptySalle
+ *
  * @endinternal
  */
-Salle supprimerS(Salle s, Horaire h) {
+Salle supprimerSalleH(Salle s, Horaire h) {
     if (isEmptySalle(s)) {
         return s;
     }
@@ -182,20 +188,22 @@ Salle supprimerS(Salle s, Horaire h) {
 /**
  * @internal
  *
+ * @details
  * On supprime toute référence de Creneau instancié dans l'intervalle
  * Horaire pour pouvoir y ajouter le nouveau Creneau.
  *
  * @endinternal
  */
-Salle modifierS(Salle s, Horaire horaire_modifie, Creneau c) {
-    supprimerS(s, horaire_modifie);
-    ajouterS(s, c);
+Salle modifierSalleHC(Salle s, Horaire horaire_modifie, Creneau c) {
+    supprimerSalleH(s, horaire_modifie);
+    ajouterSalleC(s, c);
     return s;
 }
 
 /**
  * @internal
  *
+ * @details
  * Une salle est considéré comme "libre" si dans l'intervalle Horaire
  * indiqué en paramètre, le tableau de Creneau ne contient que des références
  * NULL, c'est-à-dire qu'il ne contient aucune instance de Creneau.
@@ -213,6 +221,7 @@ bool isFreeSalle(Salle s, Horaire h) {
 /**
  * @internal
  *
+ * @details
  * Une salle est considéré comme "vide" si elle est libre toute
  * la journée, c'est-à-dire dans l'intervalle autorisée de Horaire
  * de \f$ \llbracket 8, 20 \rrbracket \f$.
@@ -239,15 +248,15 @@ bool isEmptySalle(Salle s) {
  *
  * @code {.txt}
  * -------
- * Salle : Nom
+ * Salle : {Nom de Salle}
  * -------
  *
  * de 8h00 à 9h00
- * VIDE                     //< si la référence à l'indice itéré est NULL
+ * VIDE                             //< si la référence à l'indice itéré est NULL
  *
  * de 9h00 à 10h00
- * NOM, Matiere             //< si la référence à l'indice itéré
- * Formation                    est un Creneau
+ * {Enseignant de Creneau}          //< si la référence à l'indice itéré
+ * {Formation de Creneau}               est un Creneau
  *
  * ...
  * @endcode
@@ -329,22 +338,22 @@ int main() {
 
     Salle s = salle(s1_nom);
 
-    info(ajouterS(s, c2));
+    info(ajouterSalleC(s, c2));
     test(isFreeSalle(s, h1) == true);
 
-    info(ajouterS(s, c1));
+    info(ajouterSalleC(s, c1));
     test(isFreeSalle(s, h1) == false);
 
     info(afficherSalle(s));
 
-    info(modifierS(s, h1, c2));
+    info(modifierSalleHC(s, h1, c2));
 
     test(isFreeSalle(s, h1) == true);
     test(isFreeSalle(s, h2) == false);
 
     test(isEmptySalle(s) == false);
 
-    info(supprimerS(s, h2));
+    info(supprimerSalleH(s, h2));
 
     test(isFreeSalle(s, h2) == true);
 
@@ -352,10 +361,8 @@ int main() {
 
     info(afficherSalle(s));
 
-#ifdef JSON
-    info(ajouterS(s, c2));
+    info(ajouterSalleC(s, c2));
     test(strcmp(toStringSalle(s), toStringSalle(salleParser(getJsonSalle(s)))) == 0);
-#endif
 
     return 0;
 }

@@ -36,7 +36,7 @@ Salle salle(char* nom);
  * stockant un tableau de Creneau ou null.
  *
  * @param json_salle Objet JSON de Salle.
- * @return Salle Nouvelle instance allouée de Salle.
+ * @return Nouvelle instance allouée de Salle.
  */
 Salle salleParser(json_t* json_salle);
 
@@ -44,7 +44,7 @@ Salle salleParser(json_t* json_salle);
  * @brief Accesseur de l'objet Nom de Salle.
  *
  * @param s Référence de Salle.
- * @return Valeur du Nom de type char*.
+ * @return Valeur du Nom de Salle de type char*.
  */
 char* getSalleN(Salle s);
 
@@ -68,7 +68,7 @@ json_t* getJsonSalle(Salle s);
  * @brief Ajoute une référence de l'objet Creneau au tableau
  * de Creneau de Salle.
  *
- * @pre Salle ne doit contenir aucun autre Creneau
+ * @pre Salle ne doit contenir aucune autre référence de Creneau
  * dans l'intervalle de Horaire indiqué par Creneau.
  *
  * @param s Référence de Salle.
@@ -76,10 +76,10 @@ json_t* getJsonSalle(Salle s);
  * @return Salle possédant une référence de Creneau parmi le tableau de
  * Creneau si Salle était libre dans l'intervalle de Horaire.
  */
-Salle ajouterS(Salle s, Creneau c);
+Salle ajouterSalleC(Salle s, Creneau c);
 
 /**
- * @brief Supprime tout Créneau réservé dans l'intervalle
+ * @brief Supprime tout Creneau réservé dans l'intervalle
  * de Horaire.
  *
  * @param s Référence de Salle.
@@ -87,7 +87,7 @@ Salle ajouterS(Salle s, Creneau c);
  * @return Salle ne possédant aucun Creneau réservé dans l'intervalle
  * de suppression.
  */
-Salle supprimerS(Salle s, Horaire h);
+Salle supprimerSalleH(Salle s, Horaire h);
 
 /**
  * @brief Modifie le Creneau à l'Horaire horaire_modifié pour le remplacer
@@ -101,7 +101,7 @@ Salle supprimerS(Salle s, Horaire h);
  * @return Salle possédant une référence de Creneau parmi le tableau de
  * Creneau.
  */
-Salle modifierS(Salle s, Horaire horaire_modifie, Creneau c);
+Salle modifierSalleHC(Salle s, Horaire horaire_modifie, Creneau c);
 
 /**
  * @brief Vérifie si Salle ne contient aucun créneau réservé

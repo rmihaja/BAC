@@ -226,18 +226,10 @@ Salles ajouterSs(Salles ss, Salle s) {
  * L'impression suit alors le format :
  *
  * @code {.txt}
- * -------
- * Salle : Nom
- * -------
+ * {Salle}
  *
- * de 8h00 à 9h00
- * ...
+ * {Salle}
  *
- * -------
- * Salle : Nom
- * -------
- *
- * de 8h00 à 9h00
  * ...
  * @endcode
  *
@@ -316,9 +308,7 @@ int main() {
 
     info(afficheSalles(S));
 
-#ifdef JSON
     test(strcmp(toStringSalles(S), toStringSalles(sallesParser(getJsonSalles(S)))) == 0);
-#endif
 
     return 0;
 }

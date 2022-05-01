@@ -283,9 +283,9 @@ Enseignants supprimerEs(Enseignants es, Enseignant e) {
  * Liste des enseignants
  * ---------------------
  *
- * - NOM, Matiere
- * - NOM, Matiere
- * - NOM, Matiere
+ * - {Enseignant}
+ * - {Enseignant}
+ * - ...
  * @endcode
  *
  * @sa afficheEnseignant
@@ -368,9 +368,7 @@ int main() {
 
     info(afficherEnseignants(es));
 
-#ifdef JSON
     test(strcmp(toStringEnseignants(es), toStringEnseignants(enseignantsParser(getJsonEnseignants(es)))) == 0);
-#endif
 
     return 0;
 }
