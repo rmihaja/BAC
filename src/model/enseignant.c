@@ -25,8 +25,8 @@
   * @internal
   *
   * @struct s_enseignant
-  * @details
   * @brief Structure représentant un objet Enseignant.
+  * @details
   * Structure permettant de stocker les attributs
   * (nom et prénom) d'un enseignant sous forme de
   * chaînes de caractères.

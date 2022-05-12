@@ -26,6 +26,7 @@
   *
   * @struct s_creneau_f
   * @brief Structure représentant un élément de la liste chaînée de Creneau de Formation.
+  * @details
   * Structure permettant de stocker un élément de la liste
   * de Creneau, en stockant la référence de Creneau puis
   * l'élément suivant.
