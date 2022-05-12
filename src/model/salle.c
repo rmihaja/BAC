@@ -236,7 +236,7 @@ bool isFreeSalle(Salle s, Horaire h) {
  * @details
  * Une salle est considéré comme "vide" si elle est libre toute
  * la journée, c'est-à-dire dans l'intervalle autorisée de Horaire
- * de \f$ \llbracket 8, 20 \rrbracket \f$.
+ * de \f$ \textlbrackdbl 8, 20 \textrbrackdbl \f$.
  *
  * @endinternal
  */

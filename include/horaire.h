@@ -23,8 +23,8 @@ typedef struct s_horaire* Horaire;
  * @brief construit un nouvel objet Horaire avec un Début et une Fin.
  *
  * @pre Debut doit être dans l'intervalle
- * \f$ \llbracket 8, 19 \rrbracket \f$ et Fin doit être dans l'intervalle
- * \f$ \llbracket 9, 20 \rrbracket \f$.
+ * \f$ \textlbrackdbl 8, 19 \textrbrackdbl \f$ et Fin doit être dans l'intervalle
+ * \f$ \textlbrackdbl 9, 20 \textrbrackdbl \f$.
  * Debut et Fin ne doivent pas être égaux.
  *
  * @param debut Heure de début de Horaire de type int.
