@@ -3,14 +3,15 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>BAC - Documentation</title>
+  <title>BAC - Book A Classroom documentation</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 
-  <!-- Stylesheet -->
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-darklight-theme@3/dist/docsify-themeable/style.min.css"
     type="text/css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
 
   <!-- Alternate Stylesheets -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css"
@@ -34,6 +35,7 @@
   </style>
   <script>
     window.$docsify = {
+
 
       /***********************************\
       *              GENERAL              *
@@ -77,6 +79,11 @@
 
       search: {
         depth: 3,
+        paths: [
+          '/',
+          '/Classes/',
+          '/Files/'
+        ],
         noData: 'Aucune correspondance',
         placeholder: 'Recherche'
       }
@@ -90,6 +97,7 @@
     type="text/javascript">
     </script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-c.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
 </body>
