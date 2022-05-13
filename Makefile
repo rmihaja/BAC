@@ -79,3 +79,9 @@ prune:
 	rm -f $(MODULE)/*
 	rm -f $(LIB)/*
 	rm -f $(DEST)/*/*
+
+# documentation compile
+
+doc:
+	doxygen
+	doxybook2 --input _doxygen/xml --output _site --config config.json

@@ -64,10 +64,10 @@ struct s_controle {
  * @note
  * On utilise l'algorithme ROT13 pour l'encodage de nos caractères.
  *
- * @pre dest doit être alloué
+ * @pre dest doit être alloué.
  *
- * @param mdp Mot de passe crypté.
- * @param dest Adresse où sera stocké le mot de passe décrypté
+ * @param mdp Mot de passe crypté de type char*.
+ * @param dest Adresse où sera stocké le mot de passe décrypté.
  * @return Mot de passe décrypté de type char*.
  */
 char* decodeMDP(const char* mdp, char* dest) {
@@ -102,8 +102,8 @@ char* decodeMDP(const char* mdp, char* dest) {
  * @note
  * On utilise l'algorithme ROT13 pour l'encodage de nos caractères.
  *
- * @param mdp Mot de passe crypté.
- * @return Mot de passe décrypté de type char*.
+ * @param mdp Mot de passe de type char*.
+ * @return Mot de passe crypté de type char*.
  */
 char* encodeMDP(char* mdp) {
     char* courant = mdp;

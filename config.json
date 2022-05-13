@@ -1,0 +1,19 @@
+{
+  "baseUrl": "/",
+  "foldersToGenerate": [
+    "classes",
+    "files"
+  ],
+  "formulaBlockEnd": "$$",
+  "formulaBlockStart": "$$",
+  "formulaInlineEnd": "$",
+  "formulaInlineStart": "$",
+  "imagesFolder": "assets",
+  "indexInFolders": true,
+  "linkSuffix": ".md",
+  "linkLowercase": false,
+  "indexClassesName": "README",
+  "indexClassesTitle": "Structures de données",
+  "indexFilesName": "README",
+  "indexFilesTitle": "Fichiers"
+}
