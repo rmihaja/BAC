@@ -1,25 +1,30 @@
 ---
 title: 'Rapport de projet'
 author: 'Mihaja RAZAFIMAHEFA & Ambre ROUZADE'
+export_on_save:
+    markdown: true
+markdown:
+    image_dir: ../_site/assets
+    path: ../_site/README.md
+    ignore_from_front_matter: true
 ---
 
 *[TAD]: Type Abstrait de Données
 *[BAC]: Book A Classroom
 *[MVC]: Modèle Vue Contrôleur
 
-"Book A Classroom", un gestionnaire de réservation de salles d'universités
-===
+# "Book A Classroom", un gestionnaire de réservation de salles d'universités
 
-*Par MIHAJA RAZAFIMAHEFA et Ambre ROUZADE*
+*Par Mihaja RAZAFIMAHEFA et Ambre ROUZADE*
 
 [TOC]
 
-# Introduction
+## Introduction
 
 BAC est un projet réalisé durant notre année universitaire L2 CUPGE en Structure de données.
 Écrite en C et compilée avec Makefile, BAC permet de consulter l'emploi du temps et gérer les réservations de différentes formations, réparties dans différentes salles pour différents enseignements à un horaire donnée.
 
-# Organisation du travail
+## Organisation du travail
 
 Avant de passer au codage, nous nous sommes d'abord réunis pour décomposer le projet, notamment la modélisation du problème. Nous avons donc passé 1 semaine à réfléchir ensemble aux différentes structures de données utiles, leurs opérations et comment les articuler pour obtenir le résultat souhaité. Nous avons constitué les TAD (une version préliminaire est disponible dans le fichier TAD.md) et imaginé l’interface.
 
@@ -56,26 +61,26 @@ gantt
     Tests unitaires                     :after docs, 7d
 ```
 
-## Répartition du travail
+### Répartition du travail
 
 Nous nous sommes répartis le travail en fonction de nos préférences mais nous avons toujours regardé ce que faisait l’autre et mis en commun.
 Mihaja s’est occupé de la recherche des librairies, des tests unitaires et de l'interface. Tandis que Ambre s’est concentré sur les modules des structures.
 
 Nous avons mis en place un [repertoire github](https://github.com/rmihaja/BAC) pour se partager nos avancées et nous avons créé des branches (devMihaja et devAmbre) pour ne pas faire de merge conflict. Pour faire la mise en commun de notre travail, nous effectuons un merge sur la branche feature, tout cela afin de nous permettre de coder sans s’empiéter.
 
-# Organisation du programme
+## Organisation du programme
 
 De manière général, nous conseillons vivement de lire la documentation Doxygen pour obtenir la spécification complète du programme.
 
-## Compilation
+### Compilation
 
 Le programme est compilé à partir d'un Makefile principal : celui se trouvant à la racine du projet. Il va tout d'abord compiler les librairies externes, suivi des librairies du programme organisées en modules, dont les commandes se trouve dans des sous-Makefile, dans le dossier de chaque module. Puis il va compiler le programme principale main.
 
-## Structure
+### Structure
 
 Le projet respecte l'architecte MVC. C'est-à-dire que le programme est découpé en 3 modules distincts :
 
-### Model
+#### Model
 
 Model est le module qui contient la majeure partie des structures de données du programme. Il est donc l'implémentation des TAD et regroupe les opérations élémentaires de manipulation de nos données. Elle respecte aussi le paradigme de la programmation orientée objet, c'est-à-dire que les structures (et leurs manipulations) se rapproche au plus de la manipulation d'objets.
 
@@ -96,13 +101,13 @@ Voici la liste des structures de données que compose modele :
 
 Il y a notamment 2 grands groupes de structures : les objets et les collections.
 
-#### Les structures objets
+##### Les structures objets
 
 Les structures objets avec leurs attributs regroupent :
 
 - Enseignant : défini par un nom et une matière
 - Horaire : défini par un début et une fin
-- Creneau : défini par un horaire, un enseignant, le nom d'une formation et d'une salle. C'est le coeur de notre projet.
+- Creneau : défini par un horaire, un enseignant, le nom d'une formation et d'une salle. C'est le cœur de notre projet.
 
 Ce sont les structures primaires du programme, stockant notamment les attributs qui les représente. Les fonctions types associés à ces structures respectent pour la plupart une même syntaxe :
 
@@ -116,7 +121,7 @@ Ce sont les structures primaires du programme, stockant notamment les attributs 
 - `affiche...` : permet d'imprimer sur stdout une représentation externe visualisable de l'objet.
 - `toString...` : permet d'obtenir la représentation JSON de l'objet, mais dans sa version en chaîne de caractère.
 
-#### Les structures collections
+##### Les structures collections
 
 Les structures collections englobent :
 
@@ -144,7 +149,7 @@ Outre les fonctions définit pour un objet, les collections possèdent aussi d'a
 > **Note :**
 > Pour une liste complète et détaillée des fonctions du programme, veuillez vous référer à la documentation intégrée du projet, obtenu avec Doxygen.
 
-### View
+#### View
 
 View est le module permettant de gérer les entrées utilisateurs ainsi que l'interaction Homme-Machine. Elle permet notamment d'afficher des messages, de prendre le choix de l'utilisateur ainsi que ses entrées. Il n'englobe qu'une seule structure de données : entree.
 
@@ -157,11 +162,11 @@ Le macro `BUFFER_SIZE` pour gérer l'allocation mémoire d'une entrée. Si l'uti
 
 Pour une description détaillée des fonctions, se référer à Doxygen.
 
-### Control
+#### Control
 
 Control est le module qui met le lien entre Model et View en gérant l'affichage à l'utilisateur. Il ne possède qu'une seule structure : controle, mais qui possède des "panneaux" afin de définir l'affichage courant (appelé état) de l'application en fonction du choix de l'utilisateur. Cela est géré par un gestionnaire des choix, `afficherPanneauSuivant`, qui s'exécute dans une boucle : `run`.
 
-#### Fonctionnement de l'affichage : Gestion de Panneaux
+##### Fonctionnement de l'affichage : Gestion de Panneaux
 
 Un panneau est un état structuré de l'affichage qui présente de manière ordonnée les entrées/sorties (les fonctions `affiche...`) afin de répondre à une action de l'utilisateur (exemple réserver un créneau ou afficher une salle) et modifier le modele.
 
@@ -196,19 +201,19 @@ Même si le gestionnaire de choix ne prendra pas en compte la valeur de retour d
 - `1` si l'utilisateur a bien effectué des changements, et que ces changements sont valides et validées.
 - `-1` si l'utilisateur a explicitement annulé l'opération de modification.
 
-#### Stockage des données
+##### Stockage des données
 
 À la sortie de l'application, le programme sauvegarde systématiquement les données des structures dans un fichier `data.json` à l'aide de l'API Jansson.
 Par défaut, le fichier se trouvera dans `./bin/data`
 
-##### Encryption
+###### Encryption
 
 Pour encrypter notre mot de passe, nous avons utilisé l'algorithme ROT13.
 
 > **Note :**
 > Si le mot de passe a été oublié, supprimer le fichier `./bin/data/data.json` permet de le réinitialiser à sa valeur par défaut "mdp".
 
-# Mode d'emploi du programme
+## Mode d'emploi du programme
 
 Il y a 2 profils différents pour utiliser le logiciel :
 
@@ -230,13 +235,15 @@ Voici l'affichage présenté à l'utilisateur au lancement du programme :
 Votre choix : _
 ```
 
-## Profil client
+Dans chaque menu ou panneau il y a la possibilité de quitter (ou revenir en arrière).
 
-Nous pouvons ici consulter un emploi du temps. Dans chaque menu ou visuel il y a la possibilité de revenir en arrière (ou quitter).
+### Profil client
 
-### Consulter un emploi du temps
+Un client a accès à un menu qui lui permet de consulter un emploi du temps.
 
-#### Par salle
+#### Consulter un emploi du temps
+
+##### Par salle
 
 On utilisera les fonctions de Salles et Salle notamment `afficheSalles` qui permet d’afficher comme ceci :
 C’est un peu l’emploi du temps global.
@@ -269,7 +276,7 @@ CUPGE Physique
 
 //
 
-#### Par formation
+##### Par formation
 
 Pour afficher l’emploi du temps par enseignant on parcourt chaque salle (qui stocke les informations importantes) et affiche les créneaux qui correspondent à la formation voulue.
 
@@ -297,7 +304,7 @@ Mathématiques
 COUTIN Laure
 ```
 
-#### Par Enseignant
+##### Par Enseignant
 
 Pour afficher l’emploi du temps par enseignant on parcourt chaque salle (qui stocke les informations importantes) et affiche les créneaux qui correspondent à l’enseignant voulu.
 
@@ -349,6 +356,8 @@ Mot de passe incorrect.
 Votre choix : _
 ```
 
+#### Menu des administrateurs
+
 Si le mot de passe est correct, nous serons connecté en mode administrateur avec un panneau de gestion comme suit :
 
 ```txt
@@ -373,9 +382,9 @@ Pour chaque option, nous serons présenté avec les différentes actions disponi
 4. Gestion des réservations : réserver une salle pour un enseignement, annuler une réservation, modifier une réservation, afficher la liste des salles réservées par formation
 5. Administration : changer le mot de passe
 
-# Bilan
+## Bilan
 
-## Difficultés
+### Difficultés
 
 Nous avons eu quelques difficultés au début du projet concernant la vision de la modélisation. En effet, nous avions tous les 2 réfléchi à des manières différentes d’implémenter et d’imbriquer les différentes tâches. Suite à certaines réflexions et discussions nous sommes arrivés à des compromis.
 
@@ -383,13 +392,13 @@ Nous avons aussi eu des difficultés concernant le temps de travail. En effet, n
 
 La gestion des librairies externes a aussi été dure. C'est la première qu'on avait le droit d'en utiliser et c'est vrai qu'intégrer du code externe devient une contrainte à la compilation, où la nécessité de l'installer au dépend de l'utilisateur se révèle important.
 
-## Point de vue personnel
+### Point de vue personnel
 
 Ce projet que nous avons adoré faire nous a apporté de nouvelles connaissances ou de l’approfondissement concernant GitHub et le C.
 Nous avons aussi pu réutiliser nos connaissances théoriques et expérimenter à nouveau les modules, et aussi à écouter l’avis de l’autre et travailler en groupe.
 Nous retiendrons que prévoir ses tâches et le temps pour les réaliser est très important afin de privilégier certaines ou se réorganiser.
 
-## Améliorations et perspective pour la suite
+### Améliorations et perspective pour la suite
 
 Nous prévoyons d'utiliser [Doxybook](https://github.com/matusnovak/doxybook2) si possible afin de rendre l'interface Doxygen plus belle et agréable en utilisant un frontend plus moderne.
 
