@@ -287,7 +287,6 @@ Imprime les attributs de Creneau sur stdout, suivi d'un retour à la ligne.
 Imprime les attributs de l'objet Creneau en réutilisant l'affichage des objets Enseignant et Horaire, respectant alors le format :
 
 ```txt
-
 {Salle} {Formation}
 {Enseignement}
 {Enseignant}

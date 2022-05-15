@@ -192,7 +192,6 @@ Imprime les attributs de Enseignant sur stdout, suivi d'un retour à la ligne.
 Imprime les attributs de l'objet Enseignant selon le format :
 
 ```txt
-
 {Nom} {Prenom}
 ```
 

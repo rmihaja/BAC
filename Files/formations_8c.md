@@ -142,7 +142,19 @@ void afficherFormations(
 )
 ```
 
-sa afficheFormation
+Imprime tout Formation de Formations sur stdout, suivi d'un retour à la ligne.
+
+Itère la liste des Formations pour pouvoir afficher chaque Formation à partir de sa représentation externe sur stdout. L'impression suit alors le format :
+
+```txt
+{Formation}
+
+{Formation}
+
+...
+```
+
+[afficheFormation](/Files/formation_8c.md#fonction-afficheformation)
 
 ### fonction afficherFormationsN()
 
@@ -155,27 +167,23 @@ void afficherFormationsN(
 
 Imprime le nom de toute Formation de Formations sur stdout, précédé de son indice dans la liste si ordonné, d'un tiret sinon et suivi d'un retour à la ligne.
 
-Itère la liste des Enseignements pour pouvoir afficher le Nom de chaque Formation sur stdout, précédé de son indice dans la liste si l'ordre est paramétré à True, ou d'un tiret sinon. L'impression suit alors le format :
+Itère la liste des Formations pour pouvoir afficher le Nom de chaque Formation sur stdout, précédé de son indice dans la liste si l'ordre est paramétré à True, ou d'un tiret sinon. L'impression suit alors le format :
 
 ```txt
-
 - {Nom de Formation}
 - {Nom de Formation}
 ...
 ```
 
-// ou : ```txt
+ou :
 
+```txt
 1) {Nom de Formation}
 2) {Nom de Formation}
 ...
-
 ```
 
 [getFormationN](/Files/formation_8c.md#fonction-getformationn)
-
-
-
 
 ## Code source
 

@@ -219,7 +219,6 @@ Imprime toute Salle de la liste des Salles sur stdout, suivi d'un retour à la l
 Itère la liste des Salles pour pouvoir afficher chaque Salle à partir de sa représentation externe sur stdout. L'impression suit alors le format :
 
 ```txt
-
 {Salle}
 
 {Salle}

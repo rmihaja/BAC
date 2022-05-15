@@ -268,7 +268,6 @@ Imprime le nom de Formation ainsi que sa liste de Creneau sur stdout, suivi d'un
 Imprime le Nom de l'objet Formation suivi par une représentation de sa liste de Creneau qu'on itère. L'impression suit alors le format :
 
 ```txt
-
 Salle {Salle de Creneau}
 de {Horaire de Creneau}
 {Enseignement de Creneau}

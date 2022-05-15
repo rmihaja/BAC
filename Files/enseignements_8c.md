@@ -188,20 +188,18 @@ Imprime tout Enseignement de la liste des Enseignements sur stdout, suivi d'un r
 Itère la liste des Enseignements pour pouvoir afficher le Nom de chaque Enseignement sur stdout, précédé de son indice dans la liste si l'ordre est paramétré à True, ou d'un tiret sinon. L'impression suit alors le format :
 
 ```txt
-
 - {Nom de Enseignement}
 - {Nom de Enseignement}
 ...
 ```
 
- ou : ```txt
+ou :
 
+```txt
 1) {Nom de Enseignement}
 2) {Nom de Enseignement}
 ...
-
 ```
-
 
 ### fonction toStringEnseignements()
 

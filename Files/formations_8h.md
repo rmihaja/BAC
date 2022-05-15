@@ -18,7 +18,7 @@ En-tête de la structure de données Formations.  [Plus de détails...](#descrip
 | [json_t](/Classes/structjson__t.md) * | **[getJsonFormations](/Files/formations_8h.md#fonction-getjsonformations)**([Formations](/Files/formations_8h.md#typedef-formations) fs)<br>Accesseur de la représentation en objet JSON de Formations.  |
 | int | **[sizeFormations](/Files/formations_8h.md#fonction-sizeformations)**([Formations](/Files/formations_8h.md#typedef-formations) fs)<br>Accesseur de la taille de Formations.  |
 | [Formations](/Files/formations_8h.md#typedef-formations) | **[ajouterFs](/Files/formations_8h.md#fonction-ajouterfs)**([Formations](/Files/formations_8h.md#typedef-formations) fs, [Formation](/Files/formation_8h.md#typedef-formation) f)<br>Ajoute une référence de l'objet Formation à Formations.  |
-| void | **[afficherFormations](/Files/formations_8h.md#fonction-afficherformations)**([Formations](/Files/formations_8h.md#typedef-formations) fs) |
+| void | **[afficherFormations](/Files/formations_8h.md#fonction-afficherformations)**([Formations](/Files/formations_8h.md#typedef-formations) fs)<br>Imprime tout Formation de Formations sur stdout, suivi d'un retour à ligne. |
 | void | **[afficherFormationsN](/Files/formations_8h.md#fonction-afficherformationsn)**([Formations](/Files/formations_8h.md#typedef-formations) fs, bool isOrdered)<br>Imprime le nom de toute Formation de Formations sur stdout, précédé de son indice dans la liste si ordonné, d'un tiret sinon et suivi d'un retour à la ligne.  |
 | char * | **[toStringFormations](/Files/formations_8h.md#fonction-tostringformations)**([Formations](/Files/formations_8h.md#typedef-formations) fs)<br>Accesseur de la représentation en chaîne de caractère JSON de Formations.  |
 
@@ -170,7 +170,23 @@ void afficherFormations(
 )
 ```
 
-sa afficheFormation
+Imprime tout Formation de Formations sur stdout, suivi d'un retour à la ligne.
+
+**Paramètres**:
+
+* **fs** Formations à afficher.
+
+Itère la liste des Formations pour pouvoir afficher chaque Formation à partir de sa représentation externe sur stdout. L'impression suit alors le format :
+
+```txt
+{Formation}
+
+{Formation}
+
+...
+```
+
+[afficheFormation](/Files/formation_8c.md#fonction-afficheformation)
 
 ### fonction afficherFormationsN()
 
@@ -188,25 +204,23 @@ Imprime le nom de toute Formation de Formations sur stdout, précédé de son in
 * **fs** Formations à afficher.
 * **isOrdered** indique si la liste doit être ordonnée par son indice.
 
-Itère la liste des Enseignements pour pouvoir afficher le Nom de chaque Formation sur stdout, précédé de son indice dans la liste si l'ordre est paramétré à True, ou d'un tiret sinon. L'impression suit alors le format :
+Itère la liste des Formations pour pouvoir afficher le Nom de chaque Formation sur stdout, précédé de son indice dans la liste si l'ordre est paramétré à True, ou d'un tiret sinon. L'impression suit alors le format :
 
 ```txt
-
 - {Nom de Formation}
 - {Nom de Formation}
 ...
 ```
 
-// ou : ```txt
+ou :
 
+```txt
 1) {Nom de Formation}
 2) {Nom de Formation}
 ...
-
 ```
 
 [getFormationN](/Files/formation_8c.md#fonction-getformationn)
-
 
 ### fonction toStringFormations()
 

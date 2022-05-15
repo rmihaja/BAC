@@ -264,22 +264,20 @@ Imprime tout Enseignant de la liste des Enseignants sur stdout, suivi d'un retou
 Itère la liste des Enseignants pour pouvoir afficher chaque Enseignant à partir de sa représentation externe sur stdout, précédé de son indice dans la liste si l'ordre est paramétré à True, ou d'un tiret sinon. L'impression suit alors le format :
 
 ```txt
-
 - {Enseignant}
 - {Enseignant}
 ...
 ```
 
- ou : ```txt
+ou :
 
+```txt
 1) {Enseignant}
 2) {Enseignant}
 ...
-
 ```
 
 [afficheEnseignant](/Files/enseignant_8c.md#fonction-afficheenseignant)
-
 
 ### fonction toStringEnseignants()
 

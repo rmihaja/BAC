@@ -223,7 +223,6 @@ Imprime le nom de Salle ainsi que son tableau de Creneau sur stdout, suivi d'un 
 Imprime le Nom de l'objet Salle suivi par une représentation de son tableau de Creneau qu'on itère à partir de 8 jusqu'à 20 pour symboliser une journée de cours. L'impression suit alors le format :
 
 ```txt
-
 -----------------
 EDT de la Salle : {Nom de Salle}
 -----------------
