@@ -1,6 +1,6 @@
-# "Book A Classroom", un gestionnaire de réservation e salles d'universités
+# "Book A Classroom", un gestionnaire de réservation de salles d'universités
 
-*Par MIHAJA RAZAFIMAHEFA et Ambre ROUZADE*
+*Par Mihaja RAZAFIMAHEFA et Ambre ROUZADE*
 
 ## Introduction
 
@@ -67,7 +67,7 @@ Les structures objets avec leurs attributs regroupent :
 
 - Enseignant : défini par un nom et une matière
 - Horaire : défini par un début et une fin
-- Creneau : défini par un horaire, un enseignant, le nom d'une formation et d'une salle. C'est le coeur de notre projet.
+- Creneau : défini par un horaire, un enseignant, le nom d'une formation et d'une salle. C'est le cœur de notre projet.
 
 Ce sont les structures primaires du programme, stockant notamment les attributs qui les représente. Les fonctions types associés à ces structures respectent pour la plupart une même syntaxe :
 
@@ -195,9 +195,11 @@ Voici l'affichage présenté à l'utilisateur au lancement du programme :
 Votre choix : _
 ```
 
+Dans chaque menu ou panneau il y a la possibilité de quitter (ou revenir en arrière).
+
 ### Profil client
 
-Nous pouvons ici consulter un emploi du temps. Dans chaque menu ou visuel il y a la possibilité de revenir en arrière (ou quitter).
+Un client a accès à un menu qui lui permet de consulter un emploi du temps.
 
 #### Consulter un emploi du temps
 
@@ -282,11 +284,11 @@ EDT de l'Enseignant : GAILDRAT Véronique
 ...
 ```
 
-#### Mode administrateur
+### Mode administrateur
 
 Le mode administrateur se modèle d’une toute autre manière.
 
-##### Authentification
+#### Authentification
 
 Nous devons sécuriser l’accès à la modification des données. Pour cela nous avons mis en place une « session » qui demande un mot de passe.
 
@@ -313,6 +315,8 @@ Mot de passe incorrect.
 
 Votre choix : _
 ```
+
+#### Menu des administrateurs
 
 Si le mot de passe est correct, nous serons connecté en mode administrateur avec un panneau de gestion comme suit :
 
