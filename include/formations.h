@@ -83,7 +83,12 @@ int sizeFormations(Formations fs);
  */
 Formations ajouterFs(Formations fs, Formation f);
 
-
+/**
+ * @brief Imprime tout Formation de Formations
+ * sur stdout, suivi d'un retour à ligne.
+ *
+ * @param fs Formations à afficher.
+ */
 void afficherFormations(Formations fs);
 
 /**

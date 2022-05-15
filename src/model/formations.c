@@ -166,7 +166,20 @@ Formations ajouterFs(Formations fs, Formation f) {
 /**
  * @internal
  *
- * sa afficheFormation
+ * @details
+ * Itère la liste des Formations pour pouvoir afficher chaque
+ * Formation à partir de sa représentation externe sur stdout.
+ * L'impression suit alors le format :
+ *
+ * @code {.txt}
+ * {Formation}
+ *
+ * {Formation}
+ *
+ * ...
+ * @endcode
+ *
+ * @sa afficheFormation
  *
  * @endinternal
  */
@@ -180,7 +193,7 @@ void afficherFormations(Formations fs) {
  * @internal
  *
  * @details
- * Itère la liste des Enseignements pour pouvoir afficher le Nom de
+ * Itère la liste des Formations pour pouvoir afficher le Nom de
  * chaque Formation sur stdout, précédé de son indice dans la liste
  * si l'ordre est paramétré à True, ou d'un tiret sinon.
  * L'impression suit alors le format :
@@ -191,7 +204,8 @@ void afficherFormations(Formations fs) {
  * ...
  * @endcode
  *
- * // ou :
+ * ou :
+ *
  * @code {.txt}
  * 1) {Nom de Formation}
  * 2) {Nom de Formation}
