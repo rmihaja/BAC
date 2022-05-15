@@ -49,3 +49,5 @@ Taille maximalle du tableau de Formation
 ---
 
 Généré par [doxybook2](https://github.com/matusnovak/doxybook2) v1.4.0
+
+[Voir la documentation Doxygen originale](https://rmihaja.github.io/BAC/doxygen/index.html)

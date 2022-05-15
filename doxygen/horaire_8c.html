@@ -1,0 +1,480 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>BAC: Référence du fichier src/model/horaire.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  },
+  loader: {
+    load: ['[tex]/ams','[tex]/textcomp']
+  },
+  tex: {
+    macros: {},
+    packages: ['base','configmacros','ams','textcomp']
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">BAC
+   </div>
+   <div id="projectbrief">&quot;Book A Classroom&quot;</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5dd65160827af56e6353642206b80129.html">model</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Structures de données</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle"><div class="title">Référence du fichier horaire.c</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Code source de la structure de données Horaire.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;assert.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="horaire_8h_source.html">horaire.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de horaire.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="horaire_8c__incl.png" border="0" usemap="#asrc_2model_2horaire_8c" alt=""/></div>
+<map name="asrc_2model_2horaire_8c" id="asrc_2model_2horaire_8c">
+<area shape="rect" title="Code source de la structure de données Horaire." alt="" coords="187,5,333,32"/>
+<area shape="rect" title=" " alt="" coords="350,229,421,256"/>
+<area shape="rect" title=" " alt="" coords="5,229,72,256"/>
+<area shape="rect" title=" " alt="" coords="273,80,348,107"/>
+<area shape="rect" href="horaire_8h.html" title="En&#45;tête de la structure de données Horaire." alt="" coords="169,80,249,107"/>
+<area shape="rect" title=" " alt="" coords="257,155,340,181"/>
+<area shape="rect" href="jansson_8h_source.html" title=" " alt="" coords="98,155,182,181"/>
+<area shape="rect" title=" " alt="" coords="96,229,171,256"/>
+<area shape="rect" href="jansson__config_8h_source.html" title=" " alt="" coords="195,229,325,256"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Structures de données</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs__horaire.html">s_horaire</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure représentant un objet Horaire.  <a href="structs__horaire.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a8658dc60a3913d086540485841e719a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="horaire_8h.html#a7d15432e6baf86e174c39b8ecb22e529">Horaire</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="horaire_8c.html#a8658dc60a3913d086540485841e719a8">horaire</a> (int debut, int fin)</td></tr>
+<tr class="memdesc:a8658dc60a3913d086540485841e719a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">construit un nouvel objet Horaire avec un Début et une Fin.  <a href="horaire_8c.html#a8658dc60a3913d086540485841e719a8">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a8658dc60a3913d086540485841e719a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd55c0f4321d91131d5d615dce5362ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="horaire_8h.html#a7d15432e6baf86e174c39b8ecb22e529">Horaire</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="horaire_8c.html#abd55c0f4321d91131d5d615dce5362ba">horaireParser</a> (<a class="el" href="structjson__t.html">json_t</a> *json_horaire)</td></tr>
+<tr class="memdesc:abd55c0f4321d91131d5d615dce5362ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">construit un nouvel objet Horaire à partir de sa représentation objet JSON.  <a href="horaire_8c.html#abd55c0f4321d91131d5d615dce5362ba">Plus de détails...</a><br /></td></tr>
+<tr class="separator:abd55c0f4321d91131d5d615dce5362ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69c11d1e07aea34dba410667cde75ddc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="horaire_8c.html#a69c11d1e07aea34dba410667cde75ddc">getDebut</a> (<a class="el" href="horaire_8h.html#a7d15432e6baf86e174c39b8ecb22e529">Horaire</a> h)</td></tr>
+<tr class="memdesc:a69c11d1e07aea34dba410667cde75ddc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de l'objet Debut de Horaire.  <a href="horaire_8c.html#a69c11d1e07aea34dba410667cde75ddc">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a69c11d1e07aea34dba410667cde75ddc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb14833152b31f498085f0605a92777c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="horaire_8c.html#adb14833152b31f498085f0605a92777c">getFin</a> (<a class="el" href="horaire_8h.html#a7d15432e6baf86e174c39b8ecb22e529">Horaire</a> h)</td></tr>
+<tr class="memdesc:adb14833152b31f498085f0605a92777c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de l'objet Fin de Horaire.  <a href="horaire_8c.html#adb14833152b31f498085f0605a92777c">Plus de détails...</a><br /></td></tr>
+<tr class="separator:adb14833152b31f498085f0605a92777c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeaeef80bbe93e9c5410f2886fc26c036"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structjson__t.html">json_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="horaire_8c.html#aeaeef80bbe93e9c5410f2886fc26c036">getJsonHoraire</a> (<a class="el" href="horaire_8h.html#a7d15432e6baf86e174c39b8ecb22e529">Horaire</a> h)</td></tr>
+<tr class="memdesc:aeaeef80bbe93e9c5410f2886fc26c036"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de la représentation en objet JSON de Horaire.  <a href="horaire_8c.html#aeaeef80bbe93e9c5410f2886fc26c036">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aeaeef80bbe93e9c5410f2886fc26c036"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a387453dd42f4ee9291ba24007472961b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="horaire_8c.html#a387453dd42f4ee9291ba24007472961b">duree</a> (<a class="el" href="horaire_8h.html#a7d15432e6baf86e174c39b8ecb22e529">Horaire</a> h)</td></tr>
+<tr class="memdesc:a387453dd42f4ee9291ba24007472961b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcule la durée d'une horaire.  <a href="horaire_8c.html#a387453dd42f4ee9291ba24007472961b">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a387453dd42f4ee9291ba24007472961b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26ea9540178258360db5c7622e9ffa69"><td class="memItemLeft" align="right" valign="top"><a class="el" href="horaire_8h.html#a7d15432e6baf86e174c39b8ecb22e529">Horaire</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="horaire_8c.html#a26ea9540178258360db5c7622e9ffa69">setDebut</a> (<a class="el" href="horaire_8h.html#a7d15432e6baf86e174c39b8ecb22e529">Horaire</a> h, int debut)</td></tr>
+<tr class="memdesc:a26ea9540178258360db5c7622e9ffa69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définie l'objet Debut de Horaire.  <a href="horaire_8c.html#a26ea9540178258360db5c7622e9ffa69">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a26ea9540178258360db5c7622e9ffa69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a731c93de7ce69d84edbe70795d321de9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="horaire_8h.html#a7d15432e6baf86e174c39b8ecb22e529">Horaire</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="horaire_8c.html#a731c93de7ce69d84edbe70795d321de9">setFin</a> (<a class="el" href="horaire_8h.html#a7d15432e6baf86e174c39b8ecb22e529">Horaire</a> h, int fin)</td></tr>
+<tr class="memdesc:a731c93de7ce69d84edbe70795d321de9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définie l'objet Fin de Horaire.  <a href="horaire_8c.html#a731c93de7ce69d84edbe70795d321de9">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a731c93de7ce69d84edbe70795d321de9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a028de36840e3fb1650786ad28c81e8ca"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="horaire_8c.html#a028de36840e3fb1650786ad28c81e8ca">equalsHoraire</a> (<a class="el" href="horaire_8h.html#a7d15432e6baf86e174c39b8ecb22e529">Horaire</a> h1, <a class="el" href="horaire_8h.html#a7d15432e6baf86e174c39b8ecb22e529">Horaire</a> h2)</td></tr>
+<tr class="memdesc:a028de36840e3fb1650786ad28c81e8ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">compare deux Horaire.  <a href="horaire_8c.html#a028de36840e3fb1650786ad28c81e8ca">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a028de36840e3fb1650786ad28c81e8ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc0a151517dc35dfb2af1bf9607246da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="horaire_8c.html#adc0a151517dc35dfb2af1bf9607246da">afficheHoraire</a> (<a class="el" href="horaire_8h.html#a7d15432e6baf86e174c39b8ecb22e529">Horaire</a> h)</td></tr>
+<tr class="memdesc:adc0a151517dc35dfb2af1bf9607246da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imprime les attributs de Horaire sur stdout, suivi d'un retour à la ligne.  <a href="horaire_8c.html#adc0a151517dc35dfb2af1bf9607246da">Plus de détails...</a><br /></td></tr>
+<tr class="separator:adc0a151517dc35dfb2af1bf9607246da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c62dd7504b223590c510b2229edbdd7"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="horaire_8c.html#a1c62dd7504b223590c510b2229edbdd7">toStringHoraire</a> (<a class="el" href="horaire_8h.html#a7d15432e6baf86e174c39b8ecb22e529">Horaire</a> h)</td></tr>
+<tr class="memdesc:a1c62dd7504b223590c510b2229edbdd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de la représentation en chaîne de caractère JSON de Horaire.  <a href="horaire_8c.html#a1c62dd7504b223590c510b2229edbdd7">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a1c62dd7504b223590c510b2229edbdd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p >Code source de la structure de données Horaire. </p>
+<dl class="section author"><dt>Auteur</dt><dd>Mihaja RAZAFIMAHEFA &amp; Ambre ROUZADE</dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2022 </dd></dl>
+</div><h2 class="groupheader">Documentation des fonctions</h2>
+<a id="adc0a151517dc35dfb2af1bf9607246da" name="adc0a151517dc35dfb2af1bf9607246da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc0a151517dc35dfb2af1bf9607246da">&#9670;&nbsp;</a></span>afficheHoraire()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void afficheHoraire </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="horaire_8h.html#a7d15432e6baf86e174c39b8ecb22e529">Horaire</a>&#160;</td>
+          <td class="paramname"><em>h</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Imprime les attributs de Horaire sur stdout, suivi d'un retour à la ligne. </p>
+<p >Imprime les attributs de l'objet Enseignant selon le format :</p>
+<div class="fragment"><div class="line">{Debut}h00 à {Fin}h00</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a387453dd42f4ee9291ba24007472961b" name="a387453dd42f4ee9291ba24007472961b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a387453dd42f4ee9291ba24007472961b">&#9670;&nbsp;</a></span>duree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int duree </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="horaire_8h.html#a7d15432e6baf86e174c39b8ecb22e529">Horaire</a>&#160;</td>
+          <td class="paramname"><em>h</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calcule la durée d'une horaire. </p>
+<p >Calcule \( \vert Fin - Debut \vert \). Mais comme \( Fin \gt Debut \) par construction, on peut alors tout simplement calculer \( Fin - Debut \)</p>
+
+</div>
+</div>
+<a id="a028de36840e3fb1650786ad28c81e8ca" name="a028de36840e3fb1650786ad28c81e8ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a028de36840e3fb1650786ad28c81e8ca">&#9670;&nbsp;</a></span>equalsHoraire()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool equalsHoraire </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="horaire_8h.html#a7d15432e6baf86e174c39b8ecb22e529">Horaire</a>&#160;</td>
+          <td class="paramname"><em>h1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="horaire_8h.html#a7d15432e6baf86e174c39b8ecb22e529">Horaire</a>&#160;</td>
+          <td class="paramname"><em>h2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>compare deux Horaire. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">h1</td><td>Horaire 1 à comparer. </td></tr>
+    <tr><td class="paramname">h2</td><td>Horaire 2 à comparer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>true si Horaire 1 et Horaire 2 possèdent les mêmes attributs Debut et Fin. </dd>
+<dd>
+false si un ou plusieurs attributs de Horaire 1 et Horaire 2 diffèrent. </dd></dl>
+
+</div>
+</div>
+<a id="a69c11d1e07aea34dba410667cde75ddc" name="a69c11d1e07aea34dba410667cde75ddc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69c11d1e07aea34dba410667cde75ddc">&#9670;&nbsp;</a></span>getDebut()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getDebut </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="horaire_8h.html#a7d15432e6baf86e174c39b8ecb22e529">Horaire</a>&#160;</td>
+          <td class="paramname"><em>h</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur de l'objet Debut de Horaire. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">h</td><td>Référence de Horaire. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Valeur de Debut de type int. </dd></dl>
+
+</div>
+</div>
+<a id="adb14833152b31f498085f0605a92777c" name="adb14833152b31f498085f0605a92777c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb14833152b31f498085f0605a92777c">&#9670;&nbsp;</a></span>getFin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int getFin </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="horaire_8h.html#a7d15432e6baf86e174c39b8ecb22e529">Horaire</a>&#160;</td>
+          <td class="paramname"><em>h</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur de l'objet Fin de Horaire. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">h</td><td>Référence de Horaire. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Valeur de Fin de type int. </dd></dl>
+
+</div>
+</div>
+<a id="aeaeef80bbe93e9c5410f2886fc26c036" name="aeaeef80bbe93e9c5410f2886fc26c036"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeaeef80bbe93e9c5410f2886fc26c036">&#9670;&nbsp;</a></span>getJsonHoraire()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structjson__t.html">json_t</a> * getJsonHoraire </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="horaire_8h.html#a7d15432e6baf86e174c39b8ecb22e529">Horaire</a>&#160;</td>
+          <td class="paramname"><em>h</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur de la représentation en objet JSON de Horaire. </p>
+<p >Renvoie la représentation objet JSON de Horaire en utilisant l'API Jansson. Pour cela, on construit un nouvel objet JSON pour ensuite pouvoir y attacher les attributs clé-valeurs de Horaire, défini par "debut" et "fin".</p>
+<dl class="section see"><dt>Voir également</dt><dd><a href="https://jansson.readthedocs.io/en/latest/apiref.html#object">json_object</a> , <a href="https://jansson.readthedocs.io/en/latest/apiref.html#c.json_object_set_new">json_object_set_new</a></dd></dl>
+
+</div>
+</div>
+<a id="a8658dc60a3913d086540485841e719a8" name="a8658dc60a3913d086540485841e719a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8658dc60a3913d086540485841e719a8">&#9670;&nbsp;</a></span>horaire()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="horaire_8h.html#a7d15432e6baf86e174c39b8ecb22e529">Horaire</a> horaire </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>debut</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>fin</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>construit un nouvel objet Horaire avec un Début et une Fin. </p>
+<p >Constructeur par défaut de l'objet Horaire.</p>
+
+</div>
+</div>
+<a id="abd55c0f4321d91131d5d615dce5362ba" name="abd55c0f4321d91131d5d615dce5362ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd55c0f4321d91131d5d615dce5362ba">&#9670;&nbsp;</a></span>horaireParser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="horaire_8h.html#a7d15432e6baf86e174c39b8ecb22e529">Horaire</a> horaireParser </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structjson__t.html">json_t</a> *&#160;</td>
+          <td class="paramname"><em>json_horaire</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>construit un nouvel objet Horaire à partir de sa représentation objet JSON. </p>
+<p >Construit l'objet Horaire en manipulant l'API Jansson. Pour cela, à partir d'une recherche par clé (s'il existe), nous pouvons accéder aux attributs "debut" et "fin" de Horaire, que nous construisons ensuite à l'aide du constructeur par défaut.</p>
+<dl class="section see"><dt>Voir également</dt><dd><a href="https://jansson.readthedocs.io/en/latest/apiref.html#object">json_object</a> , <a href="https://jansson.readthedocs.io/en/latest/apiref.html#c.json_object_get">json_object_get</a> , <a href="https://jansson.readthedocs.io/en/latest/apiref.html#c.json_integer_value">json_integer_value</a></dd></dl>
+
+</div>
+</div>
+<a id="a26ea9540178258360db5c7622e9ffa69" name="a26ea9540178258360db5c7622e9ffa69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26ea9540178258360db5c7622e9ffa69">&#9670;&nbsp;</a></span>setDebut()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="horaire_8h.html#a7d15432e6baf86e174c39b8ecb22e529">Horaire</a> setDebut </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="horaire_8h.html#a7d15432e6baf86e174c39b8ecb22e529">Horaire</a>&#160;</td>
+          <td class="paramname"><em>h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>debut</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définie l'objet Debut de Horaire. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">h</td><td>Référence de Horaire à modifier. </td></tr>
+    <tr><td class="paramname">debut</td><td>Valeur de Debut de type int. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Horaire avec la nouvelle valeur de Debut. </dd></dl>
+
+</div>
+</div>
+<a id="a731c93de7ce69d84edbe70795d321de9" name="a731c93de7ce69d84edbe70795d321de9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a731c93de7ce69d84edbe70795d321de9">&#9670;&nbsp;</a></span>setFin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="horaire_8h.html#a7d15432e6baf86e174c39b8ecb22e529">Horaire</a> setFin </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="horaire_8h.html#a7d15432e6baf86e174c39b8ecb22e529">Horaire</a>&#160;</td>
+          <td class="paramname"><em>h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>fin</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définie l'objet Fin de Horaire. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">h</td><td>Référence de Horaire à modifier. </td></tr>
+    <tr><td class="paramname">fin</td><td>Valeur de Fin de type int. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Horaire avec la nouvelle valeur de Fin. </dd></dl>
+
+</div>
+</div>
+<a id="a1c62dd7504b223590c510b2229edbdd7" name="a1c62dd7504b223590c510b2229edbdd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c62dd7504b223590c510b2229edbdd7">&#9670;&nbsp;</a></span>toStringHoraire()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * toStringHoraire </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="horaire_8h.html#a7d15432e6baf86e174c39b8ecb22e529">Horaire</a>&#160;</td>
+          <td class="paramname"><em>h</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur de la représentation en chaîne de caractère JSON de Horaire. </p>
+<p >Renvoie la représentation JSON en chaîne de caractères de Horaire en utilisant l'API Jansson. Pour cela, on accède d'abord à la représentation JSON objet pour pouvoir le repasser à l'API. Enfin, avant de renvoyer la chaîne de caractères, il ne faut pas oublier de libérer la mémoire allouée à l'objet JSON (à faire manuellement en décrémentant son nombre de référencement).</p>
+<dl class="section see"><dt>Voir également</dt><dd><a href="https://jansson.readthedocs.io/en/latest/apiref.html#c.json_dumps">json_dumps</a> , <a href="https://jansson.readthedocs.io/en/latest/apiref.html#c.json_decref">json_decref</a></dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

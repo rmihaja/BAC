@@ -1,0 +1,5 @@
+<map id="s_enseignants" name="s_enseignants">
+<area shape="rect" id="node1" title="Structure représentant une liste chaînée de Enseignant." alt="" coords="5,184,120,211"/>
+<area shape="rect" id="node2" href="$structs__element__es.html" title="Structure représentant un élément de la liste chaînée Enseignants." alt="" coords="7,95,119,121"/>
+<area shape="rect" id="node3" href="$structs__enseignant.html" title="Structure représentant un objet Enseignant." alt="" coords="9,5,117,32"/>
+</map>

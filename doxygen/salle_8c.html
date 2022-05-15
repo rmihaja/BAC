@@ -1,0 +1,582 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>BAC: Référence du fichier src/model/salle.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  },
+  loader: {
+    load: ['[tex]/ams','[tex]/textcomp']
+  },
+  tex: {
+    macros: {},
+    packages: ['base','configmacros','ams','textcomp']
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">BAC
+   </div>
+   <div id="projectbrief">&quot;Book A Classroom&quot;</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5dd65160827af56e6353642206b80129.html">model</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Structures de données</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle"><div class="title">Référence du fichier salle.c</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Code source de la structure de données Salle.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;assert.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="salle_8h_source.html">salle.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de salle.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="salle_8c__incl.png" border="0" usemap="#asrc_2model_2salle_8c" alt=""/></div>
+<map name="asrc_2model_2salle_8c" id="asrc_2model_2salle_8c">
+<area shape="rect" title="Code source de la structure de données Salle." alt="" coords="274,5,406,32"/>
+<area shape="rect" title=" " alt="" coords="350,379,421,405"/>
+<area shape="rect" title=" " alt="" coords="5,379,72,405"/>
+<area shape="rect" title=" " alt="" coords="303,80,377,107"/>
+<area shape="rect" title=" " alt="" coords="402,80,473,107"/>
+<area shape="rect" href="salle_8h.html" title="En&#45;tête de la structure de données Salle." alt="" coords="213,80,278,107"/>
+<area shape="rect" title=" " alt="" coords="384,304,467,331"/>
+<area shape="rect" href="creneau_8h.html" title="En&#45;tête de la structure de données Creneau." alt="" coords="202,155,289,181"/>
+<area shape="rect" href="jansson_8h_source.html" title=" " alt="" coords="143,304,227,331"/>
+<area shape="rect" href="enseignant_8h.html" title="En&#45;tête de la structure de données Enseignant." alt="" coords="177,229,284,256"/>
+<area shape="rect" href="horaire_8h.html" title="En&#45;tête de la structure de données Horaire." alt="" coords="308,229,388,256"/>
+<area shape="rect" title=" " alt="" coords="96,379,171,405"/>
+<area shape="rect" href="jansson__config_8h_source.html" title=" " alt="" coords="195,379,325,405"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Structures de données</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs__salle.html">s_salle</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure représentant un objet Salle.  <a href="structs__salle.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a6febf807da50a8973d0aaa2befec240e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="salle_8c.html#a6febf807da50a8973d0aaa2befec240e">salle</a> ()</td></tr>
+<tr class="memdesc:a6febf807da50a8973d0aaa2befec240e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construit un nouvel objet Salle avec un Nom vide et un tableau de Creneau vide.  <a href="salle_8c.html#a6febf807da50a8973d0aaa2befec240e">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a6febf807da50a8973d0aaa2befec240e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af71297f4a39c7e6081944bd21932e480"><td class="memItemLeft" align="right" valign="top"><a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="salle_8c.html#af71297f4a39c7e6081944bd21932e480">salleCopie</a> (char *nom)</td></tr>
+<tr class="memdesc:af71297f4a39c7e6081944bd21932e480"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construit un nouvel objet Salle avec un Nom et un tableau de Creneau vide.  <a href="salle_8c.html#af71297f4a39c7e6081944bd21932e480">Plus de détails...</a><br /></td></tr>
+<tr class="separator:af71297f4a39c7e6081944bd21932e480"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c71efa01bf679e14820b05834540308"><td class="memItemLeft" align="right" valign="top"><a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="salle_8c.html#a1c71efa01bf679e14820b05834540308">salleParser</a> (<a class="el" href="structjson__t.html">json_t</a> *json_salle)</td></tr>
+<tr class="memdesc:a1c71efa01bf679e14820b05834540308"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construit un nouvel objet Salle à partir de sa représentation en objet JSON.  <a href="salle_8c.html#a1c71efa01bf679e14820b05834540308">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a1c71efa01bf679e14820b05834540308"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b105b26d89a3de72360fbb23a2988f6"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="salle_8c.html#a0b105b26d89a3de72360fbb23a2988f6">getSalleN</a> (<a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a> s)</td></tr>
+<tr class="memdesc:a0b105b26d89a3de72360fbb23a2988f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de l'objet Nom de Salle.  <a href="salle_8c.html#a0b105b26d89a3de72360fbb23a2988f6">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a0b105b26d89a3de72360fbb23a2988f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a397860f140e4be674c69ad2fa66df796"><td class="memItemLeft" align="right" valign="top"><a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="salle_8c.html#a397860f140e4be674c69ad2fa66df796">getSalleC</a> (<a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a> s)</td></tr>
+<tr class="memdesc:a397860f140e4be674c69ad2fa66df796"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur du tableau de Creneau de Salle.  <a href="salle_8c.html#a397860f140e4be674c69ad2fa66df796">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a397860f140e4be674c69ad2fa66df796"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36ab862cfb332fda486798df5d7a85fa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structjson__t.html">json_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="salle_8c.html#a36ab862cfb332fda486798df5d7a85fa">getJsonSalle</a> (<a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a> s)</td></tr>
+<tr class="memdesc:a36ab862cfb332fda486798df5d7a85fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de la représentation en objet JSON de Salle.  <a href="salle_8c.html#a36ab862cfb332fda486798df5d7a85fa">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a36ab862cfb332fda486798df5d7a85fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf968d835c8302025983e428fad1cedd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="salle_8c.html#acf968d835c8302025983e428fad1cedd">setSalleN</a> (<a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a> s, char *nom)</td></tr>
+<tr class="memdesc:acf968d835c8302025983e428fad1cedd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définie l'objet Nom de Salle.  <a href="salle_8c.html#acf968d835c8302025983e428fad1cedd">Plus de détails...</a><br /></td></tr>
+<tr class="separator:acf968d835c8302025983e428fad1cedd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41c3ce0b64e8fff2ef5e025260d7fcad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="salle_8c.html#a41c3ce0b64e8fff2ef5e025260d7fcad">ajouterSalleC</a> (<a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a> s, <a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a> c)</td></tr>
+<tr class="memdesc:a41c3ce0b64e8fff2ef5e025260d7fcad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ajoute une référence de l'objet Creneau au tableau de Creneau de Salle.  <a href="salle_8c.html#a41c3ce0b64e8fff2ef5e025260d7fcad">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a41c3ce0b64e8fff2ef5e025260d7fcad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c3136d0b773212ac26813e265544ccf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="salle_8c.html#a7c3136d0b773212ac26813e265544ccf">supprimerSalleH</a> (<a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a> s, <a class="el" href="horaire_8h.html#a7d15432e6baf86e174c39b8ecb22e529">Horaire</a> h)</td></tr>
+<tr class="memdesc:a7c3136d0b773212ac26813e265544ccf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supprime tout Creneau réservé dans l'intervalle de Horaire.  <a href="salle_8c.html#a7c3136d0b773212ac26813e265544ccf">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a7c3136d0b773212ac26813e265544ccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5ec8beee6cd56e330781631c777e797"><td class="memItemLeft" align="right" valign="top"><a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="salle_8c.html#ab5ec8beee6cd56e330781631c777e797">modifierSalleHC</a> (<a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a> s, <a class="el" href="horaire_8h.html#a7d15432e6baf86e174c39b8ecb22e529">Horaire</a> horaire_modifie, <a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a> c)</td></tr>
+<tr class="memdesc:ab5ec8beee6cd56e330781631c777e797"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifie le Creneau à l'Horaire horaire_modifié pour le remplacer par un nouveau Creneau.  <a href="salle_8c.html#ab5ec8beee6cd56e330781631c777e797">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ab5ec8beee6cd56e330781631c777e797"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeeb718a14edea73760db513c5697f541"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="salle_8c.html#aeeb718a14edea73760db513c5697f541">isFreeSalle</a> (<a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a> s, <a class="el" href="horaire_8h.html#a7d15432e6baf86e174c39b8ecb22e529">Horaire</a> h)</td></tr>
+<tr class="memdesc:aeeb718a14edea73760db513c5697f541"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérifie si Salle ne contient aucun créneau réservé dans l'intervalle de Horaire.  <a href="salle_8c.html#aeeb718a14edea73760db513c5697f541">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aeeb718a14edea73760db513c5697f541"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac42ddf64cb30e01d0a6391c9c60a31d0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="salle_8c.html#ac42ddf64cb30e01d0a6391c9c60a31d0">isEmptySalle</a> (<a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a> s)</td></tr>
+<tr class="memdesc:ac42ddf64cb30e01d0a6391c9c60a31d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vérifie si Salle ne contient aucun créneau réservé.  <a href="salle_8c.html#ac42ddf64cb30e01d0a6391c9c60a31d0">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac42ddf64cb30e01d0a6391c9c60a31d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cb3e935f91451a8c6d741222acf6921"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="salle_8c.html#a1cb3e935f91451a8c6d741222acf6921">afficheSalle</a> (<a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a> s)</td></tr>
+<tr class="memdesc:a1cb3e935f91451a8c6d741222acf6921"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imprime le nom de Salle ainsi que son tableau de Creneau sur stdout, suivi d'un retour à la ligne.  <a href="salle_8c.html#a1cb3e935f91451a8c6d741222acf6921">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a1cb3e935f91451a8c6d741222acf6921"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2074ec22884d4e0e5306de38007bfdc"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="salle_8c.html#ad2074ec22884d4e0e5306de38007bfdc">toStringSalle</a> (<a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a> s)</td></tr>
+<tr class="memdesc:ad2074ec22884d4e0e5306de38007bfdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de la représentation en chaîne de caractère JSON de Salle.  <a href="salle_8c.html#ad2074ec22884d4e0e5306de38007bfdc">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ad2074ec22884d4e0e5306de38007bfdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p >Code source de la structure de données Salle. </p>
+<dl class="section author"><dt>Auteur</dt><dd>Mihaja RAZAFIMAHEFA &amp; Ambre ROUZADE</dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2022 </dd></dl>
+</div><h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a1cb3e935f91451a8c6d741222acf6921" name="a1cb3e935f91451a8c6d741222acf6921"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cb3e935f91451a8c6d741222acf6921">&#9670;&nbsp;</a></span>afficheSalle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void afficheSalle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a>&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Imprime le nom de Salle ainsi que son tableau de Creneau sur stdout, suivi d'un retour à la ligne. </p>
+<p >Imprime le Nom de l'objet Salle suivi par une représentation de son tableau de Creneau qu'on itère à partir de 8 jusqu'à 20 pour symboliser une journée de cours. L'impression suit alors le format :</p>
+<div class="fragment"><div class="line">-----------------</div>
+<div class="line"><a class="code hl_enumvalue" href="controle_8c.html#a58ea2806d44139fd0ff194d1ae0f10f2a661a9cd32f23e412becdd22c75caae50">EDT</a> de la <a class="code hl_typedef" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a> : {Nom de <a class="code hl_struct" href="structs__salle.html">Salle</a>}</div>
+<div class="line">-----------------</div>
+<div class="line"> </div>
+<div class="line">de 8h00 à 9h00</div>
+<div class="line">VIDE                             <span class="comment">//&lt; si la référence à l&#39;indice itéré est NULL</span></div>
+<div class="line"> </div>
+<div class="line">de 9h00 à 10h00</div>
+<div class="line">{<a class="code hl_struct" href="structs__enseignant.html">Enseignant</a> de <a class="code hl_struct" href="structs__creneau.html">Creneau</a>}          <span class="comment">//&lt; si la référence à l&#39;indice itéré</span></div>
+<div class="line">{<a class="code hl_struct" href="structs__formation.html">Formation</a> de <a class="code hl_struct" href="structs__creneau.html">Creneau</a>}               est un <a class="code hl_struct" href="structs__creneau.html">Creneau</a></div>
+<div class="line"> </div>
+<div class="line">...</div>
+<div class="ttc" id="acontrole_8c_html_a58ea2806d44139fd0ff194d1ae0f10f2a661a9cd32f23e412becdd22c75caae50"><div class="ttname"><a href="controle_8c.html#a58ea2806d44139fd0ff194d1ae0f10f2a661a9cd32f23e412becdd22c75caae50">EDT</a></div><div class="ttdeci">@ EDT</div><div class="ttdef"><b>Definition:</b> controle.c:31</div></div>
+<div class="ttc" id="asalle_8h_html_abd2990d1ab6df045aa013af3fdc304c8"><div class="ttname"><a href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a></div><div class="ttdeci">struct s_salle * Salle</div><div class="ttdoc">Objet Salle.</div><div class="ttdef"><b>Definition:</b> salle.h:20</div></div>
+<div class="ttc" id="astructs__creneau_html"><div class="ttname"><a href="structs__creneau.html">s_creneau</a></div><div class="ttdoc">Structure représentant un objet Creneau.</div><div class="ttdef"><b>Definition:</b> creneau.c:36</div></div>
+<div class="ttc" id="astructs__enseignant_html"><div class="ttname"><a href="structs__enseignant.html">s_enseignant</a></div><div class="ttdoc">Structure représentant un objet Enseignant.</div><div class="ttdef"><b>Definition:</b> enseignant.c:37</div></div>
+<div class="ttc" id="astructs__formation_html"><div class="ttname"><a href="structs__formation.html">s_formation</a></div><div class="ttdoc">Structure représentant un objet Formation.</div><div class="ttdef"><b>Definition:</b> formation.c:56</div></div>
+<div class="ttc" id="astructs__salle_html"><div class="ttname"><a href="structs__salle.html">s_salle</a></div><div class="ttdoc">Structure représentant un objet Salle.</div><div class="ttdef"><b>Definition:</b> salle.c:36</div></div>
+</div><!-- fragment --><dl class="section see"><dt>Voir également</dt><dd><a class="el" href="horaire_8c.html#adc0a151517dc35dfb2af1bf9607246da" title="Imprime les attributs de Horaire sur stdout, suivi d&#39;un retour à la ligne.">afficheHoraire</a> , <a class="el" href="enseignant_8c.html#a4c6fa8dfb8876f117cdd731313628665" title="Imprime les attributs de Enseignant sur stdout, suivi d&#39;un retour à la ligne.">afficheEnseignant</a> , <a class="el" href="creneau_8c.html#a25b4588e28008673cf3cd5723bab97c1" title="Accesseur de l&#39;objet Enseignant du Creneau.">getCreneauE</a> , <a class="el" href="creneau_8c.html#a124c93ff2e3d0c243261b5f82b37c4ab" title="Accesseur de l&#39;objet Formation du Creneau.">getCreneauF</a> , <a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d" title="Objet Creneau.">Creneau</a></dd></dl>
+
+</div>
+</div>
+<a id="a41c3ce0b64e8fff2ef5e025260d7fcad" name="a41c3ce0b64e8fff2ef5e025260d7fcad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41c3ce0b64e8fff2ef5e025260d7fcad">&#9670;&nbsp;</a></span>ajouterSalleC()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a> ajouterSalleC </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a>&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a>&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ajoute une référence de l'objet Creneau au tableau de Creneau de Salle. </p>
+<p >Si Salle est libre dans l'intervalle de Horaire, on fixe sur chaque indice de l'intervalle une référence de Creneau afin de la "réserver".</p>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="salle_8c.html#aeeb718a14edea73760db513c5697f541" title="Vérifie si Salle ne contient aucun créneau réservé dans l&#39;intervalle de Horaire.">isFreeSalle</a></dd></dl>
+
+</div>
+</div>
+<a id="a36ab862cfb332fda486798df5d7a85fa" name="a36ab862cfb332fda486798df5d7a85fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36ab862cfb332fda486798df5d7a85fa">&#9670;&nbsp;</a></span>getJsonSalle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structjson__t.html">json_t</a> * getJsonSalle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a>&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur de la représentation en objet JSON de Salle. </p>
+<p >Renvoie la représentation objet JSON de Salle en utilisant l'API Jansson. Pour cela, on construit un nouvel objet JSON et on y attache les clés "nom" qui stocke la valeur Nom de Salle et "enseignants" qui est un tableau. En itérant ensuite le tableau de Creneau de Salle, on ajoute à ce tableau la représentation objet JSON de chaque Creneau ou null si aucun Creneau n'est instancié à l'indice itérée.</p>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="creneau_8c.html#a0ed28a34a4325a884686c9af4a6aa717" title="Accesseur de la représentation en objet JSON du Creneau.">getJsonCreneau</a> , <a href="https://jansson.readthedocs.io/en/latest/apiref.html#c.json_array">json_array</a> , <a href="https://jansson.readthedocs.io/en/latest/apiref.html#c.json_array_append">json_array_append</a></dd></dl>
+
+</div>
+</div>
+<a id="a397860f140e4be674c69ad2fa66df796" name="a397860f140e4be674c69ad2fa66df796"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a397860f140e4be674c69ad2fa66df796">&#9670;&nbsp;</a></span>getSalleC()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a> * getSalleC </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a>&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur du tableau de Creneau de Salle. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>Référence de Salle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Adresse de la première case du tableau de Creneau, de type Creneau*. </dd></dl>
+
+</div>
+</div>
+<a id="a0b105b26d89a3de72360fbb23a2988f6" name="a0b105b26d89a3de72360fbb23a2988f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b105b26d89a3de72360fbb23a2988f6">&#9670;&nbsp;</a></span>getSalleN()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * getSalleN </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a>&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur de l'objet Nom de Salle. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>Référence de Salle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Valeur du Nom de Salle de type char*. </dd></dl>
+
+</div>
+</div>
+<a id="ac42ddf64cb30e01d0a6391c9c60a31d0" name="ac42ddf64cb30e01d0a6391c9c60a31d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac42ddf64cb30e01d0a6391c9c60a31d0">&#9670;&nbsp;</a></span>isEmptySalle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool isEmptySalle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a>&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Vérifie si Salle ne contient aucun créneau réservé. </p>
+<p >Une salle est considéré comme "vide" si elle est libre toute la journée, c'est-à-dire dans l'intervalle autorisée de Horaire de \( \textlbrackdbl 8, 20 \textrbrackdbl \).</p>
+
+</div>
+</div>
+<a id="aeeb718a14edea73760db513c5697f541" name="aeeb718a14edea73760db513c5697f541"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeeb718a14edea73760db513c5697f541">&#9670;&nbsp;</a></span>isFreeSalle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool isFreeSalle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a>&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="horaire_8h.html#a7d15432e6baf86e174c39b8ecb22e529">Horaire</a>&#160;</td>
+          <td class="paramname"><em>h</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Vérifie si Salle ne contient aucun créneau réservé dans l'intervalle de Horaire. </p>
+<p >Une salle est considéré comme "libre" si dans l'intervalle Horaire indiqué en paramètre, le tableau de Creneau ne contient que des références NULL, c'est-à-dire qu'il ne contient aucune instance de Creneau.</p>
+
+</div>
+</div>
+<a id="ab5ec8beee6cd56e330781631c777e797" name="ab5ec8beee6cd56e330781631c777e797"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5ec8beee6cd56e330781631c777e797">&#9670;&nbsp;</a></span>modifierSalleHC()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a> modifierSalleHC </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a>&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="horaire_8h.html#a7d15432e6baf86e174c39b8ecb22e529">Horaire</a>&#160;</td>
+          <td class="paramname"><em>horaire_modifie</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a>&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Modifie le Creneau à l'Horaire horaire_modifié pour le remplacer par un nouveau Creneau. </p>
+<p >On supprime toute référence de Creneau instancié dans l'intervalle Horaire pour pouvoir y ajouter le nouveau Creneau.</p>
+
+</div>
+</div>
+<a id="a6febf807da50a8973d0aaa2befec240e" name="a6febf807da50a8973d0aaa2befec240e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6febf807da50a8973d0aaa2befec240e">&#9670;&nbsp;</a></span>salle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a> salle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construit un nouvel objet Salle avec un Nom vide et un tableau de Creneau vide. </p>
+<p >Constructeur par défaut de l'objet Salle.</p>
+
+</div>
+</div>
+<a id="af71297f4a39c7e6081944bd21932e480" name="af71297f4a39c7e6081944bd21932e480"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af71297f4a39c7e6081944bd21932e480">&#9670;&nbsp;</a></span>salleCopie()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a> salleCopie </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>nom</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construit un nouvel objet Salle avec un Nom et un tableau de Creneau vide. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nom</td><td>Nom de Salle de type char*. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Nouvelle instance allouée de Salle. </dd></dl>
+
+</div>
+</div>
+<a id="a1c71efa01bf679e14820b05834540308" name="a1c71efa01bf679e14820b05834540308"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c71efa01bf679e14820b05834540308">&#9670;&nbsp;</a></span>salleParser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a> salleParser </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structjson__t.html">json_t</a> *&#160;</td>
+          <td class="paramname"><em>json_salle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construit un nouvel objet Salle à partir de sa représentation en objet JSON. </p>
+<p >Construit l'objet Salle en manipulant l'API Jansson. Pour cela, à partir d'une recherche par clé (s'il existe), nous pouvons accéder à l'attribut "nom" de Salle que nous construisons à l'aide du constructeur par défaut. Nous accédons ensuite à la clé "creneaux" qui est un tableau de Creneau. On itère le tableau pour pouvoir ajouter chaque Creneau au tableau de l'objet Salle, en faisant chaque fois appel à son constructeur lorsque la valeur renvoyé par l'API n'est pas nulle.</p>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="creneau_8c.html#a1284510554cec007a9dcbfac22b664e6" title="Construit un nouvel objet Creneau à partir de sa représentation en objet JSON.">creneauParser</a> , <a href="https://jansson.readthedocs.io/en/latest/apiref.html#c.json_array_foreach">json_array_foreach</a></dd></dl>
+
+</div>
+</div>
+<a id="acf968d835c8302025983e428fad1cedd" name="acf968d835c8302025983e428fad1cedd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf968d835c8302025983e428fad1cedd">&#9670;&nbsp;</a></span>setSalleN()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a> setSalleN </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a>&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>nom</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définie l'objet Nom de Salle. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>Référence de Salle à modifier. </td></tr>
+    <tr><td class="paramname">nom</td><td>Valeur du Nom de type char*. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Salle avec la nouvelle valeur de Nom. </dd></dl>
+
+</div>
+</div>
+<a id="a7c3136d0b773212ac26813e265544ccf" name="a7c3136d0b773212ac26813e265544ccf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c3136d0b773212ac26813e265544ccf">&#9670;&nbsp;</a></span>supprimerSalleH()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a> supprimerSalleH </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a>&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="horaire_8h.html#a7d15432e6baf86e174c39b8ecb22e529">Horaire</a>&#160;</td>
+          <td class="paramname"><em>h</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Supprime tout Creneau réservé dans l'intervalle de Horaire. </p>
+<p >Si un Creneau a été instancié dans l'intervalle Horaire de suppression, on réinitialise le tableau dans l'intervalle par NULL pour marquer Horaire comme "libre" ou "non réservé".</p>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="salle_8c.html#ac42ddf64cb30e01d0a6391c9c60a31d0" title="Vérifie si Salle ne contient aucun créneau réservé.">isEmptySalle</a></dd></dl>
+
+</div>
+</div>
+<a id="ad2074ec22884d4e0e5306de38007bfdc" name="ad2074ec22884d4e0e5306de38007bfdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2074ec22884d4e0e5306de38007bfdc">&#9670;&nbsp;</a></span>toStringSalle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * toStringSalle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a>&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur de la représentation en chaîne de caractère JSON de Salle. </p>
+<p >Renvoie la représentation JSON en chaîne de caractères de Salle en utilisant l'API Jansson. Pour cela, on accède d'abord à la représentation JSON objet pour pouvoir le repasser à l'API. Enfin, avant de renvoyer la chaîne de caractères, il ne faut pas oublier de libérer la mémoire allouée à l'objet JSON (à faire manuellement en décrémentant son nombre de référencement).</p>
+<dl class="section see"><dt>Voir également</dt><dd><a href="https://jansson.readthedocs.io/en/latest/apiref.html#c.json_dumps">json_dumps</a> , <a href="https://jansson.readthedocs.io/en/latest/apiref.html#c.json_decref">json_decref</a></dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

@@ -1,0 +1,405 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>BAC: &quot;Book A Classroom&quot;, un gestionnaire de réservation de salles d&#39;universités</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  },
+  loader: {
+    load: ['[tex]/ams','[tex]/textcomp']
+  },
+  tex: {
+    macros: {},
+    packages: ['base','configmacros','ams','textcomp']
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">BAC
+   </div>
+   <div id="projectbrief">&quot;Book A Classroom&quot;</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0"
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">"Book A Classroom", un gestionnaire de réservation de salles d'universités </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p ><a class="anchor" id="md__site_README"></a> <em>Par Mihaja RAZAFIMAHEFA et Ambre ROUZADE</em></p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Introduction</h1>
+<p >BAC est un projet réalisé durant notre année universitaire L2 CUPGE en Structure de données. Écrite en C et compilée avec Makefile, BAC permet de consulter l'emploi du temps et gérer les réservations de différentes formations, réparties dans différentes salles pour différents enseignements à un horaire donnée.</p>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Organisation du travail</h1>
+<p >Avant de passer au codage, nous nous sommes d'abord réunis pour décomposer le projet, notamment la modélisation du problème. Nous avons donc passé 1 semaine à réfléchir ensemble aux différentes structures de données utiles, leurs opérations et comment les articuler pour obtenir le résultat souhaité. Nous avons constitué les TAD (une version préliminaire est disponible dans le fichier TAD.md) et imaginé l’interface.</p>
+<p >Le travail se décompose ainsi en 5 phases :</p>
+<ul>
+<li>Phase d'organisation : Répartition des tâches, Configuration des outils de collaborations, définitions des objectifs</li>
+<li>Phase de conception : Définition de l'architecture du programme, des TAD, de l'interface utilisateur</li>
+<li>Phase de documentation : Mise en place de l'organigramme du projet, des en-têtes, des tests unitaires, familiarisation avec les librairies externes</li>
+<li>Phase d'implémentation : Définitions des méthodes et des structures, algorithmiques</li>
+<li>Phase de tests et de compilation : Passation des tests unitaires ou des tests utilisateurs grandeurs natures.</li>
+</ul>
+<div class="image">
+<img src="diagramme-gantt.png" alt=""/>
+<div class="caption">
+Diagramme de Gantt du projet</div></div>
+    <h2><a class="anchor" id="autotoc_md3"></a>
+Répartition du travail</h2>
+<p >Nous nous sommes répartis le travail en fonction de nos préférences mais nous avons toujours regardé ce que faisait l’autre et mis en commun. Mihaja s’est occupé de la recherche des librairies, des tests unitaires et de l'interface. Tandis que Ambre s’est concentré sur les modules des structures.</p>
+<p >Nous avons mis en place un <a href="https://github.com/rmihaja/BAC">repertoire github</a> pour se partager nos avancées et nous avons créé des branches (devMihaja et devAmbre) pour ne pas faire de merge conflict. Pour faire la mise en commun de notre travail, nous effectuons un merge sur la branche feature, tout cela afin de nous permettre de coder sans s’empiéter.</p>
+<h1><a class="anchor" id="autotoc_md4"></a>
+Organisation du programme</h1>
+<p >De manière général, nous conseillons vivement de lire la documentation Doxygen pour obtenir la spécification complète du programme.</p>
+<h2><a class="anchor" id="autotoc_md5"></a>
+Compilation</h2>
+<p >Le programme est compilé à partir d'un Makefile principal : celui se trouvant à la racine du projet. Il va tout d'abord compiler les librairies externes, suivi des librairies du programme organisées en modules, dont les commandes se trouve dans des sous-Makefile, dans le dossier de chaque module. Puis il va compiler le programme principale main.</p>
+<h2><a class="anchor" id="autotoc_md6"></a>
+Structure</h2>
+<p >Le projet respecte l'architecte MVC. C'est-à-dire que le programme est découpé en 3 modules distincts :</p>
+<h3><a class="anchor" id="autotoc_md7"></a>
+Model</h3>
+<p >Model est le module qui contient la majeure partie des structures de données du programme. Il est donc l'implémentation des TAD et regroupe les opérations élémentaires de manipulation de nos données. Elle respecte aussi le paradigme de la programmation orientée objet, c'est-à-dire que les structures (et leurs manipulations) se rapproche au plus de la manipulation d'objets.</p>
+<p >Voici la liste des structures de données que compose modele :</p>
+<div class="fragment"><div class="line">model</div>
+<div class="line">┣ <a class="code hl_function" href="creneau_8h.html#a251ccf32bae868fe770316b68b73447a">creneau</a>.c</div>
+<div class="line">┣ <a class="code hl_function" href="enseignant_8h.html#ad398788b1cfe11d9915cdae562321551">enseignant</a>.c</div>
+<div class="line">┣ <a class="code hl_function" href="enseignants_8h.html#a816e467e0474815f7181243f0273cf0b">enseignants</a>.c</div>
+<div class="line">┣ <a class="code hl_function" href="enseignements_8h.html#a910d5bf69b2e437e5c47c7db4630212b">enseignements</a>.c</div>
+<div class="line">┣ <a class="code hl_function" href="formation_8h.html#aa90520a6de1e9802ed490ea6194aab85">formation</a>.c</div>
+<div class="line">┣ <a class="code hl_function" href="formations_8h.html#a553871c0732ffc540d738af9b0036607">formations</a>.c</div>
+<div class="line">┣ <a class="code hl_function" href="horaire_8h.html#a8658dc60a3913d086540485841e719a8">horaire</a>.c</div>
+<div class="line">┣ <a class="code hl_function" href="salle_8h.html#a6febf807da50a8973d0aaa2befec240e">salle</a>.c</div>
+<div class="line">┗ <a class="code hl_function" href="salles_8h.html#ac02e4f1630510ccd6fdd0c277cafdffb">salles</a>.c</div>
+<div class="ttc" id="acreneau_8h_html_a251ccf32bae868fe770316b68b73447a"><div class="ttname"><a href="creneau_8h.html#a251ccf32bae868fe770316b68b73447a">creneau</a></div><div class="ttdeci">Creneau creneau(Enseignant e, Horaire h, char *enseignement, char *formation, char *salle)</div><div class="ttdoc">Construit un nouvel objet Creneau avec un objet Enseignant, un objet Horaire, un Enseignement,...</div><div class="ttdef"><b>Definition:</b> creneau.c:57</div></div>
+<div class="ttc" id="aenseignant_8h_html_ad398788b1cfe11d9915cdae562321551"><div class="ttname"><a href="enseignant_8h.html#ad398788b1cfe11d9915cdae562321551">enseignant</a></div><div class="ttdeci">Enseignant enseignant()</div><div class="ttdoc">Construit un nouvel objet Enseignant avec un Nom et un Prenom vide.</div><div class="ttdef"><b>Definition:</b> enseignant.c:55</div></div>
+<div class="ttc" id="aenseignants_8h_html_a816e467e0474815f7181243f0273cf0b"><div class="ttname"><a href="enseignants_8h.html#a816e467e0474815f7181243f0273cf0b">enseignants</a></div><div class="ttdeci">Enseignants enseignants()</div><div class="ttdoc">Construit un nouvel objet Enseignants.</div><div class="ttdef"><b>Definition:</b> enseignants.c:71</div></div>
+<div class="ttc" id="aenseignements_8h_html_a910d5bf69b2e437e5c47c7db4630212b"><div class="ttname"><a href="enseignements_8h.html#a910d5bf69b2e437e5c47c7db4630212b">enseignements</a></div><div class="ttdeci">Enseignements enseignements()</div><div class="ttdoc">Construit un nouvel objet Enseignements.</div><div class="ttdef"><b>Definition:</b> enseignements.c:71</div></div>
+<div class="ttc" id="aformation_8h_html_aa90520a6de1e9802ed490ea6194aab85"><div class="ttname"><a href="formation_8h.html#aa90520a6de1e9802ed490ea6194aab85">formation</a></div><div class="ttdeci">Formation formation(char *nom)</div><div class="ttdoc">Construit un nouvel objet Formation avec un Nom et une liste de Creneau vide.</div><div class="ttdef"><b>Definition:</b> formation.c:75</div></div>
+<div class="ttc" id="aformations_8h_html_a553871c0732ffc540d738af9b0036607"><div class="ttname"><a href="formations_8h.html#a553871c0732ffc540d738af9b0036607">formations</a></div><div class="ttdeci">Formations formations(int taille_max)</div><div class="ttdoc">Construit un nouvel objet Formations avec un tableau de Formation.</div><div class="ttdef"><b>Definition:</b> formations.c:52</div></div>
+<div class="ttc" id="ahoraire_8h_html_a8658dc60a3913d086540485841e719a8"><div class="ttname"><a href="horaire_8h.html#a8658dc60a3913d086540485841e719a8">horaire</a></div><div class="ttdeci">Horaire horaire(int debut, int fin)</div><div class="ttdoc">construit un nouvel objet Horaire avec un Début et une Fin.</div><div class="ttdef"><b>Definition:</b> horaire.c:47</div></div>
+<div class="ttc" id="asalle_8h_html_a6febf807da50a8973d0aaa2befec240e"><div class="ttname"><a href="salle_8h.html#a6febf807da50a8973d0aaa2befec240e">salle</a></div><div class="ttdeci">Salle salle()</div><div class="ttdoc">Construit un nouvel objet Salle avec un Nom vide et un tableau de Creneau vide.</div><div class="ttdef"><b>Definition:</b> salle.c:56</div></div>
+<div class="ttc" id="asalles_8h_html_ac02e4f1630510ccd6fdd0c277cafdffb"><div class="ttname"><a href="salles_8h.html#ac02e4f1630510ccd6fdd0c277cafdffb">salles</a></div><div class="ttdeci">Salles salles()</div><div class="ttdoc">Construit un nouvel objet Salles.</div><div class="ttdef"><b>Definition:</b> salles.c:73</div></div>
+</div><!-- fragment --><p >Il y a notamment 2 grands groupes de structures : les objets et les collections.</p>
+<h4><a class="anchor" id="autotoc_md8"></a>
+Les structures objets</h4>
+<p >Les structures objets avec leurs attributs regroupent :</p>
+<ul>
+<li>Enseignant : défini par un nom et une matière</li>
+<li>Horaire : défini par un début et une fin</li>
+<li>Creneau : défini par un horaire, un enseignant, le nom d'une formation et d'une salle. C'est le cœur de notre projet.</li>
+</ul>
+<p >Ce sont les structures primaires du programme, stockant notamment les attributs qui les représente. Les fonctions types associés à ces structures respectent pour la plupart une même syntaxe :</p>
+<ul>
+<li><code>{nom de l'objet}</code> : constructeur par défaut de l'objet, avec des attributs initialisés mais vides.</li>
+<li><code>...Copie</code> : permet de copier les attributs en paramètre dans un nouvel objet.</li>
+<li><code>...Parser</code> : constructeur de l'objet à partir de sa représentation JSON (voir la librairie utilisée <a href="https://jansson.readthedocs.io/">Jansson</a>).</li>
+<li><code>getJson...</code> : permet d'obtenir la représentation JSON de l'objet</li>
+<li><code>get...</code> : permet d'obtenir un attribut de l'objet.</li>
+<li><code>set...</code> : permet de définir un attribut de l'objet.</li>
+<li><code>equals...</code> : permet de comparer deux objets de même type afin de savoir s'ils ont les mêmes attributs.</li>
+<li><code>affiche...</code> : permet d'imprimer sur stdout une représentation externe visualisable de l'objet.</li>
+<li><code>toString...</code> : permet d'obtenir la représentation JSON de l'objet, mais dans sa version en chaîne de caractère.</li>
+</ul>
+<h4><a class="anchor" id="autotoc_md9"></a>
+Les structures collections</h4>
+<p >Les structures collections englobent :</p>
+<ul>
+<li>Enseignants : défini par une liste chaînée de Enseignant</li>
+<li>Enseignements : défini une liste chaînée de chaîne de caractère définissant un Enseignement</li>
+<li>Salles : défini par une liste chaînée de Salle</li>
+<li>Formation : défini par un nom et un tableau de Creneau (limité à 4)</li>
+<li>Formations : défini par un tableau de Formation (limité à 3)</li>
+<li>Salle : défini par un nom et un tableau de 24 Creneau (représentant un jour)</li>
+</ul>
+<p >Ces structures respectent toujours à peu près la même définition qu'un objet, à la seule différence qu'il est ou possède un ensemble d'autres objets, ce qui les détachent de la propriété primaire des objets. Elles nécessitent notamment une référence des objets primaires à la compilation (pour les tests unitaires).</p>
+<p >Outre les fonctions définit pour un objet, les collections possèdent aussi d'autres méthodes spécifiques à la manipulation d'ensembles, qui respecte à peu près la même syntaxe :</p>
+<blockquote class="doxtable">
+<p >&zwj;<b>Note :</b> Nous définissons par <code>{a}</code> un attribut d'un objet. </p>
+</blockquote>
+<ul>
+<li><code>get...By{a}</code> : permet d'obtenir un élément de la liste à partir de son attribut</li>
+<li><code>get...ByIndice</code> : permet d'obtenir un élément de la liste à partir de son indice dans la liste</li>
+<li><code>size...</code> : permet d'obtenir la taille de l'ensemble</li>
+<li><code>appartient...</code> : permet de savoir si un élément appartient déjà à l'ensemble</li>
+<li><code>ajouter...</code> : permet de rajouter une référence de l'objet à l'ensemble</li>
+<li><code>supprimer...</code> : permet de supprimer la référence de l'objet de l'ensemble</li>
+</ul>
+<blockquote class="doxtable">
+<p >&zwj;<b>Note :</b> Pour une liste complète et détaillée des fonctions du programme, veuillez vous référer à la documentation intégrée du projet, obtenu avec Doxygen. </p>
+</blockquote>
+<h3><a class="anchor" id="autotoc_md10"></a>
+View</h3>
+<p >View est le module permettant de gérer les entrées utilisateurs ainsi que l'interaction Homme-Machine. Elle permet notamment d'afficher des messages, de prendre le choix de l'utilisateur ainsi que ses entrées. Il n'englobe qu'une seule structure de données : entree.</p>
+<p >Elle possède des macros permettant de formatter l'impression sur stdout :</p>
+<ul>
+<li><code>println</code> : imprime une chaîne de caractère suivi de 2 retours à ligne</li>
+<li><code>display</code> : imprime une chaîne de caractère selon un format (comme printf) suivi de 2 retours à la ligne</li>
+</ul>
+<p >Le macro <code>BUFFER_SIZE</code> pour gérer l'allocation mémoire d'une entrée. Si l'utilisateur imprime plus de BUFFER_SIZE caractères, le module va automatiquement s'arrêter à la 256ème caractères pour avoir une chaîne valide. Ce comportement est suivi par <code>getCharInput</code>.</p>
+<p >Pour une description détaillée des fonctions, se référer à Doxygen.</p>
+<h3><a class="anchor" id="autotoc_md11"></a>
+Control</h3>
+<p >Control est le module qui met le lien entre Model et View en gérant l'affichage à l'utilisateur. Il ne possède qu'une seule structure : controle, mais qui possède des "panneaux" afin de définir l'affichage courant (appelé état) de l'application en fonction du choix de l'utilisateur. Cela est géré par un gestionnaire des choix, <code>afficherPanneauSuivant</code>, qui s'exécute dans une boucle : <code>run</code>.</p>
+<h4><a class="anchor" id="autotoc_md12"></a>
+Fonctionnement de l'affichage : Gestion de Panneaux</h4>
+<p >Un panneau est un état structuré de l'affichage qui présente de manière ordonnée les entrées/sorties (les fonctions <code>affiche...</code>) afin de répondre à une action de l'utilisateur (exemple réserver un créneau ou afficher une salle) et modifier le modele.</p>
+<p >Tous panneaux de Controle commencent par <code>afficherPanneau...</code> et renvoie un entier qui permet à l'utilisateur de communiquer avec le gestionnaire des choix afin qu'il puisse le rediriger vers le bon panneau qui suit.</p>
+<p >Les échanges suivent notamment le traitement suivant :</p>
+<ul>
+<li><code>0</code> permet de sortir de la boucle <code>run</code> et marque la fin du programme.</li>
+<li><code>1, 2, ...</code> permet de naviguer vers d'autres panneaux à partir d'un état courant.</li>
+<li><code>-1</code> demande explicitement à revenir à l'état précédant s'il le permet, en annulant l'opération en cours.</li>
+</ul>
+<p >L'état courant de l'affichage est codifié à partir d'un enum (plus d'informations sur chaque enum est disponible sur Doxygen). La boucle procède alors comme suit :</p>
+<p >0. L'état 0 (initialisation) consiste à afficher le panneau Bienvenue.</p><ol type="1">
+<li>Le panneau Bienvenue demande un choix à l'utilisateur et le renvoie.</li>
+<li>La boucle lit ce choix et s'arrête si elle vaut <code>0</code>.</li>
+<li>Sinon, le choix et l'état courant (BIENVENUE) est envoyé au gestionnaire des choix.</li>
+<li>Le gestionnaire des choix lit le choix et l'état courant, puis le modifie pour stocker l'enum de l'état suivant (exemple CONNEXION), il renvoie alors la fonction responsable d'afficher ce panneau et poursuit.</li>
+<li>on affiche le panneau renvoyé et on recommence...</li>
+</ol>
+<p >Nous avons ainsi une gestion dynamique de notre interface.</p>
+<p >Pour chaque panneau effectuant une modification des données, il est à noter que l'utilisateur se trouvera dans une boucle tant que ses entrées ne sont pas valides. Ainsi, les échanges suivent le traitement suivant :</p>
+<ul>
+<li><code>1</code> permet de rester dans la boucle afin de tenter une autre modification. À chaque fois que l'utilisateur présente une entrée fausse, il lui sera présenter le choix de réessayer (qui renverra donc <code>1</code>) ou quitter.</li>
+<li><code>0</code> permet de quitter explicitement la boucle et l'application.</li>
+<li><code>-1</code> permet de quitter explicitement la boucle et revenir en arrière.</li>
+<li><code>2, 3, ...</code> permet donc de valider l'entrée utilisateur et continuer le cycle de l'application.</li>
+</ul>
+<p >Même si le gestionnaire de choix ne prendra pas en compte la valeur de retour différent de zéro pour un panneau de modification, notons que nous pouvons tracer le choix de l'utilisateur par :</p>
+<ul>
+<li><code>1</code> si l'utilisateur a bien effectué des changements, et que ces changements sont valides et validées.</li>
+<li><code>-1</code> si l'utilisateur a explicitement annulé l'opération de modification.</li>
+</ul>
+<h4><a class="anchor" id="autotoc_md13"></a>
+Stockage des données</h4>
+<p >À la sortie de l'application, le programme sauvegarde systématiquement les données des structures dans un fichier <code>data.json</code> à l'aide de l'API Jansson. Par défaut, le fichier se trouvera dans <code>./bin/data</code></p>
+<h5>Encryption</h5>
+<p >Pour encrypter notre mot de passe, nous avons utilisé l'algorithme ROT13.</p>
+<blockquote class="doxtable">
+<p >&zwj;<b>Note :</b> Si le mot de passe a été oublié, supprimer le fichier <code>./bin/data/data.json</code> permet de le réinitialiser à sa valeur par défaut "mdp". </p>
+</blockquote>
+<h1><a class="anchor" id="autotoc_md14"></a>
+Mode d'emploi du programme</h1>
+<p >Il y a 2 profils différents pour utiliser le logiciel :</p>
+<ul>
+<li>administrateur qui permet de modifier, ajouter et supprimer des cours (créneaux).</li>
+<li>client qui permet de consulter les emplois du temps par enseignant, par salle, par formation.</li>
+</ul>
+<p >Voici l'affichage présenté à l'utilisateur au lancement du programme :</p>
+<div class="fragment"><div class="line">******************************</div>
+<div class="line">*     Bienvenue dans BAC     *</div>
+<div class="line">******************************</div>
+<div class="line"> </div>
+<div class="line">1) Se connecter en tant que client</div>
+<div class="line">2) Se connecter en tant qu<span class="stringliteral">&#39;administrateur</span></div>
+<div class="line"><span class="stringliteral"></span> </div>
+<div class="line"><span class="stringliteral">0) Quitter</span></div>
+<div class="line"><span class="stringliteral"></span> </div>
+<div class="line"><span class="stringliteral">Votre choix : _</span></div>
+</div><!-- fragment --><p >Dans chaque menu ou panneau il y a la possibilité de quitter (ou revenir en arrière).</p>
+<h2><a class="anchor" id="autotoc_md15"></a>
+Profil client</h2>
+<p >Un client a accès à un menu qui lui permet de consulter un emploi du temps.</p>
+<h3><a class="anchor" id="autotoc_md16"></a>
+Consulter un emploi du temps</h3>
+<h4><a class="anchor" id="autotoc_md17"></a>
+Par salle</h4>
+<p >On utilisera les fonctions de Salles et Salle notamment <code>afficheSalles</code> qui permet d’afficher comme ceci : C’est un peu l’emploi du temps global.</p>
+<div class="fragment"><div class="line">-----------------</div>
+<div class="line"><a class="code hl_enumvalue" href="controle_8c.html#a58ea2806d44139fd0ff194d1ae0f10f2a661a9cd32f23e412becdd22c75caae50">EDT</a> de la <a class="code hl_typedef" href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a> : 3TP2</div>
+<div class="line">-----------------</div>
+<div class="line"> </div>
+<div class="line">de 8h00 à 9h00</div>
+<div class="line">VIDE</div>
+<div class="line"> </div>
+<div class="line">de 9h00 à 10h00</div>
+<div class="line">VIDE</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// ...</span></div>
+<div class="line"> </div>
+<div class="line">de 15h00 à 16h00</div>
+<div class="line">COUTIN Laure</div>
+<div class="line">Mathématiques</div>
+<div class="line">CUPGE Physique</div>
+<div class="line"> </div>
+<div class="line">de 16h00 à 17h00</div>
+<div class="line">COUTIN Laure</div>
+<div class="line">Mathématiques</div>
+<div class="line">CUPGE Physique</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// ...</span></div>
+<div class="ttc" id="acontrole_8c_html_a58ea2806d44139fd0ff194d1ae0f10f2a661a9cd32f23e412becdd22c75caae50"><div class="ttname"><a href="controle_8c.html#a58ea2806d44139fd0ff194d1ae0f10f2a661a9cd32f23e412becdd22c75caae50">EDT</a></div><div class="ttdeci">@ EDT</div><div class="ttdef"><b>Definition:</b> controle.c:31</div></div>
+<div class="ttc" id="asalle_8h_html_abd2990d1ab6df045aa013af3fdc304c8"><div class="ttname"><a href="salle_8h.html#abd2990d1ab6df045aa013af3fdc304c8">Salle</a></div><div class="ttdeci">struct s_salle * Salle</div><div class="ttdoc">Objet Salle.</div><div class="ttdef"><b>Definition:</b> salle.h:20</div></div>
+</div><!-- fragment --><p >//</p>
+<h4><a class="anchor" id="autotoc_md18"></a>
+Par formation</h4>
+<p >Pour afficher l’emploi du temps par enseignant on parcourt chaque salle (qui stocke les informations importantes) et affiche les créneaux qui correspondent à la formation voulue.</p>
+<div class="fragment"><div class="line">---------------------</div>
+<div class="line"><a class="code hl_enumvalue" href="controle_8c.html#a58ea2806d44139fd0ff194d1ae0f10f2a661a9cd32f23e412becdd22c75caae50">EDT</a> de la <a class="code hl_function" href="formation_8h.html#aa90520a6de1e9802ed490ea6194aab85">formation</a> : CUPGE Chimie</div>
+<div class="line">---------------------</div>
+<div class="line"> </div>
+<div class="line">---------------------</div>
+<div class="line"><a class="code hl_enumvalue" href="controle_8c.html#a58ea2806d44139fd0ff194d1ae0f10f2a661a9cd32f23e412becdd22c75caae50">EDT</a> de la <a class="code hl_function" href="formation_8h.html#aa90520a6de1e9802ed490ea6194aab85">formation</a> : CUPGE Informatique</div>
+<div class="line">---------------------</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_struct" href="structs__salle.html">Salle</a> 106</div>
+<div class="line">de 8h00 à 10h00</div>
+<div class="line">Structure de données</div>
+<div class="line">PHILIPPE Truillet</div>
+<div class="line"> </div>
+<div class="line">---------------------</div>
+<div class="line"><a class="code hl_enumvalue" href="controle_8c.html#a58ea2806d44139fd0ff194d1ae0f10f2a661a9cd32f23e412becdd22c75caae50">EDT</a> de la <a class="code hl_function" href="formation_8h.html#aa90520a6de1e9802ed490ea6194aab85">formation</a> : CUPGE Physique</div>
+<div class="line">---------------------</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_struct" href="structs__salle.html">Salle</a> 3TP2</div>
+<div class="line">de 15h00 à 17h00</div>
+<div class="line">Mathématiques</div>
+<div class="line">COUTIN Laure</div>
+<div class="ttc" id="astructs__salle_html"><div class="ttname"><a href="structs__salle.html">s_salle</a></div><div class="ttdoc">Structure représentant un objet Salle.</div><div class="ttdef"><b>Definition:</b> salle.c:36</div></div>
+</div><!-- fragment --><h4><a class="anchor" id="autotoc_md19"></a>
+Par Enseignant</h4>
+<p >Pour afficher l’emploi du temps par enseignant on parcourt chaque salle (qui stocke les informations importantes) et affiche les créneaux qui correspondent à l’enseignant voulu.</p>
+<div class="fragment"><div class="line">---------------------</div>
+<div class="line"><a class="code hl_enumvalue" href="controle_8c.html#a58ea2806d44139fd0ff194d1ae0f10f2a661a9cd32f23e412becdd22c75caae50">EDT</a> de l<span class="stringliteral">&#39;Enseignant : PHILIPPE Truillet</span></div>
+<div class="line"><span class="stringliteral">---------------------</span></div>
+<div class="line"><span class="stringliteral"></span> </div>
+<div class="line"><span class="stringliteral">Salle 106</span></div>
+<div class="line"><span class="stringliteral">De 8h00 à 10h00</span></div>
+<div class="line"><span class="stringliteral">Structure de données, CUPGE Informatique</span></div>
+<div class="line"><span class="stringliteral"></span> </div>
+<div class="line"><span class="stringliteral">---------------------</span></div>
+<div class="line"><span class="stringliteral">EDT de l&#39;</span><a class="code hl_typedef" href="enseignant_8h.html#ae182509dd066fcbc24384cd848812d78">Enseignant</a> : GAILDRAT Véronique</div>
+<div class="line">---------------------</div>
+<div class="line"> </div>
+<div class="line">...</div>
+<div class="ttc" id="aenseignant_8h_html_ae182509dd066fcbc24384cd848812d78"><div class="ttname"><a href="enseignant_8h.html#ae182509dd066fcbc24384cd848812d78">Enseignant</a></div><div class="ttdeci">struct s_enseignant * Enseignant</div><div class="ttdoc">Objet Enseignant.</div><div class="ttdef"><b>Definition:</b> enseignant.h:19</div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md20"></a>
+Mode administrateur</h2>
+<p >Le mode administrateur se modèle d’une toute autre manière.</p>
+<h3><a class="anchor" id="autotoc_md21"></a>
+Authentification</h3>
+<p >Nous devons sécuriser l’accès à la modification des données. Pour cela nous avons mis en place une « session » qui demande un mot de passe.</p>
+<div class="fragment"><div class="line">************ Panneau de contrôle administrateur ************</div>
+<div class="line"> </div>
+<div class="line">Veuillez vous connecter pour continuer</div>
+<div class="line"> </div>
+<div class="line">Mot de passe : _</div>
+</div><!-- fragment --><blockquote class="doxtable">
+<p >&zwj;<b>Note :</b> Le mot de passe par défaut est "mdp". </p>
+</blockquote>
+<p>Si le mot de passe est incorrect, nous pouvons réessayer ou quitter :</p>
+<div class="fragment"><div class="line">Mot de passe : test</div>
+<div class="line">Mot de passe incorrect.</div>
+<div class="line"> </div>
+<div class="line">1) Réessayer</div>
+<div class="line"> </div>
+<div class="line">0) Quitter</div>
+<div class="line"> </div>
+<div class="line">Votre choix : _</div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md22"></a>
+Menu des administrateurs</h3>
+<p >Si le mot de passe est correct, nous serons connecté en mode administrateur avec un panneau de gestion comme suit :</p>
+<div class="fragment"><div class="line">Vous êtes connecté en tant que : Administrateur</div>
+<div class="line"> </div>
+<div class="line">1) Gestion des <a class="code hl_function" href="enseignants_8h.html#a816e467e0474815f7181243f0273cf0b">enseignants</a></div>
+<div class="line">2) Gestion des <a class="code hl_function" href="enseignements_8h.html#a910d5bf69b2e437e5c47c7db4630212b">enseignements</a></div>
+<div class="line">3) Gestion des <a class="code hl_function" href="salles_8h.html#ac02e4f1630510ccd6fdd0c277cafdffb">salles</a></div>
+<div class="line">4) Gestion des réservations</div>
+<div class="line">5) Changer le mot de passe</div>
+<div class="line"> </div>
+<div class="line">0) Quitter</div>
+<div class="line"> </div>
+<div class="line">Votre choix : _</div>
+</div><!-- fragment --><p >Pour chaque option, nous serons présenté avec les différentes actions disponibles spécifiées par les contraintes de programmation :</p>
+<ol type="1">
+<li>Gestion des enseignants : ajouter, modifier ou supprimer un enseignant, afficher la liste des enseignants</li>
+<li>Gestion des enseignements : ajouter, modifier ou supprimer un enseignement, afficher la liste des enseignements par heure</li>
+<li>Gestion des salles : ajouter, modifier une salle, afficher la liste des salles par étage</li>
+<li>Gestion des réservations : réserver une salle pour un enseignement, annuler une réservation, modifier une réservation, afficher la liste des salles réservées par formation</li>
+<li>Administration : changer le mot de passe</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md23"></a>
+Bilan</h1>
+<h2><a class="anchor" id="autotoc_md24"></a>
+Difficultés</h2>
+<p >Nous avons eu quelques difficultés au début du projet concernant la vision de la modélisation. En effet, nous avions tous les 2 réfléchi à des manières différentes d’implémenter et d’imbriquer les différentes tâches. Suite à certaines réflexions et discussions nous sommes arrivés à des compromis.</p>
+<p >Nous avons aussi eu des difficultés concernant le temps de travail. En effet, nous avons eu du mal à faire coïncider l’avancement du projet et la révision des partiels.</p>
+<p >La gestion des librairies externes a aussi été dure. C'est la première qu'on avait le droit d'en utiliser et c'est vrai qu'intégrer du code externe devient une contrainte à la compilation, où la nécessité de l'installer au dépend de l'utilisateur se révèle important.</p>
+<h2><a class="anchor" id="autotoc_md25"></a>
+Point de vue personnel</h2>
+<p >Ce projet que nous avons adoré faire nous a apporté de nouvelles connaissances ou de l’approfondissement concernant GitHub et le C. Nous avons aussi pu réutiliser nos connaissances théoriques et expérimenter à nouveau les modules, et aussi à écouter l’avis de l’autre et travailler en groupe. Nous retiendrons que prévoir ses tâches et le temps pour les réaliser est très important afin de privilégier certaines ou se réorganiser.</p>
+<h2><a class="anchor" id="autotoc_md26"></a>
+Améliorations et perspective pour la suite</h2>
+<p >Nous prévoyons d'utiliser <a href="https://github.com/matusnovak/doxybook2">Doxybook</a> si possible afin de rendre l'interface Doxygen plus belle et agréable en utilisant un frontend plus moderne.</p>
+<p >Par manque de temps, nous n'avons pas pu utiliser <code>openssl</code> pour l'encryption de nos données.</p>
+<hr  />
+<p >Généré par <a href="https://github.com/matusnovak/doxybook2">doxybook2</a> v1.4.0</p>
+<p ><a href="https://rmihaja.github.io/BAC/doxygen/index.html">Voir la documentation Doxygen originale</a> </p>
+</div></div><!-- PageDoc -->
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

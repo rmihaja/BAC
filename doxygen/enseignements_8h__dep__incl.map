@@ -1,0 +1,7 @@
+<map id="include/enseignements.h" name="include/enseignements.h">
+<area shape="rect" id="node1" title="En&#45;tête de la struture de données Enseignements." alt="" coords="122,5,307,32"/>
+<area shape="rect" id="node2" href="$controle_8h.html" title="En&#45;tête de la structure de données Controle." alt="" coords="48,80,187,107"/>
+<area shape="rect" id="node5" href="$enseignements_8c.html" title="Code source de la structure de données Enseignements." alt="" coords="211,80,413,107"/>
+<area shape="rect" id="node3" href="$app_8c.html" title="Code du programme principal." alt="" coords="5,155,85,181"/>
+<area shape="rect" id="node4" href="$controle_8c.html" title="Code source de la structure de données Controle." alt="" coords="110,155,269,181"/>
+</map>

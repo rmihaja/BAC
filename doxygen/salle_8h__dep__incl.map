@@ -1,0 +1,9 @@
+<map id="include/salle.h" name="include/salle.h">
+<area shape="rect" id="node1" title="En&#45;tête de la structure de données Salle." alt="" coords="217,5,333,32"/>
+<area shape="rect" id="node2" href="$salles_8h.html" title="En&#45;tête de la structure de données Salles." alt="" coords="137,80,260,107"/>
+<area shape="rect" id="node7" href="$salle_8c.html" title="Code source de la structure de données Salle." alt="" coords="285,80,417,107"/>
+<area shape="rect" id="node3" href="$controle_8h.html" title="En&#45;tête de la structure de données Controle." alt="" coords="48,155,187,181"/>
+<area shape="rect" id="node6" href="$salles_8c.html" title="Code source de la structure de données Salles." alt="" coords="211,155,349,181"/>
+<area shape="rect" id="node4" href="$app_8c.html" title="Code du programme principal." alt="" coords="5,229,85,256"/>
+<area shape="rect" id="node5" href="$controle_8c.html" title="Code source de la structure de données Controle." alt="" coords="110,229,269,256"/>
+</map>

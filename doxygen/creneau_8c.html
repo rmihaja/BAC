@@ -1,0 +1,700 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>BAC: Référence du fichier src/model/creneau.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  },
+  loader: {
+    load: ['[tex]/ams','[tex]/textcomp']
+  },
+  tex: {
+    macros: {},
+    packages: ['base','configmacros','ams','textcomp']
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">BAC
+   </div>
+   <div id="projectbrief">&quot;Book A Classroom&quot;</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5dd65160827af56e6353642206b80129.html">model</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Structures de données</a> &#124;
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle"><div class="title">Référence du fichier creneau.c</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Code source de la structure de données Creneau.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;assert.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="creneau_8h_source.html">creneau.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Graphe des dépendances par inclusion de creneau.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="creneau_8c__incl.png" border="0" usemap="#asrc_2model_2creneau_8c" alt=""/></div>
+<map name="asrc_2model_2creneau_8c" id="asrc_2model_2creneau_8c">
+<area shape="rect" title="Code source de la structure de données Creneau." alt="" coords="311,5,464,32"/>
+<area shape="rect" title=" " alt="" coords="5,304,76,331"/>
+<area shape="rect" title=" " alt="" coords="354,304,421,331"/>
+<area shape="rect" title=" " alt="" coords="425,80,496,107"/>
+<area shape="rect" title=" " alt="" coords="521,80,595,107"/>
+<area shape="rect" href="creneau_8h.html" title="En&#45;tête de la structure de données Creneau." alt="" coords="216,80,303,107"/>
+<area shape="rect" title=" " alt="" coords="75,229,158,256"/>
+<area shape="rect" href="jansson_8h_source.html" title=" " alt="" coords="233,229,317,256"/>
+<area shape="rect" href="enseignant_8h.html" title="En&#45;tête de la structure de données Enseignant." alt="" coords="89,155,195,181"/>
+<area shape="rect" href="horaire_8h.html" title="En&#45;tête de la structure de données Horaire." alt="" coords="219,155,299,181"/>
+<area shape="rect" title=" " alt="" coords="255,304,330,331"/>
+<area shape="rect" href="jansson__config_8h_source.html" title=" " alt="" coords="101,304,231,331"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Structures de données</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs__creneau.html">s_creneau</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure représentant un objet Creneau.  <a href="structs__creneau.html#details">Plus de détails...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a251ccf32bae868fe770316b68b73447a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="creneau_8c.html#a251ccf32bae868fe770316b68b73447a">creneau</a> (<a class="el" href="enseignant_8h.html#ae182509dd066fcbc24384cd848812d78">Enseignant</a> e, <a class="el" href="horaire_8h.html#a7d15432e6baf86e174c39b8ecb22e529">Horaire</a> h, char *<a class="el" href="enseignements_8c.html#a127ec50bfe4eed5abbd0b3cccf53c2d1">enseignement</a>, char *<a class="el" href="formation_8c.html#aa90520a6de1e9802ed490ea6194aab85">formation</a>, char *<a class="el" href="salle_8c.html#a6febf807da50a8973d0aaa2befec240e">salle</a>)</td></tr>
+<tr class="memdesc:a251ccf32bae868fe770316b68b73447a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construit un nouvel objet Creneau avec un objet Enseignant, un objet Horaire, un Enseignement, une Formation et une Salle.  <a href="creneau_8c.html#a251ccf32bae868fe770316b68b73447a">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a251ccf32bae868fe770316b68b73447a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1284510554cec007a9dcbfac22b664e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="creneau_8c.html#a1284510554cec007a9dcbfac22b664e6">creneauParser</a> (<a class="el" href="structjson__t.html">json_t</a> *json_creneau)</td></tr>
+<tr class="memdesc:a1284510554cec007a9dcbfac22b664e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construit un nouvel objet Creneau à partir de sa représentation en objet JSON.  <a href="creneau_8c.html#a1284510554cec007a9dcbfac22b664e6">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a1284510554cec007a9dcbfac22b664e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25b4588e28008673cf3cd5723bab97c1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="enseignant_8h.html#ae182509dd066fcbc24384cd848812d78">Enseignant</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="creneau_8c.html#a25b4588e28008673cf3cd5723bab97c1">getCreneauE</a> (<a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a> c)</td></tr>
+<tr class="memdesc:a25b4588e28008673cf3cd5723bab97c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de l'objet Enseignant du Creneau.  <a href="creneau_8c.html#a25b4588e28008673cf3cd5723bab97c1">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a25b4588e28008673cf3cd5723bab97c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a673caa9f5a7924654af8f77297093638"><td class="memItemLeft" align="right" valign="top"><a class="el" href="horaire_8h.html#a7d15432e6baf86e174c39b8ecb22e529">Horaire</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="creneau_8c.html#a673caa9f5a7924654af8f77297093638">getCreneauH</a> (<a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a> c)</td></tr>
+<tr class="memdesc:a673caa9f5a7924654af8f77297093638"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de l'objet Horaire du Creneau.  <a href="creneau_8c.html#a673caa9f5a7924654af8f77297093638">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a673caa9f5a7924654af8f77297093638"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9a6905dc01e66477a1a052cb6b5c97b"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="creneau_8c.html#af9a6905dc01e66477a1a052cb6b5c97b">getCreneauENS</a> (<a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a> c)</td></tr>
+<tr class="memdesc:af9a6905dc01e66477a1a052cb6b5c97b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de l'objet Enseignement du Creneau.  <a href="creneau_8c.html#af9a6905dc01e66477a1a052cb6b5c97b">Plus de détails...</a><br /></td></tr>
+<tr class="separator:af9a6905dc01e66477a1a052cb6b5c97b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a124c93ff2e3d0c243261b5f82b37c4ab"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="creneau_8c.html#a124c93ff2e3d0c243261b5f82b37c4ab">getCreneauF</a> (<a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a> c)</td></tr>
+<tr class="memdesc:a124c93ff2e3d0c243261b5f82b37c4ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de l'objet Formation du Creneau.  <a href="creneau_8c.html#a124c93ff2e3d0c243261b5f82b37c4ab">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a124c93ff2e3d0c243261b5f82b37c4ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1639653b3c0aae9008950c6f2baf7fcd"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="creneau_8c.html#a1639653b3c0aae9008950c6f2baf7fcd">getCreneauS</a> (<a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a> c)</td></tr>
+<tr class="memdesc:a1639653b3c0aae9008950c6f2baf7fcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de l'objet Salle du Creneau.  <a href="creneau_8c.html#a1639653b3c0aae9008950c6f2baf7fcd">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a1639653b3c0aae9008950c6f2baf7fcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ed28a34a4325a884686c9af4a6aa717"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structjson__t.html">json_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="creneau_8c.html#a0ed28a34a4325a884686c9af4a6aa717">getJsonCreneau</a> (<a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a> c)</td></tr>
+<tr class="memdesc:a0ed28a34a4325a884686c9af4a6aa717"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de la représentation en objet JSON du Creneau.  <a href="creneau_8c.html#a0ed28a34a4325a884686c9af4a6aa717">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a0ed28a34a4325a884686c9af4a6aa717"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab88c8c58558c4a14757b76535f273a87"><td class="memItemLeft" align="right" valign="top"><a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="creneau_8c.html#ab88c8c58558c4a14757b76535f273a87">setCreneauE</a> (<a class="el" href="enseignant_8h.html#ae182509dd066fcbc24384cd848812d78">Enseignant</a> e, <a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a> c)</td></tr>
+<tr class="memdesc:ab88c8c58558c4a14757b76535f273a87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définie l'objet Enseignant du Creneau.  <a href="creneau_8c.html#ab88c8c58558c4a14757b76535f273a87">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ab88c8c58558c4a14757b76535f273a87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade051e65d5d7a36fffc3e04086c63606"><td class="memItemLeft" align="right" valign="top"><a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="creneau_8c.html#ade051e65d5d7a36fffc3e04086c63606">setCreneauH</a> (<a class="el" href="horaire_8h.html#a7d15432e6baf86e174c39b8ecb22e529">Horaire</a> h, <a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a> c)</td></tr>
+<tr class="memdesc:ade051e65d5d7a36fffc3e04086c63606"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définie l'objet Horaire du Creneau.  <a href="creneau_8c.html#ade051e65d5d7a36fffc3e04086c63606">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ade051e65d5d7a36fffc3e04086c63606"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf7b046d2f947e84078fbfd893decaf4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="creneau_8c.html#acf7b046d2f947e84078fbfd893decaf4">setCreneauENS</a> (char *<a class="el" href="enseignements_8c.html#a127ec50bfe4eed5abbd0b3cccf53c2d1">enseignement</a>, <a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a> c)</td></tr>
+<tr class="memdesc:acf7b046d2f947e84078fbfd893decaf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définie l'objet Enseignement du Creneau.  <a href="creneau_8c.html#acf7b046d2f947e84078fbfd893decaf4">Plus de détails...</a><br /></td></tr>
+<tr class="separator:acf7b046d2f947e84078fbfd893decaf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef204157cbe2f71f1d017146959a4742"><td class="memItemLeft" align="right" valign="top"><a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="creneau_8c.html#aef204157cbe2f71f1d017146959a4742">setCreneauF</a> (char *<a class="el" href="formation_8c.html#aa90520a6de1e9802ed490ea6194aab85">formation</a>, <a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a> c)</td></tr>
+<tr class="memdesc:aef204157cbe2f71f1d017146959a4742"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définie l'objet Formation du Creneau.  <a href="creneau_8c.html#aef204157cbe2f71f1d017146959a4742">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aef204157cbe2f71f1d017146959a4742"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b8148e1d74f7a7e14d4ab24d1415c88"><td class="memItemLeft" align="right" valign="top"><a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="creneau_8c.html#a3b8148e1d74f7a7e14d4ab24d1415c88">setCreneauS</a> (char *<a class="el" href="salle_8c.html#a6febf807da50a8973d0aaa2befec240e">salle</a>, <a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a> c)</td></tr>
+<tr class="memdesc:a3b8148e1d74f7a7e14d4ab24d1415c88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Définie l'objet Salle du Creneau.  <a href="creneau_8c.html#a3b8148e1d74f7a7e14d4ab24d1415c88">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a3b8148e1d74f7a7e14d4ab24d1415c88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86d00126fd669816c9c1d336f8e73c10"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="creneau_8c.html#a86d00126fd669816c9c1d336f8e73c10">equalsCreneau</a> (<a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a> c1, <a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a> c2)</td></tr>
+<tr class="memdesc:a86d00126fd669816c9c1d336f8e73c10"><td class="mdescLeft">&#160;</td><td class="mdescRight">compare deux Creneau.  <a href="creneau_8c.html#a86d00126fd669816c9c1d336f8e73c10">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a86d00126fd669816c9c1d336f8e73c10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ad7900f594e6c14d2d092d168f89d98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="creneau_8c.html#a3ad7900f594e6c14d2d092d168f89d98">afficheCreneau</a> (<a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a> c)</td></tr>
+<tr class="memdesc:a3ad7900f594e6c14d2d092d168f89d98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imprime les attributs de Creneau sur stdout, suivi d'un retour à la ligne.  <a href="creneau_8c.html#a3ad7900f594e6c14d2d092d168f89d98">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a3ad7900f594e6c14d2d092d168f89d98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4abeff8782f24c6e67a1254dd13143e8"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="creneau_8c.html#a4abeff8782f24c6e67a1254dd13143e8">toStringCreneau</a> (<a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a> c)</td></tr>
+<tr class="memdesc:a4abeff8782f24c6e67a1254dd13143e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accesseur de la représentation en chaîne de caractère JSON de Creneau.  <a href="creneau_8c.html#a4abeff8782f24c6e67a1254dd13143e8">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a4abeff8782f24c6e67a1254dd13143e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p >Code source de la structure de données Creneau. </p>
+<dl class="section author"><dt>Auteur</dt><dd>Mihaja RAZAFIMAHEFA &amp; Ambre ROUZADE</dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2022 </dd></dl>
+</div><h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a3ad7900f594e6c14d2d092d168f89d98" name="a3ad7900f594e6c14d2d092d168f89d98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ad7900f594e6c14d2d092d168f89d98">&#9670;&nbsp;</a></span>afficheCreneau()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void afficheCreneau </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a>&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Imprime les attributs de Creneau sur stdout, suivi d'un retour à la ligne. </p>
+<p >Imprime les attributs de l'objet Creneau en réutilisant l'affichage des objets Enseignant et Horaire, respectant alors le format :</p>
+<div class="fragment"><div class="line">{<a class="code hl_struct" href="structs__salle.html">Salle</a>} {<a class="code hl_struct" href="structs__formation.html">Formation</a>}</div>
+<div class="line">{<a class="code hl_struct" href="structs__enseignement.html">Enseignement</a>}</div>
+<div class="line">{<a class="code hl_struct" href="structs__enseignant.html">Enseignant</a>}</div>
+<div class="line">{<a class="code hl_struct" href="structs__horaire.html">Horaire</a>}</div>
+<div class="ttc" id="astructs__enseignant_html"><div class="ttname"><a href="structs__enseignant.html">s_enseignant</a></div><div class="ttdoc">Structure représentant un objet Enseignant.</div><div class="ttdef"><b>Definition:</b> enseignant.c:37</div></div>
+<div class="ttc" id="astructs__enseignement_html"><div class="ttname"><a href="structs__enseignement.html">s_enseignement</a></div><div class="ttdoc">Structure représentant un élément de la liste chaînée Enseignements.</div><div class="ttdef"><b>Definition:</b> enseignements.c:35</div></div>
+<div class="ttc" id="astructs__formation_html"><div class="ttname"><a href="structs__formation.html">s_formation</a></div><div class="ttdoc">Structure représentant un objet Formation.</div><div class="ttdef"><b>Definition:</b> formation.c:56</div></div>
+<div class="ttc" id="astructs__horaire_html"><div class="ttname"><a href="structs__horaire.html">s_horaire</a></div><div class="ttdoc">Structure représentant un objet Horaire.</div><div class="ttdef"><b>Definition:</b> horaire.c:29</div></div>
+<div class="ttc" id="astructs__salle_html"><div class="ttname"><a href="structs__salle.html">s_salle</a></div><div class="ttdoc">Structure représentant un objet Salle.</div><div class="ttdef"><b>Definition:</b> salle.c:36</div></div>
+</div><!-- fragment --><dl class="section see"><dt>Voir également</dt><dd><a class="el" href="enseignant_8c.html#a4c6fa8dfb8876f117cdd731313628665" title="Imprime les attributs de Enseignant sur stdout, suivi d&#39;un retour à la ligne.">afficheEnseignant</a> , <a class="el" href="horaire_8c.html#adc0a151517dc35dfb2af1bf9607246da" title="Imprime les attributs de Horaire sur stdout, suivi d&#39;un retour à la ligne.">afficheHoraire</a></dd></dl>
+
+</div>
+</div>
+<a id="a251ccf32bae868fe770316b68b73447a" name="a251ccf32bae868fe770316b68b73447a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a251ccf32bae868fe770316b68b73447a">&#9670;&nbsp;</a></span>creneau()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a> creneau </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enseignant_8h.html#ae182509dd066fcbc24384cd848812d78">Enseignant</a>&#160;</td>
+          <td class="paramname"><em>e</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="horaire_8h.html#a7d15432e6baf86e174c39b8ecb22e529">Horaire</a>&#160;</td>
+          <td class="paramname"><em>h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>enseignement</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>formation</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>salle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construit un nouvel objet Creneau avec un objet Enseignant, un objet Horaire, un Enseignement, une Formation et une Salle. </p>
+<p >Constructeur par défaut de l'objet Creneau.</p>
+
+</div>
+</div>
+<a id="a1284510554cec007a9dcbfac22b664e6" name="a1284510554cec007a9dcbfac22b664e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1284510554cec007a9dcbfac22b664e6">&#9670;&nbsp;</a></span>creneauParser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a> creneauParser </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structjson__t.html">json_t</a> *&#160;</td>
+          <td class="paramname"><em>json_creneau</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construit un nouvel objet Creneau à partir de sa représentation en objet JSON. </p>
+<p >Construit l'objet Creneau en manipulant l'API Jansson. Pour cela, à partir d'une recherche par clé (s'il existe), nous pouvons accéder aux attributs "enseignant", "horaire", "enseignement", "formation" et "salle" de Creneau, que nous construisons ensuite à l'aide du constructeur par défaut, avec les objets Enseignant et Horaire préalablement construit à partir de leur représentation JSON également.</p>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="enseignant_8c.html#a2b82719c4bdeb93a5d088c95ad16b95a" title="Construit un nouvel objet Enseignant à partir de sa représentation en objet JSON.">enseignantParser</a> , <a class="el" href="horaire_8c.html#abd55c0f4321d91131d5d615dce5362ba" title="construit un nouvel objet Horaire à partir de sa représentation objet JSON.">horaireParser</a> , <a href="https://jansson.readthedocs.io/en/latest/apiref.html#object">json_object</a> , <a href="https://jansson.readthedocs.io/en/latest/apiref.html#c.json_object_get">json_object_get</a> , <a href="https://jansson.readthedocs.io/en/latest/apiref.html#string">json_string</a></dd></dl>
+
+</div>
+</div>
+<a id="a86d00126fd669816c9c1d336f8e73c10" name="a86d00126fd669816c9c1d336f8e73c10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86d00126fd669816c9c1d336f8e73c10">&#9670;&nbsp;</a></span>equalsCreneau()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool equalsCreneau </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a>&#160;</td>
+          <td class="paramname"><em>c1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a>&#160;</td>
+          <td class="paramname"><em>c2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>compare deux Creneau. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c1</td><td>Creneau 1 à comparer. </td></tr>
+    <tr><td class="paramname">c2</td><td>Creneau 2 à comparer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>true si Creneau 1 et Creneau 2 possèdent les mêmes attributs Enseignant, Horaire, Formation et Salle. </dd>
+<dd>
+false si un ou plusieurs attributs de Creneau 1 et Creneau 2 diffèrent. </dd></dl>
+
+</div>
+</div>
+<a id="a25b4588e28008673cf3cd5723bab97c1" name="a25b4588e28008673cf3cd5723bab97c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25b4588e28008673cf3cd5723bab97c1">&#9670;&nbsp;</a></span>getCreneauE()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="enseignant_8h.html#ae182509dd066fcbc24384cd848812d78">Enseignant</a> getCreneauE </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a>&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur de l'objet Enseignant du Creneau. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>Référence du Creneau. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Référence de Enseignant du Creneau. </dd></dl>
+
+</div>
+</div>
+<a id="af9a6905dc01e66477a1a052cb6b5c97b" name="af9a6905dc01e66477a1a052cb6b5c97b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9a6905dc01e66477a1a052cb6b5c97b">&#9670;&nbsp;</a></span>getCreneauENS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * getCreneauENS </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a>&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur de l'objet Enseignement du Creneau. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>Référence du Creneau. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Valeur de Enseignement de type char*. </dd></dl>
+
+</div>
+</div>
+<a id="a124c93ff2e3d0c243261b5f82b37c4ab" name="a124c93ff2e3d0c243261b5f82b37c4ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a124c93ff2e3d0c243261b5f82b37c4ab">&#9670;&nbsp;</a></span>getCreneauF()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * getCreneauF </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a>&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur de l'objet Formation du Creneau. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>Référence du Creneau. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Valeur de la Formation de type char*. </dd></dl>
+
+</div>
+</div>
+<a id="a673caa9f5a7924654af8f77297093638" name="a673caa9f5a7924654af8f77297093638"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a673caa9f5a7924654af8f77297093638">&#9670;&nbsp;</a></span>getCreneauH()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="horaire_8h.html#a7d15432e6baf86e174c39b8ecb22e529">Horaire</a> getCreneauH </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a>&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur de l'objet Horaire du Creneau. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>Référence du Creneau. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Référence de Horaire du Creneau. </dd></dl>
+
+</div>
+</div>
+<a id="a1639653b3c0aae9008950c6f2baf7fcd" name="a1639653b3c0aae9008950c6f2baf7fcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1639653b3c0aae9008950c6f2baf7fcd">&#9670;&nbsp;</a></span>getCreneauS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * getCreneauS </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a>&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur de l'objet Salle du Creneau. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>Référence du Creneau. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Valeur de la Salle de type char*. </dd></dl>
+
+</div>
+</div>
+<a id="a0ed28a34a4325a884686c9af4a6aa717" name="a0ed28a34a4325a884686c9af4a6aa717"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ed28a34a4325a884686c9af4a6aa717">&#9670;&nbsp;</a></span>getJsonCreneau()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structjson__t.html">json_t</a> * getJsonCreneau </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a>&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur de la représentation en objet JSON du Creneau. </p>
+<p >Renvoie la représentation objet JSON du Creneau en utilisant l'API Jansson. Pour cela, on construit un nouvel objet JSON pour ensuite pouvoir y attacher les attributs clé-valeurs du Creneau, défini par "enseignant" et "horaire", faisant appel à la représentation objet JSON de Enseignant et Horaire, ainsi que "formation" et "salle".</p>
+<dl class="section see"><dt>Voir également</dt><dd><a class="el" href="enseignant_8c.html#ab950fa79834f75ac069e6b734b8aa35b" title="Accesseur de la représentation en objet JSON de Enseignant.">getJsonEnseignant</a> , <a class="el" href="horaire_8c.html#aeaeef80bbe93e9c5410f2886fc26c036" title="Accesseur de la représentation en objet JSON de Horaire.">getJsonHoraire</a> , <a href="https://jansson.readthedocs.io/en/latest/apiref.html#object">json_object</a> , <a href="https://jansson.readthedocs.io/en/latest/apiref.html#c.json_object_set_new">json_object_set_new</a></dd></dl>
+
+</div>
+</div>
+<a id="ab88c8c58558c4a14757b76535f273a87" name="ab88c8c58558c4a14757b76535f273a87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab88c8c58558c4a14757b76535f273a87">&#9670;&nbsp;</a></span>setCreneauE()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a> setCreneauE </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="enseignant_8h.html#ae182509dd066fcbc24384cd848812d78">Enseignant</a>&#160;</td>
+          <td class="paramname"><em>e</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a>&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définie l'objet Enseignant du Creneau. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>Référence de l'objet Enseignant. </td></tr>
+    <tr><td class="paramname">c</td><td>Référence du Creneau à modifier. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Creneau avec la nouvelle référence de Enseignant. </dd></dl>
+
+</div>
+</div>
+<a id="acf7b046d2f947e84078fbfd893decaf4" name="acf7b046d2f947e84078fbfd893decaf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf7b046d2f947e84078fbfd893decaf4">&#9670;&nbsp;</a></span>setCreneauENS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a> setCreneauENS </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>enseignement</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a>&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définie l'objet Enseignement du Creneau. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">enseignement</td><td>Valeur de Enseignement de type char*. </td></tr>
+    <tr><td class="paramname">c</td><td>Référence du Creneau à modifier. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Creneau avec la nouvelle valeur de Enseignement. </dd></dl>
+
+</div>
+</div>
+<a id="aef204157cbe2f71f1d017146959a4742" name="aef204157cbe2f71f1d017146959a4742"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef204157cbe2f71f1d017146959a4742">&#9670;&nbsp;</a></span>setCreneauF()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a> setCreneauF </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>formation</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a>&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définie l'objet Formation du Creneau. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">formation</td><td>Valeur de Formation de type char*. </td></tr>
+    <tr><td class="paramname">c</td><td>Référence du Creneau à modifier. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Creneau avec la nouvelle valeur de Formation. </dd></dl>
+
+</div>
+</div>
+<a id="ade051e65d5d7a36fffc3e04086c63606" name="ade051e65d5d7a36fffc3e04086c63606"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade051e65d5d7a36fffc3e04086c63606">&#9670;&nbsp;</a></span>setCreneauH()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a> setCreneauH </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="horaire_8h.html#a7d15432e6baf86e174c39b8ecb22e529">Horaire</a>&#160;</td>
+          <td class="paramname"><em>h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a>&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définie l'objet Horaire du Creneau. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">h</td><td>Référence de l'objet Horaire. </td></tr>
+    <tr><td class="paramname">c</td><td>Référence du Creneau à modifier. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Creneau avec la nouvelle référence de Horaire. </dd></dl>
+
+</div>
+</div>
+<a id="a3b8148e1d74f7a7e14d4ab24d1415c88" name="a3b8148e1d74f7a7e14d4ab24d1415c88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b8148e1d74f7a7e14d4ab24d1415c88">&#9670;&nbsp;</a></span>setCreneauS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a> setCreneauS </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>salle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a>&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Définie l'objet Salle du Creneau. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">salle</td><td>Valeur de Salle de type char*. </td></tr>
+    <tr><td class="paramname">c</td><td>Référence du Creneau à modifier. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Renvoie</dt><dd>Creneau avec la nouvelle valeur de Salle. </dd></dl>
+
+</div>
+</div>
+<a id="a4abeff8782f24c6e67a1254dd13143e8" name="a4abeff8782f24c6e67a1254dd13143e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4abeff8782f24c6e67a1254dd13143e8">&#9670;&nbsp;</a></span>toStringCreneau()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * toStringCreneau </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="creneau_8h.html#ace9e94fa094f9c711ef43caa079fdc9d">Creneau</a>&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accesseur de la représentation en chaîne de caractère JSON de Creneau. </p>
+<p >Renvoie la représentation JSON en chaîne de caractères du Creneau en utilisant l'API Jansson. Pour cela, on accède d'abord à la représentation JSON objet pour pouvoir le repasser à l'API. Enfin, avant de renvoyer la chaîne de caractères, il ne faut pas oublier de libérer la mémoire allouée à l'objet JSON (à faire manuellement en décrémentant son nombre de référencement).</p>
+<dl class="section see"><dt>Voir également</dt><dd><a href="https://jansson.readthedocs.io/en/latest/apiref.html#c.json_dumps">json_dumps</a> , <a href="https://jansson.readthedocs.io/en/latest/apiref.html#c.json_decref">json_decref</a></dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

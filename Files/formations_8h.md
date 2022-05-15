@@ -275,3 +275,5 @@ char* toStringFormations(Formations fs);
 ---
 
 Généré par [doxybook2](https://github.com/matusnovak/doxybook2) v1.4.0
+
+[Voir la documentation Doxygen d'origine](https://rmihaja.github.io/BAC/doxygen/index.html)

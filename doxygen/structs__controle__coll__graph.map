@@ -1,0 +1,16 @@
+<map id="s_controle" name="s_controle">
+<area shape="rect" id="node1" title="Objet Controle." alt="" coords="218,464,307,491"/>
+<area shape="rect" id="node2" href="$structs__enseignants.html" title="Structure représentant une liste chaînée de Enseignant." alt="" coords="5,235,120,261"/>
+<area shape="rect" id="node3" href="$structs__element__es.html" title="Structure représentant un élément de la liste chaînée Enseignants." alt="" coords="7,95,119,121"/>
+<area shape="rect" id="node4" href="$structs__enseignant.html" title="Structure représentant un objet Enseignant." alt="" coords="74,5,182,32"/>
+<area shape="rect" id="node10" href="$structs__creneau.html" title="Structure représentant un objet Creneau." alt="" coords="220,95,308,121"/>
+<area shape="rect" id="node5" href="$structs__enseignements.html" title="Structure représentant une liste chaînée de Enseignement." alt="" coords="415,375,551,401"/>
+<area shape="rect" id="node6" href="$structs__enseignement.html" title="Structure représentant un élément de la liste chaînée Enseignements." alt="" coords="437,285,566,312"/>
+<area shape="rect" id="node7" href="$structs__salles.html" title="Structure représentant une liste chaînée de Salle." alt="" coords="160,375,235,401"/>
+<area shape="rect" id="node8" href="$structs__element__ss.html" title="Structure représentant un élément de la liste chaînée Salles." alt="" coords="101,285,211,312"/>
+<area shape="rect" id="node9" href="$structs__salle.html" title="Structure représentant un objet Salle." alt="" coords="159,184,225,211"/>
+<area shape="rect" id="node14" href="$structs__creneau__f.html" title="Structure représentant un élément de la liste chaînée de Creneau de Formation." alt="" coords="287,184,387,211"/>
+<area shape="rect" id="node11" href="$structs__horaire.html" title="Structure représentant un objet Horaire." alt="" coords="223,5,305,32"/>
+<area shape="rect" id="node12" href="$structs__formations.html" title="Structure représentant un tableau de Formation." alt="" coords="276,375,383,401"/>
+<area shape="rect" id="node13" href="$structs__formation.html" title="Structure représentant un objet Formation." alt="" coords="313,285,413,312"/>
+</map>

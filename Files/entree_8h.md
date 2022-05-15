@@ -11,7 +11,7 @@ En-tête des fonctions d'entrées.  [Plus de détails...](#description-détaill�
 | bool | **[getUserInput](/Files/entree_8h.md#fonction-getuserinput)**(char *message, char* description, char * value)<br>Lit une entrée utilisateur de format chaîne de caractères.  |
 | int | **[getChoiceInput](/Files/entree_8h.md#fonction-getchoiceinput)**(char * message, int maxValue)<br>Lit le choix entier de l'utilisateur parmi une liste à afficher. Le choix est défini entre 0 (Quitter) et maxValue.  |
 | int | **[getIntervalInput](/Files/entree_8h.md#fonction-getintervalinput)**(char * message, int minValue, int maxValue)<br>Lit l'entrée d'un entier de l'utilisateur parmi une intervalle défini par minValue et maxValue.  |
-| int | **[getAnyInput](/Files/entree_8h.md#fonction-getanyinput)**()<br>demande une réponse physique de l'utilisateur par un appuie sur la touche <ENTREE>  |
+| int | **[getAnyInput](/Files/entree_8h.md#fonction-getanyinput)**()<br>demande une réponse physique de l'utilisateur par un appuie sur la touche \<ENTREE>  |
 | int | **[getCancelInput](/Files/entree_8h.md#fonction-getcancelinput)**()<br>Renvoie au gestionnaire d'évènement une demande de revenir en arrière, marquée par l'entier -1.  |
 | int | **[getRetryInput](/Files/entree_8h.md#fonction-getretryinput)**(char * description)<br>Présente une erreur à l'utilisateur le demandant de réessayer. Puis lit le choix de l'utilisateur.  |
 
@@ -150,7 +150,7 @@ Lit l'entrée d'un entier de l'utilisateur parmi une intervalle défini par minV
 int getAnyInput()
 ```
 
-demande une réponse physique de l'utilisateur par un appuie sur la touche <ENTREE>
+demande une réponse physique de l'utilisateur par un appuie sur la touche \<ENTREE>
 
 **Renvoie**: 0
 
@@ -244,3 +244,5 @@ int getRetryInput(char* description);
 ---
 
 Généré par [doxybook2](https://github.com/matusnovak/doxybook2) v1.4.0
+
+[Voir la documentation Doxygen originale](https://rmihaja.github.io/BAC/doxygen/index.html)

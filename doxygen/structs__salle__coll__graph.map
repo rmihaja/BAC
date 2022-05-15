@@ -1,0 +1,6 @@
+<map id="s_salle" name="s_salle">
+<area shape="rect" id="node1" title="Structure représentant un objet Salle." alt="" coords="86,184,153,211"/>
+<area shape="rect" id="node2" href="$structs__creneau.html" title="Structure représentant un objet Creneau." alt="" coords="75,95,163,121"/>
+<area shape="rect" id="node3" href="$structs__enseignant.html" title="Structure représentant un objet Enseignant." alt="" coords="5,5,113,32"/>
+<area shape="rect" id="node4" href="$structs__horaire.html" title="Structure représentant un objet Horaire." alt="" coords="138,5,221,32"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="s_formation" name="s_formation">
+<area shape="rect" id="node1" title="Structure représentant un objet Formation." alt="" coords="69,273,169,300"/>
+<area shape="rect" id="node2" href="$structs__creneau__f.html" title="Structure représentant un élément de la liste chaînée de Creneau de Formation." alt="" coords="69,184,169,211"/>
+<area shape="rect" id="node3" href="$structs__creneau.html" title="Structure représentant un objet Creneau." alt="" coords="75,95,163,121"/>
+<area shape="rect" id="node4" href="$structs__enseignant.html" title="Structure représentant un objet Enseignant." alt="" coords="5,5,113,32"/>
+<area shape="rect" id="node5" href="$structs__horaire.html" title="Structure représentant un objet Horaire." alt="" coords="138,5,221,32"/>
+</map>

@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>BAC:  Fichier source de include/enseignant.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  },
+  loader: {
+    load: ['[tex]/ams','[tex]/textcomp']
+  },
+  tex: {
+    macros: {},
+    packages: ['base','configmacros','ams','textcomp']
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">BAC
+   </div>
+   <div id="projectbrief">&quot;Book A Classroom&quot;</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">enseignant.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="enseignant_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef __ENSEIGNANT_H__</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define __ENSEIGNANT_H__</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;jansson.h&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="enseignant_8h.html#ae182509dd066fcbc24384cd848812d78">   19</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structs__enseignant.html">s_enseignant</a>* <a class="code hl_typedef" href="enseignant_8h.html#ae182509dd066fcbc24384cd848812d78">Enseignant</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><a class="code hl_struct" href="structs__enseignant.html">Enseignant</a> <a class="code hl_function" href="enseignant_8h.html#ad398788b1cfe11d9915cdae562321551">enseignant</a>();</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><a class="code hl_struct" href="structs__enseignant.html">Enseignant</a> <a class="code hl_function" href="enseignant_8h.html#ae9eac2c0eba1c83b986e1d108d08a110">enseignantCopie</a>(<span class="keywordtype">char</span>* <a class="code hl_variable" href="structs__enseignant.html#af39f1059655ea6ba1d5a525a7dcd5234">nom</a>, <span class="keywordtype">char</span>* <a class="code hl_variable" href="structs__enseignant.html#a3f2696103a4137935b0327a1de4ba91e">prenom</a>);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><a class="code hl_struct" href="structs__enseignant.html">Enseignant</a> <a class="code hl_function" href="enseignant_8h.html#a2b82719c4bdeb93a5d088c95ad16b95a">enseignantParser</a>(<a class="code hl_struct" href="structjson__t.html">json_t</a>* json_enseignant);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keywordtype">char</span>* <a class="code hl_function" href="enseignant_8h.html#a093dec08e7ac4475442f9e644ed14013">getNom</a>(<a class="code hl_struct" href="structs__enseignant.html">Enseignant</a> e);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="keywordtype">char</span>* <a class="code hl_function" href="enseignant_8h.html#a72d5483fb1e8725f53b6f1f4757b683f">getPrenom</a>(<a class="code hl_struct" href="structs__enseignant.html">Enseignant</a> e);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><a class="code hl_struct" href="structjson__t.html">json_t</a>* <a class="code hl_function" href="enseignant_8h.html#ab950fa79834f75ac069e6b734b8aa35b">getJsonEnseignant</a>(<a class="code hl_struct" href="structs__enseignant.html">Enseignant</a> e);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><a class="code hl_struct" href="structs__enseignant.html">Enseignant</a> <a class="code hl_function" href="enseignant_8h.html#ab9c81fc8d8087c529f0e8d826726499d">setNom</a>(<a class="code hl_struct" href="structs__enseignant.html">Enseignant</a> e, <span class="keywordtype">char</span>* <a class="code hl_variable" href="structs__enseignant.html#af39f1059655ea6ba1d5a525a7dcd5234">nom</a>);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><a class="code hl_struct" href="structs__enseignant.html">Enseignant</a> <a class="code hl_function" href="enseignant_8h.html#ab679f4ddaba22cfab9e9b97f7b5fe680">setPrenom</a>(<a class="code hl_struct" href="structs__enseignant.html">Enseignant</a> e, <span class="keywordtype">char</span>* <a class="code hl_variable" href="structs__enseignant.html#a3f2696103a4137935b0327a1de4ba91e">prenom</a>);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="keywordtype">bool</span> <a class="code hl_function" href="enseignant_8h.html#a4ff5794d9c7d03d693be20b969145ce8">equalsEnseignant</a>(<a class="code hl_struct" href="structs__enseignant.html">Enseignant</a> e1, <a class="code hl_struct" href="structs__enseignant.html">Enseignant</a> e2);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="keywordtype">void</span> <a class="code hl_function" href="enseignant_8h.html#a4c6fa8dfb8876f117cdd731313628665">afficheEnseignant</a>(<a class="code hl_struct" href="structs__enseignant.html">Enseignant</a> e);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="keywordtype">char</span>* <a class="code hl_function" href="enseignant_8h.html#aa45162052b043f93d24be1f4d28e6270">toStringEnseignant</a>(<a class="code hl_struct" href="structs__enseignant.html">Enseignant</a> e);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aenseignant_8h_html_a093dec08e7ac4475442f9e644ed14013"><div class="ttname"><a href="enseignant_8h.html#a093dec08e7ac4475442f9e644ed14013">getNom</a></div><div class="ttdeci">char * getNom(Enseignant e)</div><div class="ttdoc">Accesseur de l'objet Nom de Enseignant.</div><div class="ttdef"><b>Definition:</b> enseignant.c:96</div></div>
+<div class="ttc" id="aenseignant_8h_html_a2b82719c4bdeb93a5d088c95ad16b95a"><div class="ttname"><a href="enseignant_8h.html#a2b82719c4bdeb93a5d088c95ad16b95a">enseignantParser</a></div><div class="ttdeci">Enseignant enseignantParser(json_t *json_enseignant)</div><div class="ttdoc">Construit un nouvel objet Enseignant à partir de sa représentation en objet JSON.</div><div class="ttdef"><b>Definition:</b> enseignant.c:84</div></div>
+<div class="ttc" id="aenseignant_8h_html_a4c6fa8dfb8876f117cdd731313628665"><div class="ttname"><a href="enseignant_8h.html#a4c6fa8dfb8876f117cdd731313628665">afficheEnseignant</a></div><div class="ttdeci">void afficheEnseignant(Enseignant e)</div><div class="ttdoc">Imprime les attributs de Enseignant sur stdout, suivi d'un retour à la ligne.</div><div class="ttdef"><b>Definition:</b> enseignant.c:158</div></div>
+<div class="ttc" id="aenseignant_8h_html_a4ff5794d9c7d03d693be20b969145ce8"><div class="ttname"><a href="enseignant_8h.html#a4ff5794d9c7d03d693be20b969145ce8">equalsEnseignant</a></div><div class="ttdeci">bool equalsEnseignant(Enseignant e1, Enseignant e2)</div><div class="ttdoc">compare deux Enseignant.</div><div class="ttdef"><b>Definition:</b> enseignant.c:136</div></div>
+<div class="ttc" id="aenseignant_8h_html_a72d5483fb1e8725f53b6f1f4757b683f"><div class="ttname"><a href="enseignant_8h.html#a72d5483fb1e8725f53b6f1f4757b683f">getPrenom</a></div><div class="ttdeci">char * getPrenom(Enseignant e)</div><div class="ttdoc">Accesseur de l'objet Prenom de Enseignant.</div><div class="ttdef"><b>Definition:</b> enseignant.c:100</div></div>
+<div class="ttc" id="aenseignant_8h_html_aa45162052b043f93d24be1f4d28e6270"><div class="ttname"><a href="enseignant_8h.html#aa45162052b043f93d24be1f4d28e6270">toStringEnseignant</a></div><div class="ttdeci">char * toStringEnseignant(Enseignant e)</div><div class="ttdoc">Accesseur de la représentation en chaîne de caractère JSON de Enseignant.</div><div class="ttdef"><b>Definition:</b> enseignant.c:180</div></div>
+<div class="ttc" id="aenseignant_8h_html_ab679f4ddaba22cfab9e9b97f7b5fe680"><div class="ttname"><a href="enseignant_8h.html#ab679f4ddaba22cfab9e9b97f7b5fe680">setPrenom</a></div><div class="ttdeci">Enseignant setPrenom(Enseignant e, char *prenom)</div><div class="ttdoc">Définie l'objet Prenom de Enseignant.</div><div class="ttdef"><b>Definition:</b> enseignant.c:131</div></div>
+<div class="ttc" id="aenseignant_8h_html_ab950fa79834f75ac069e6b734b8aa35b"><div class="ttname"><a href="enseignant_8h.html#ab950fa79834f75ac069e6b734b8aa35b">getJsonEnseignant</a></div><div class="ttdeci">json_t * getJsonEnseignant(Enseignant e)</div><div class="ttdoc">Accesseur de la représentation en objet JSON de Enseignant.</div><div class="ttdef"><b>Definition:</b> enseignant.c:119</div></div>
+<div class="ttc" id="aenseignant_8h_html_ab9c81fc8d8087c529f0e8d826726499d"><div class="ttname"><a href="enseignant_8h.html#ab9c81fc8d8087c529f0e8d826726499d">setNom</a></div><div class="ttdeci">Enseignant setNom(Enseignant e, char *nom)</div><div class="ttdoc">Définie l'objet Nom de Enseignant.</div><div class="ttdef"><b>Definition:</b> enseignant.c:126</div></div>
+<div class="ttc" id="aenseignant_8h_html_ad398788b1cfe11d9915cdae562321551"><div class="ttname"><a href="enseignant_8h.html#ad398788b1cfe11d9915cdae562321551">enseignant</a></div><div class="ttdeci">Enseignant enseignant()</div><div class="ttdoc">Construit un nouvel objet Enseignant avec un Nom et un Prenom vide.</div><div class="ttdef"><b>Definition:</b> enseignant.c:55</div></div>
+<div class="ttc" id="aenseignant_8h_html_ae182509dd066fcbc24384cd848812d78"><div class="ttname"><a href="enseignant_8h.html#ae182509dd066fcbc24384cd848812d78">Enseignant</a></div><div class="ttdeci">struct s_enseignant * Enseignant</div><div class="ttdoc">Objet Enseignant.</div><div class="ttdef"><b>Definition:</b> enseignant.h:19</div></div>
+<div class="ttc" id="aenseignant_8h_html_ae9eac2c0eba1c83b986e1d108d08a110"><div class="ttname"><a href="enseignant_8h.html#ae9eac2c0eba1c83b986e1d108d08a110">enseignantCopie</a></div><div class="ttdeci">Enseignant enseignantCopie(char *nom, char *prenom)</div><div class="ttdoc">Construit un nouvel objet Enseignant avec un Nom et un Prenom.</div><div class="ttdef"><b>Definition:</b> enseignant.c:60</div></div>
+<div class="ttc" id="astructjson__t_html"><div class="ttname"><a href="structjson__t.html">json_t</a></div><div class="ttdef"><b>Definition:</b> jansson.h:61</div></div>
+<div class="ttc" id="astructs__enseignant_html"><div class="ttname"><a href="structs__enseignant.html">s_enseignant</a></div><div class="ttdoc">Structure représentant un objet Enseignant.</div><div class="ttdef"><b>Definition:</b> enseignant.c:37</div></div>
+<div class="ttc" id="astructs__enseignant_html_a3f2696103a4137935b0327a1de4ba91e"><div class="ttname"><a href="structs__enseignant.html#a3f2696103a4137935b0327a1de4ba91e">s_enseignant::prenom</a></div><div class="ttdeci">char prenom[BUFSIZ]</div><div class="ttdef"><b>Definition:</b> enseignant.c:39</div></div>
+<div class="ttc" id="astructs__enseignant_html_af39f1059655ea6ba1d5a525a7dcd5234"><div class="ttname"><a href="structs__enseignant.html#af39f1059655ea6ba1d5a525a7dcd5234">s_enseignant::nom</a></div><div class="ttdeci">char nom[BUFSIZ]</div><div class="ttdef"><b>Definition:</b> enseignant.c:38</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

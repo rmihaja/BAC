@@ -363,3 +363,9 @@ Nous retiendrons que prévoir ses tâches et le temps pour les réaliser est tr�
 Nous prévoyons d'utiliser [Doxybook](https://github.com/matusnovak/doxybook2 ) si possible afin de rendre l'interface Doxygen plus belle et agréable en utilisant un frontend plus moderne.
 
 Par manque de temps, nous n'avons pas pu utiliser `openssl` pour l'encryption de nos données.
+
+---
+
+Généré par [doxybook2](https://github.com/matusnovak/doxybook2) v1.4.0
+
+[Voir la documentation Doxygen originale](https://rmihaja.github.io/BAC/doxygen/index.html)

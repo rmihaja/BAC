@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>BAC:  Fichier source de include/controle.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  },
+  loader: {
+    load: ['[tex]/ams','[tex]/textcomp']
+  },
+  tex: {
+    macros: {},
+    packages: ['base','configmacros','ams','textcomp']
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">BAC
+   </div>
+   <div id="projectbrief">&quot;Book A Classroom&quot;</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">controle.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="controle_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef __CONTROLE_H__</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define __CONTROLE_H__</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="formations_8h.html">formations.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="enseignants_8h.html">enseignants.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="enseignements_8h.html">enseignements.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="salles_8h.html">salles.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="entree_8h.html">entree.h</a>&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">   22</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="structs__controle.html">s_controle</a>* <a class="code hl_typedef" href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><a class="code hl_struct" href="structs__controle.html">Controle</a> <a class="code hl_function" href="controle_8h.html#a9cc48dc74fda529f014586404b0989f3">controle</a>(<span class="keywordtype">char</span>* <a class="code hl_variable" href="structs__controle.html#a34f5651606303f2441c44460066d5b9b">cheminData</a>);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keywordtype">int</span> <a class="code hl_function" href="controle_8h.html#a3b42e026b478cfd7af6b8b4e6f27f646">run</a>(<a class="code hl_struct" href="structs__controle.html">Controle</a> C);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="acontrole_8h_html_a3b42e026b478cfd7af6b8b4e6f27f646"><div class="ttname"><a href="controle_8h.html#a3b42e026b478cfd7af6b8b4e6f27f646">run</a></div><div class="ttdeci">int run(Controle C)</div><div class="ttdoc">Boucle principale de l'interface de Controle.</div><div class="ttdef"><b>Definition:</b> controle.c:1300</div></div>
+<div class="ttc" id="acontrole_8h_html_a9cc48dc74fda529f014586404b0989f3"><div class="ttname"><a href="controle_8h.html#a9cc48dc74fda529f014586404b0989f3">controle</a></div><div class="ttdeci">Controle controle(char *cheminData)</div><div class="ttdoc">Construit un nouvelle objet Controle à partir des données JSON s'il existe.</div><div class="ttdef"><b>Definition:</b> controle.c:223</div></div>
+<div class="ttc" id="acontrole_8h_html_af88dd3763ebc5e743dcadebfb9d6dc90"><div class="ttname"><a href="controle_8h.html#af88dd3763ebc5e743dcadebfb9d6dc90">Controle</a></div><div class="ttdeci">struct s_controle * Controle</div><div class="ttdoc">Objet Controle.</div><div class="ttdef"><b>Definition:</b> controle.h:22</div></div>
+<div class="ttc" id="aenseignants_8h_html"><div class="ttname"><a href="enseignants_8h.html">enseignants.h</a></div><div class="ttdoc">En-tête de la struture de données Enseignants.</div></div>
+<div class="ttc" id="aenseignements_8h_html"><div class="ttname"><a href="enseignements_8h.html">enseignements.h</a></div><div class="ttdoc">En-tête de la struture de données Enseignements.</div></div>
+<div class="ttc" id="aentree_8h_html"><div class="ttname"><a href="entree_8h.html">entree.h</a></div><div class="ttdoc">En-tête des fonctions d'entrées.</div></div>
+<div class="ttc" id="aformations_8h_html"><div class="ttname"><a href="formations_8h.html">formations.h</a></div><div class="ttdoc">En-tête de la structure de données Formations.</div></div>
+<div class="ttc" id="asalles_8h_html"><div class="ttname"><a href="salles_8h.html">salles.h</a></div><div class="ttdoc">En-tête de la structure de données Salles.</div></div>
+<div class="ttc" id="astructs__controle_html"><div class="ttname"><a href="structs__controle.html">s_controle</a></div><div class="ttdoc">Objet Controle.</div><div class="ttdef"><b>Definition:</b> controle.c:45</div></div>
+<div class="ttc" id="astructs__controle_html_a34f5651606303f2441c44460066d5b9b"><div class="ttname"><a href="structs__controle.html#a34f5651606303f2441c44460066d5b9b">s_controle::cheminData</a></div><div class="ttdeci">char * cheminData</div><div class="ttdef"><b>Definition:</b> controle.c:53</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>
